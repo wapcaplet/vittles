@@ -1,6 +1,8 @@
 from django.contrib import admin
-from pyantry.pantry.models import Pantry, Provision
+from pyantry.pantry.models import Provision
 
-admin.site.register(Pantry)
-admin.site.register(Provision)
+class ProvisionAdmin (admin.ModelAdmin):
+    fields = ('food', 'quantity', 'unit')
+
+admin.site.register(Provision, ProvisionAdmin)
 
