@@ -1,10 +1,31 @@
 from django.contrib import admin
 from pyantry.core.models import Category, Food, Unit, Equivalence
 
+# Inline forms
+
+class CategoryInline (admin.TabularInline):
+    model = Category
+    extra = 5
+    fk_name = 'parent'
+    verbose_name = 'Subcategory'
+    verbose_name_plural = 'Subcategories'
+
+class EquivalenceInline (admin.TabularInline):
+    model = Equivalence
+    extra = 5
+    fk_name = 'unit'
+
+class FoodInline (admin.TabularInline):
+    model = Food
+    extra = 5
+
+# Admin forms
+
 class CategoryAdmin (admin.ModelAdmin):
     list_display = ('name', 'parent')
     #list_editable = ('parent',)
     ordering = ('name',)
+    inlines = [FoodInline, CategoryInline]
 
 class FoodAdmin (admin.ModelAdmin):
     list_display = ('name', 'category')
@@ -17,6 +38,7 @@ class UnitAdmin (admin.ModelAdmin):
     list_display = ('name', 'abbr')
     list_editable = ('abbr',)
     ordering = ('name',)
+    inlines = [EquivalenceInline]
 
 class EquivalenceAdmin (admin.ModelAdmin):
     #list_display = ('__unicode__', 'unit', 'to_quantity', 'to_unit')
