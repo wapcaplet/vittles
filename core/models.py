@@ -20,3 +20,13 @@ class Unit (models.Model):
         return self.name
 
 
+class Equivalence (models.Model):
+    """Maps one unit to another.
+    """
+    unit = models.ForeignKey(Unit)
+    to_quantity = models.FloatField()
+    to_unit = models.ForeignKey(Unit, related_name='+')
+
+    def __unicode__(self):
+        return "1 %s equals %g %s(s)" % (self.unit, self.to_quantity, self.to_unit)
+
