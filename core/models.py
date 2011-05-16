@@ -5,9 +5,13 @@ class Category (models.Model):
     """A classification for something.
     """
     name = models.CharField(max_length=50)
+    parent = models.ForeignKey('Category', null=True, blank=True)
 
     def __unicode__(self):
         return self.name
+
+    class Meta:
+        verbose_name_plural = 'Categories'
 
 
 class Food (models.Model):

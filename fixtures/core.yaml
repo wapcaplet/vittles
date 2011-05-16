@@ -1,30 +1,63 @@
-- fields: {name: vegetables}
+- fields: {name: vegetables, parent: 14}
   model: core.category
   pk: 1
-- fields: {name: fats}
+- fields: {name: fats, parent: null}
   model: core.category
   pk: 2
-- fields: {name: fruit}
+- fields: {name: fruit, parent: 14}
   model: core.category
   pk: 3
-- fields: {name: grain}
+- fields: {name: grain, parent: null}
   model: core.category
   pk: 4
-- fields: {name: leavening}
+- fields: {name: leavening, parent: null}
   model: core.category
   pk: 5
-- fields: {name: meat}
+- fields: {name: meat, parent: null}
   model: core.category
   pk: 6
-- fields: {name: dairy}
+- fields: {name: dairy, parent: null}
   model: core.category
   pk: 7
-- fields: {name: seasoning}
+- fields: {name: seasoning, parent: null}
   model: core.category
   pk: 8
-- fields: {name: sweets}
+- fields: {name: sweets, parent: null}
   model: core.category
   pk: 9
+- fields: {name: beverages, parent: null}
+  model: core.category
+  pk: 10
+- fields: {name: coffee, parent: 10}
+  model: core.category
+  pk: 11
+- fields: {name: tea, parent: 10}
+  model: core.category
+  pk: 12
+- fields: {name: juice, parent: 10}
+  model: core.category
+  pk: 13
+- fields: {name: produce, parent: null}
+  model: core.category
+  pk: 14
+- fields: {name: soda, parent: 10}
+  model: core.category
+  pk: 15
+- fields: {name: cheese, parent: 7}
+  model: core.category
+  pk: 16
+- fields: {name: chicken, parent: 6}
+  model: core.category
+  pk: 17
+- fields: {name: beef, parent: 6}
+  model: core.category
+  pk: 18
+- fields: {name: pork, parent: 6}
+  model: core.category
+  pk: 19
+- fields: {name: turkey, parent: 6}
+  model: core.category
+  pk: 20
 - fields: {category: 4, name: flour}
   model: core.food
   pk: 1
@@ -67,7 +100,7 @@
 - fields: {category: 2, name: shortening}
   model: core.food
   pk: 14
-- fields: {category: null, name: water}
+- fields: {category: 10, name: water}
   model: core.food
   pk: 15
 - fields: {category: 1, name: onion}
@@ -82,6 +115,96 @@
 - fields: {category: 9, name: chocolate chips}
   model: core.food
   pk: 19
+- fields: {category: 1, name: potatoes}
+  model: core.food
+  pk: 20
+- fields: {category: 19, name: bacon}
+  model: core.food
+  pk: 21
+- fields: {category: 18, name: steak}
+  model: core.food
+  pk: 22
+- fields: {category: 18, name: ground beef}
+  model: core.food
+  pk: 23
+- fields: {category: 17, name: chicken breast}
+  model: core.food
+  pk: 24
+- fields: {category: 17, name: chicken nuggets}
+  model: core.food
+  pk: 25
+- fields: {category: 6, name: corn dogs}
+  model: core.food
+  pk: 26
+- fields: {category: 4, name: corn meal}
+  model: core.food
+  pk: 27
+- fields: {category: 2, name: vegetable oil}
+  model: core.food
+  pk: 28
+- fields: {category: 2, name: olive oil}
+  model: core.food
+  pk: 29
+- fields: {category: 9, name: chocolate syrup}
+  model: core.food
+  pk: 30
+- fields: {category: 5, name: yeast}
+  model: core.food
+  pk: 31
+- fields: {category: 3, name: blueberries}
+  model: core.food
+  pk: 32
+- fields: {category: 3, name: strawberries}
+  model: core.food
+  pk: 33
+- fields: {category: 3, name: raspberries}
+  model: core.food
+  pk: 34
+- fields: {category: 4, name: whole wheat flour}
+  model: core.food
+  pk: 35
+- fields: {category: 4, name: bread flour}
+  model: core.food
+  pk: 36
+- fields: {category: 2, name: lard}
+  model: core.food
+  pk: 37
+- fields: {category: 16, name: cheddar}
+  model: core.food
+  pk: 38
+- fields: {category: 16, name: ricotta}
+  model: core.food
+  pk: 39
+- fields: {category: 16, name: mozarella}
+  model: core.food
+  pk: 40
+- fields: {category: 16, name: parmesan}
+  model: core.food
+  pk: 41
+- fields: {category: 16, name: colby jack}
+  model: core.food
+  pk: 42
+- fields: {category: 19, name: ham}
+  model: core.food
+  pk: 43
+- fields: {category: 20, name: turkey breast}
+  model: core.food
+  pk: 44
+- fields: {category: 15, name: Dr. Pepper}
+  model: core.food
+  pk: 45
+- fields: {category: 13, name: apple juice}
+  model: core.food
+  pk: 46
+- fields: {category: 13, name: orange juice}
+  model: core.food
+  pk: 47
+- fields: {category: 10, name: coffee}
+  model: core.food
+  pk: 48
+- fields: {category: 4, name: pretzels}
+  model: core.food
+  pk: 49
 - fields: {name: cup}
   model: core.unit
   pk: 1

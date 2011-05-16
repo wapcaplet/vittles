@@ -10,6 +10,9 @@ class Pantry (models.Model):
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        verbose_name_plural = 'Pantries'
+
 
 class Provision (models.Model):
     """A quantity of food stored in a pantry.
