@@ -1,5 +1,5 @@
 from django.contrib import admin
-from pyantry.pantry.models import Provision
+from pyantry.inventory.models import Provision
 
 class ProvisionAdmin (admin.ModelAdmin):
     fields = ('food', 'quantity', 'unit')

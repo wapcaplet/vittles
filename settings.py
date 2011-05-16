@@ -95,6 +95,6 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
 
     'pyantry.core',
-    'pyantry.pantry',
+    'pyantry.inventory',
     'pyantry.cookbook',
 )

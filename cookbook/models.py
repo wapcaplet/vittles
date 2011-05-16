@@ -1,15 +1,6 @@
 from django.db import models
 from core.models import Unit, Food
 
-class Preparation (models.Model):
-    """A method of preparing food for cooking or eating.
-    """
-    name = models.CharField(max_length=50)
-
-    def __unicode__(self):
-        return self.name
-
-
 class Recipe (models.Model):
     """Instructions for preparing a meal.
     """
@@ -21,6 +12,15 @@ class Recipe (models.Model):
         return "%s (%s servings)" % (self.name, self.servings)
 
 
+class Preparation (models.Model):
+    """A method of preparing food for cooking or eating.
+    """
+    name = models.CharField(max_length=50)
+
+    def __unicode__(self):
+        return self.name
+
+
 class Ingredient (models.Model):
     """A quantity of food used in a recipe.
     """
@@ -28,7 +28,7 @@ class Ingredient (models.Model):
     unit = models.ForeignKey(Unit)
     food = models.ForeignKey(Food)
     preparation = models.ForeignKey(Preparation, null=True, blank=True)
-    recipe = models.ForeignKey(Recipe)
+    recipe = models.ForeignKey('Recipe')
 
     def __unicode__(self):
         if self.preparation:
@@ -37,4 +37,5 @@ class Ingredient (models.Model):
         else:
             return "%s %s %s" % \
                     (self.quantity, self.unit, self.food)
+
 

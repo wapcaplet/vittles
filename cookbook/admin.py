@@ -11,7 +11,7 @@ class RecipeAdmin (admin.ModelAdmin):
     """Customized recipe admin interface, with ingredients included.
     """
     inlines = [IngredientInline]
-    list_display = ('name', 'servings', 'directions')
+    #list_display = ('name', 'servings', 'directions', 'ingredients')
 
 admin.site.register(Preparation)
 admin.site.register(Ingredient)
