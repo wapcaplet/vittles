@@ -28,6 +28,7 @@ class Unit (models.Model):
     """A form of measurement.
     """
     name = models.CharField(max_length=50)
+    abbr = models.CharField(max_length=10, blank=True)
 
     def __unicode__(self):
         return self.name

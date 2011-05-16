@@ -58,6 +58,18 @@
 - fields: {name: turkey, parent: 6}
   model: core.category
   pk: 20
+- fields: {name: sauces, parent: null}
+  model: core.category
+  pk: 21
+- fields: {name: soups, parent: null}
+  model: core.category
+  pk: 22
+- fields: {name: condiments, parent: null}
+  model: core.category
+  pk: 23
+- fields: {name: alcohols, parent: 10}
+  model: core.category
+  pk: 24
 - fields: {category: 4, name: flour}
   model: core.food
   pk: 1
@@ -205,49 +217,139 @@
 - fields: {category: 4, name: pretzels}
   model: core.food
   pk: 49
-- fields: {name: cup}
+- fields: {category: 7, name: sour cream}
+  model: core.food
+  pk: 50
+- fields: {category: 7, name: yogurt}
+  model: core.food
+  pk: 51
+- fields: {category: null, name: vinegar}
+  model: core.food
+  pk: 52
+- fields: {category: 9, name: molasses}
+  model: core.food
+  pk: 53
+- fields: {category: 9, name: light corn syrup}
+  model: core.food
+  pk: 54
+- fields: {category: 9, name: dark corn syrup}
+  model: core.food
+  pk: 55
+- fields: {category: 9, name: brown sugar}
+  model: core.food
+  pk: 56
+- fields: {category: 4, name: quick cooking oats}
+  model: core.food
+  pk: 57
+- fields: {category: 4, name: oatmeal}
+  model: core.food
+  pk: 58
+- fields: {category: 4, name: spaghetti}
+  model: core.food
+  pk: 59
+- fields: {category: 4, name: macaroni}
+  model: core.food
+  pk: 60
+- fields: {category: 4, name: egg noodles}
+  model: core.food
+  pk: 61
+- fields: {category: 1, name: tomato sauce}
+  model: core.food
+  pk: 62
+- fields: {category: 1, name: tomato paste}
+  model: core.food
+  pk: 63
+- fields: {category: 21, name: pasta sauce}
+  model: core.food
+  pk: 64
+- fields: {category: 22, name: cream of mushroom soup}
+  model: core.food
+  pk: 65
+- fields: {category: 22, name: cream of chicken soup}
+  model: core.food
+  pk: 66
+- fields: {category: 22, name: chicken broth}
+  model: core.food
+  pk: 67
+- fields: {category: 22, name: vegetable broth}
+  model: core.food
+  pk: 68
+- fields: {category: 22, name: chicken boullion}
+  model: core.food
+  pk: 69
+- fields: {category: 22, name: beef boullion}
+  model: core.food
+  pk: 70
+- fields: {category: 23, name: ketchup}
+  model: core.food
+  pk: 71
+- fields: {category: 23, name: brown mustard}
+  model: core.food
+  pk: 72
+- fields: {category: 23, name: yellow mustard}
+  model: core.food
+  pk: 73
+- fields: {category: 10, name: slim-fast}
+  model: core.food
+  pk: 74
+- fields: {category: 24, name: white wine}
+  model: core.food
+  pk: 75
+- fields: {category: 24, name: red wine}
+  model: core.food
+  pk: 76
+- fields: {category: 11, name: coffee beans}
+  model: core.food
+  pk: 77
+- fields: {category: 12, name: Earl Grey tea}
+  model: core.food
+  pk: 78
+- fields: {category: 12, name: green tea}
+  model: core.food
+  pk: 79
+- fields: {abbr: C., name: cup}
   model: core.unit
   pk: 1
-- fields: {name: teaspoon}
+- fields: {abbr: tsp., name: teaspoon}
   model: core.unit
   pk: 2
-- fields: {name: tablespoon}
+- fields: {abbr: Tbsp., name: tablespoon}
   model: core.unit
   pk: 3
-- fields: {name: ounce}
+- fields: {abbr: oz., name: ounce}
   model: core.unit
   pk: 4
-- fields: {name: gram}
+- fields: {abbr: g, name: gram}
   model: core.unit
   pk: 5
-- fields: {name: pound}
+- fields: {abbr: lb., name: pound}
   model: core.unit
   pk: 6
-- fields: {name: pinch}
+- fields: {abbr: '', name: pinch}
   model: core.unit
   pk: 7
-- fields: {name: quart}
+- fields: {abbr: qt., name: quart}
   model: core.unit
   pk: 8
-- fields: {name: gallon}
+- fields: {abbr: gal., name: gallon}
   model: core.unit
   pk: 9
-- fields: {name: pint}
+- fields: {abbr: pt., name: pint}
   model: core.unit
   pk: 10
-- fields: {name: liter}
+- fields: {abbr: L, name: liter}
   model: core.unit
   pk: 11
-- fields: {name: kilogram}
+- fields: {abbr: kg, name: kilogram}
   model: core.unit
   pk: 12
-- fields: {name: whole}
+- fields: {abbr: '', name: whole}
   model: core.unit
   pk: 13
-- fields: {name: milliliter}
+- fields: {abbr: ml, name: milliliter}
   model: core.unit
   pk: 14
-- fields: {name: fluid ounce}
+- fields: {abbr: fl. oz., name: fluid ounce}
   model: core.unit
   pk: 15
 - fields: {to_quantity: 4.0, to_unit: 8, unit: 9}
@@ -265,9 +367,30 @@
 - fields: {to_quantity: 8.0, to_unit: 15, unit: 1}
   model: core.equivalence
   pk: 5
-- fields: {to_quantity: 236.58799999999999, to_unit: 14, unit: 1}
+- fields: {to_quantity: 236.59999999999999, to_unit: 14, unit: 1}
   model: core.equivalence
   pk: 6
 - fields: {to_quantity: 0.5, to_unit: 10, unit: 1}
   model: core.equivalence
   pk: 7
+- fields: {to_quantity: 29.57, to_unit: 14, unit: 15}
+  model: core.equivalence
+  pk: 8
+- fields: {to_quantity: 473.18000000000001, to_unit: 14, unit: 10}
+  model: core.equivalence
+  pk: 9
+- fields: {to_quantity: 3785.0, to_unit: 14, unit: 9}
+  model: core.equivalence
+  pk: 10
+- fields: {to_quantity: 14.800000000000001, to_unit: 14, unit: 3}
+  model: core.equivalence
+  pk: 11
+- fields: {to_quantity: 4.9000000000000004, to_unit: 14, unit: 2}
+  model: core.equivalence
+  pk: 12
+- fields: {to_quantity: 3.0, to_unit: 2, unit: 3}
+  model: core.equivalence
+  pk: 13
+- fields: {to_quantity: 16.0, to_unit: 3, unit: 1}
+  model: core.equivalence
+  pk: 14
