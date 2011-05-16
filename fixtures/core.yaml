@@ -1,0 +1,150 @@
+- fields: {name: vegetables}
+  model: core.category
+  pk: 1
+- fields: {name: fats}
+  model: core.category
+  pk: 2
+- fields: {name: fruit}
+  model: core.category
+  pk: 3
+- fields: {name: grain}
+  model: core.category
+  pk: 4
+- fields: {name: leavening}
+  model: core.category
+  pk: 5
+- fields: {name: meat}
+  model: core.category
+  pk: 6
+- fields: {name: dairy}
+  model: core.category
+  pk: 7
+- fields: {name: seasoning}
+  model: core.category
+  pk: 8
+- fields: {name: sweets}
+  model: core.category
+  pk: 9
+- fields: {category: 4, name: flour}
+  model: core.food
+  pk: 1
+- fields: {category: 6, name: egg}
+  model: core.food
+  pk: 2
+- fields: {category: 7, name: milk}
+  model: core.food
+  pk: 3
+- fields: {category: 3, name: pineapple}
+  model: core.food
+  pk: 4
+- fields: {category: 3, name: apple}
+  model: core.food
+  pk: 5
+- fields: {category: 1, name: green beans}
+  model: core.food
+  pk: 6
+- fields: {category: 1, name: peas}
+  model: core.food
+  pk: 7
+- fields: {category: 1, name: corn}
+  model: core.food
+  pk: 8
+- fields: {category: 2, name: butter}
+  model: core.food
+  pk: 9
+- fields: {category: 5, name: baking powder}
+  model: core.food
+  pk: 10
+- fields: {category: 5, name: baking soda}
+  model: core.food
+  pk: 11
+- fields: {category: 8, name: salt}
+  model: core.food
+  pk: 12
+- fields: {category: 9, name: sugar}
+  model: core.food
+  pk: 13
+- fields: {category: 2, name: shortening}
+  model: core.food
+  pk: 14
+- fields: {category: null, name: water}
+  model: core.food
+  pk: 15
+- fields: {category: 1, name: onion}
+  model: core.food
+  pk: 16
+- fields: {category: 1, name: carrot}
+  model: core.food
+  pk: 17
+- fields: {category: 1, name: celery}
+  model: core.food
+  pk: 18
+- fields: {category: 9, name: chocolate chips}
+  model: core.food
+  pk: 19
+- fields: {name: cup}
+  model: core.unit
+  pk: 1
+- fields: {name: teaspoon}
+  model: core.unit
+  pk: 2
+- fields: {name: tablespoon}
+  model: core.unit
+  pk: 3
+- fields: {name: ounce}
+  model: core.unit
+  pk: 4
+- fields: {name: gram}
+  model: core.unit
+  pk: 5
+- fields: {name: pound}
+  model: core.unit
+  pk: 6
+- fields: {name: pinch}
+  model: core.unit
+  pk: 7
+- fields: {name: quart}
+  model: core.unit
+  pk: 8
+- fields: {name: gallon}
+  model: core.unit
+  pk: 9
+- fields: {name: pint}
+  model: core.unit
+  pk: 10
+- fields: {name: liter}
+  model: core.unit
+  pk: 11
+- fields: {name: kilogram}
+  model: core.unit
+  pk: 12
+- fields: {name: whole}
+  model: core.unit
+  pk: 13
+- fields: {name: milliliter}
+  model: core.unit
+  pk: 14
+- fields: {name: fluid ounce}
+  model: core.unit
+  pk: 15
+- fields: {to_quantity: 4.0, to_unit: 8, unit: 9}
+  model: core.equivalence
+  pk: 1
+- fields: {to_quantity: 1000.0, to_unit: 5, unit: 12}
+  model: core.equivalence
+  pk: 2
+- fields: {to_quantity: 1000.0, to_unit: 14, unit: 11}
+  model: core.equivalence
+  pk: 3
+- fields: {to_quantity: 16.0, to_unit: 4, unit: 6}
+  model: core.equivalence
+  pk: 4
+- fields: {to_quantity: 8.0, to_unit: 15, unit: 1}
+  model: core.equivalence
+  pk: 5
+- fields: {to_quantity: 236.58799999999999, to_unit: 14, unit: 1}
+  model: core.equivalence
+  pk: 6
+- fields: {to_quantity: 0.5, to_unit: 10, unit: 1}
+  model: core.equivalence
+  pk: 7
