@@ -1,8 +1,17 @@
 from django.contrib import admin
-from pyantry.inventory.models import Provision
+from pyantry.inventory.models import Place, Provision
 
-class ProvisionAdmin (admin.ModelAdmin):
+class ProvisionInline (admin.TabularInline):
+    model = Provision
+    extra = 10
     fields = ('food', 'quantity', 'unit')
 
+class ProvisionAdmin (admin.ModelAdmin):
+    fields = ('food', 'quantity', 'unit', 'place')
+
+class PlaceAdmin (admin.ModelAdmin):
+    inlines = [ProvisionInline]
+
 admin.site.register(Provision, ProvisionAdmin)
+admin.site.register(Place, PlaceAdmin)
 
