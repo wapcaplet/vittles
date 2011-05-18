@@ -8,6 +8,7 @@ class ProvisionInline (admin.TabularInline):
 
 class ProvisionAdmin (admin.ModelAdmin):
     fields = ('food', 'quantity', 'unit', 'place')
+    list_filter = ('place',)
 
 class PlaceAdmin (admin.ModelAdmin):
     inlines = [ProvisionInline]

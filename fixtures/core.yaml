@@ -352,6 +352,9 @@
 - fields: {abbr: fl. oz., name: fluid ounce}
   model: core.unit
   pk: 15
+- fields: {abbr: doz., name: dozen}
+  model: core.unit
+  pk: 16
 - fields: {to_quantity: 4.0, to_unit: 8, unit: 9}
   model: core.equivalence
   pk: 1
@@ -394,3 +397,6 @@
 - fields: {to_quantity: 16.0, to_unit: 3, unit: 1}
   model: core.equivalence
   pk: 14
+- fields: {to_quantity: 12.0, to_unit: 13, unit: 16}
+  model: core.equivalence
+  pk: 15
