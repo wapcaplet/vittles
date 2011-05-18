@@ -104,22 +104,6 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
-INSTALLED_APPS = (
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django.contrib.admin',
-    'django.contrib.admindocs',
-
-    'core',
-    'cookbook',
-    'inventory',
-    'lettuce.django',
-)
-
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error.
@@ -142,3 +126,25 @@ LOGGING = {
         },
     }
 }
+
+INSTALLED_APPS = (
+    # Django
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.sites',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django.contrib.admin',
+    'django.contrib.admindocs',
+
+    # Local apps
+    'core',
+    'cookbook',
+    'inventory',
+
+    # Add-ons
+    'lettuce.django',
+    'south',
+)
+
