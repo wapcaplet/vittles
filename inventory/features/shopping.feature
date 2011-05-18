@@ -4,10 +4,11 @@ Feature: Shopping list
     Given I have an empty shopping list
     When I add "potatoes" to my shopping list
     Then my shopping list should include:
-      | flour |
+      | food     |
+      | potatoes |
 
   Scenario: Add to shopping list when a recipe is used
-    Given I have a pantry containing:
+    Given I have these provisions:
       | food  | qty | unit   |
       | flour | 1   | pound  |
       | milk  | 1   | gallon |
