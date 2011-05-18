@@ -1,1 +1,6 @@
-[]
+- fields: {name: shopping list}
+  model: inventory.place
+  pk: 1
+- fields: {name: pantry}
+  model: inventory.place
+  pk: 2
