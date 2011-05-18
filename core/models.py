@@ -4,7 +4,7 @@ from django.db import models
 class Category (models.Model):
     """A classification for something.
     """
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
     parent = models.ForeignKey('Category', null=True, blank=True)
 
     def __unicode__(self):
@@ -17,7 +17,7 @@ class Category (models.Model):
 class Food (models.Model):
     """Something edible.
     """
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
     category = models.ForeignKey(Category, null=True, blank=True)
 
     def __unicode__(self):
@@ -27,7 +27,7 @@ class Food (models.Model):
 class Unit (models.Model):
     """A form of measurement.
     """
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
     abbr = models.CharField(max_length=10, blank=True)
 
     def __unicode__(self):

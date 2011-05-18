@@ -5,7 +5,7 @@ class Place (models.Model):
     """A place where provisions may be located
     (pantry, freezer, shopping list etc.)
     """
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
 
     def __unicode__(self):
         return self.name
@@ -14,10 +14,10 @@ class Place (models.Model):
 class Provision (models.Model):
     """A quantity of food on a shopping list or in a pantry.
     """
-    quantity = models.FloatField(blank=True)
+    quantity = models.FloatField(blank=True, null=True)
     unit = models.ForeignKey(Unit, null=True)
     food = models.ForeignKey(Food)
-    place = models.ForeignKey(Place, null=True)
+    place = models.ForeignKey(Place, null=True, related_name='provisions')
 
     def __unicode__(self):
         desc = "%g %s %s" % (self.quantity, self.unit, self.food)
