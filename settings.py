@@ -148,3 +148,7 @@ INSTALLED_APPS = (
     'south',
 )
 
+LETTUCE_APPS = (
+    'inventory',
+)
+
