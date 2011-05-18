@@ -8,6 +8,10 @@ def get_or_create(model, **attrs):
     obj, created = model.objects.get_or_create(**attrs)
     return obj
 
+def assert_contains(item, items):
+    if item not in items:
+        raise AssertionError("'%s' not found in %s" % (item, str(items)))
+
 
 @step('I have an empty shopping list')
 def have_empty_shopping_list(step):
@@ -38,7 +42,6 @@ def have_provisions(step):
 def shopping_list_should_include(step):
     items = [food.name for food in world.shopping_list.foods.all()]
     for item in step.hashes:
-        if item['food'] not in items:
-            raise Exception("'%s' not found in '%s'" % (item['food'], str(items)))
+        assert_contains(item['food'], items)
 
 
