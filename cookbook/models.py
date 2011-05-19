@@ -1,7 +1,7 @@
 from django.db import models
-from core.models import Food, Amount, Preparation
+from core.models import ModelWrapper, Food, Amount, Preparation
 
-class Ingredient (models.Model):
+class Ingredient (ModelWrapper):
     """A quantity of food used in a recipe.
     """
     amount      = models.ForeignKey(Amount)
@@ -17,7 +17,7 @@ class Ingredient (models.Model):
                     (self.amount, self.food)
 
 
-class Recipe (models.Model):
+class Recipe (ModelWrapper):
     """Instructions for preparing a meal.
     """
     name        = models.CharField(max_length=100)

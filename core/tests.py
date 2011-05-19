@@ -1,23 +1,29 @@
-"""
-This file demonstrates two different styles of tests (one doctest and one
-unittest). These will both pass when you run "manage.py test".
-
-Replace these with more appropriate tests for your application.
-"""
-
 from django.test import TestCase
+from core.models import Unit, Equivalence, Amount, NoEquivalence
 
-class SimpleTest(TestCase):
-    def test_basic_addition(self):
+class ConversionTest (TestCase):
+    def setUp(self):
+        self.ounce = Unit.get(name='ounce')
+        self.pound = Unit.get(name='pound')
+        self.quart = Unit.get(name='quart')
+        self.equiv = Equivalence.get(
+            unit=self.pound,
+            to_quantity=16.0,
+            to_unit=self.ounce,
+        )
+        self.two_pounds = Amount.get(quantity=2.0, unit=self.pound)
+
+
+    def test_pounds_to_ounces(self):
+        """Correctly convert from one quantity to another.
         """
-        Tests that 1 + 1 always equals 2.
+        ounces = self.two_pounds.convert(self.ounce)
+        self.failUnlessEqual(ounces, 32.0)
+
+
+    def test_missing_equivalence(self):
+        """Raise an exception when no equivalence mapping is found.
         """
-        self.failUnlessEqual(1 + 1, 2)
+        self.assertRaises(NoEquivalence, self.two_pounds.convert, self.quart)
 
-__test__ = {"doctest": """
-Another way to test that 1 + 1 is equal to 2.
-
->>> 1 + 1 == 2
-True
-"""}
 

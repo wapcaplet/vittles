@@ -1,7 +1,7 @@
 from django.db import models
-from core.models import Food, Amount
+from core.models import ModelWrapper, Food, Amount
 
-class ShoppingList (models.Model):
+class ShoppingList (ModelWrapper):
     """A list of foods to shop for.
     """
     name = models.CharField(max_length=50)
@@ -11,7 +11,7 @@ class ShoppingList (models.Model):
         return self.name
 
 
-class Provision (models.Model):
+class Provision (ModelWrapper):
     """A quantity of food on-hand.
     """
     amount = models.ForeignKey(Amount)
