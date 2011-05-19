@@ -1,30 +1,20 @@
 from django.db import models
-from core.models import Unit, Food
-
-class Preparation (models.Model):
-    """A method of preparing food for cooking or eating.
-    """
-    name = models.CharField(max_length=50, unique=True)
-
-    def __unicode__(self):
-        return self.name
-
+from core.models import Food, Amount, Preparation
 
 class Ingredient (models.Model):
     """A quantity of food used in a recipe.
     """
-    quantity    = models.FloatField()
-    unit        = models.ForeignKey(Unit)
+    amount      = models.ForeignKey(Amount)
     preparation = models.ForeignKey(Preparation, null=True, blank=True)
     food        = models.ForeignKey(Food)
 
     def __unicode__(self):
         if self.preparation:
-            return "%s %s %s %s" % \
-                    (self.quantity, self.unit, self.preparation, self.food)
-        else:
             return "%s %s %s" % \
-                    (self.quantity, self.unit, self.food)
+                    (self.amount, self.preparation, self.food)
+        else:
+            return "%s %s" % \
+                    (self.amount, self.food)
 
 
 class Recipe (models.Model):

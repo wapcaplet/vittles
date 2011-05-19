@@ -1,5 +1,5 @@
 from django.contrib import admin
-from pyantry.core.models import Category, Food, Unit, Equivalence
+from pyantry.core.models import Category, Food, Unit, Equivalence, Amount, Preparation
 
 # Inline forms
 
@@ -44,8 +44,14 @@ class EquivalenceAdmin (admin.ModelAdmin):
     #list_display = ('__unicode__', 'unit', 'to_quantity', 'to_unit')
     ordering = ('unit', 'to_unit')
 
+class AmountAdmin (admin.ModelAdmin):
+    ordering = ('quantity', 'unit')
+
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Food, FoodAdmin)
 admin.site.register(Unit, UnitAdmin)
 admin.site.register(Equivalence, EquivalenceAdmin)
+admin.site.register(Amount, AmountAdmin)
+admin.site.register(Preparation)
+
 

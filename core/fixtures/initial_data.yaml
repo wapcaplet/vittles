@@ -400,3 +400,30 @@
 - fields: {to_quantity: 12.0, to_unit: 13, unit: 16}
   model: core.equivalence
   pk: 15
+- fields: {name: chopped}
+  model: core.preparation
+  pk: 1
+- fields: {name: diced}
+  model: core.preparation
+  pk: 2
+- fields: {name: sliced}
+  model: core.preparation
+  pk: 3
+- fields: {name: beaten}
+  model: core.preparation
+  pk: 4
+- fields: {name: boiling}
+  model: core.preparation
+  pk: 5
+- fields: {name: melted}
+  model: core.preparation
+  pk: 6
+- fields: {name: grated}
+  model: core.preparation
+  pk: 7
+- fields: {name: shredded}
+  model: core.preparation
+  pk: 8
+- fields: {name: minced}
+  model: core.preparation
+  pk: 9

@@ -45,3 +45,22 @@ class Equivalence (models.Model):
         return "1 %s equals %g %s(s)" % (self.unit, self.to_quantity, self.to_unit)
 
 
+class Amount (models.Model):
+    """A quantity of something, with units.
+    """
+    quantity = models.FloatField()
+    unit = models.ForeignKey(Unit)
+
+    def __unicode__(self):
+        return "%g %s" % (self.quantity, self.unit)
+
+
+class Preparation (models.Model):
+    """A method of preparing food for cooking or eating.
+    """
+    name = models.CharField(max_length=50, unique=True)
+
+    def __unicode__(self):
+        return self.name
+
+
