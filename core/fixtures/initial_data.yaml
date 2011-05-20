@@ -307,52 +307,52 @@
 - fields: {category: 12, name: green tea}
   model: core.food
   pk: 79
-- fields: {abbr: C., name: cup}
+- fields: {abbreviation: C., name: cup, pluralizable: true}
   model: core.unit
   pk: 1
-- fields: {abbr: tsp., name: teaspoon}
+- fields: {abbreviation: tsp., name: teaspoon, pluralizable: true}
   model: core.unit
   pk: 2
-- fields: {abbr: Tbsp., name: tablespoon}
+- fields: {abbreviation: Tbsp., name: tablespoon, pluralizable: true}
   model: core.unit
   pk: 3
-- fields: {abbr: oz., name: ounce}
+- fields: {abbreviation: oz., name: ounce, pluralizable: true}
   model: core.unit
   pk: 4
-- fields: {abbr: g, name: gram}
+- fields: {abbreviation: g, name: gram, pluralizable: true}
   model: core.unit
   pk: 5
-- fields: {abbr: lb., name: pound}
+- fields: {abbreviation: lb., name: pound, pluralizable: true}
   model: core.unit
   pk: 6
-- fields: {abbr: '', name: pinch}
+- fields: {abbreviation: '', name: pinch, pluralizable: true}
   model: core.unit
   pk: 7
-- fields: {abbr: qt., name: quart}
+- fields: {abbreviation: qt., name: quart, pluralizable: true}
   model: core.unit
   pk: 8
-- fields: {abbr: gal., name: gallon}
+- fields: {abbreviation: gal., name: gallon, pluralizable: true}
   model: core.unit
   pk: 9
-- fields: {abbr: pt., name: pint}
+- fields: {abbreviation: pt., name: pint, pluralizable: true}
   model: core.unit
   pk: 10
-- fields: {abbr: L, name: liter}
+- fields: {abbreviation: L, name: liter, pluralizable: true}
   model: core.unit
   pk: 11
-- fields: {abbr: kg, name: kilogram}
+- fields: {abbreviation: kg, name: kilogram, pluralizable: true}
   model: core.unit
   pk: 12
-- fields: {abbr: '', name: whole}
+- fields: {abbreviation: '', name: whole, pluralizable: false}
   model: core.unit
   pk: 13
-- fields: {abbr: ml, name: milliliter}
+- fields: {abbreviation: ml, name: milliliter, pluralizable: true}
   model: core.unit
   pk: 14
-- fields: {abbr: fl. oz., name: fluid ounce}
+- fields: {abbreviation: fl. oz., name: fluid ounce, pluralizable: true}
   model: core.unit
   pk: 15
-- fields: {abbr: doz., name: dozen}
+- fields: {abbreviation: doz., name: dozen, pluralizable: false}
   model: core.unit
   pk: 16
 - fields: {to_quantity: 4.0, to_unit: 8, unit: 9}

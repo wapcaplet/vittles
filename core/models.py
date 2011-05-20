@@ -52,7 +52,8 @@ class Unit (ModelWrapper):
     """A form of measurement.
     """
     name = models.CharField(max_length=50, unique=True)
-    abbr = models.CharField(max_length=10, blank=True)
+    abbreviation = models.CharField(max_length=10, blank=True)
+    pluralizable = models.BooleanField(default=True)
 
     def __unicode__(self):
         return self.name
@@ -85,7 +86,10 @@ class Amount (ModelWrapper):
     unit = models.ForeignKey(Unit)
 
     def __unicode__(self):
-        return "%g %s" % (self.quantity, self.unit)
+        if self.quantity > 1.0 and self.unit.pluralizable:
+            return "%g %ss" % (self.quantity, self.unit)
+        else:
+            return "%g %s" % (self.quantity, self.unit)
 
 
     def convert(self, to_unit):
