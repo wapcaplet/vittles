@@ -94,10 +94,14 @@ class Amount (ModelWrapper):
         for the relevant units; if no `Equivalence` is found, raise a
         `NoEquivalence` exception.
         """
+        # If units are the same, no conversion is necessary
+        if self.unit == to_unit:
+            return self.quantity
+        # Otherwise, try to find a direct mapping between units
         try:
             equivalence = Equivalence.objects.get(unit=self.unit, to_unit=to_unit)
         except ObjectDoesNotExist:
-            # See if there's a mapping in the other direction
+            # OK, see if there's a mapping in the other direction
             try:
                 equivalence = Equivalence.objects.get(unit=to_unit, to_unit=self.unit)
             except ObjectDoesNotExist:
@@ -106,5 +110,40 @@ class Amount (ModelWrapper):
                 return self.quantity / equivalence.to_quantity
         else:
             return self.quantity * equivalence.to_quantity
+
+
+    def __add__(self, other_amount):
+        """Add this Amount to another Amount, and return a new Amount in the
+        same units as this one.
+        """
+        new_quantity=self.quantity + other_amount.convert(self.unit)
+        return Amount(unit=self.unit, quantity=new_quantity)
+
+
+    def __sub__(self, other_amount):
+        """Subtract another Amount from this Amount, and return a new Amount in
+        the same units as this one.
+        """
+        new_quantity=self.quantity - other_amount.convert(self.unit)
+        return Amount(unit=self.unit, quantity=new_quantity)
+
+
+    def __mul__(self, factor):
+        """Multiply this Amount by a numeric value, and return a new Amount
+        in the same units as this one.
+        """
+        return Amount(unit=self.unit, quantity=self.quantity * factor)
+
+
+    def __eq__(self, other_amount):
+        """Return True if this Amount is equal to another Amount, False otherwise.
+        """
+        return self.quantity == other_amount.convert(self.unit)
+
+
+    def __ne__(self, other_amount):
+        """Return False if this Amount is equal to another Amount, True otherwise.
+        """
+        return self.quantity != other_amount.convert(self.unit)
 
 
