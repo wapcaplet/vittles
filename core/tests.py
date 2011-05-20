@@ -1,7 +1,9 @@
 from django.test import TestCase
 from core.models import Unit, Equivalence, Amount, NoEquivalence
 
-class ConversionTest (TestCase):
+class CoreTest (TestCase):
+    """Initialization shared by all test cases
+    """
     def setUp(self):
         self.ounce = Unit.get(name='ounce')
         self.pound = Unit.get(name='pound')
@@ -10,10 +12,14 @@ class ConversionTest (TestCase):
             to_quantity=16.0,
             to_unit=self.ounce,
         )
+        self.half_pound = Amount.get(quantity=0.5, unit=self.pound)
         self.two_pounds = Amount.get(quantity=2.0, unit=self.pound)
         self.four_ounces = Amount.get(quantity=4.0, unit=self.ounce)
+        self.eight_ounces = Amount.get(quantity=8.0, unit=self.ounce)
+        self.twelve_ounces = Amount.get(quantity=12.0, unit=self.ounce)
 
 
+class AmountConversionTest (CoreTest):
     def test_pounds_to_ounces(self):
         """Convert a quantity when there is a direct equivalence.
         """
@@ -35,22 +41,7 @@ class ConversionTest (TestCase):
         self.assertRaises(NoEquivalence, self.two_pounds.convert, quart)
 
 
-class AddAmountTest (TestCase):
-    def setUp(self):
-        self.ounce = Unit.get(name='ounce')
-        self.pound = Unit.get(name='pound')
-        self.pound_to_ounces = Equivalence.get(
-            unit=self.pound,
-            to_quantity=16.0,
-            to_unit=self.ounce,
-        )
-        self.half_pound = Amount.get(quantity=0.5, unit=self.pound)
-        self.two_pounds = Amount.get(quantity=2.0, unit=self.pound)
-        self.four_ounces = Amount.get(quantity=4.0, unit=self.ounce)
-        self.eight_ounces = Amount.get(quantity=8.0, unit=self.ounce)
-        self.twelve_ounces = Amount.get(quantity=12.0, unit=self.ounce)
-
-
+class AmountAddTest (CoreTest):
     def test_add_same_units(self):
         """Add two Amounts in the same units.
         """
@@ -64,17 +55,6 @@ class AddAmountTest (TestCase):
             (self.twelve_ounces + self.four_ounces).quantity, 16.0)
         self.failUnlessEqual(
             (self.four_ounces + self.twelve_ounces).quantity, 16.0)
-
-
-    def test_subtract_same_units(self):
-        """Subtract two Amounts in the same units.
-        """
-        # Results in pounds
-        self.failUnlessEqual(
-            (self.two_pounds - self.half_pound).quantity, 1.5)
-        # Results in ounces
-        self.failUnlessEqual(
-            (self.twelve_ounces - self.four_ounces).quantity, 8.0)
 
 
     def test_add_different_units(self):
@@ -100,6 +80,18 @@ class AddAmountTest (TestCase):
             (self.twelve_ounces + self.half_pound).quantity, 20.0)
 
 
+class AmountSubtractTest (CoreTest):
+    def test_subtract_same_units(self):
+        """Subtract two Amounts in the same units.
+        """
+        # Results in pounds
+        self.failUnlessEqual(
+            (self.two_pounds - self.half_pound).quantity, 1.5)
+        # Results in ounces
+        self.failUnlessEqual(
+            (self.twelve_ounces - self.four_ounces).quantity, 8.0)
+
+
     def test_subtract_different_units(self):
         """Subtract two Amounts in different units.
         """
@@ -115,6 +107,7 @@ class AddAmountTest (TestCase):
             (self.twelve_ounces - self.half_pound).quantity, 4.0)
 
 
+class AmountMultiplyTest (CoreTest):
     def test_multiply(self):
         """Multiply an Amount.
         """
@@ -128,6 +121,7 @@ class AddAmountTest (TestCase):
         self.failUnlessEqual((self.four_ounces * 0.1).quantity, 0.4)
 
 
+class AmountEqualityTest (CoreTest):
     def test_equality_same_units(self):
         """Compare two Amounts in the same units for equality.
         """
@@ -152,4 +146,24 @@ class AddAmountTest (TestCase):
         self.assertTrue(self.half_pound != self.four_ounces)
         self.assertTrue(self.four_ounces != self.half_pound)
 
+
+class AmountInequalityTest (CoreTest):
+    def test_inequality_same_units(self):
+        """Compare two Amounts in the same units for greater/less than.
+        """
+        self.assertTrue(self.two_pounds > self.half_pound)
+        self.assertTrue(self.four_ounces < self.twelve_ounces)
+
+        self.assertFalse(self.two_pounds < self.half_pound)
+        self.assertFalse(self.four_ounces > self.twelve_ounces)
+
+
+    def test_inequality_different_units(self):
+        """Compare two Amounts in different units for greater/less than.
+        """
+        self.assertTrue(self.four_ounces < self.half_pound)
+        self.assertTrue(self.half_pound < self.twelve_ounces)
+
+        self.assertFalse(self.four_ounces > self.half_pound)
+        self.assertFalse(self.half_pound > self.twelve_ounces)
 

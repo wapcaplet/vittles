@@ -147,3 +147,15 @@ class Amount (ModelWrapper):
         return self.quantity != other_amount.convert(self.unit)
 
 
+    def __gt__(self, other_amount):
+        """Return True if this Amount is greater than another Amount, False otherwise.
+        """
+        return self.quantity > other_amount.convert(self.unit)
+
+
+    def __lt__(self, other_amount):
+        """Return True if this Amount is less than another Amount, False otherwise.
+        """
+        return self.quantity < other_amount.convert(self.unit)
+
+
