@@ -67,7 +67,7 @@ class Equivalence (ModelWrapper):
     to_unit = models.ForeignKey(Unit, related_name='+')
 
     def __unicode__(self):
-        return "1 %s equals %g %s(s)" % (self.unit, self.to_quantity, self.to_unit)
+        return "1 %s = %g %s(s)" % (self.unit, self.to_quantity, self.to_unit)
 
 
 class Preparation (ModelWrapper):

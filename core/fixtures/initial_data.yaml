@@ -400,6 +400,78 @@
 - fields: {to_quantity: 12.0, to_unit: 13, unit: 16}
   model: core.equivalence
   pk: 15
+- fields: {to_quantity: 0.45000000000000001, to_unit: 12, unit: 6}
+  model: core.equivalence
+  pk: 16
+- fields: {to_quantity: 454.0, to_unit: 5, unit: 6}
+  model: core.equivalence
+  pk: 17
+- fields: {to_quantity: 0.26400000000000001, to_unit: 9, unit: 11}
+  model: core.equivalence
+  pk: 18
+- fields: {to_quantity: 1.0566, to_unit: 8, unit: 11}
+  model: core.equivalence
+  pk: 19
+- fields: {to_quantity: 2.113, to_unit: 10, unit: 11}
+  model: core.equivalence
+  pk: 20
+- fields: {to_quantity: 33.814, to_unit: 15, unit: 11}
+  model: core.equivalence
+  pk: 21
+- fields: {to_quantity: 0.94599999999999995, to_unit: 11, unit: 8}
+  model: core.equivalence
+  pk: 22
+- fields: {to_quantity: 946.0, to_unit: 14, unit: 8}
+  model: core.equivalence
+  pk: 23
+- fields: {to_quantity: 2.0, to_unit: 10, unit: 8}
+  model: core.equivalence
+  pk: 24
+- fields: {to_quantity: 0.25, to_unit: 9, unit: 8}
+  model: core.equivalence
+  pk: 25
+- fields: {to_quantity: 0.25, to_unit: 8, unit: 1}
+  model: core.equivalence
+  pk: 26
+- fields: {to_quantity: 0.125, to_unit: 1, unit: 15}
+  model: core.equivalence
+  pk: 27
+- fields: {to_quantity: 2.2046000000000001, to_unit: 6, unit: 12}
+  model: core.equivalence
+  pk: 28
+- fields: {to_quantity: 35.274000000000001, to_unit: 4, unit: 12}
+  model: core.equivalence
+  pk: 29
+- fields: {to_quantity: 0.0625, to_unit: 6, unit: 4}
+  model: core.equivalence
+  pk: 30
+- fields: {to_quantity: 28.350000000000001, to_unit: 5, unit: 4}
+  model: core.equivalence
+  pk: 31
+- fields: {to_quantity: 0.035000000000000003, to_unit: 4, unit: 5}
+  model: core.equivalence
+  pk: 32
+- fields: {to_quantity: 0.0022000000000000001, to_unit: 6, unit: 5}
+  model: core.equivalence
+  pk: 33
+- fields: {to_quantity: 0.001, to_unit: 12, unit: 5}
+  model: core.equivalence
+  pk: 34
+- fields: {to_quantity: 3.7850000000000001, to_unit: 11, unit: 9}
+  model: core.equivalence
+  pk: 35
+- fields: {to_quantity: 0.5, to_unit: 8, unit: 10}
+  model: core.equivalence
+  pk: 36
+- fields: {to_quantity: 16.0, to_unit: 15, unit: 10}
+  model: core.equivalence
+  pk: 37
+- fields: {to_quantity: 0.125, to_unit: 9, unit: 10}
+  model: core.equivalence
+  pk: 38
+- fields: {to_quantity: 0.47299999999999998, to_unit: 11, unit: 10}
+  model: core.equivalence
+  pk: 39
 - fields: {name: chopped}
   model: core.preparation
   pk: 1
@@ -427,3 +499,6 @@
 - fields: {name: minced}
   model: core.preparation
   pk: 9
+- fields: {name: sifted}
+  model: core.preparation
+  pk: 10
