@@ -106,8 +106,10 @@ class Amount (ModelWrapper):
                 equivalence = Equivalence.objects.get(unit=to_unit, to_unit=self.unit)
             except ObjectDoesNotExist:
                 raise NoEquivalence("Cannot convert '%s' to '%s'" % (self.unit, to_unit))
+            # Got a reverse mapping -- divide
             else:
                 return self.quantity / equivalence.to_quantity
+        # Got a direct mapping -- multiply
         else:
             return self.quantity * equivalence.to_quantity
 
