@@ -1,4 +1,4 @@
-# Django settings for pyantry project.
+# Django settings for vittles project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -12,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/tmp/pyantry_dev.sqlite3',
+        'NAME': '/tmp/vittles_dev.sqlite3',
     }
 }
 
@@ -96,7 +96,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'pyantry.urls'
+ROOT_URLCONF = 'vittles.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".

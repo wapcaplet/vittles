@@ -1,5 +1,5 @@
 from django.contrib import admin
-from pyantry.cookbook.models import Ingredient, Recipe, IngredientGroup
+from vittles.cookbook.models import Ingredient, Recipe, IngredientGroup
 
 # Inline forms
 

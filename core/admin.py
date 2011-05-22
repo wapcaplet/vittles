@@ -1,5 +1,5 @@
 from django.contrib import admin
-from pyantry.core.models import Category, Food, Unit, Equivalence, Amount, Preparation
+from vittles.core.models import Category, Food, Unit, Equivalence, Amount, Preparation
 
 # Inline forms
 

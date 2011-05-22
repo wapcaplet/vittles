@@ -1,6 +1,7 @@
 import re
+from fractions import Fraction
 from django.db import models
-from core.models import ModelWrapper, Food, Amount, Preparation
+from core.models import ModelWrapper, Food, Amount, Preparation, Unit
 
 class Ingredient (ModelWrapper):
     """A quantity of food used in a recipe.
@@ -26,18 +27,14 @@ class Ingredient (ModelWrapper):
 
         """
         # TODO:
-        # Handle preparations
         pattern = re.compile(
             """
-            ^(?P<quantity>[\d\./ ]+)    # Integers, decimals, or mixed fractions
-            [ ]+                        # At least one space
-            (?P<unit>\w+)               # Unit name
-            [ ]+                        # At least one space
-            (
-                (?P<preparation>\w+)    # Optional preparation
-                [ ]+
-            )?
-            (?P<food>\w+)
+            ^
+            (?P<quantity>[\d\./ ]+)         # Integer, decimal, or mixed fraction
+            [ ]+                            # At least one space
+            ((?P<unit>\w+)[ ]+)?            # Optional unit name
+            ((?P<preparation>\w+)[ ]+)?     # Optional preparation name
+            (?P<food>\w+)                   # Food name
             $
             """, re.X)
         match = pattern.match(text)
@@ -47,8 +44,26 @@ class Ingredient (ModelWrapper):
 
         parts = match.groupdict()
 
-        amount = Amount.parse("%s %s" % (parts['quantity'], parts['unit']))
+        # Split the quantity on spaces, and accumulate fractions
+        quantity = 0.0
+        for numpart in parts['quantity'].split(' '):
+            quantity += float(Fraction(numpart))
 
+        # If quantity is > 1, some de-pluralization may be needed
+        # FIXME: Make this work with funky pluralizations like "potatoes"
+        if quantity > 1.0:
+            if parts['unit']:
+                parts['unit'] = parts['unit'].rstrip('s')
+            else:
+                parts['food'] = parts['food'].rstrip('s')
+
+        # If a unit was given, look it up
+        if parts['unit']:
+            parts['unit'] = Unit.get(name=parts['unit'])
+
+        amount = Amount.get(quantity=quantity, unit=parts['unit'])
+
+        # Include preparation if there is one
         if parts['preparation']:
             preparation = Preparation.get(name=parts['preparation'])
         else:

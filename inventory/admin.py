@@ -1,5 +1,5 @@
 from django.contrib import admin
-from pyantry.inventory.models import ShoppingList, Provision
+from vittles.inventory.models import ShoppingList, Provision
 
 # Admin forms
 
