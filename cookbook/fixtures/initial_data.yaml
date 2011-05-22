@@ -1,0 +1,98 @@
+- fields: {food: 1, optional: false, preparation: null, quantity: 2.5, unit: 1}
+  model: cookbook.ingredient
+  pk: 1
+- fields: {food: 14, optional: false, preparation: null, quantity: 0.33000000000000002,
+    unit: 1}
+  model: cookbook.ingredient
+  pk: 2
+- fields: {food: 1, optional: false, preparation: null, quantity: 1.75, unit: 1}
+  model: cookbook.ingredient
+  pk: 3
+- fields: {food: 11, optional: false, preparation: null, quantity: 1.0, unit: 2}
+  model: cookbook.ingredient
+  pk: 4
+- fields: {food: 11, optional: false, preparation: null, quantity: 0.5, unit: 2}
+  model: cookbook.ingredient
+  pk: 5
+- fields: {food: 12, optional: false, preparation: null, quantity: 0.5, unit: 2}
+  model: cookbook.ingredient
+  pk: 6
+- fields: {food: 10, optional: false, preparation: null, quantity: 1.0, unit: 2}
+  model: cookbook.ingredient
+  pk: 7
+- fields: {food: 13, optional: false, preparation: null, quantity: 0.5, unit: 1}
+  model: cookbook.ingredient
+  pk: 8
+- fields: {food: 2, optional: false, preparation: null, quantity: 2.0, unit: null}
+  model: cookbook.ingredient
+  pk: 9
+- fields: {food: 80, optional: false, preparation: 11, quantity: 1.0, unit: 1}
+  model: cookbook.ingredient
+  pk: 10
+- fields: {food: 13, optional: false, preparation: null, quantity: 0.25, unit: 1}
+  model: cookbook.ingredient
+  pk: 11
+- fields: {food: 2, optional: false, preparation: 4, quantity: 1.0, unit: null}
+  model: cookbook.ingredient
+  pk: 12
+- fields: {food: 10, optional: false, preparation: null, quantity: 2.5, unit: 2}
+  model: cookbook.ingredient
+  pk: 13
+- fields: {food: 12, optional: false, preparation: null, quantity: 0.73999999999999999,
+    unit: 2}
+  model: cookbook.ingredient
+  pk: 14
+- fields: {food: 3, optional: false, preparation: null, quantity: 0.75, unit: 1}
+  model: cookbook.ingredient
+  pk: 15
+- fields:
+    directions: Cream together shortening and sugar; add eggs and beat well. Sift
+      together dry ingredients; add to creamed mixture alternately with banana, blending
+      well after each addition. Pour into greased 9"x5"x3" loaf pan. Bake 45 to 50
+      minutes. Remove from pan and cool on a wire rack.
+    ingredients: []
+    name: Banana Bread
+    preheat: 350 F
+    servings: null
+  model: cookbook.recipe
+  pk: 1
+- fields:
+    directions: Sift dry ingredients together. Combine egg, milk, and oil, then add
+      wet to dry. Stir quickly until dry ingredients are moistened. Fill greased muffin
+      tin 2/3 full. Bake about 20 minutes.
+    ingredients: []
+    name: Best Ever Muffins
+    preheat: 400 F
+    servings: 12
+  model: cookbook.recipe
+  pk: 2
+- fields:
+    ingredients: [3, 5, 6, 7]
+    name: Dry
+    recipe: 1
+  model: cookbook.ingredientgroup
+  pk: 1
+- fields:
+    ingredients: [2, 8, 9]
+    name: Wet
+    recipe: 1
+  model: cookbook.ingredientgroup
+  pk: 2
+- fields:
+    ingredients: [10]
+    name: Banana
+    recipe: 1
+  model: cookbook.ingredientgroup
+  pk: 3
+- fields:
+    ingredients: [3, 13, 14]
+    name: Dry
+    recipe: 2
+  model: cookbook.ingredientgroup
+  pk: 4
+- fields:
+    ingredients: [2, 11, 12, 15]
+    name: Wet
+    recipe: 2
+  model: cookbook.ingredientgroup
+  pk: 5

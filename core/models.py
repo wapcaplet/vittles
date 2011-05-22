@@ -1,3 +1,4 @@
+from core.helpers import fractionize
 from django.db import models
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -100,12 +101,12 @@ class Amount (ModelWrapper):
         #unique_together = ('quantity', 'unit')
 
     def __unicode__(self):
-        if not self.unit:
-            return "%g" % self.quantity
-        elif self.quantity > 1.0:
-            return "%g %ss" % (self.quantity, self.unit)
-        else:
-            return "%g %s" % (self.quantity, self.unit)
+        string = fractionize(self.quantity)
+        if self.unit:
+            string += " %s" % self.unit
+            if self.quantity > 1.0:
+                string += "s"
+        return string
 
 
     def convert(self, to_unit):
