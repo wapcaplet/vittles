@@ -4,15 +4,11 @@ from vittles.cookbook.models import Ingredient, Recipe, IngredientGroup
 # Inline forms
 
 class IngredientInline (admin.TabularInline):
-    """Displays ingredients in a table, with 10 rows.
-    """
     model = Recipe.ingredients.through
     verbose_name = 'ingredient'
     verbose_name_plural = 'ingredients'
 
 class IngredientGroupInline (admin.StackedInline):
-    """Displays ingredient groups inline.
-    """
     model = IngredientGroup
     extra = 0
     filter_horizontal = ('ingredients',)
@@ -24,6 +20,7 @@ class RecipeAdmin (admin.ModelAdmin):
     """Customized recipe admin interface, with ingredients included.
     """
     inlines = [IngredientGroupInline]
+    fields = ('name', 'ingredients', 'preheat', 'directions', 'servings')
     filter_horizontal = ('ingredients',)
 
 class IngredientGroupAdmin (admin.ModelAdmin):

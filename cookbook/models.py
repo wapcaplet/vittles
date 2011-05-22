@@ -81,7 +81,8 @@ class Recipe (ModelWrapper):
     """Instructions for preparing a meal.
     """
     name        = models.CharField(max_length=100)
-    directions  = models.TextField()
+    directions  = models.TextField(blank=True, null=True)
+    preheat     = models.CharField(max_length=5, blank=True, null=True)
     servings    = models.IntegerField(blank=True, null=True)
     ingredients = models.ManyToManyField(Ingredient, related_name='recipes', blank=True)
 

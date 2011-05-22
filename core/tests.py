@@ -193,3 +193,9 @@ class AmountInequalityTest (CoreTest):
         self.assertRaises(NoEquivalence, self.two_pounds.__lt__, self.three_quarts)
 
 
+from helpers import fractionize, format_food_unit
+
+__test__ = {
+    'fractionize': fractionize,
+    'format_food_unit': format_food_unit,
+}
