@@ -49,6 +49,9 @@ class Food (ModelWrapper):
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        ordering = ['name']
+
 
 class Unit (ModelWrapper):
     """A form of measurement.
@@ -60,6 +63,8 @@ class Unit (ModelWrapper):
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        ordering = ['name']
 
 class Equivalence (ModelWrapper):
     """Maps one unit to another.
@@ -80,15 +85,20 @@ class Preparation (ModelWrapper):
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        ordering = ['name']
+
 
 class Amount (ModelWrapper):
     """A quantity of something, with units.
     """
     quantity = models.FloatField()
-    unit = models.ForeignKey(Unit)
+    unit = models.ForeignKey(Unit, blank=True, null=True)
 
     def __unicode__(self):
-        if self.quantity > 1.0 and self.unit.pluralizable:
+        if not self.unit:
+            return "%g" % self.quantity
+        elif self.quantity > 1.0 and self.unit.pluralizable:
             return "%g %ss" % (self.quantity, self.unit)
         else:
             return "%g %s" % (self.quantity, self.unit)
@@ -151,6 +161,14 @@ class Amount (ModelWrapper):
             return self.quantity * equivalence.to_quantity
 
 
+    def same_as(self, other_amount):
+        """Return True if this Amount is equal to another Amount, False otherwise.
+        This function exists because overriding `__eq__` on a model instance
+        is potentially dangerous.
+        """
+        return self.quantity == other_amount.convert(self.unit)
+
+
     def __add__(self, other_amount):
         """Add this Amount to another Amount, and return a new Amount in the
         same units as this one.
@@ -172,18 +190,6 @@ class Amount (ModelWrapper):
         in the same units as this one.
         """
         return Amount(unit=self.unit, quantity=self.quantity * factor)
-
-
-    def __eq__(self, other_amount):
-        """Return True if this Amount is equal to another Amount, False otherwise.
-        """
-        return self.quantity == other_amount.convert(self.unit)
-
-
-    def __ne__(self, other_amount):
-        """Return False if this Amount is equal to another Amount, True otherwise.
-        """
-        return self.quantity != other_amount.convert(self.unit)
 
 
     def __gt__(self, other_amount):

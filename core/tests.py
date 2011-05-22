@@ -139,31 +139,31 @@ class AmountEqualityTest (CoreTest):
         """Compare two Amounts in the same units for equality.
         """
         # Equal
-        self.assertTrue(self.two_pounds == self.two_pounds)
-        self.assertTrue(self.half_pound == self.half_pound)
-        self.assertTrue(self.four_ounces == self.four_ounces)
-        self.assertTrue(self.twelve_ounces == self.twelve_ounces)
+        self.assertTrue(self.two_pounds.same_as(self.two_pounds))
+        self.assertTrue(self.half_pound.same_as(self.half_pound))
+        self.assertTrue(self.four_ounces.same_as(self.four_ounces))
+        self.assertTrue(self.twelve_ounces.same_as(self.twelve_ounces))
         # Not-equal
-        self.assertTrue(self.two_pounds != self.half_pound)
-        self.assertTrue(self.half_pound != self.two_pounds)
-        self.assertTrue(self.four_ounces != self.twelve_ounces)
-        self.assertTrue(self.twelve_ounces != self.four_ounces)
+        self.assertFalse(self.two_pounds.same_as(self.half_pound))
+        self.assertFalse(self.half_pound.same_as(self.two_pounds))
+        self.assertFalse(self.four_ounces.same_as(self.twelve_ounces))
+        self.assertFalse(self.twelve_ounces.same_as(self.four_ounces))
 
 
     def test_equality_different_units(self):
         """Compare two Amounts in different units for equality.
         """
-        self.assertTrue(self.half_pound == self.eight_ounces)
-        self.assertTrue(self.eight_ounces == self.half_pound)
+        self.assertTrue(self.half_pound.same_as(self.eight_ounces))
+        self.assertTrue(self.eight_ounces.same_as(self.half_pound))
 
-        self.assertTrue(self.half_pound != self.four_ounces)
-        self.assertTrue(self.four_ounces != self.half_pound)
+        self.assertFalse(self.half_pound.same_as(self.four_ounces))
+        self.assertFalse(self.four_ounces.same_as(self.half_pound))
 
 
     def test_missing_equivalence(self):
         """Exception when comparing Amounts with no Equivalence.
         """
-        self.assertRaises(NoEquivalence, self.two_pounds.__eq__, self.three_quarts)
+        self.assertRaises(NoEquivalence, self.two_pounds.same_as, self.three_quarts)
 
 
 class AmountInequalityTest (CoreTest):

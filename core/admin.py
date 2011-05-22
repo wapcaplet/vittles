@@ -19,10 +19,11 @@ class FoodInline (admin.TabularInline):
     model = Food
     extra = 5
 
-# Admin forms
+# Main forms
 
 class CategoryAdmin (admin.ModelAdmin):
     list_display = ('name', 'parent')
+    list_filter = ('parent',)
     #list_editable = ('parent',)
     ordering = ('name',)
     inlines = [FoodInline, CategoryInline]
