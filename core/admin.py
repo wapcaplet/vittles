@@ -22,25 +22,23 @@ class FoodInline (admin.TabularInline):
 # Main forms
 
 class CategoryAdmin (admin.ModelAdmin):
+    ordering = ('name',)
     list_display = ('name', 'parent')
     list_filter = ('parent',)
-    #list_editable = ('parent',)
-    ordering = ('name',)
     inlines = [FoodInline, CategoryInline]
 
 class FoodAdmin (admin.ModelAdmin):
+    ordering = ('name',)
     list_display = ('name', 'category')
     list_filter = ('category',)
     search_fields = ('name',)
-    #list_editable = ('category',)
-    ordering = ('name',)
 
 class UnitAdmin (admin.ModelAdmin):
     ordering = ('name',)
+    list_display = ('name', 'abbreviation')
     inlines = [EquivalenceInline]
 
 class EquivalenceAdmin (admin.ModelAdmin):
-    #list_display = ('__unicode__', 'unit', 'to_quantity', 'to_unit')
     ordering = ('unit', 'to_unit')
     list_filter = ('unit', 'to_unit')
 

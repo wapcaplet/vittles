@@ -58,10 +58,7 @@ class Unit (ModelWrapper):
     abbreviation = models.CharField(max_length=10, blank=True)
 
     def __unicode__(self):
-        if self.abbreviation:
-            return "%s (%s)" % (self.name, self.abbreviation)
-        else:
-            return self.name
+        return self.name
 
     class Meta:
         ordering = ['name']
@@ -75,7 +72,10 @@ class Equivalence (ModelWrapper):
     to_unit = models.ForeignKey(Unit, related_name='+')
 
     def __unicode__(self):
-        return "1 %s = %g %s(s)" % (self.unit, self.to_quantity, self.to_unit)
+        if self.to_quantity > 1.0:
+            return "1 %s = %g %ss" % (self.unit, self.to_quantity, self.to_unit)
+        else:
+            return "1 %s = %g %s" % (self.unit, self.to_quantity, self.to_unit)
 
 
 class Preparation (ModelWrapper):
