@@ -1,3 +1,4 @@
+import re
 from django.db import models
 from core.models import ModelWrapper, Food, Amount, Preparation
 
@@ -15,6 +16,46 @@ class Ingredient (ModelWrapper):
         else:
             return "%s %s" % \
                     (self.amount, self.food)
+
+    @classmethod
+    def parse(cls, text):
+        """Parse the given text, and return an Ingredient instance.
+        `text` is expected to be in this format:
+
+            <quantity> <unit> <preparation> <food>
+
+        """
+        # TODO:
+        # Handle preparations
+        pattern = re.compile(
+            """
+            ^(?P<quantity>[\d\./ ]+)    # Integers, decimals, or mixed fractions
+            [ ]+                        # At least one space
+            (?P<unit>\w+)               # Unit name
+            [ ]+                        # At least one space
+            (
+                (?P<preparation>\w+)    # Optional preparation
+                [ ]+
+            )?
+            (?P<food>\w+)
+            $
+            """, re.X)
+        match = pattern.match(text)
+
+        if not match:
+            raise ValueError("Could not parse ingredient from: '%s'" % text)
+
+        parts = match.groupdict()
+
+        amount = Amount.parse("%s %s" % (parts['quantity'], parts['unit']))
+
+        if parts['preparation']:
+            preparation = Preparation.get(name=parts['preparation'])
+        else:
+            preparation = None
+
+        food = Food.get(name=parts['food'])
+        return Ingredient.get(amount=amount, preparation=preparation, food=food)
 
 
 class Recipe (ModelWrapper):

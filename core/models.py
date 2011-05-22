@@ -1,3 +1,5 @@
+import re
+from fractions import Fraction
 from django.db import models
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -90,6 +92,37 @@ class Amount (ModelWrapper):
             return "%g %ss" % (self.quantity, self.unit)
         else:
             return "%g %s" % (self.quantity, self.unit)
+
+
+    @classmethod
+    def parse(cls, text):
+        """Parse a string containing an amount, and return an Amount instance.
+        """
+        pattern = re.compile(
+            """
+            ^(?P<quantity>[\d./ ]+)
+            [ ]+
+            (?P<unit>\w+)
+            """, re.X)
+        match = pattern.match(text)
+
+        if not match:
+            raise ValueError("Cannot parse amount: '%s'" % text)
+
+        parts = match.groupdict()
+
+        # Split the quantity on spaces, and accumulate fractions
+        quantity = 0.0
+        for numpart in parts['quantity'].split(' '):
+            quantity += float(Fraction(numpart))
+        # If quantity is greater than 1, expect unit to be pluralized
+        if quantity > 1.0:
+            unit = Unit.get(name=parts['unit'].rstrip('s'))
+        else:
+            unit = Unit.get(name=parts['unit'])
+
+        return Amount.get(quantity=quantity, unit=unit)
+
 
 
     def convert(self, to_unit):
