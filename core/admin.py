@@ -36,8 +36,6 @@ class FoodAdmin (admin.ModelAdmin):
     ordering = ('name',)
 
 class UnitAdmin (admin.ModelAdmin):
-    list_display = ('name', 'abbreviation', 'pluralizable')
-    list_editable = ('abbreviation', 'pluralizable')
     ordering = ('name',)
     inlines = [EquivalenceInline]
 

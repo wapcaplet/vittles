@@ -1,5 +1,3 @@
-import re
-from fractions import Fraction
 from django.db import models
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -58,13 +56,16 @@ class Unit (ModelWrapper):
     """
     name = models.CharField(max_length=50, unique=True)
     abbreviation = models.CharField(max_length=10, blank=True)
-    pluralizable = models.BooleanField(default=True)
 
     def __unicode__(self):
-        return self.name
+        if self.abbreviation:
+            return "%s (%s)" % (self.name, self.abbreviation)
+        else:
+            return self.name
 
     class Meta:
         ordering = ['name']
+
 
 class Equivalence (ModelWrapper):
     """Maps one unit to another.
@@ -98,7 +99,7 @@ class Amount (ModelWrapper):
     def __unicode__(self):
         if not self.unit:
             return "%g" % self.quantity
-        elif self.quantity > 1.0 and self.unit.pluralizable:
+        elif self.quantity > 1.0:
             return "%g %ss" % (self.quantity, self.unit)
         else:
             return "%g %s" % (self.quantity, self.unit)
