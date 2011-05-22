@@ -1,29 +1,33 @@
 import re
 from fractions import Fraction
 from django.db import models
-from core.models import ModelWrapper, Food, Amount, Preparation, Unit
+from core.models import ModelWrapper, Food, Preparation, Unit
+from core.helpers import format_food_unit
 
 class Ingredient (ModelWrapper):
     """A quantity of food used in a recipe.
     """
-    amount      = models.ForeignKey(Amount)
+    quantity    = models.FloatField()
+    unit        = models.ForeignKey(Unit, blank=True, null=True)
     preparation = models.ForeignKey(Preparation, null=True, blank=True)
     food        = models.ForeignKey(Food)
+    optional    = models.BooleanField(default=False)
 
     def __unicode__(self):
+        string = format_food_unit(self.quantity, self.unit, self.food)
         if self.preparation:
-            return "%s %s %s" % \
-                    (self.amount, self.preparation, self.food)
-        else:
-            return "%s %s" % \
-                    (self.amount, self.food)
+            string += ", %s" % self.preparation
+        if self.optional:
+            string += " (optional)"
+        return string
+
 
     @classmethod
     def parse(cls, text):
         """Parse the given text, and return an Ingredient instance.
         `text` is expected to be in this format:
 
-            <quantity> <unit> <preparation> <food>
+            <quantity> <unit> <food>, <preparation> (optional)
 
         """
         # TODO:
@@ -33,8 +37,8 @@ class Ingredient (ModelWrapper):
             (?P<quantity>[\d\./ ]+)         # Integer, decimal, or mixed fraction
             [ ]+                            # At least one space
             ((?P<unit>\w+)[ ]+)?            # Optional unit name
-            ((?P<preparation>\w+)[ ]+)?     # Optional preparation name
             (?P<food>\w+)                   # Food name
+            (,[ ]+(?P<preparation>\w+))?    # Optional preparation name
             $
             """, re.X)
         match = pattern.match(text)
@@ -57,20 +61,20 @@ class Ingredient (ModelWrapper):
             else:
                 parts['food'] = parts['food'].rstrip('s')
 
-        # If a unit was given, look it up
+        # Look up unit if one was given
         if parts['unit']:
-            parts['unit'] = Unit.get(name=parts['unit'])
+            unit = Unit.get(name=parts['unit'])
+        else:
+            unit = None
 
-        amount = Amount.get(quantity=quantity, unit=parts['unit'])
-
-        # Include preparation if there is one
+        # Look up preparation if one was given
         if parts['preparation']:
             preparation = Preparation.get(name=parts['preparation'])
         else:
             preparation = None
 
         food = Food.get(name=parts['food'])
-        return Ingredient.get(amount=amount, preparation=preparation, food=food)
+        return Ingredient.get(quantity=quantity, unit=unit, preparation=preparation, food=food)
 
 
 class Recipe (ModelWrapper):

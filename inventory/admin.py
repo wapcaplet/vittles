@@ -4,7 +4,8 @@ from vittles.inventory.models import ShoppingList, Provision
 # Admin forms
 
 class ProvisionAdmin (admin.ModelAdmin):
-    fields = ('food', 'amount')
+    #fields = ('food',)
+    pass
 
 class ShoppingListAdmin (admin.ModelAdmin):
     filter_horizontal = ('foods',)

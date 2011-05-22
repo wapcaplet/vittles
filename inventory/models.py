@@ -1,5 +1,6 @@
 from django.db import models
-from core.models import ModelWrapper, Food, Amount
+from core.models import ModelWrapper, Food, Unit
+from core.helpers import format_food_unit
 
 class ShoppingList (ModelWrapper):
     """A list of foods to shop for.
@@ -14,9 +15,10 @@ class ShoppingList (ModelWrapper):
 class Provision (ModelWrapper):
     """A quantity of food on-hand.
     """
-    amount = models.ForeignKey(Amount)
-    food = models.ForeignKey(Food)
+    quantity    = models.FloatField()
+    unit        = models.ForeignKey(Unit, blank=True, null=True)
+    food        = models.ForeignKey(Food)
 
     def __unicode__(self):
-        return "%s %s" % (self.amount, self.food)
+        return format_food_unit(self.quantity, self.unit, self.food)
 

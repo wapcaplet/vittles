@@ -96,6 +96,9 @@ class Amount (ModelWrapper):
     quantity = models.FloatField()
     unit = models.ForeignKey(Unit, blank=True, null=True)
 
+    #class Meta:
+        #unique_together = ('quantity', 'unit')
+
     def __unicode__(self):
         if not self.unit:
             return "%g" % self.quantity

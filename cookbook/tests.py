@@ -1,5 +1,5 @@
 from django.test import TestCase
-from core.models import Food, Unit, Amount, Preparation
+from core.models import Food, Unit
 from cookbook.models import Ingredient
 
 class CookbookTest (TestCase):
@@ -12,12 +12,12 @@ class CookbookTest (TestCase):
 
 class IngredientParsingTest (CookbookTest):
     def _matches(self, ingredient,
-                           quantity, unit_name, preparation_name, food_name):
+                           quantity, unit_name, food_name, preparation_name=None):
         """Return True if an ingredient has attributes matching the given values.
         """
-        if ingredient.amount.quantity != quantity:
+        if ingredient.quantity != quantity:
             return False
-        if ingredient.amount.unit and ingredient.amount.unit.name != unit_name:
+        if ingredient.unit and ingredient.unit.name != unit_name:
             return False
         if ingredient.preparation and ingredient.preparation.name != preparation_name:
             return False
@@ -32,11 +32,11 @@ class IngredientParsingTest (CookbookTest):
         """
         ingredient = Ingredient.parse("1 cup flour")
         self.assertTrue(
-            self._matches(ingredient, 1.0, 'cup', None, 'flour'))
+            self._matches(ingredient, 1.0, 'cup', 'flour'))
 
         ingredient = Ingredient.parse("2 cups flour")
         self.assertTrue(
-            self._matches(ingredient, 2.0, 'cup', None, 'flour'))
+            self._matches(ingredient, 2.0, 'cup', 'flour'))
 
 
     def test_simple_fractions(self):
@@ -44,11 +44,11 @@ class IngredientParsingTest (CookbookTest):
         """
         ingredient = Ingredient.parse("1/2 cup flour")
         self.assertTrue(
-            self._matches(ingredient, 0.5, 'cup', None, 'flour'))
+            self._matches(ingredient, 0.5, 'cup', 'flour'))
 
         ingredient = Ingredient.parse("3/4 cup flour")
         self.assertTrue(
-            self._matches(ingredient, 0.75, 'cup', None, 'flour'))
+            self._matches(ingredient, 0.75, 'cup', 'flour'))
 
 
     def test_mixed_fractions(self):
@@ -56,11 +56,11 @@ class IngredientParsingTest (CookbookTest):
         """
         ingredient = Ingredient.parse("1 1/2 cup flour")
         self.assertTrue(
-            self._matches(ingredient, 1.5, 'cup', None, 'flour'))
+            self._matches(ingredient, 1.5, 'cup', 'flour'))
 
         ingredient = Ingredient.parse("2 3/4 cups flour")
         self.assertTrue(
-            self._matches(ingredient, 2.75, 'cup', None, 'flour'))
+            self._matches(ingredient, 2.75, 'cup', 'flour'))
 
 
     def test_decimals(self):
@@ -68,23 +68,23 @@ class IngredientParsingTest (CookbookTest):
         """
         ingredient = Ingredient.parse("0.5 cup flour")
         self.assertTrue(
-            self._matches(ingredient, 0.5, 'cup', None, 'flour'))
+            self._matches(ingredient, 0.5, 'cup', 'flour'))
 
         ingredient = Ingredient.parse("3.25 cups flour")
         self.assertTrue(
-            self._matches(ingredient, 3.25, 'cup', None, 'flour'))
+            self._matches(ingredient, 3.25, 'cup', 'flour'))
 
 
     def test_preparation(self):
         """Parse ingredients with a preparation specified.
         """
-        ingredient = Ingredient.parse("2 cups diced carrot")
+        ingredient = Ingredient.parse("2 cups carrot, diced")
         self.assertTrue(
-            self._matches(ingredient, 2.0, 'cup', 'diced', 'carrot'))
+            self._matches(ingredient, 2.0, 'cup', 'carrot', 'diced'))
 
-        ingredient = Ingredient.parse("4.5 cups sifted flour")
+        ingredient = Ingredient.parse("4.5 cups flour, sifted")
         self.assertTrue(
-            self._matches(ingredient, 4.5, 'cup', 'sifted', 'flour'))
+            self._matches(ingredient, 4.5, 'cup', 'flour', 'sifted'))
 
 
     def test_empty_units(self):
@@ -92,10 +92,10 @@ class IngredientParsingTest (CookbookTest):
         """
         ingredient = Ingredient.parse("3 eggs")
         self.assertTrue(
-            self._matches(ingredient, 3.0, None, None, 'egg'))
+            self._matches(ingredient, 3.0, None, 'egg'))
 
         ingredient = Ingredient.parse("25 peppercorns")
         self.assertTrue(
-            self._matches(ingredient, 25.0, None, None, 'peppercorn'))
+            self._matches(ingredient, 25.0, None, 'peppercorn'))
 
 
