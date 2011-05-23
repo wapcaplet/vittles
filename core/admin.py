@@ -1,5 +1,5 @@
 from django.contrib import admin
-from vittles.core.models import Category, Food, Unit, Equivalence, Amount, Preparation
+from vittles.core.models import Category, Food, Unit, Equivalence, Preparation
 
 # Inline forms
 
@@ -42,9 +42,6 @@ class EquivalenceAdmin (admin.ModelAdmin):
     ordering = ('unit', 'to_unit')
     list_filter = ('unit', 'to_unit')
 
-class AmountAdmin (admin.ModelAdmin):
-    ordering = ('quantity', 'unit')
-
 class PreparationAdmin (admin.ModelAdmin):
     ordering = ('name',)
 
@@ -52,7 +49,6 @@ admin.site.register(Category, CategoryAdmin)
 admin.site.register(Food, FoodAdmin)
 admin.site.register(Unit, UnitAdmin)
 admin.site.register(Equivalence, EquivalenceAdmin)
-admin.site.register(Amount, AmountAdmin)
 admin.site.register(Preparation, PreparationAdmin)
 
 
