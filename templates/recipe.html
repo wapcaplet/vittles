@@ -16,7 +16,15 @@
 {% endfor %}
 
 <h2>Directions</h2>
+{% if recipe.preheat %}
+  <p>Preheat oven to {{ recipe.preheat }}.</p>
+{% endif %}
+
 <p>{{ recipe.directions }}</p>
+
+{% if recipe.servings %}
+  <p>Makes {{ recipe.servings }} servings.</p>
+{% endif %}
 
 {% endblock %}
 
