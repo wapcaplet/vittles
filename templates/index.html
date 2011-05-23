@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Vittles{% endblock %}
+
+{% block content %}
+
+  <h1>Vittles</h1>
+
+  <ul>
+    {% for recipe in recipes %}
+    <li>
+      <a href="/cookbook/{{ recipe.id }}/">{{ recipe.name }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}

@@ -13,4 +13,8 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
+
+    (r'^cookbook/$', 'vittles.cookbook.views.index'),
+    (r'^cookbook/(?P<recipe_id>\w+)/$', 'vittles.cookbook.views.show_recipe'),
 )
+
