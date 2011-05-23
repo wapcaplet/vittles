@@ -2,7 +2,7 @@ import re
 from fractions import Fraction
 from django.db import models
 from core.models import ModelWrapper, Food, Preparation, Unit
-from core.helpers import format_food_unit
+from core.helpers import format_food_unit, fraction_to_float
 
 class Ingredient (ModelWrapper):
     """A quantity of food used in a recipe.
@@ -48,10 +48,7 @@ class Ingredient (ModelWrapper):
 
         parts = match.groupdict()
 
-        # Split the quantity on spaces, and accumulate fractions
-        quantity = 0.0
-        for numpart in parts['quantity'].split(' '):
-            quantity += float(Fraction(numpart))
+        quantity = fraction_to_float(parts['quantity'])
 
         # If quantity is > 1, some de-pluralization may be needed
         # FIXME: Make this work with funky pluralizations like "potatoes"

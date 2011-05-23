@@ -94,9 +94,11 @@ class SubtractAmountTest (CoreTest):
         self.assertRaises(NoEquivalence, subtract_amount, 2.0, pound, 3.0, quart)
 
 
-from helpers import fractionize, format_food_unit
+from helpers import float_to_fraction, fraction_to_float, format_food_unit
 
 __test__ = {
-    'fractionize': fractionize,
+    'float_to_fraction': float_to_fraction,
+    'fraction_to_float': fraction_to_float,
     'format_food_unit': format_food_unit,
 }
+
