@@ -1,33 +1,33 @@
 from django.contrib import admin
-from vittles.cookbook.models import Ingredient, Recipe, IngredientGroup
+from vittles.cookbook.models import Ingredient, Recipe, IngredientList
 
 # Inline forms
 
-class IngredientInline (admin.TabularInline):
-    model = Recipe.ingredients.through
-    verbose_name = 'ingredient'
-    verbose_name_plural = 'ingredients'
-
-class IngredientGroupInline (admin.StackedInline):
-    model = IngredientGroup
-    extra = 0
+class IngredientListInline (admin.StackedInline):
+    model = IngredientList
+    extra = 1
     filter_horizontal = ('ingredients',)
 
 
 # Main forms
 
+class IngredientAdmin (admin.ModelAdmin):
+    fieldsets = (
+        (None, {'fields': (('quantity', 'unit', 'preparation', 'food'),)}),
+    )
+
 class RecipeAdmin (admin.ModelAdmin):
     """Customized recipe admin interface, with ingredients included.
     """
-    inlines = [IngredientGroupInline]
-    fields = ('name', 'ingredients', 'preheat', 'directions', 'servings')
-    filter_horizontal = ('ingredients',)
+    inlines = [IngredientListInline]
+    fields = ('name', 'preheat', 'directions', 'servings')
 
-class IngredientGroupAdmin (admin.ModelAdmin):
+class IngredientListAdmin (admin.ModelAdmin):
     """Ingredient Group admin interface.
     """
     filter_horizontal = ('ingredients',)
 
-admin.site.register(Ingredient)
+admin.site.register(Ingredient, IngredientAdmin)
 admin.site.register(Recipe, RecipeAdmin)
-admin.site.register(IngredientGroup)
+admin.site.register(IngredientList, IngredientListAdmin)
+

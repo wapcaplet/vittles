@@ -50,7 +50,6 @@
       together dry ingredients; add to creamed mixture alternately with banana, blending
       well after each addition. Pour into greased 9"x5"x3" loaf pan. Bake 45 to 50
       minutes. Remove from pan and cool on a wire rack.
-    ingredients: []
     name: Banana Bread
     preheat: 350 F
     servings: null
@@ -60,7 +59,6 @@
     directions: Sift dry ingredients together. Combine egg, milk, and oil, then add
       wet to dry. Stir quickly until dry ingredients are moistened. Fill greased muffin
       tin 2/3 full. Bake about 20 minutes.
-    ingredients: []
     name: Best Ever Muffins
     preheat: 400 F
     servings: 12
@@ -70,29 +68,29 @@
     ingredients: [3, 5, 6, 7]
     name: Dry
     recipe: 1
-  model: cookbook.ingredientgroup
+  model: cookbook.ingredientlist
   pk: 1
 - fields:
     ingredients: [2, 8, 9]
     name: Wet
     recipe: 1
-  model: cookbook.ingredientgroup
+  model: cookbook.ingredientlist
   pk: 2
 - fields:
     ingredients: [10]
     name: Banana
     recipe: 1
-  model: cookbook.ingredientgroup
+  model: cookbook.ingredientlist
   pk: 3
 - fields:
     ingredients: [3, 13, 14]
     name: Dry
     recipe: 2
-  model: cookbook.ingredientgroup
+  model: cookbook.ingredientlist
   pk: 4
 - fields:
     ingredients: [2, 11, 12, 15]
     name: Wet
     recipe: 2
-  model: cookbook.ingredientgroup
+  model: cookbook.ingredientlist
   pk: 5

@@ -84,7 +84,7 @@ class Recipe (ModelWrapper):
     directions  = models.TextField(blank=True, null=True)
     preheat     = models.CharField(max_length=5, blank=True, null=True)
     servings    = models.IntegerField(blank=True, null=True)
-    ingredients = models.ManyToManyField(Ingredient, related_name='recipes', blank=True)
+    #ingredients = models.ManyToManyField(Ingredient, related_name='recipes', blank=True)
 
     def __unicode__(self):
         if self.servings:
@@ -93,16 +93,16 @@ class Recipe (ModelWrapper):
             return self.name
 
 
-class IngredientGroup (ModelWrapper):
+class IngredientList (ModelWrapper):
     """A group of ingredients for part of a recipe.
 
     For example, a cake recipe may have one group for the batter, and another
     group for the icing. Or, a recipe may call for mixing dry ingredients
     separately from the wet ingredients before combining them.
     """
-    name = models.CharField(max_length=100)
-    ingredients = models.ManyToManyField(Ingredient, related_name='ingredient_groups')
-    recipe = models.ForeignKey(Recipe, related_name='ingredient_groups')
+    name = models.CharField(max_length=100, default='Ingredients')
+    ingredients = models.ManyToManyField(Ingredient, related_name='ingredient_lists')
+    recipe = models.ForeignKey(Recipe, related_name='ingredient_lists')
 
     def __unicode__(self):
         return "%s (%s)" % (self.name, self.recipe)
