@@ -12,7 +12,7 @@ class CookbookTest (TestCase):
 
 class IngredientParsingTest (CookbookTest):
     def _matches(self, ingredient,
-                           quantity, unit_name, food_name, preparation_name=None):
+                 quantity, unit_name, food_name, preparation_name=None):
         """Return True if an ingredient has attributes matching the given values.
         """
         if ingredient.quantity != quantity:
@@ -27,75 +27,58 @@ class IngredientParsingTest (CookbookTest):
         return True
 
 
-    def test_whole_numbers(self):
-        """Parse ingredients with integer quantities.
+    def assert_correct_parsing(self, text, quantity, unit_name,
+                               food_name, preparation_name=None):
+        """Assert that the given text is parsed correctly as an Ingredient,
+        with attributes matching those given.
         """
-        ingredient = Ingredient.parse("1 cup flour")
+        ingredient = Ingredient.parse(text)
         self.assertTrue(
-            self._matches(ingredient, 1.0, 'cup', 'flour'))
-
-        ingredient = Ingredient.parse("2 cups flour")
-        self.assertTrue(
-            self._matches(ingredient, 2.0, 'cup', 'flour'))
-
-
-    def test_simple_fractions(self):
-        """Parse ingredients with simple fraction quantities.
-        """
-        ingredient = Ingredient.parse("1/2 cup flour")
-        self.assertTrue(
-            self._matches(ingredient, 0.5, 'cup', 'flour'))
-
-        ingredient = Ingredient.parse("3/4 cup flour")
-        self.assertTrue(
-            self._matches(ingredient, 0.75, 'cup', 'flour'))
+            self._matches(
+                ingredient,
+                quantity,
+                unit_name,
+                food_name,
+                preparation_name
+            )
+        )
 
 
-    def test_mixed_fractions(self):
-        """Parse ingredients with mixed fraction quantities.
-        """
-        ingredient = Ingredient.parse("1 1/2 cup flour")
-        self.assertTrue(
-            self._matches(ingredient, 1.5, 'cup', 'flour'))
-
-        ingredient = Ingredient.parse("2 3/4 cups flour")
-        self.assertTrue(
-            self._matches(ingredient, 2.75, 'cup', 'flour'))
+    def test_whole_number_quantities(self):
+        self.assert_correct_parsing("1 cup flour", 1.0, 'cup', 'flour')
+        self.assert_correct_parsing("2 cups flour", 2.0, 'cup', 'flour')
 
 
-    def test_decimals(self):
-        """Parse ingredients with decimal quantities.
-        """
-        ingredient = Ingredient.parse("0.5 cup flour")
-        self.assertTrue(
-            self._matches(ingredient, 0.5, 'cup', 'flour'))
-
-        ingredient = Ingredient.parse("3.25 cups flour")
-        self.assertTrue(
-            self._matches(ingredient, 3.25, 'cup', 'flour'))
+    def test_simple_fraction_quantities(self):
+        self.assert_correct_parsing("1/2 cup flour", 0.5, 'cup', 'flour')
+        self.assert_correct_parsing("3/4 cup flour", 0.75, 'cup', 'flour')
 
 
-    def test_preparation(self):
-        """Parse ingredients with a preparation specified.
-        """
-        ingredient = Ingredient.parse("2 cups carrot, diced")
-        self.assertTrue(
-            self._matches(ingredient, 2.0, 'cup', 'carrot', 'diced'))
+    def test_mixed_fraction_quantities(self):
+        self.assert_correct_parsing("1 1/2 cup flour", 1.5, 'cup', 'flour')
+        self.assert_correct_parsing("2 3/4 cups flour", 2.75, 'cup', 'flour')
 
-        ingredient = Ingredient.parse("4.5 cups flour, sifted")
-        self.assertTrue(
-            self._matches(ingredient, 4.5, 'cup', 'flour', 'sifted'))
+
+    def test_decimal_quantities(self):
+        self.assert_correct_parsing("0.5 cup flour", 0.5, 'cup', 'flour')
+        self.assert_correct_parsing("3.25 cups flour", 3.25, 'cup', 'flour')
+
+
+    def test_ingredient_with_preparation(self):
+        self.assert_correct_parsing(
+            "2 cups carrot, diced", 2.0, 'cup', 'carrot', 'diced')
+        self.assert_correct_parsing(
+            "4.5 cups flour, sifted", 4.5, 'cup', 'flour', 'sifted')
 
 
     def test_empty_units(self):
-        """Parse ingredients without units specified.
-        """
-        ingredient = Ingredient.parse("3 eggs")
-        self.assertTrue(
-            self._matches(ingredient, 3.0, None, 'egg'))
+        self.assert_correct_parsing(
+            "3 eggs", 3.0, None, 'egg')
+        self.assert_correct_parsing(
+            "25 peppercorns", 25.0, None, 'peppercorn')
 
-        ingredient = Ingredient.parse("25 peppercorns")
-        self.assertTrue(
-            self._matches(ingredient, 25.0, None, 'peppercorn'))
 
+    def test_empty_units_with_preparation(self):
+        self.assert_correct_parsing(
+            "3 eggs, beaten", 3.0, None, 'egg', 'beaten')
 
