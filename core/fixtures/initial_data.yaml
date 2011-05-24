@@ -1,6 +1,27 @@
-- fields: {name: vegetables, parent: 14}
+- fields: {name: alcohols, parent: 10}
   model: core.category
-  pk: 1
+  pk: 24
+- fields: {name: beef, parent: 6}
+  model: core.category
+  pk: 18
+- fields: {name: beverages, parent: null}
+  model: core.category
+  pk: 10
+- fields: {name: cheese, parent: 7}
+  model: core.category
+  pk: 16
+- fields: {name: chicken, parent: 27}
+  model: core.category
+  pk: 17
+- fields: {name: coffee, parent: 10}
+  model: core.category
+  pk: 11
+- fields: {name: condiments, parent: null}
+  model: core.category
+  pk: 23
+- fields: {name: dairy, parent: null}
+  model: core.category
+  pk: 7
 - fields: {name: fats, parent: null}
   model: core.category
   pk: 2
@@ -10,66 +31,51 @@
 - fields: {name: grain, parent: null}
   model: core.category
   pk: 4
+- fields: {name: juice, parent: 10}
+  model: core.category
+  pk: 13
 - fields: {name: leavening, parent: null}
   model: core.category
   pk: 5
 - fields: {name: meat, parent: null}
   model: core.category
   pk: 6
-- fields: {name: dairy, parent: null}
+- fields: {name: nuts, parent: 14}
   model: core.category
-  pk: 7
-- fields: {name: seasoning, parent: null}
-  model: core.category
-  pk: 8
-- fields: {name: sweets, parent: null}
-  model: core.category
-  pk: 9
-- fields: {name: beverages, parent: null}
-  model: core.category
-  pk: 10
-- fields: {name: coffee, parent: 10}
-  model: core.category
-  pk: 11
-- fields: {name: tea, parent: 10}
-  model: core.category
-  pk: 12
-- fields: {name: juice, parent: 10}
-  model: core.category
-  pk: 13
-- fields: {name: produce, parent: null}
-  model: core.category
-  pk: 14
-- fields: {name: soda, parent: 10}
-  model: core.category
-  pk: 15
-- fields: {name: cheese, parent: 7}
-  model: core.category
-  pk: 16
-- fields: {name: chicken, parent: 6}
-  model: core.category
-  pk: 17
-- fields: {name: beef, parent: 6}
-  model: core.category
-  pk: 18
+  pk: 26
 - fields: {name: pork, parent: 6}
   model: core.category
   pk: 19
-- fields: {name: turkey, parent: 6}
+- fields: {name: poultry, parent: 6}
   model: core.category
-  pk: 20
+  pk: 27
+- fields: {name: produce, parent: null}
+  model: core.category
+  pk: 14
 - fields: {name: sauces, parent: null}
   model: core.category
   pk: 21
+- fields: {name: seasoning, parent: null}
+  model: core.category
+  pk: 8
+- fields: {name: soda, parent: 10}
+  model: core.category
+  pk: 15
 - fields: {name: soups, parent: null}
   model: core.category
   pk: 22
-- fields: {name: condiments, parent: null}
+- fields: {name: sweets, parent: null}
   model: core.category
-  pk: 23
-- fields: {name: alcohols, parent: 10}
+  pk: 9
+- fields: {name: tea, parent: 10}
   model: core.category
-  pk: 24
+  pk: 12
+- fields: {name: turkey, parent: 27}
+  model: core.category
+  pk: 20
+- fields: {name: vegetables, parent: 14}
+  model: core.category
+  pk: 1
 - fields: {category: 15, name: Dr. Pepper}
   model: core.food
   pk: 45
@@ -211,7 +217,7 @@
 - fields: {category: 16, name: mozarella}
   model: core.food
   pk: 40
-- fields: {category: null, name: nuts}
+- fields: {category: 26, name: nuts}
   model: core.food
   pk: 82
 - fields: {category: 4, name: oatmeal}
@@ -247,6 +253,9 @@
 - fields: {category: 4, name: quick cooking oats}
   model: core.food
   pk: 57
+- fields: {category: 3, name: raisins}
+  model: core.food
+  pk: 84
 - fields: {category: 3, name: raspberries}
   model: core.food
   pk: 34
@@ -289,6 +298,9 @@
 - fields: {category: 20, name: turkey breast}
   model: core.food
   pk: 44
+- fields: {category: 8, name: vanilla extract}
+  model: core.food
+  pk: 83
 - fields: {category: 22, name: vegetable broth}
   model: core.food
   pk: 68
@@ -298,6 +310,9 @@
 - fields: {category: null, name: vinegar}
   model: core.food
   pk: 52
+- fields: {category: 26, name: walnuts}
+  model: core.food
+  pk: 85
 - fields: {category: 10, name: water}
   model: core.food
   pk: 15
@@ -505,3 +520,6 @@
 - fields: {name: sliced}
   model: core.preparation
   pk: 3
+- fields: {name: softened}
+  model: core.preparation
+  pk: 12

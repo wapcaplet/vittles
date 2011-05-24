@@ -6,10 +6,10 @@
 <h1>{{ recipe.name }}</h1>
 
 <h2>Ingredients</h2>
-{% for group in ingredient_groups %}
-  <h3>{{ group.name }}</h3>
+{% for ingredient_list in ingredient_lists %}
+  <h3>{{ ingredient_list.name }}</h3>
   <ul>
-    {% for ingredient in group.ingredients.all %}
+    {% for ingredient in ingredient_list.ingredients.all %}
       <li>{{ ingredient }}</li>
     {% endfor %}
   </ul>
@@ -20,10 +20,12 @@
   <p>Preheat oven to {{ recipe.preheat }}.</p>
 {% endif %}
 
-<p>{{ recipe.directions }}</p>
+{% for paragraph in recipe.directions_paragraphs %}
+  <p>{{ paragraph }}</p>
+{% endfor %}
 
 {% if recipe.servings %}
-  <p>Makes {{ recipe.servings }} servings.</p>
+  <p>Yield: {{ recipe.servings }}.</p>
 {% endif %}
 
 {% endblock %}

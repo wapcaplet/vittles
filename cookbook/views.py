@@ -12,8 +12,7 @@ def show_recipe(request, recipe_id):
     recipe = Recipe.objects.get(id=recipe_id)
     variables = {
         'recipe': recipe,
-        'ingredients': recipe.ingredients.all(),
-        'ingredient_groups': recipe.ingredient_groups.all(),
+        'ingredient_lists': recipe.ingredient_lists.all(),
     }
     return render_to_response('recipe.html', variables)
 

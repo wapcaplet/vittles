@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib import admin
-from cookbook.models import Ingredient, Recipe, IngredientList
+from cookbook.models import Ingredient, Recipe, IngredientList, Portion
 from core.helpers import fraction_to_float
 
 # Custom forms and fields
@@ -41,7 +41,10 @@ class RecipeAdmin (admin.ModelAdmin):
     """Customized recipe admin interface, with ingredients included.
     """
     inlines = [IngredientListInline]
-    fields = ('name', 'preheat', 'directions', 'servings')
+    fieldsets = (
+        (None, {'fields':
+                ('name', 'preheat', 'directions', ('num_portions', 'portion')) }),
+    )
 
 class IngredientListAdmin (admin.ModelAdmin):
     """Ingredient Group admin interface.
@@ -49,7 +52,11 @@ class IngredientListAdmin (admin.ModelAdmin):
     #filter_horizontal = ('ingredients',)
     inlines = [IngredientInline]
 
+class PortionAdmin (admin.ModelAdmin):
+    list_display = ('name', 'plural')
+
 admin.site.register(Ingredient, IngredientAdmin)
 admin.site.register(Recipe, RecipeAdmin)
 admin.site.register(IngredientList, IngredientListAdmin)
+admin.site.register(Portion, PortionAdmin)
 

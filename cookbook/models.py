@@ -1,5 +1,4 @@
 import re
-from fractions import Fraction
 from django.db import models
 from core.models import ModelWrapper, Food, Preparation, Unit
 from core.helpers import format_food_unit, fraction_to_float
@@ -12,6 +11,9 @@ class Ingredient (ModelWrapper):
     preparation = models.ForeignKey(Preparation, null=True, blank=True)
     food        = models.ForeignKey(Food)
     optional    = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['food', 'quantity']
 
     def __unicode__(self):
         string = format_food_unit(self.quantity, self.unit, self.food)
@@ -30,7 +32,7 @@ class Ingredient (ModelWrapper):
             <quantity> <unit> <food>, <preparation> (optional)
 
         """
-        # TODO:
+        # TODO: How on earth to handle spaces in both unit and food names?
         pattern = re.compile(
             """
             ^
@@ -74,20 +76,52 @@ class Ingredient (ModelWrapper):
         return Ingredient.get(quantity=quantity, unit=unit, preparation=preparation, food=food)
 
 
+class Portion (ModelWrapper):
+    """Serving or portion names.
+    """
+    name = models.CharField(max_length=50)
+    plural = models.CharField(max_length=50)
+
+    class Meta:
+        ordering = ['name']
+
+    def __unicode__(self):
+        return self.name
+
+
 class Recipe (ModelWrapper):
     """Instructions for preparing a meal.
     """
-    name        = models.CharField(max_length=100)
-    directions  = models.TextField(blank=True, null=True)
-    preheat     = models.CharField(max_length=5, blank=True, null=True)
-    servings    = models.IntegerField(blank=True, null=True)
-    #ingredients = models.ManyToManyField(Ingredient, related_name='recipes', blank=True)
+    name         = models.CharField(max_length=100)
+    directions   = models.TextField(blank=True, null=True)
+    preheat      = models.CharField(max_length=5, blank=True, null=True)
+    num_portions = models.IntegerField("Yield", blank=True, null=True)
+    portion      = models.ForeignKey(Portion, blank=True, null=True)
 
     def __unicode__(self):
-        if self.servings:
-            return "%s (%s servings)" % (self.name, self.servings)
-        else:
-            return self.name
+        string = "%s" % self.name
+        if self.num_portions:
+            string += " (%s)" % self.servings()
+        return string
+
+
+    def servings(self):
+        """Return a string indicating the yield or serving size of this recipe.
+        """
+        string = "%d" % self.num_portions
+        if self.portion:
+            if self.num_portions > 1:
+                string += " %s" % self.portion.plural
+            else:
+                string += " %s" % self.portion.name
+        return string
+
+
+    def directions_paragraphs(self):
+        """Return the Recipe directions, split into a list of paragraphs.
+        """
+        return [line for line in self.directions.splitlines()
+                if line.strip() != '']
 
 
 class IngredientList (ModelWrapper):

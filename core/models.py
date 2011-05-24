@@ -30,6 +30,7 @@ class Category (ModelWrapper):
         return self.name
 
     class Meta:
+        ordering = ['name']
         verbose_name_plural = 'Categories'
 
 
