@@ -1,0 +1,89 @@
+/* cookbook.css */
+
+body {
+  font-size: 12px;
+  margin: 0;
+}
+
+.header {
+  background: #206;
+  color: white;
+  margin: 0;
+  padding: 8px 15px;
+}
+.rating {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+.left-column {
+  float: left;
+  margin-right: 1em;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background: #eee;
+  padding: 15px;
+}
+
+.ingredients h2,
+.directions h2 {
+  display: none;
+}
+
+.ingredients ul {
+  list-style: circle;
+  padding-left: 20px;
+}
+
+.directions {
+  padding: 15px;
+  text-align: justify;
+}
+.directions p {
+  margin: 0 0 1.2em 0;
+}
+
+.yield, .source {
+  font-style: italic;
+  margin: 0;
+  padding: 2px;
+}
+
+a {
+  color: #448;
+  text-decoration: none;
+}
+a:hover, a:active {
+  color: #40E;
+  text-decoration: none;
+}
+
+.recipes ul {
+  list-style: none;
+  margin: 1em;
+  padding: 0;
+}
+
+.recipes ul li a {
+  display: block;
+  background: #fff;
+  border: 1px solid #aaa;
+  padding: 6px 10px;
+  margin: 2px 0;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+.recipes ul li a .recipe-name {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.recipes ul li a:hover {
+  background: #eef;
+}
+

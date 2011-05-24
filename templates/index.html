@@ -1,16 +1,26 @@
 {% extends "base.html" %}
+{% load cookbook_extras %}
 {% block title %}Vittles{% endblock %}
 
 {% block content %}
 
+<div class="header">
   <h1>Vittles</h1>
+</div>
 
+<div class="recipes">
   <ul>
     {% for recipe in recipes %}
     <li>
-      <a href="/cookbook/{{ recipe.id }}/">{{ recipe.name }}</a>
+      <a href="/cookbook/{{ recipe.id }}/">
+        <span class="recipe-name">{{ recipe.name }}</span>
+        {% include "recipe_rating.html" %}
+        {% if recipe.servings %} {{ recipe.servings }} {% endif %}
+        {% if recipe.source %} from {{ recipe.source }} {% endif %}
+      </a>
     </li>
     {% endfor %}
   </ul>
+</div>
 
 {% endblock %}

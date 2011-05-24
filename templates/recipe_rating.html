@@ -1,0 +1,8 @@
+{% load cookbook_extras %}
+{% if recipe.rating %}
+  <span class="recipe-rating">
+    {% for star in recipe.rating|times %}
+      <img src="/static/images/star.png" alt="*"/>
+    {% endfor %}
+  </span>
+{% endif %}

@@ -1,44 +1,47 @@
 {% extends "base.html" %}
-{% block title %}Vittles{% endblock %}
+{% block title %}{{ recipe.name }}{% endblock %}
 
 {% block content %}
 
-<h1>{{ recipe.name }}</h1>
+<div class="header">
+  <h1>{{ recipe.name }} {% include "recipe_rating.html" %} </h1>
+</div>
 
-{% if recipe.source %}
-  <p>Source: {{ recipe.source }}</p>
-{% endif %}
+<div class="left-column">
+  <div class="ingredients">
+    <h2>Ingredients</h2>
+    {% for category, ingredients in recipe.ingredient_groups %}
+      {% if category %}
+        <h3>{{ category }}</h3>
+      {% endif %}
 
-{% if recipe.rating %}
-  <p>Rating: {{ recipe.rating }}</p>
-{% endif %}
+      <ul>
+        {% for ingredient in ingredients %}
+          <li>{{ ingredient }}</li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  </div>
 
-{% if recipe.servings %}
-  <p>Yield: {{ recipe.servings }}.</p>
-{% endif %}
+  {% if recipe.servings %}
+    <p class="yield">Yield: {{ recipe.servings }}</p>
+  {% endif %}
+  {% if recipe.source %}
+    <p class="source">Source: {{ recipe.source }}</p>
+  {% endif %}
+</div>
 
-<h2>Ingredients</h2>
-{% for category, ingredients in recipe.ingredient_groups %}
-  {% if category %}
-    <h3>{{ category }}</h3>
+<div class="directions">
+  <h2>Directions</h2>
+  {% if recipe.preheat %}
+    <p>Preheat oven to {{ recipe.preheat }}.</p>
   {% endif %}
 
-  <ul>
-    {% for ingredient in ingredients %}
-      <li>{{ ingredient }}</li>
-    {% endfor %}
-  </ul>
-{% endfor %}
+  {% for paragraph in recipe.directions_paragraphs %}
+    <p>{{ paragraph }}</p>
+  {% endfor %}
+</div>
 
-
-<h2>Directions</h2>
-{% if recipe.preheat %}
-  <p>Preheat oven to {{ recipe.preheat }}.</p>
-{% endif %}
-
-{% for paragraph in recipe.directions_paragraphs %}
-  <p>{{ paragraph }}</p>
-{% endfor %}
 
 {% endblock %}
 
