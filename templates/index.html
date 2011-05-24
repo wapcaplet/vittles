@@ -15,8 +15,8 @@
       <a href="/cookbook/{{ recipe.id }}/">
         <span class="recipe-name">{{ recipe.name }}</span>
         {% include "recipe_rating.html" %}
-        {% if recipe.servings %} {{ recipe.servings }} {% endif %}
         {% if recipe.source %} from {{ recipe.source }} {% endif %}
+        {% if recipe.servings %}({{ recipe.servings }}){% endif %}
       </a>
     </li>
     {% endfor %}
