@@ -5,15 +5,31 @@
 
 <h1>{{ recipe.name }}</h1>
 
+{% if recipe.source %}
+  <p>Source: {{ recipe.source }}</p>
+{% endif %}
+
+{% if recipe.rating %}
+  <p>Rating: {{ recipe.rating }}</p>
+{% endif %}
+
+{% if recipe.servings %}
+  <p>Yield: {{ recipe.servings }}.</p>
+{% endif %}
+
 <h2>Ingredients</h2>
-{% for ingredient_list in ingredient_lists %}
-  <h3>{{ ingredient_list.name }}</h3>
+{% for category, ingredients in recipe.ingredient_groups %}
+  {% if category %}
+    <h3>{{ category }}</h3>
+  {% endif %}
+
   <ul>
-    {% for ingredient in ingredient_list.ingredients.all %}
+    {% for ingredient in ingredients %}
       <li>{{ ingredient }}</li>
     {% endfor %}
   </ul>
 {% endfor %}
+
 
 <h2>Directions</h2>
 {% if recipe.preheat %}
@@ -23,10 +39,6 @@
 {% for paragraph in recipe.directions_paragraphs %}
   <p>{{ paragraph }}</p>
 {% endfor %}
-
-{% if recipe.servings %}
-  <p>Yield: {{ recipe.servings }}.</p>
-{% endif %}
 
 {% endblock %}
 

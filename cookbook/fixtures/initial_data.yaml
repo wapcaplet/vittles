@@ -1,232 +1,30 @@
-- fields: {food: 10, optional: false, preparation: null, quantity: 1.0, unit: 2}
-  model: cookbook.ingredient
-  pk: 7
-- fields: {food: 10, optional: false, preparation: null, quantity: 2.5, unit: 2}
-  model: cookbook.ingredient
-  pk: 13
-- fields: {food: 11, optional: false, preparation: null, quantity: 0.5, unit: 2}
-  model: cookbook.ingredient
-  pk: 5
-- fields: {food: 11, optional: false, preparation: null, quantity: 1.0, unit: 2}
-  model: cookbook.ingredient
-  pk: 4
-- fields: {food: 80, optional: false, preparation: 11, quantity: 1.0, unit: 1}
-  model: cookbook.ingredient
-  pk: 10
-- fields: {food: 80, optional: false, preparation: 11, quantity: 3.0, unit: null}
-  model: cookbook.ingredient
-  pk: 19
-- fields: {food: 32, optional: false, preparation: null, quantity: 15.0, unit: 4}
-  model: cookbook.ingredient
-  pk: 56
-- fields: {food: 56, optional: false, preparation: 13, quantity: 1.0, unit: 1}
-  model: cookbook.ingredient
-  pk: 44
-- fields: {food: 9, optional: false, preparation: 12, quantity: 1.0, unit: 1}
-  model: cookbook.ingredient
-  pk: 16
-- fields: {food: 9, optional: false, preparation: 6, quantity: 1.0, unit: 3}
-  model: cookbook.ingredient
-  pk: 21
-- fields: {food: 9, optional: false, preparation: 6, quantity: 1.5, unit: 3}
-  model: cookbook.ingredient
-  pk: 46
-- fields: {food: 9, optional: false, preparation: 12, quantity: 2.0, unit: 4}
-  model: cookbook.ingredient
-  pk: 52
-- fields: {food: 9, optional: false, preparation: 15, quantity: 2.0, unit: 4}
-  model: cookbook.ingredient
-  pk: 59
-- fields: {food: 9, optional: false, preparation: 6, quantity: 6.0, unit: 3}
-  model: cookbook.ingredient
-  pk: 39
-- fields: {food: 87, optional: false, preparation: null, quantity: 6.0, unit: 4}
-  model: cookbook.ingredient
-  pk: 40
-- fields: {food: 90, optional: false, preparation: null, quantity: 0.33333333333333331,
-    unit: 1}
-  model: cookbook.ingredient
-  pk: 57
-- fields: {food: 90, optional: false, preparation: null, quantity: 9.0, unit: 4}
-  model: cookbook.ingredient
-  pk: 50
-- fields: {food: 17, optional: false, preparation: 8, quantity: 1.0, unit: 1}
-  model: cookbook.ingredient
-  pk: 33
-- fields: {food: 19, optional: false, preparation: null, quantity: 1.0, unit: 1}
-  model: cookbook.ingredient
-  pk: 20
-- fields: {food: 81, optional: false, preparation: null, quantity: 1.0, unit: 2}
-  model: cookbook.ingredient
-  pk: 26
-- fields: {food: 81, optional: false, preparation: null, quantity: 1.0, unit: 3}
-  model: cookbook.ingredient
-  pk: 45
-- fields: {food: 88, optional: false, preparation: 12, quantity: 4.0, unit: 3}
-  model: cookbook.ingredient
-  pk: 47
-- fields: {food: 2, optional: false, preparation: 4, quantity: 1.0, unit: null}
-  model: cookbook.ingredient
-  pk: 12
-- fields: {food: 2, optional: false, preparation: null, quantity: 1.0, unit: null}
-  model: cookbook.ingredient
-  pk: 18
-- fields: {food: 2, optional: false, preparation: null, quantity: 1.0, unit: null}
-  model: cookbook.ingredient
-  pk: 37
-- fields: {food: 2, optional: false, preparation: null, quantity: 1.0, unit: null}
-  model: cookbook.ingredient
-  pk: 54
-- fields: {food: 2, optional: false, preparation: null, quantity: 2.0, unit: null}
-  model: cookbook.ingredient
-  pk: 9
-- fields: {food: 2, optional: false, preparation: null, quantity: 3.0, unit: null}
-  model: cookbook.ingredient
-  pk: 30
-- fields: {food: 86, optional: false, preparation: null, quantity: 4.0, unit: null}
-  model: cookbook.ingredient
-  pk: 36
-- fields: {food: 1, optional: false, preparation: null, quantity: 1.5, unit: 1}
-  model: cookbook.ingredient
-  pk: 25
-- fields: {food: 1, optional: false, preparation: null, quantity: 1.75, unit: 1}
-  model: cookbook.ingredient
-  pk: 3
-- fields: {food: 1, optional: false, preparation: null, quantity: 2.5, unit: 1}
-  model: cookbook.ingredient
-  pk: 1
-- fields: {food: 1, optional: false, preparation: null, quantity: 4.75, unit: 4}
-  model: cookbook.ingredient
-  pk: 22
-- fields: {food: 1, optional: false, preparation: null, quantity: 20.0, unit: 4}
-  model: cookbook.ingredient
-  pk: 41
-- fields: {food: 91, optional: false, preparation: 14, quantity: 0.5, unit: 2}
-  model: cookbook.ingredient
-  pk: 51
-- fields: {food: 3, optional: false, preparation: null, quantity: 0.5, unit: 1}
-  model: cookbook.ingredient
-  pk: 55
-- fields: {food: 3, optional: false, preparation: null, quantity: 0.75, unit: 1}
-  model: cookbook.ingredient
-  pk: 15
-- fields: {food: 3, optional: false, preparation: null, quantity: 1.0, unit: 1}
-  model: cookbook.ingredient
-  pk: 24
-- fields: {food: 3, optional: false, preparation: null, quantity: 3.0, unit: 3}
-  model: cookbook.ingredient
-  pk: 48
-- fields: {food: 53, optional: false, preparation: null, quantity: 0.25, unit: 1}
-  model: cookbook.ingredient
-  pk: 31
-- fields: {food: 92, optional: false, preparation: 14, quantity: 0.5, unit: 2}
-  model: cookbook.ingredient
-  pk: 58
-- fields: {food: 89, optional: false, preparation: null, quantity: 1.5, unit: 1}
-  model: cookbook.ingredient
-  pk: 49
-- fields: {food: 84, optional: false, preparation: null, quantity: 1.0, unit: 1}
-  model: cookbook.ingredient
-  pk: 34
-- fields: {food: 12, optional: false, preparation: null, quantity: 0.5, unit: 2}
-  model: cookbook.ingredient
-  pk: 6
-- fields: {food: 12, optional: false, preparation: null, quantity: 0.73999999999999999,
-    unit: 2}
-  model: cookbook.ingredient
-  pk: 14
-- fields: {food: 12, optional: false, preparation: null, quantity: 0.75, unit: 2}
-  model: cookbook.ingredient
-  pk: 60
-- fields: {food: 12, optional: false, preparation: null, quantity: 1.0, unit: 2}
-  model: cookbook.ingredient
-  pk: 27
-- fields: {food: 12, optional: false, preparation: null, quantity: 1.25, unit: 2}
-  model: cookbook.ingredient
-  pk: 43
-- fields: {food: 12, optional: false, preparation: null, quantity: 1.5, unit: 2}
-  model: cookbook.ingredient
-  pk: 23
-- fields: {food: 14, optional: false, preparation: null, quantity: 0.33000000000000002,
-    unit: 1}
-  model: cookbook.ingredient
-  pk: 2
-- fields: {food: 13, optional: false, preparation: null, quantity: 0.25, unit: 1}
-  model: cookbook.ingredient
-  pk: 11
-- fields: {food: 13, optional: false, preparation: null, quantity: 0.25, unit: 1}
-  model: cookbook.ingredient
-  pk: 38
-- fields: {food: 13, optional: false, preparation: null, quantity: 0.5, unit: 1}
-  model: cookbook.ingredient
-  pk: 8
-- fields: {food: 13, optional: false, preparation: null, quantity: 0.75, unit: 1}
-  model: cookbook.ingredient
-  pk: 53
-- fields: {food: 13, optional: false, preparation: null, quantity: 1.125, unit: 1}
-  model: cookbook.ingredient
-  pk: 29
-- fields: {food: 13, optional: false, preparation: null, quantity: 1.25, unit: 1}
-  model: cookbook.ingredient
-  pk: 17
-- fields: {food: 83, optional: false, preparation: null, quantity: 0.5, unit: 2}
-  model: cookbook.ingredient
-  pk: 32
-- fields: {food: 28, optional: false, preparation: null, quantity: 0.5, unit: 1}
-  model: cookbook.ingredient
-  pk: 28
-- fields: {food: 85, optional: false, preparation: 1, quantity: 0.75, unit: 1}
-  model: cookbook.ingredient
-  pk: 35
-- fields: {food: 31, optional: false, preparation: null, quantity: 2.25, unit: 2}
-  model: cookbook.ingredient
-  pk: 42
-- fields: {name: loaf, plural: loaves}
+- fields: {name: 3x3" square, plural: 3x3" squares}
   model: cookbook.portion
   pk: 2
-- fields: {name: muffin, plural: muffins}
-  model: cookbook.portion
-  pk: 1
 - fields: {name: roll, plural: rolls}
   model: cookbook.portion
-  pk: 4
-- fields: {name: serving, plural: servings}
-  model: cookbook.portion
-  pk: 3
-- fields: {directions: 'Cream together shortening and sugar; add eggs and beat well.
-      Sift together dry ingredients; add to creamed mixture alternately with banana,
-      blending well after each addition. Pour into greased 9"x5"x3" loaf pan. Bake
-      45 to 50 minutes. Remove from pan and cool on a wire rack.', name: Banana Bread,
-    num_portions: 1, portion: 2, preheat: 350 F}
-  model: cookbook.recipe
   pk: 1
-- fields: {directions: 'Sift dry ingredients together. Combine egg, milk, and oil,
-      then add wet to dry. Stir quickly until dry ingredients are moistened. Fill
-      greased muffin tin 2/3 full. Bake about 20 minutes.', name: Best Ever Muffins,
-    num_portions: 12, portion: 1, preheat: 400 F}
-  model: cookbook.recipe
-  pk: 2
-- fields: {directions: Grease 2 dozen muffin cups. Stir together dry ingredients in
-      a small bowl. Beat butter and sugar in large bowl until light and fluffy. Beat
-      in egg. Mix in mashed bananas. Stir in dry ingredients until well blended. Fold
-      in chocolate chips. Pour into muffin cups. Bake for 25 minutes or until GBD.,
-    name: Banana Coffee Cake Muffins, num_portions: 24, portion: 1, preheat: 400 F}
-  model: cookbook.recipe
+- fields: {name: Cake}
+  model: cookbook.ingredientcategory
+  pk: 6
+- fields: {name: Dough}
+  model: cookbook.ingredientcategory
   pk: 3
-- fields: {directions: 'Bring eggs and milk up to room temperature. Combine all ingredients
-      in a blender, and mix on high speed for at least 30 seconds. Pour batter into
-      a well-greased 12-muffin tin, filling each cup about halfway. Bake for 40 minutes
-      or until dark golden brown.', name: Popovers, num_portions: 12, portion: null,
-    preheat: 425 F}
-  model: cookbook.recipe
+- fields: {name: Dry}
+  model: cookbook.ingredientcategory
+  pk: 1
+- fields: {name: Filling}
+  model: cookbook.ingredientcategory
   pk: 4
-- fields: {directions: 'Sift dry ingredients into a bowl. In a separate bowl, mix
-      wet ingredients until blended, then stir in carrots, raisins, and walnuts. Add
-      dry ingredients to the mixture and stir until just combined. Pour into two ungreased
-      8-inch loaf pans. Bake for 60 minutes or until done.', name: Carrot Raisin Bread,
-    num_portions: 2, portion: 2, preheat: 350 F}
-  model: cookbook.recipe
+- fields: {name: Icing}
+  model: cookbook.ingredientcategory
   pk: 5
+- fields: {name: Topping}
+  model: cookbook.ingredientcategory
+  pk: 7
+- fields: {name: Wet}
+  model: cookbook.ingredientcategory
+  pk: 2
 - fields: {directions: "Using a stand mixer, whisk the egg yolks, whole egg, sugar,\
       \ butter, and buttermilk. Add about 2 cups of flour along with yeast and salt;\
       \ whisk until combined. Replace whisk with dough hook, add all but 3/4 cup of\
@@ -239,7 +37,7 @@
       \ Roll the dough into a 12x18\" rectangle with the long side towards you. Brush\
       \ dough with the melted butter, then sprinkle on the filling, leaving a 1\"\
       \ border along the top edge. Starting with the edge closest to you, roll the\
-      \ dough into a tight cylinder. Pinch the edge to seal, then roll it seam-side-down.\r\
+      \ dough into a tight cylinder. Pinch the edge to seal, then roll it seam-side-down..\r\
       \n\r\nUsing a serrated knife, slice off the irregular ends, then divide the\
       \ roll into 12 equal pieces. Arrange the rolls in the baking dish, cover with\
       \ plastic wrap, and refrigerate overnight.\r\n\r\nThe next day, remove the rolls\
@@ -250,9 +48,10 @@
       \ until golden brown, or until the internal temperature reaches 190 F, about\
       \ 30 minutes.\r\n\r\nAfter removing the rolls from the oven, combine the icing\
       \ ingredients with a whisk. Drizzle or spread over the rolls and serve immediately.",
-    name: Cinnamon Rolls, num_portions: 12, portion: 4, preheat: ''}
+    name: Cinnamon Rolls, num_portions: 12, portion: 1, preheat: '', rating: 5, source: Alton
+      Brown}
   model: cookbook.recipe
-  pk: 6
+  pk: 1
 - fields: {directions: "Using a stand mixer with the paddle attachment, beat together\
       \ the butter and sugar on medium speed until light and fluffy, about 1 minute.\
       \ Add the egg and beat until well incorporated, about 30 seconds.\r\n\r\nIn\
@@ -261,109 +60,147 @@
       \ on low speed between each addition. Remove the bowl, and fold in the blueberries.\r\
       \n\r\nSpray a 9x9\" glass baking dish with nonstick spray, and spread the batter\
       \ into the dish. It'll look like there are too many blueberries--that's a good\
-      \ thing.", name: Blueberry Buckle, num_portions: null, portion: null, preheat: 375
-      F}
+      \ thing.", name: Blueberry Buckle, num_portions: 9, portion: 2, preheat: '',
+    rating: 4, source: Alton Brown}
   model: cookbook.recipe
-  pk: 7
-- fields:
-    ingredients: [7, 5, 3, 6]
-    name: Dry
-    recipe: 1
-  model: cookbook.ingredientlist
-  pk: 1
-- fields:
-    ingredients: [9, 2, 8]
-    name: Wet
-    recipe: 1
-  model: cookbook.ingredientlist
   pk: 2
-- fields:
-    ingredients: [10]
-    name: Banana
-    recipe: 1
-  model: cookbook.ingredientlist
+- fields: {directions: '', name: Test, num_portions: null, portion: null, preheat: '',
+    rating: null, source: ''}
+  model: cookbook.recipe
   pk: 3
-- fields:
-    ingredients: [13, 3, 60]
-    name: Dry
-    recipe: 2
-  model: cookbook.ingredientlist
-  pk: 4
-- fields:
-    ingredients: [12, 15, 2, 11]
-    name: Wet
-    recipe: 2
-  model: cookbook.ingredientlist
-  pk: 5
-- fields:
-    ingredients: [7, 5, 1, 6]
-    name: Dry
-    recipe: 3
-  model: cookbook.ingredientlist
-  pk: 6
-- fields:
-    ingredients: [16, 18, 17]
-    name: Wet
-    recipe: 3
-  model: cookbook.ingredientlist
-  pk: 7
-- fields:
-    ingredients: [19, 20]
-    name: Other
-    recipe: 3
-  model: cookbook.ingredientlist
-  pk: 8
-- fields:
-    ingredients: [21, 9, 22, 24, 23]
-    name: Ingredients
-    recipe: 4
-  model: cookbook.ingredientlist
-  pk: 9
-- fields:
-    ingredients: [7, 4, 26, 25, 27]
-    name: Dry
-    recipe: 5
-  model: cookbook.ingredientlist
-  pk: 10
-- fields:
-    ingredients: [30, 31, 29, 32, 28]
-    name: Wet
-    recipe: 5
-  model: cookbook.ingredientlist
-  pk: 11
-- fields:
-    ingredients: [33, 34, 35]
-    name: Other
-    recipe: 5
-  model: cookbook.ingredientlist
-  pk: 12
-- fields:
-    ingredients: [39, 40, 37, 36, 41, 43, 38, 42]
-    name: Dough
-    recipe: 6
-  model: cookbook.ingredientlist
-  pk: 13
-- fields:
-    ingredients: [44, 46, 45]
-    name: Filling
-    recipe: 6
-  model: cookbook.ingredientlist
-  pk: 14
-- fields:
-    ingredients: [47, 48, 49]
-    name: Icing
-    recipe: 6
-  model: cookbook.ingredientlist
-  pk: 15
-- fields:
-    ingredients: [7, 56, 52, 50, 18, 51, 55, 6, 53]
-    name: Cake
-    recipe: 7
-  model: cookbook.ingredientlist
-  pk: 16
-- fields:
-    ingredients: [59, 57, 58, 8]
-    name: Topping
-    recipe: 7
-  model: cookbook.ingredientlist
+- fields: {category: null, food: 32, optional: false, preparation: null, quantity: 8.0,
+    recipe: 3, unit: 4}
+  model: cookbook.ingredient
+  pk: 33
+- fields: {category: null, food: 85, optional: false, preparation: null, quantity: 8.0,
+    recipe: 3, unit: 4}
+  model: cookbook.ingredient
+  pk: 34
+- fields: {category: 6, food: 10, optional: false, preparation: null, quantity: 1.0,
+    recipe: 2, unit: 2}
+  model: cookbook.ingredient
   pk: 17
+- fields: {category: 6, food: 32, optional: false, preparation: null, quantity: 15.0,
+    recipe: 2, unit: 4}
+  model: cookbook.ingredient
+  pk: 24
+- fields: {category: 6, food: 9, optional: false, preparation: 12, quantity: 2.0,
+    recipe: 2, unit: 4}
+  model: cookbook.ingredient
+  pk: 20
+- fields: {category: 6, food: 90, optional: false, preparation: null, quantity: 9.0,
+    recipe: 2, unit: 4}
+  model: cookbook.ingredient
+  pk: 16
+- fields: {category: 6, food: 2, optional: false, preparation: null, quantity: 1.0,
+    recipe: 2, unit: null}
+  model: cookbook.ingredient
+  pk: 22
+- fields: {category: 6, food: 91, optional: false, preparation: 13, quantity: 0.5,
+    recipe: 2, unit: 2}
+  model: cookbook.ingredient
+  pk: 19
+- fields: {category: 6, food: 3, optional: false, preparation: null, quantity: 0.5,
+    recipe: 2, unit: 1}
+  model: cookbook.ingredient
+  pk: 23
+- fields: {category: 6, food: 12, optional: false, preparation: null, quantity: 0.5,
+    recipe: 2, unit: 2}
+  model: cookbook.ingredient
+  pk: 18
+- fields: {category: 6, food: 13, optional: false, preparation: null, quantity: 0.75,
+    recipe: 2, unit: 1}
+  model: cookbook.ingredient
+  pk: 21
+- fields: {category: 3, food: 9, optional: false, preparation: 6, quantity: 6.0, recipe: 1,
+    unit: 3}
+  model: cookbook.ingredient
+  pk: 4
+- fields: {category: 3, food: 87, optional: false, preparation: null, quantity: 6.0,
+    recipe: 1, unit: 4}
+  model: cookbook.ingredient
+  pk: 5
+- fields: {category: 3, food: 2, optional: false, preparation: null, quantity: 1.0,
+    recipe: 1, unit: null}
+  model: cookbook.ingredient
+  pk: 2
+- fields: {category: 3, food: 86, optional: false, preparation: null, quantity: 4.0,
+    recipe: 1, unit: null}
+  model: cookbook.ingredient
+  pk: 1
+- fields: {category: 3, food: 1, optional: false, preparation: null, quantity: 20.0,
+    recipe: 1, unit: 4}
+  model: cookbook.ingredient
+  pk: 6
+- fields: {category: 3, food: 1, optional: false, preparation: null, quantity: 1.0,
+    recipe: 3, unit: 1}
+  model: cookbook.ingredient
+  pk: 29
+- fields: {category: 3, food: 12, optional: false, preparation: null, quantity: 1.25,
+    recipe: 1, unit: 2}
+  model: cookbook.ingredient
+  pk: 8
+- fields: {category: 3, food: 13, optional: false, preparation: null, quantity: 0.25,
+    recipe: 1, unit: 1}
+  model: cookbook.ingredient
+  pk: 3
+- fields: {category: 3, food: 31, optional: false, preparation: null, quantity: 2.25,
+    recipe: 1, unit: 2}
+  model: cookbook.ingredient
+  pk: 7
+- fields: {category: 3, food: 31, optional: false, preparation: null, quantity: 1.0,
+    recipe: 3, unit: 2}
+  model: cookbook.ingredient
+  pk: 30
+- fields: {category: 4, food: 56, optional: false, preparation: null, quantity: 8.0,
+    recipe: 1, unit: 4}
+  model: cookbook.ingredient
+  pk: 9
+- fields: {category: 4, food: 9, optional: false, preparation: 6, quantity: 0.75,
+    recipe: 1, unit: 4}
+  model: cookbook.ingredient
+  pk: 12
+- fields: {category: 4, food: 81, optional: false, preparation: 13, quantity: 1.0,
+    recipe: 1, unit: 3}
+  model: cookbook.ingredient
+  pk: 10
+- fields: {category: 4, food: 12, optional: false, preparation: null, quantity: 1.0,
+    recipe: 1, unit: 7}
+  model: cookbook.ingredient
+  pk: 11
+- fields: {category: 5, food: 9, optional: false, preparation: null, quantity: 1.0,
+    recipe: 3, unit: 1}
+  model: cookbook.ingredient
+  pk: 32
+- fields: {category: 5, food: 88, optional: false, preparation: 12, quantity: 2.5,
+    recipe: 1, unit: 4}
+  model: cookbook.ingredient
+  pk: 13
+- fields: {category: 5, food: 3, optional: false, preparation: null, quantity: 3.0,
+    recipe: 1, unit: 3}
+  model: cookbook.ingredient
+  pk: 14
+- fields: {category: 5, food: 89, optional: false, preparation: null, quantity: 5.5,
+    recipe: 1, unit: 4}
+  model: cookbook.ingredient
+  pk: 15
+- fields: {category: 5, food: 13, optional: false, preparation: null, quantity: 1.0,
+    recipe: 3, unit: 1}
+  model: cookbook.ingredient
+  pk: 31
+- fields: {category: 7, food: 9, optional: false, preparation: 14, quantity: 2.0,
+    recipe: 2, unit: 4}
+  model: cookbook.ingredient
+  pk: 28
+- fields: {category: 7, food: 90, optional: false, preparation: null, quantity: 1.5,
+    recipe: 2, unit: 4}
+  model: cookbook.ingredient
+  pk: 26
+- fields: {category: 7, food: 92, optional: false, preparation: 13, quantity: 0.5,
+    recipe: 2, unit: 2}
+  model: cookbook.ingredient
+  pk: 27
+- fields: {category: 7, food: 13, optional: false, preparation: null, quantity: 0.5,
+    recipe: 2, unit: 1}
+  model: cookbook.ingredient
+  pk: 25
