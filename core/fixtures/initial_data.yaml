@@ -43,6 +43,9 @@
 - fields: {name: nuts, parent: 14}
   model: core.category
   pk: 26
+- fields: {name: pasta, parent: 4}
+  model: core.category
+  pk: 28
 - fields: {name: pork, parent: 6}
   model: core.category
   pk: 19
@@ -100,6 +103,12 @@
 - fields: {category: 3, name: banana}
   model: core.food
   pk: 80
+- fields: {category: 8, name: basil}
+  model: core.food
+  pk: 102
+- fields: {category: 8, name: bay leaf}
+  model: core.food
+  pk: 98
 - fields: {category: 22, name: beef boullion}
   model: core.food
   pk: 70
@@ -196,6 +205,9 @@
 - fields: {category: 6, name: egg yolk}
   model: core.food
   pk: 86
+- fields: {category: 28, name: elbow macaroni}
+  model: core.food
+  pk: 100
 - fields: {category: 4, name: flour}
   model: core.food
   pk: 1
@@ -241,6 +253,9 @@
 - fields: {category: 16, name: mozarella}
   model: core.food
   pk: 40
+- fields: {category: 8, name: mustard}
+  model: core.food
+  pk: 97
 - fields: {category: 8, name: nutmeg}
   model: core.food
   pk: 92
@@ -259,9 +274,18 @@
 - fields: {category: 13, name: orange juice}
   model: core.food
   pk: 47
+- fields: {category: 4, name: panko bread crumbs}
+  model: core.food
+  pk: 101
+- fields: {category: 8, name: paprika}
+  model: core.food
+  pk: 99
 - fields: {category: 16, name: parmesan}
   model: core.food
   pk: 41
+- fields: {category: 8, name: parsley}
+  model: core.food
+  pk: 103
 - fields: {category: 21, name: pasta sauce}
   model: core.food
   pk: 64
@@ -538,6 +562,9 @@
 - fields: {name: diced}
   model: core.preparation
   pk: 2
+- fields: {name: dried}
+  model: core.preparation
+  pk: 16
 - fields: {name: grated}
   model: core.preparation
   pk: 7
