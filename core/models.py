@@ -1,5 +1,5 @@
 from django.db import models
-
+from vittles.core import utils
 
 class ModelWrapper (models.Model):
     """Abstract base class for models.
@@ -69,9 +69,10 @@ class Equivalence (ModelWrapper):
 
     def __unicode__(self):
         if self.to_quantity > 1.0:
-            return "1 %s = %g %ss" % (self.unit, self.to_quantity, self.to_unit)
+            to_unit = utils.pluralize(self.to_unit)
         else:
-            return "1 %s = %g %s" % (self.unit, self.to_quantity, self.to_unit)
+            to_unit = self.to_unit
+        return "1 %s = %g %s" % (self.unit, self.to_quantity, to_unit)
 
 
 class Preparation (ModelWrapper):

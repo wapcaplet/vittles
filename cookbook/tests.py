@@ -1,6 +1,6 @@
 from django.test import TestCase
-from core.models import Food, Unit
-from cookbook.models import Ingredient
+from vittles.core.models import Food, Unit
+from vittles.cookbook.models import Ingredient
 
 class CookbookTest (TestCase):
     """Initialization shared by all test cases

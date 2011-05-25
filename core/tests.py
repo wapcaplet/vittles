@@ -1,6 +1,6 @@
 from django.test import TestCase
-from core.models import Unit, Equivalence
-from core.helpers import convert_amount, add_amount, subtract_amount, NoEquivalence
+from vittles.core.models import Unit, Equivalence
+from vittles.core.helpers import convert_amount, add_amount, subtract_amount, NoEquivalence
 
 class CoreTest (TestCase):
     """Initialization shared by all test cases
@@ -94,11 +94,13 @@ class SubtractAmountTest (CoreTest):
         self.assertRaises(NoEquivalence, subtract_amount, 2.0, pound, 3.0, quart)
 
 
-from helpers import float_to_fraction, fraction_to_float, format_food_unit
+from vittles.core.utils import \
+        float_to_fraction, fraction_to_float, pluralize, format_food_unit
 
 __test__ = {
     'float_to_fraction': float_to_fraction,
     'fraction_to_float': fraction_to_float,
     'format_food_unit': format_food_unit,
+    'pluralize': pluralize,
 }
 

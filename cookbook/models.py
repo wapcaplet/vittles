@@ -1,7 +1,7 @@
 import re
 from django.db import models
 from vittles.core.models import ModelWrapper, Food, Preparation, Unit
-from vittles.core.helpers import format_food_unit, fraction_to_float
+from vittles.core.utils import format_food_unit, fraction_to_float
 
 
 class Portion (ModelWrapper):
