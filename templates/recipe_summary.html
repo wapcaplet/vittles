@@ -1,0 +1,7 @@
+<span class="recipe-name">{{ recipe.name }}</span>
+<span class="recipe-info">
+  {% if recipe.source %} from {{ recipe.source }} {% endif %}
+  {% if recipe.servings %}({{ recipe.servings }}){% endif %}
+</span>
+{% include "recipe_rating.html" %}
+

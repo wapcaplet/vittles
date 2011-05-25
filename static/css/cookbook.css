@@ -1,7 +1,7 @@
 /* cookbook.css */
 
 body {
-  font-size: 12px;
+  font-size: 14px;
   margin: 0;
 }
 
@@ -51,12 +51,6 @@ h1, h2, h3 {
   margin: 0 0 1.2em 0;
 }
 
-.yield, .source {
-  font-style: italic;
-  margin: 0;
-  padding: 2px;
-}
-
 a {
   color: #448;
   text-decoration: none;
@@ -89,12 +83,24 @@ a:hover, a:active {
   -moz-border-radius: 5px;
 }
 
-.recipes ul li a .recipe-name {
-  font-size: 1.2em;
+.recipes ul li {
+  font-size: 1.3em;
+}
+.recipe-name {
   font-weight: bold;
 }
 
+.recipe-info {
+  font-weight: normal;
+  font-size: 0.8em;
+}
+
 .recipes ul li a:hover {
-  background: #eef;
+  background: #f8f8d0;
+}
+
+.preheat {
+  color: #f40;
+  font-style: italic;
 }
 

@@ -17,10 +17,7 @@
       {% for recipe in recipes %}
       <li>
         <a href="/cookbook/{{ recipe.id }}/">
-          <span class="recipe-name">{{ recipe.name }}</span>
-          {% if recipe.source %} from {{ recipe.source }} {% endif %}
-          {% if recipe.servings %}({{ recipe.servings }}){% endif %}
-          {% include "recipe_rating.html" %}
+          {% include "recipe_summary.html" %}
         </a>
       </li>
       {% endfor %}

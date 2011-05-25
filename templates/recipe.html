@@ -4,7 +4,7 @@
 {% block content %}
 
 <div class="header">
-  <h1>{{ recipe.name }} {% include "recipe_rating.html" %} </h1>
+  <h1>{% include "recipe_summary.html" %}</h1>
 </div>
 
 <div class="left-column">
@@ -23,18 +23,12 @@
     {% endfor %}
   </div>
 
-  {% if recipe.servings %}
-    <p class="yield">Yield: {{ recipe.servings }}</p>
-  {% endif %}
-  {% if recipe.source %}
-    <p class="source">Source: {{ recipe.source }}</p>
-  {% endif %}
 </div>
 
 <div class="directions">
   <h2>Directions</h2>
   {% if recipe.preheat %}
-    <p>Preheat oven to {{ recipe.preheat }}.</p>
+    <p class="preheat">Preheat oven to {{ recipe.preheat }}</p>
   {% endif %}
 
   {% for paragraph in recipe.directions_paragraphs %}
