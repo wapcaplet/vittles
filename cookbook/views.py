@@ -4,7 +4,17 @@ from vittles.cookbook.models import Recipe
 def index(request):
     """Cookbook homepage.
     """
-    variables = {'recipes': Recipe.objects.all()}
+    recipes = Recipe.objects.all()
+    categories = set(recipe.category for recipe in recipes)
+    recipe_categories = []
+    for category in categories:
+        if category:
+            category = category.name
+        recipe_categories.append((category, recipes.filter(category__name=category)))
+
+    variables = {
+        'recipe_categories': recipe_categories,
+    }
     return render_to_response('index.html', variables)
 
 

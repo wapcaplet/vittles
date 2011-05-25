@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib import admin
-from vittles.cookbook.models import Ingredient, Recipe, Portion, IngredientCategory
+from vittles.cookbook.models import Ingredient, Recipe, Portion, IngredientCategory, RecipeCategory
 from vittles.core.helpers import fraction_to_float
 
 # Custom forms and fields
@@ -36,8 +36,15 @@ class IngredientAdmin (admin.ModelAdmin):
 class RecipeAdmin (admin.ModelAdmin):
     inlines = [IngredientInline]
     fieldsets = (
-        (None, {'fields':
-                ('name', 'preheat', 'directions', ('num_portions', 'portion'), ('rating', 'source')) }),
+        (None, {
+            'fields': (
+                ('name', 'category'),
+                'preheat',
+                'directions',
+                ('num_portions', 'portion'),
+                ('rating', 'source')
+            )
+        }),
     )
 
 class PortionAdmin (admin.ModelAdmin):
@@ -47,4 +54,5 @@ admin.site.register(Ingredient, IngredientAdmin)
 admin.site.register(Recipe, RecipeAdmin)
 admin.site.register(Portion, PortionAdmin)
 admin.site.register(IngredientCategory)
+admin.site.register(RecipeCategory)
 

@@ -32,6 +32,20 @@ class IngredientCategory (ModelWrapper):
         return self.name
 
 
+class RecipeCategory (ModelWrapper):
+    """A category of recipe.
+    Examples: entree, dessert, side dish.
+    """
+    name = models.CharField(max_length=100, unique=True)
+
+    class Meta:
+        ordering = ['name']
+        verbose_name_plural = 'Recipe categories'
+
+    def __unicode__(self):
+        return self.name
+
+
 class Recipe (ModelWrapper):
     """Instructions for preparing a meal.
     """
@@ -42,6 +56,7 @@ class Recipe (ModelWrapper):
     portion      = models.ForeignKey(Portion, blank=True, null=True)
     source       = models.CharField(max_length=100, blank=True, null=True)
     rating       = models.IntegerField(blank=True, null=True)
+    category     = models.ForeignKey(RecipeCategory, blank=True, null=True)
 
     def __unicode__(self):
         string = "%s" % self.name
