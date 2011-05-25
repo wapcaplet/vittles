@@ -1,7 +1,7 @@
 import re
 from fractions import Fraction
-from core.models import Equivalence
 from django.core.exceptions import ObjectDoesNotExist
+from vittles.core.models import Equivalence
 
 
 class NoEquivalence (Exception):

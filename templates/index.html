@@ -8,15 +8,17 @@
   <h1>Vittles</h1>
 </div>
 
+<p><a href="/admin">Admin site</a></p>
+
 <div class="recipes">
   <ul>
     {% for recipe in recipes %}
     <li>
       <a href="/cookbook/{{ recipe.id }}/">
         <span class="recipe-name">{{ recipe.name }}</span>
-        {% include "recipe_rating.html" %}
         {% if recipe.source %} from {{ recipe.source }} {% endif %}
         {% if recipe.servings %}({{ recipe.servings }}){% endif %}
+        {% include "recipe_rating.html" %}
       </a>
     </li>
     {% endfor %}

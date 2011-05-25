@@ -15,7 +15,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/tmp/vittles_dev.sqlite3',
+        'NAME': '/usr/local/db/vittles_dev.sqlite3',
     }
 }
 
@@ -144,9 +144,9 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
 
     # Local apps
-    'core',
-    'cookbook',
-    'inventory',
+    'vittles.core',
+    'vittles.cookbook',
+    'vittles.inventory',
 
     # Add-ons
     'lettuce.django',
