@@ -8,7 +8,17 @@
   <h1>Vittles</h1>
 </div>
 
-<p><a href="/admin">Admin site</a></p>
+<div class="nav">
+  <p><a href="/admin">Admin site</a></p>
+  <form>
+    <label for="search">Search</label> <input type="text" id="search" size="30" />
+  </form>
+  <script type="text/javascript">
+    $(function () {
+      $('input#search').quicksearch('ul li');
+    });
+  </script>
+</div>
 
 <div class="recipes">
   {% for category, recipes in recipe_categories %}
