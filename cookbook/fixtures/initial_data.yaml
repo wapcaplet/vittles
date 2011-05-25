@@ -28,25 +28,52 @@
 - fields: {name: Icing}
   model: cookbook.ingredientcategory
   pk: 5
+- fields: {name: Liquids}
+  model: cookbook.ingredientcategory
+  pk: 12
+- fields: {name: Roux}
+  model: cookbook.ingredientcategory
+  pk: 10
+- fields: {name: Sauce}
+  model: cookbook.ingredientcategory
+  pk: 9
+- fields: {name: Seasoning}
+  model: cookbook.ingredientcategory
+  pk: 11
 - fields: {name: Topping}
   model: cookbook.ingredientcategory
   pk: 7
 - fields: {name: Wet}
   model: cookbook.ingredientcategory
   pk: 2
-- fields: {directions: "Using a stand mixer, whisk the egg yolks, whole egg, sugar,\
-      \ butter, and buttermilk. Add about 2 cups of flour along with yeast and salt;\
-      \ whisk until combined. Replace whisk with dough hook, add all but 3/4 cup of\
-      \ the remaining flour and knead on low speed for 5 minutes. Check consistency\
-      \ and add more flour if needed; the dough should be soft and moist, but not\
-      \ sticky. Knead 5 more minutes with the mixer, then 30 seconds by hand. Place\
-      \ dough in a large oiled bowl, lightly oil the top of the dough, cover and allow\
-      \ at least 2 hours to double.\r\n\r\nWhen dough is almost ready, combine brown\
-      \ sugar, cinnamon, and salt in a small bowl. Butter a 9x13\" glass baking dish.\
-      \ Roll the dough into a 12x18\" rectangle with the long side towards you. Brush\
-      \ dough with the melted butter, then sprinkle on the filling, leaving a 1\"\
-      \ border along the top edge. Starting with the edge closest to you, roll the\
-      \ dough into a tight cylinder. Pinch the edge to seal, then roll it seam-side-down..\r\
+- fields: {name: Bread}
+  model: cookbook.recipecategory
+  pk: 5
+- fields: {name: Dessert}
+  model: cookbook.recipecategory
+  pk: 2
+- fields: {name: Entree}
+  model: cookbook.recipecategory
+  pk: 1
+- fields: {name: Side Dish}
+  model: cookbook.recipecategory
+  pk: 4
+- fields: {name: Soup}
+  model: cookbook.recipecategory
+  pk: 3
+- fields: {category: 2, directions: "Using a stand mixer, whisk the egg yolks, whole\
+      \ egg, sugar, butter, and buttermilk. Add about 2 cups of flour along with yeast\
+      \ and salt; whisk until combined. Replace whisk with dough hook, add all but\
+      \ 3/4 cup of the remaining flour and knead on low speed for 5 minutes. Check\
+      \ consistency and add more flour if needed; the dough should be soft and moist,\
+      \ but not sticky. Knead 5 more minutes with the mixer, then 30 seconds by hand.\
+      \ Place dough in a large oiled bowl, lightly oil the top of the dough, cover\
+      \ and allow at least 2 hours to double.\r\n\r\nWhen dough is almost ready, combine\
+      \ brown sugar, cinnamon, and salt in a small bowl. Butter a 9x13\" glass baking\
+      \ dish. Roll the dough into a 12x18\" rectangle with the long side towards you.\
+      \ Brush dough with the melted butter, then sprinkle on the filling, leaving\
+      \ a 1\" border along the top edge. Starting with the edge closest to you, roll\
+      \ the dough into a tight cylinder. Pinch the edge to seal, then roll it seam-side-down..\r\
       \n\r\nUsing a serrated knife, slice off the irregular ends, then divide the\
       \ roll into 12 equal pieces. Arrange the rolls in the baking dish, cover with\
       \ plastic wrap, and refrigerate overnight.\r\n\r\nThe next day, remove the rolls\
@@ -61,40 +88,40 @@
       Brown}
   model: cookbook.recipe
   pk: 1
-- fields: {directions: "Using a stand mixer with the paddle attachment, beat together\
-      \ the butter and sugar on medium speed until light and fluffy, about 1 minute.\
-      \ Add the egg and beat until well incorporated, about 30 seconds.\r\n\r\nIn\
-      \ a separate bowl, sift together all the dry ingredients. Add 1/3 of the dry\
-      \ ingredients to the stand mixer, alternately with 1/3 of the milk, beating\
-      \ on low speed between each addition. Remove the bowl, and fold in the blueberries.\r\
-      \n\r\nSpray a 9x9\" glass baking dish with nonstick spray, and spread the batter\
-      \ into the dish. It'll look like there are too many blueberries--that's a good\
-      \ thing.", name: Blueberry Buckle, num_portions: 9, portion: 2, preheat: 375
+- fields: {category: 2, directions: "Using a stand mixer with the paddle attachment,\
+      \ beat together the butter and sugar on medium speed until light and fluffy,\
+      \ about 1 minute. Add the egg and beat until well incorporated, about 30 seconds.\r\
+      \n\r\nIn a separate bowl, sift together all the dry ingredients. Add 1/3 of\
+      \ the dry ingredients to the stand mixer, alternately with 1/3 of the milk,\
+      \ beating on low speed between each addition. Remove the bowl, and fold in the\
+      \ blueberries.\r\n\r\nSpray a 9x9\" glass baking dish with nonstick spray, and\
+      \ spread the batter into the dish. It'll look like there are too many blueberries--that's\
+      \ a good thing.", name: Blueberry Buckle, num_portions: 9, portion: 2, preheat: 375
       F, rating: 4, source: Alton Brown}
   model: cookbook.recipe
   pk: 2
-- fields: {directions: "Combine dry ingredients in a large mixing bowl. Combine wet\
-      \ ingredients in an electric mixer; stir in carrot, raisins, and walnuts. Add\
-      \ dry mixture to wet mixture and stir until combined.\r\n\r\nPour batter into\
-      \ two ungreased 8-inch loaf pans, and bake for 60 minutes or until done.", name: Carrot
-      Raisin Bread, num_portions: 2, portion: 3, preheat: 350 F, rating: 5, source: Top
-      Secret Recipes}
+- fields: {category: 5, directions: "Combine dry ingredients in a large mixing bowl.\
+      \ Combine wet ingredients in an electric mixer; stir in carrot, raisins, and\
+      \ walnuts. Add dry mixture to wet mixture and stir until combined.\r\n\r\nPour\
+      \ batter into two ungreased 8-inch loaf pans, and bake for 60 minutes or until\
+      \ done.", name: Carrot Raisin Bread, num_portions: 2, portion: 3, preheat: 350
+      F, rating: 5, source: Top Secret Recipes}
   model: cookbook.recipe
   pk: 4
-- fields: {directions: 'Bring eggs and milk to room temperature. Combine all ingredients
-      in a blender, and mix on high speed for 30 seconds to 1 minute. Pour into a
-      well-greased 12-muffin tin and bake for 40 minutes or until deep golden brown.',
-    name: Popovers, num_portions: 12, portion: null, preheat: 425 F, rating: 4, source: Alton
-      Brown}
+- fields: {category: 5, directions: 'Bring eggs and milk to room temperature. Combine
+      all ingredients in a blender, and mix on high speed for 30 seconds to 1 minute.
+      Pour into a well-greased 12-muffin tin and bake for 40 minutes or until deep
+      golden brown.', name: Popovers, num_portions: 12, portion: null, preheat: 425
+      F, rating: 4, source: Alton Brown}
   model: cookbook.recipe
   pk: 5
-- fields: {directions: "Sift dry ingredients together in a medium bowl. In a stand\
-      \ mixer, beat butter and sugar until light and fluffy, then add eggs and beat\
-      \ until smooth. Stir in flour mixture at low speed, then stir in hazelnuts and\
-      \ chocolate chips.\r\n\r\nForm the dough into two slightly flattened logs, each\
-      \ about 12\" long and 2\" wide (it helps to use a flexible cutting board to\
-      \ roll the dough tightly). Place the logs on a parchment-lined sheet pan, and\
-      \ sprinkle with powdered sugar. Bake for 35 minutes, or until slightly firm.\
+- fields: {category: 2, directions: "Sift dry ingredients together in a medium bowl.\
+      \ In a stand mixer, beat butter and sugar until light and fluffy, then add eggs\
+      \ and beat until smooth. Stir in flour mixture at low speed, then stir in hazelnuts\
+      \ and chocolate chips.\r\n\r\nForm the dough into two slightly flattened logs,\
+      \ each about 12\" long and 2\" wide (it helps to use a flexible cutting board\
+      \ to roll the dough tightly). Place the logs on a parchment-lined sheet pan,\
+      \ and sprinkle with powdered sugar. Bake for 35 minutes, or until slightly firm.\
       \ Remove from oven and cool for 5 minutes.\r\n\r\nSlice each log diagonally\
       \ into 3/4\" slices. Arrange slices cut side down on the same parchment-lined\
       \ sheet pan, then bake for 10 more minutes.\r\n\r\nBiscotti keep in airtight\
@@ -103,19 +130,46 @@
       F, rating: 5, source: Gourmet Magazine}
   model: cookbook.recipe
   pk: 6
-- fields: {directions: 'Remove shells from hard-boiled eggs, and halve lengthwise.
-      Remove yolks and mash with remaining ingredients. Refill whites and refrigerate.',
-    name: Deviled Eggs, num_portions: 12, portion: null, preheat: '', rating: 4, source: Sandra
-      Heller}
+- fields: {category: 4, directions: 'Remove shells from hard-boiled eggs, and halve
+      lengthwise. Remove yolks and mash with remaining ingredients. Refill whites
+      and refrigerate.', name: Deviled Eggs, num_portions: 12, portion: null, preheat: '',
+    rating: 4, source: Sandra Heller}
   model: cookbook.recipe
   pk: 7
-- fields: {directions: 'Slice potatoes into 1/4" strips, leaving the peels on if desired.
-      Toss in a bowl with oil until coated. Bake on a parchment-lined sheet pan for
-      15 minutes, then stir and bake another 15 minutes or until golden brown and
-      tender. Salt to taste while the fries are still hot.', name: French Fries, num_portions: 2,
-    portion: 4, preheat: '400', rating: 4, source: Eric Pierce}
+- fields: {category: 4, directions: 'Slice potatoes into 1/4" strips, leaving the
+      peels on if desired. Toss in a bowl with oil until coated. Bake on a parchment-lined
+      sheet pan for 15 minutes, then stir and bake another 15 minutes or until golden
+      brown and tender. Salt to taste while the fries are still hot.', name: French
+      Fries, num_portions: 2, portion: 4, preheat: '400', rating: 4, source: Eric
+      Pierce}
   model: cookbook.recipe
   pk: 8
+- fields: {category: 4, directions: "In a large pot of boiling, salted water, cook\
+      \ the pasta to al dente.\r\n\r\nWhile the pasta is cooking, melt 3 tablespoons\
+      \ of butter in a medium saucepan. Whisk in the flour and mustard to make a roux;\
+      \ keep stirring for 5 minutes. Slowly whisk in the milk, onion, paprika, and\
+      \ bay leaf. Simmer for 10 minutes, then remove the bay leaf.\r\n\r\nTemper in\
+      \ the egg, then stir in 3/4 of the cheese. Season with salt and pepper. Fold\
+      \ the macaroni into the mix and pour into a 2-quart casserole dish. Top with\
+      \ remaining cheese.\r\n\r\nFor the topping, melt the butter in a skillet and\
+      \ toss with the bread crumbs until golden brown. Spread over the casserole,\
+      \ and bake for 30 minutes. Allow to cool for 5 minutes before serving.", name: Macaroni
+      and Cheese, num_portions: 6, portion: 4, preheat: '350', rating: 4, source: Alton
+      Brown}
+  model: cookbook.recipe
+  pk: 9
+- fields: {category: 3, directions: 'In a 3 quart saucepan, brown beef; drain and
+      set aside. In the same pan, saute onion, carrot, celery, basil and parsley in
+      1 tablespoon of butter until tender, about 10 minutes. Add broth, potatoes,
+      and beef, and bring to a boil. Reduce heat, cover and simmer for 10 to 12 minutes.
+      Meanwhile, in a small saucepan, melt remaining butter. Add flour to make a roux;
+      stir for 3 to 5 minutes or until bubbly. Add to soup and bring to a boil. Cook
+      and stir 2 minutes, then reduce heat to low. Add cheese, milk, salt and pepper.
+      Cook and stir until the cheese melts. Remove from heat and stir in sour cream.',
+    name: Cheeseburger Soup, num_portions: 8, portion: 4, preheat: '', rating: 4,
+    source: Sandra Heller}
+  model: cookbook.recipe
+  pk: 10
 - fields: {category: null, food: 96, optional: false, preparation: 13, quantity: 1.0,
     recipe: 7, unit: 16}
   model: cookbook.ingredient
@@ -132,10 +186,18 @@
     recipe: 7, unit: null}
   model: cookbook.ingredient
   pk: 62
+- fields: {category: null, food: 100, optional: false, preparation: null, quantity: 0.5,
+    recipe: 9, unit: 6}
+  model: cookbook.ingredient
+  pk: 82
 - fields: {category: null, food: 1, optional: false, preparation: null, quantity: 4.75,
     recipe: 5, unit: 4}
   model: cookbook.ingredient
   pk: 48
+- fields: {category: null, food: 23, optional: false, preparation: null, quantity: 0.5,
+    recipe: 10, unit: 6}
+  model: cookbook.ingredient
+  pk: 85
 - fields: {category: null, food: 95, optional: false, preparation: null, quantity: 0.25,
     recipe: 7, unit: 1}
   model: cookbook.ingredient
@@ -276,10 +338,22 @@
     recipe: 6, unit: 1}
   model: cookbook.ingredient
   pk: 53
+- fields: {category: 8, food: 9, optional: false, preparation: null, quantity: 1.0,
+    recipe: 10, unit: 3}
+  model: cookbook.ingredient
+  pk: 100
 - fields: {category: 8, food: 17, optional: false, preparation: 8, quantity: 1.0,
     recipe: 4, unit: 1}
   model: cookbook.ingredient
   pk: 44
+- fields: {category: 8, food: 17, optional: false, preparation: 8, quantity: 0.75,
+    recipe: 10, unit: 1}
+  model: cookbook.ingredient
+  pk: 87
+- fields: {category: 8, food: 18, optional: true, preparation: 2, quantity: 0.75,
+    recipe: 10, unit: 1}
+  model: cookbook.ingredient
+  pk: 88
 - fields: {category: 8, food: 19, optional: false, preparation: null, quantity: 1.0,
     recipe: 6, unit: 1}
   model: cookbook.ingredient
@@ -288,6 +362,14 @@
     recipe: 6, unit: 1}
   model: cookbook.ingredient
   pk: 60
+- fields: {category: 8, food: 16, optional: false, preparation: 1, quantity: 0.75,
+    recipe: 10, unit: 1}
+  model: cookbook.ingredient
+  pk: 86
+- fields: {category: 8, food: 20, optional: false, preparation: 2, quantity: 4.0,
+    recipe: 10, unit: 1}
+  model: cookbook.ingredient
+  pk: 93
 - fields: {category: 8, food: 89, optional: false, preparation: null, quantity: 1.0,
     recipe: 6, unit: 3}
   model: cookbook.ingredient
@@ -328,10 +410,98 @@
     recipe: 1, unit: 4}
   model: cookbook.ingredient
   pk: 15
+- fields: {category: 12, food: 38, optional: false, preparation: null, quantity: 8.0,
+    recipe: 10, unit: 4}
+  model: cookbook.ingredient
+  pk: 95
+- fields: {category: 12, food: 67, optional: false, preparation: null, quantity: 3.0,
+    recipe: 10, unit: 1}
+  model: cookbook.ingredient
+  pk: 92
+- fields: {category: 12, food: 3, optional: false, preparation: null, quantity: 1.5,
+    recipe: 10, unit: 1}
+  model: cookbook.ingredient
+  pk: 96
+- fields: {category: 12, food: 50, optional: true, preparation: null, quantity: 0.25,
+    recipe: 10, unit: 1}
+  model: cookbook.ingredient
+  pk: 99
+- fields: {category: 10, food: 9, optional: false, preparation: null, quantity: 3.0,
+    recipe: 10, unit: 3}
+  model: cookbook.ingredient
+  pk: 91
+- fields: {category: 10, food: 1, optional: false, preparation: null, quantity: 0.25,
+    recipe: 10, unit: 1}
+  model: cookbook.ingredient
+  pk: 94
+- fields: {category: 9, food: 98, optional: false, preparation: null, quantity: 1.0,
+    recipe: 9, unit: null}
+  model: cookbook.ingredient
+  pk: 76
+- fields: {category: 9, food: 96, optional: false, preparation: 13, quantity: 1.0,
+    recipe: 9, unit: 16}
+  model: cookbook.ingredient
+  pk: 81
+- fields: {category: 9, food: 9, optional: false, preparation: null, quantity: 3.0,
+    recipe: 9, unit: 3}
+  model: cookbook.ingredient
+  pk: 71
+- fields: {category: 9, food: 38, optional: false, preparation: 8, quantity: 12.0,
+    recipe: 9, unit: 4}
+  model: cookbook.ingredient
+  pk: 79
+- fields: {category: 9, food: 2, optional: false, preparation: null, quantity: 1.0,
+    recipe: 9, unit: null}
+  model: cookbook.ingredient
+  pk: 78
+- fields: {category: 9, food: 1, optional: false, preparation: null, quantity: 3.0,
+    recipe: 9, unit: 3}
+  model: cookbook.ingredient
+  pk: 72
+- fields: {category: 9, food: 3, optional: false, preparation: null, quantity: 3.0,
+    recipe: 9, unit: 1}
+  model: cookbook.ingredient
+  pk: 74
+- fields: {category: 9, food: 97, optional: false, preparation: 13, quantity: 1.0,
+    recipe: 9, unit: 3}
+  model: cookbook.ingredient
+  pk: 73
+- fields: {category: 9, food: 16, optional: false, preparation: 2, quantity: 0.5,
+    recipe: 9, unit: 1}
+  model: cookbook.ingredient
+  pk: 75
+- fields: {category: 9, food: 99, optional: false, preparation: null, quantity: 0.5,
+    recipe: 9, unit: 2}
+  model: cookbook.ingredient
+  pk: 77
+- fields: {category: 9, food: 12, optional: false, preparation: null, quantity: 1.0,
+    recipe: 9, unit: 2}
+  model: cookbook.ingredient
+  pk: 80
+- fields: {category: 11, food: 102, optional: false, preparation: 16, quantity: 1.0,
+    recipe: 10, unit: 2}
+  model: cookbook.ingredient
+  pk: 89
+- fields: {category: 11, food: 96, optional: false, preparation: 13, quantity: 0.25,
+    recipe: 10, unit: 2}
+  model: cookbook.ingredient
+  pk: 98
+- fields: {category: 11, food: 103, optional: false, preparation: 16, quantity: 1.0,
+    recipe: 10, unit: 2}
+  model: cookbook.ingredient
+  pk: 90
+- fields: {category: 11, food: 12, optional: false, preparation: null, quantity: 0.75,
+    recipe: 10, unit: 2}
+  model: cookbook.ingredient
+  pk: 97
 - fields: {category: 7, food: 9, optional: false, preparation: 14, quantity: 2.0,
     recipe: 2, unit: 4}
   model: cookbook.ingredient
   pk: 28
+- fields: {category: 7, food: 9, optional: false, preparation: null, quantity: 3.0,
+    recipe: 9, unit: 3}
+  model: cookbook.ingredient
+  pk: 83
 - fields: {category: 7, food: 90, optional: false, preparation: null, quantity: 1.5,
     recipe: 2, unit: 4}
   model: cookbook.ingredient
@@ -340,6 +510,10 @@
     recipe: 2, unit: 2}
   model: cookbook.ingredient
   pk: 27
+- fields: {category: 7, food: 101, optional: false, preparation: null, quantity: 1.0,
+    recipe: 9, unit: 1}
+  model: cookbook.ingredient
+  pk: 84
 - fields: {category: 7, food: 13, optional: false, preparation: null, quantity: 0.5,
     recipe: 2, unit: 1}
   model: cookbook.ingredient
