@@ -85,12 +85,18 @@
 - fields: {category: 12, name: Earl Grey tea}
   model: core.food
   pk: 78
+- fields: {category: 26, name: almond}
+  model: core.food
+  pk: 125
 - fields: {category: 3, name: apple}
   model: core.food
   pk: 5
 - fields: {category: 13, name: apple juice}
   model: core.food
   pk: 46
+- fields: {category: 1, name: artichoke hearts}
+  model: core.food
+  pk: 126
 - fields: {category: 19, name: bacon}
   model: core.food
   pk: 21
@@ -112,12 +118,18 @@
 - fields: {category: 22, name: beef boullion}
   model: core.food
   pk: 70
+- fields: {category: 1, name: bell pepper}
+  model: core.food
+  pk: 105
 - fields: {category: 8, name: black pepper}
   model: core.food
   pk: 96
 - fields: {category: 3, name: blueberries}
   model: core.food
   pk: 32
+- fields: {category: 4, name: bread crumbs}
+  model: core.food
+  pk: 120
 - fields: {category: 4, name: bread flour}
   model: core.food
   pk: 36
@@ -154,9 +166,12 @@
 - fields: {category: 22, name: chicken broth}
   model: core.food
   pk: 67
-- fields: {category: 17, name: chicken nuggets}
+- fields: {category: 17, name: chicken nugget}
   model: core.food
   pk: 25
+- fields: {category: 8, name: chili powder}
+  model: core.food
+  pk: 110
 - fields: {category: 9, name: chocolate chips}
   model: core.food
   pk: 19
@@ -175,6 +190,9 @@
 - fields: {category: 16, name: colby jack}
   model: core.food
   pk: 42
+- fields: {category: 20, name: cooked turkey}
+  model: core.food
+  pk: 123
 - fields: {category: 1, name: corn}
   model: core.food
   pk: 8
@@ -193,30 +211,54 @@
 - fields: {category: 22, name: cream of mushroom soup}
   model: core.food
   pk: 65
+- fields: {category: 1, name: crimini mushrooms}
+  model: core.food
+  pk: 118
 - fields: {category: 9, name: dark corn syrup}
   model: core.food
   pk: 55
+- fields: {category: 24, name: dry sherry}
+  model: core.food
+  pk: 124
 - fields: {category: 6, name: egg}
   model: core.food
   pk: 2
 - fields: {category: 4, name: egg noodles}
   model: core.food
   pk: 61
+- fields: {category: 6, name: egg white}
+  model: core.food
+  pk: 119
 - fields: {category: 6, name: egg yolk}
   model: core.food
   pk: 86
 - fields: {category: 28, name: elbow macaroni}
   model: core.food
   pk: 100
+- fields: {category: 7, name: evaporated milk}
+  model: core.food
+  pk: 122
 - fields: {category: 4, name: flour}
   model: core.food
   pk: 1
+- fields: {category: 1, name: garlic}
+  model: core.food
+  pk: 115
+- fields: {category: 8, name: garlic powder}
+  model: core.food
+  pk: 116
+- fields: {category: 8, name: garlic salt}
+  model: core.food
+  pk: 106
 - fields: {category: 8, name: ginger}
   model: core.food
   pk: 91
 - fields: {category: 1, name: green beans}
   model: core.food
   pk: 6
+- fields: {category: 1, name: green onion}
+  model: core.food
+  pk: 104
 - fields: {category: 12, name: green tea}
   model: core.food
   pk: 79
@@ -229,9 +271,15 @@
 - fields: {category: 26, name: hazelnuts}
   model: core.food
   pk: 94
+- fields: {category: 9, name: honey}
+  model: core.food
+  pk: 114
 - fields: {category: 23, name: ketchup}
   model: core.food
   pk: 71
+- fields: {category: 8, name: kosher salt}
+  model: core.food
+  pk: 109
 - fields: {category: 2, name: lard}
   model: core.food
   pk: 37
@@ -253,6 +301,9 @@
 - fields: {category: 16, name: mozarella}
   model: core.food
   pk: 40
+- fields: {category: 1, name: mushroom}
+  model: core.food
+  pk: 121
 - fields: {category: 8, name: mustard}
   model: core.food
   pk: 97
@@ -274,6 +325,12 @@
 - fields: {category: 13, name: orange juice}
   model: core.food
   pk: 47
+- fields: {category: 8, name: oregano}
+  model: core.food
+  pk: 127
+- fields: {category: 8, name: other spices}
+  model: core.food
+  pk: 111
 - fields: {category: 4, name: panko bread crumbs}
   model: core.food
   pk: 101
@@ -289,13 +346,19 @@
 - fields: {category: 21, name: pasta sauce}
   model: core.food
   pk: 64
+- fields: {category: 2, name: peanut oil}
+  model: core.food
+  pk: 128
 - fields: {category: 1, name: peas}
   model: core.food
   pk: 7
 - fields: {category: 3, name: pineapple}
   model: core.food
   pk: 4
-- fields: {category: 1, name: potatoes}
+- fields: {category: 19, name: pork ribs}
+  model: core.food
+  pk: 108
+- fields: {category: 1, name: potato}
   model: core.food
   pk: 20
 - fields: {category: 9, name: powdered sugar}
@@ -304,6 +367,9 @@
 - fields: {category: 4, name: pretzels}
   model: core.food
   pk: 49
+- fields: {category: 16, name: provolone}
+  model: core.food
+  pk: 117
 - fields: {category: 4, name: quick cooking oats}
   model: core.food
   pk: 57
@@ -316,6 +382,9 @@
 - fields: {category: 24, name: red wine}
   model: core.food
   pk: 76
+- fields: {category: 4, name: rice}
+  model: core.food
+  pk: 107
 - fields: {category: 16, name: ricotta}
   model: core.food
   pk: 39
@@ -376,9 +445,15 @@
 - fields: {category: 24, name: white wine}
   model: core.food
   pk: 75
+- fields: {category: null, name: white wine vinegar}
+  model: core.food
+  pk: 112
 - fields: {category: 4, name: whole wheat flour}
   model: core.food
   pk: 35
+- fields: {category: 8, name: worchestershire sauce}
+  model: core.food
+  pk: 113
 - fields: {category: 5, name: yeast}
   model: core.food
   pk: 31
@@ -388,6 +463,9 @@
 - fields: {category: 7, name: yogurt}
   model: core.food
   pk: 51
+- fields: {abbreviation: '', name: clove}
+  model: core.unit
+  pk: 19
 - fields: {abbreviation: C., name: cup}
   model: core.unit
   pk: 1
@@ -427,6 +505,12 @@
 - fields: {abbreviation: qt., name: quart}
   model: core.unit
   pk: 8
+- fields: {abbreviation: '', name: slab}
+  model: core.unit
+  pk: 18
+- fields: {abbreviation: '', name: slice}
+  model: core.unit
+  pk: 17
 - fields: {abbreviation: Tbsp., name: tablespoon}
   model: core.unit
   pk: 3
@@ -559,6 +643,12 @@
 - fields: {name: chopped}
   model: core.preparation
   pk: 1
+- fields: {name: cooked}
+  model: core.preparation
+  pk: 17
+- fields: {name: cubed}
+  model: core.preparation
+  pk: 18
 - fields: {name: diced}
   model: core.preparation
   pk: 2
