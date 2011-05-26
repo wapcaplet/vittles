@@ -10,6 +10,9 @@
 - fields: {name: serving, plural: servings}
   model: cookbook.portion
   pk: 4
+- fields: {name: slice, plural: slices}
+  model: cookbook.portion
+  pk: 5
 - fields: {name: Balls}
   model: cookbook.ingredientcategory
   pk: 15
@@ -61,6 +64,9 @@
 - fields: {name: Dessert}
   model: cookbook.recipecategory
   pk: 2
+- fields: {name: Drink}
+  model: cookbook.recipecategory
+  pk: 6
 - fields: {name: Entree}
   model: cookbook.recipecategory
   pk: 1
@@ -70,215 +76,273 @@
 - fields: {name: Soup}
   model: cookbook.recipecategory
   pk: 3
-- fields: {category: 2, directions: "Using a stand mixer, whisk the egg yolks, whole\
-      \ egg, sugar, butter, and buttermilk. Add about 2 cups of flour along with yeast\
-      \ and salt; whisk until combined. Replace whisk with dough hook, add all but\
-      \ 3/4 cup of the remaining flour and knead on low speed for 5 minutes. Check\
-      \ consistency and add more flour if needed; the dough should be soft and moist,\
-      \ but not sticky. Knead 5 more minutes with the mixer, then 30 seconds by hand.\
-      \ Place dough in a large oiled bowl, lightly oil the top of the dough, cover\
-      \ and allow at least 2 hours to double.\r\n\r\nWhen dough is almost ready, combine\
-      \ brown sugar, cinnamon, and salt in a small bowl. Butter a 9x13\" glass baking\
-      \ dish. Roll the dough into a 12x18\" rectangle with the long side towards you.\
-      \ Brush dough with the melted butter, then sprinkle on the filling, leaving\
-      \ a 1\" border along the top edge. Starting with the edge closest to you, roll\
-      \ the dough into a tight cylinder. Pinch the edge to seal, then roll it seam-side-down..\r\
-      \n\r\nUsing a serrated knife, slice off the irregular ends, then divide the\
-      \ roll into 12 equal pieces. Arrange the rolls in the baking dish, cover with\
-      \ plastic wrap, and refrigerate overnight.\r\n\r\nThe next day, remove the rolls\
-      \ from the refrigerator, and remove the plastic. Place the dish in a cold oven.\
-      \ Place a pan on the lower rack, and fill with hot water. Let the rolls rise\
-      \ until they're slightly puffy.\r\n\r\nRemove both pans from the oven, and preheat\
-      \ to 350 F. When the oven is ready, place the rolls in the middle rack and bake\
-      \ until golden brown, or until the internal temperature reaches 190 F, about\
-      \ 30 minutes.\r\n\r\nAfter removing the rolls from the oven, combine the icing\
-      \ ingredients with a whisk. Drizzle or spread over the rolls and serve immediately.",
-    name: Cinnamon Rolls, num_portions: 12, portion: 1, preheat: '', rating: 5, source: Alton
-      Brown}
+- fields: {category: 2, cook_minutes: 30, directions: "Using a stand mixer, whisk\
+      \ the egg yolks, whole egg, sugar, butter, and buttermilk. Add about 2 cups\
+      \ of flour along with yeast and salt; whisk until combined. Replace whisk with\
+      \ dough hook, add all but 3/4 cup of the remaining flour and knead on low speed\
+      \ for 5 minutes. Check consistency and add more flour if needed; the dough should\
+      \ be soft and moist, but not sticky. Knead 5 more minutes with the mixer, then\
+      \ 30 seconds by hand. Place dough in a large oiled bowl, lightly oil the top\
+      \ of the dough, cover and allow at least 2 hours to double.\r\n\r\nWhen dough\
+      \ is almost ready, combine brown sugar, cinnamon, and salt in a small bowl.\
+      \ Butter a 9x13\" glass baking dish. Roll the dough into a 12x18\" rectangle\
+      \ with the long side towards you. Brush dough with the melted butter, then sprinkle\
+      \ on the filling, leaving a 1\" border along the top edge. Starting with the\
+      \ edge closest to you, roll the dough into a tight cylinder. Pinch the edge\
+      \ to seal, then roll it seam-side-down..\r\n\r\nUsing a serrated knife, slice\
+      \ off the irregular ends, then divide the roll into 12 equal pieces. Arrange\
+      \ the rolls in the baking dish, cover with plastic wrap, and refrigerate overnight.\r\
+      \n\r\nThe next day, remove the rolls from the refrigerator, and remove the plastic.\
+      \ Place the dish in a cold oven. Place a pan on the lower rack, and fill with\
+      \ hot water. Let the rolls rise until they're slightly puffy.\r\n\r\nRemove\
+      \ both pans from the oven, and preheat to 350 F. When the oven is ready, place\
+      \ the rolls in the middle rack and bake until golden brown, or until the internal\
+      \ temperature reaches 190 F, about 30 minutes.\r\n\r\nAfter removing the rolls\
+      \ from the oven, combine the icing ingredients with a whisk. Drizzle or spread\
+      \ over the rolls and serve immediately.", inactive_prep_minutes: 600, name: Cinnamon
+      Rolls, num_portions: 12, portion: 1, preheat: '', prep_minutes: 20, rating: 5,
+    source: Alton Brown}
   model: cookbook.recipe
   pk: 1
-- fields: {category: 2, directions: "Using a stand mixer with the paddle attachment,\
-      \ beat together the butter and sugar on medium speed until light and fluffy,\
-      \ about 1 minute. Add the egg and beat until well incorporated, about 30 seconds.\r\
-      \n\r\nIn a separate bowl, sift together all the dry ingredients. Add 1/3 of\
-      \ the dry ingredients to the stand mixer, alternately with 1/3 of the milk,\
-      \ beating on low speed between each addition. Remove the bowl, and fold in the\
-      \ blueberries.\r\n\r\nSpray a 9x9\" glass baking dish with nonstick spray, and\
-      \ spread the batter into the dish. It'll look like there are too many blueberries--that's\
-      \ a good thing.", name: Blueberry Buckle, num_portions: 9, portion: 2, preheat: 375
-      F, rating: 4, source: Alton Brown}
+- fields: {category: 2, cook_minutes: 35, directions: "Using a stand mixer with the\
+      \ paddle attachment, beat together the butter and sugar on medium speed until\
+      \ light and fluffy, about 1 minute. Add the egg and beat until well incorporated,\
+      \ about 30 seconds.\r\n\r\nIn a separate bowl, sift together all the dry ingredients.\
+      \ Add 1/3 of the dry ingredients to the stand mixer, alternately with 1/3 of\
+      \ the milk, beating on low speed between each addition. Remove the bowl, and\
+      \ fold in the blueberries.\r\n\r\nSpray a 9x9\" glass baking dish with nonstick\
+      \ spray, and spread the batter into the dish. It'll look like there are too\
+      \ many blueberries--that's a good thing. Bake on the middle rack of the oven\
+      \ for 35 minutes or until golden brown on top. Cool for at least 10 minutes\
+      \ before serving.", inactive_prep_minutes: null, name: Blueberry Buckle, num_portions: 9,
+    portion: 2, preheat: 375 F, prep_minutes: 25, rating: 4, source: Alton Brown}
   model: cookbook.recipe
   pk: 2
-- fields: {category: 5, directions: "Combine dry ingredients in a large mixing bowl.\
-      \ Combine wet ingredients in an electric mixer; stir in carrot, raisins, and\
-      \ walnuts. Add dry mixture to wet mixture and stir until combined.\r\n\r\nPour\
-      \ batter into two ungreased 8-inch loaf pans, and bake for 60 minutes or until\
-      \ done.", name: Carrot Raisin Bread, num_portions: 2, portion: 3, preheat: 350
-      F, rating: 5, source: Top Secret Recipes}
+- fields: {category: 5, cook_minutes: 60, directions: "Combine dry ingredients in\
+      \ a large mixing bowl. Combine wet ingredients in an electric mixer; stir in\
+      \ carrot, raisins, and walnuts. Add dry mixture to wet mixture and stir until\
+      \ combined.\r\n\r\nPour batter into two ungreased 8-inch loaf pans, and bake\
+      \ for 60 minutes or until done.", inactive_prep_minutes: null, name: Carrot
+      Raisin Bread, num_portions: 2, portion: 3, preheat: 350 F, prep_minutes: 20,
+    rating: 5, source: Top Secret Recipes}
   model: cookbook.recipe
   pk: 4
-- fields: {category: 5, directions: 'Bring eggs and milk to room temperature. Combine
-      all ingredients in a blender, and mix on high speed for 30 seconds to 1 minute.
-      Pour into a well-greased 12-muffin tin and bake for 40 minutes or until deep
-      golden brown.', name: Popovers, num_portions: 12, portion: null, preheat: 425
-      F, rating: 4, source: Alton Brown}
-  model: cookbook.recipe
-  pk: 5
-- fields: {category: 2, directions: "Sift dry ingredients together in a medium bowl.\
-      \ In a stand mixer, beat butter and sugar until light and fluffy, then add eggs\
-      \ and beat until smooth. Stir in flour mixture at low speed, then stir in hazelnuts\
-      \ and chocolate chips.\r\n\r\nForm the dough into two slightly flattened logs,\
-      \ each about 12\" long and 2\" wide (it helps to use a flexible cutting board\
-      \ to roll the dough tightly). Place the logs on a parchment-lined sheet pan,\
-      \ and sprinkle with powdered sugar. Bake for 35 minutes, or until slightly firm.\
-      \ Remove from oven and cool for 5 minutes.\r\n\r\nSlice each log diagonally\
-      \ into 3/4\" slices. Arrange slices cut side down on the same parchment-lined\
-      \ sheet pan, then bake for 10 more minutes.\r\n\r\nBiscotti keep in airtight\
-      \ containers for 1 week, or frozen for 1 month. They will not last that long.",
-    name: Chocolate Hazelnut Biscotti, num_portions: 30, portion: null, preheat: 350
-      F, rating: 5, source: Gourmet Magazine}
-  model: cookbook.recipe
-  pk: 6
-- fields: {category: 4, directions: 'Remove shells from hard-boiled eggs, and halve
-      lengthwise. Remove yolks and mash with remaining ingredients. Refill whites
-      and refrigerate.', name: Deviled Eggs, num_portions: 12, portion: null, preheat: '',
-    rating: 4, source: Sandra Heller}
-  model: cookbook.recipe
-  pk: 7
-- fields: {category: 4, directions: 'Slice potatoes into 1/4" strips, leaving the
-      peels on if desired. Toss in a bowl with oil until coated. Bake on a parchment-lined
-      sheet pan for 15 minutes, then stir and bake another 15 minutes or until golden
-      brown and tender. Salt to taste while the fries are still hot.', name: French
-      Fries, num_portions: 2, portion: 4, preheat: '400', rating: 4, source: Eric
-      Pierce}
-  model: cookbook.recipe
-  pk: 8
-- fields: {category: 4, directions: "In a large pot of boiling, salted water, cook\
-      \ the pasta to al dente.\r\n\r\nWhile the pasta is cooking, melt 3 tablespoons\
-      \ of butter in a medium saucepan. Whisk in the flour and mustard to make a roux;\
-      \ keep stirring for 5 minutes. Slowly whisk in the milk, onion, paprika, and\
-      \ bay leaf. Simmer for 10 minutes, then remove the bay leaf.\r\n\r\nTemper in\
-      \ the egg, then stir in 3/4 of the cheese. Season with salt and pepper. Fold\
-      \ the macaroni into the mix and pour into a 2-quart casserole dish. Top with\
-      \ remaining cheese.\r\n\r\nFor the topping, melt the butter in a skillet and\
-      \ toss with the bread crumbs until golden brown. Spread over the casserole,\
-      \ and bake for 30 minutes. Allow to cool for 5 minutes before serving.", name: Macaroni
-      and Cheese, num_portions: 6, portion: 4, preheat: '350', rating: 4, source: Alton
+- fields: {category: 5, cook_minutes: 40, directions: 'Bring eggs and milk to room
+      temperature. Combine all ingredients in a blender, and mix on high speed for
+      30 seconds to 1 minute. Pour into a well-greased 12-muffin tin and bake for
+      40 minutes or until deep golden brown.', inactive_prep_minutes: null, name: Popovers,
+    num_portions: 12, portion: null, preheat: 425 F, prep_minutes: 5, rating: 4, source: Alton
       Brown}
   model: cookbook.recipe
-  pk: 9
-- fields: {category: 3, directions: 'In a 3 quart saucepan, brown beef; drain and
-      set aside. In the same pan, saute onion, carrot, celery, basil and parsley in
-      1 tablespoon of butter until tender, about 10 minutes. Add broth, potatoes,
-      and beef, and bring to a boil. Reduce heat, cover and simmer for 10 to 12 minutes.
-      Meanwhile, in a small saucepan, melt remaining butter. Add flour to make a roux;
-      stir for 3 to 5 minutes or until bubbly. Add to soup and bring to a boil. Cook
-      and stir 2 minutes, then reduce heat to low. Add cheese, milk, salt and pepper.
-      Cook and stir until the cheese melts. Remove from heat and stir in sour cream.',
-    name: Cheeseburger Soup, num_portions: 8, portion: 4, preheat: '', rating: 4,
+  pk: 5
+- fields: {category: 2, cook_minutes: 50, directions: "Sift dry ingredients together\
+      \ in a medium bowl. In a stand mixer, beat butter and sugar until light and\
+      \ fluffy, then add eggs and beat until smooth. Stir in flour mixture at low\
+      \ speed, then stir in hazelnuts and chocolate chips.\r\n\r\nForm the dough into\
+      \ two slightly flattened logs, each about 12\" long and 2\" wide (it helps to\
+      \ use a flexible cutting board to roll the dough tightly). Place the logs on\
+      \ a parchment-lined sheet pan, and sprinkle with powdered sugar. Bake for 35\
+      \ minutes, or until slightly firm. Remove from oven and cool for 5 minutes.\r\
+      \n\r\nSlice each log diagonally into 3/4\" slices. Arrange slices cut side down\
+      \ on the same parchment-lined sheet pan, then bake for 10 more minutes.\r\n\r\
+      \nBiscotti keep in airtight containers for 1 week, or frozen for 1 month. They\
+      \ will not last that long.", inactive_prep_minutes: null, name: Chocolate Hazelnut
+      Biscotti, num_portions: 30, portion: null, preheat: 350 F, prep_minutes: 20,
+    rating: 5, source: Gourmet Magazine}
+  model: cookbook.recipe
+  pk: 6
+- fields: {category: 4, cook_minutes: null, directions: 'Remove shells from hard-boiled
+      eggs, and halve lengthwise. Remove yolks and mash with remaining ingredients.
+      Refill whites and refrigerate.', inactive_prep_minutes: null, name: Deviled
+      Eggs, num_portions: 12, portion: null, preheat: '', prep_minutes: null, rating: 4,
     source: Sandra Heller}
   model: cookbook.recipe
+  pk: 7
+- fields: {category: 4, cook_minutes: 30, directions: 'Slice potatoes into 1/4" strips,
+      leaving the peels on if desired. Toss in a bowl with oil until coated. Bake
+      on a parchment-lined sheet pan for 15 minutes, then stir and bake another 15
+      minutes or until golden brown and tender. Salt to taste while the fries are
+      still hot.', inactive_prep_minutes: null, name: French Fries, num_portions: 2,
+    portion: 4, preheat: '400', prep_minutes: 10, rating: 4, source: Eric Pierce}
+  model: cookbook.recipe
+  pk: 8
+- fields: {category: 4, cook_minutes: 30, directions: "In a large pot of boiling,\
+      \ salted water, cook the pasta to al dente.\r\n\r\nWhile the pasta is cooking,\
+      \ melt 3 tablespoons of butter in a medium saucepan. Whisk in the flour and\
+      \ mustard to make a roux; keep stirring for 5 minutes. Slowly whisk in the milk,\
+      \ onion, paprika, and bay leaf. Simmer for 10 minutes, then remove the bay leaf.\r\
+      \n\r\nTemper in the egg, then stir in 3/4 of the cheese. Season with salt and\
+      \ pepper. Fold the macaroni into the mix and pour into a 2-quart casserole dish.\
+      \ Top with remaining cheese.\r\n\r\nFor the topping, melt the butter in a skillet\
+      \ and toss with the bread crumbs until golden brown. Spread over the casserole,\
+      \ and bake for 30 minutes. Allow to cool for 5 minutes before serving.", inactive_prep_minutes: null,
+    name: Macaroni and Cheese, num_portions: 6, portion: 4, preheat: '350', prep_minutes: 20,
+    rating: 4, source: Alton Brown}
+  model: cookbook.recipe
+  pk: 9
+- fields: {category: 3, cook_minutes: null, directions: 'In a 3 quart saucepan, brown
+      beef; drain and set aside. In the same pan, saute onion, carrot, celery, basil
+      and parsley in 1 tablespoon of butter until tender, about 10 minutes. Add broth,
+      potatoes, and beef, and bring to a boil. Reduce heat, cover and simmer for 10
+      to 12 minutes. Meanwhile, in a small saucepan, melt remaining butter. Add flour
+      to make a roux; stir for 3 to 5 minutes or until bubbly. Add to soup and bring
+      to a boil. Cook and stir 2 minutes, then reduce heat to low. Add cheese, milk,
+      salt and pepper. Cook and stir until the cheese melts. Remove from heat and
+      stir in sour cream.', inactive_prep_minutes: null, name: Cheeseburger Soup,
+    num_portions: 8, portion: 4, preheat: '', prep_minutes: null, rating: 4, source: Sandra
+      Heller}
+  model: cookbook.recipe
   pk: 10
-- fields: {category: 3, directions: "Bake potatoes 1 hour at 400 F, or microwave on\
-      \ high for 8 to 10 minutes. Meanwhile, cook the bacon in a large skillet until\
-      \ crispy. Drain on paper towels and set aside. Remove potatoes from oven, scoop\
-      \ out the insides and set aside. Reserve the skins for another recipe.\r\n\r\
-      \nMelt the butter in a large pot over medium-low heat. Stir in the flour to\
-      \ make a roux. Cook about 1 minute, stirring constantly. Gradually stir in the\
-      \ milk. Bring heat to medium and keep stirring until the soup thickens.\r\n\r\
-      \nAdd the potatoes, green onions, salt, pepper, bacon and cheese. Heat for 15\
-      \ minutes, stirring occasionally. Remove from heat and stir in sour cream.\r\
-      \n", name: Baked Potato Soup, num_portions: 4, portion: 4, preheat: 400 F, rating: 5,
-    source: Allrecipes.com}
+- fields: {category: 3, cook_minutes: 15, directions: "Bake potatoes 1 hour at 400\
+      \ F, or microwave on high for 8 to 10 minutes. Meanwhile, cook the bacon in\
+      \ a large skillet until crispy. Drain on paper towels and set aside. Remove\
+      \ potatoes from oven, scoop out the insides and set aside. Reserve the skins\
+      \ for another recipe.\r\n\r\nMelt the butter in a large pot over medium-low\
+      \ heat. Stir in the flour to make a roux. Cook about 1 minute, stirring constantly.\
+      \ Gradually stir in the milk. Bring heat to medium and keep stirring until the\
+      \ soup thickens.\r\n\r\nAdd the potatoes, green onions, salt, pepper, bacon\
+      \ and cheese. Heat for 15 minutes, stirring occasionally. Remove from heat and\
+      \ stir in sour cream.\r\n", inactive_prep_minutes: 60, name: Baked Potato Soup,
+    num_portions: 4, portion: 4, preheat: 400 F, prep_minutes: 20, rating: 5, source: Allrecipes.com}
   model: cookbook.recipe
   pk: 11
-- fields: {category: 1, directions: 'Cook the rice until tender. Meanwhile, cook and
-      stir ground beef and onion in skillet until browned. Drain off the fat. Cut
-      a hole in the top of each pepper, remove seeds, and cook in salted boiling water
-      for 5 minutes; drain. Combine beef mixture, seasoning, and rice in a bowl, then
-      spoon into the peppers. Top with tomato sauce and bake for 20 minutes.', name: Stuffed
-      Green Peppers, num_portions: 6, portion: 4, preheat: 350 F, rating: 4, source: Sandra
+- fields: {category: 1, cook_minutes: null, directions: 'Cook the rice until tender.
+      Meanwhile, cook and stir ground beef and onion in skillet until browned. Drain
+      off the fat. Cut a hole in the top of each pepper, remove seeds, and cook in
+      salted boiling water for 5 minutes; drain. Combine beef mixture, seasoning,
+      and rice in a bowl, then spoon into the peppers. Top with tomato sauce and bake
+      for 20 minutes.', inactive_prep_minutes: null, name: Stuffed Green Peppers,
+    num_portions: 6, portion: 4, preheat: 350 F, prep_minutes: null, rating: 4, source: Sandra
       Heller}
   model: cookbook.recipe
   pk: 12
-- fields: {category: 1, directions: "Cover potatoes in salted water and boil until\
-      \ soft, about 30 minutes. Meanwhile, mix ground beef and onion in a medium bowl;\
-      \ add salt and pepper to taste. Press meat mixture into a pie pan and brown\
-      \ slightly in the oven. Pour off excess fat and set aside.\r\n\r\nDrain potatoes\
-      \ and place in a large mixing bowl. Add butter and milk and beat until the right\
-      \ consistency for mashed potatoes. Season to taste. Stir in cheese, then spread\
-      \ potato mixture on top of meat. Bake about 15 minutes or until the top of the\
-      \ potatoes is slightly browned.", name: Shepherd's Pie, num_portions: 6, portion: 4,
-    preheat: 350 F, rating: 5, source: Andrea Pierce}
+- fields: {category: 1, cook_minutes: 15, directions: "Cover potatoes in salted water\
+      \ and boil until soft, about 30 minutes. Meanwhile, mix ground beef and onion\
+      \ in a medium bowl; add salt and pepper to taste. Press meat mixture into a\
+      \ pie pan and brown slightly in the oven. Pour off excess fat and set aside.\r\
+      \n\r\nDrain potatoes and place in a large mixing bowl. Add butter and milk and\
+      \ beat until the right consistency for mashed potatoes. Season to taste. Stir\
+      \ in cheese, then spread potato mixture on top of meat. Bake about 15 minutes\
+      \ or until the top of the potatoes is slightly browned.", inactive_prep_minutes: null,
+    name: Shepherd's Pie, num_portions: 6, portion: 4, preheat: 350 F, prep_minutes: 30,
+    rating: 5, source: Andrea Pierce}
   model: cookbook.recipe
   pk: 13
-- fields: {category: 1, directions: "In a bowl, combine all dry rub ingredients and\
-      \ mix well. Place each slab of baby back ribs on a piece of heavy-duty aluminum\
-      \ foil, shiny side down. Sprinkle each side generously with the rub, and pat\
-      \ it into the meat. Wrap the foil around the ribs, place on a large baking sheet,\
-      \ and refrigerate for a minimum of 1 hour, preferably overnight.\r\n\r\nAfter\
-      \ ribs have been refrigerated, combine all braising liquid ingredients in a\
-      \ microwave-safe bowl, and microwave on high for 1 minute. Open one end of the\
-      \ foil on each slab and pour in the braising liquid. Tilt to equally distribute\
-      \ the liquid, then braise the ribs in a 250F oven for at least 2 hours.\r\n\r\
-      \nWhen ribs are tender, remove from oven and pour the remaining braising liquid\
-      \ into a sauce pot. Boil on high, stirring constantly, until the liquid reduces\
-      \ and begins to thicken. Brush onto the ribs, and place under a broiler just\
-      \ until the glaze begins to carmelize. Repeat brushing and broiling if desired,\
-      \ for a thicker glaze. Remove ribs from the oven, slice into portions, and top\
-      \ with the remaining glaze.", name: 'Who Loves Ya Baby-Back?', num_portions: 6,
-    portion: 4, preheat: '', rating: 5, source: Alton Brown}
+- fields: {category: 1, cook_minutes: 120, directions: "In a bowl, combine all dry\
+      \ rub ingredients and mix well. Place each slab of baby back ribs on a piece\
+      \ of heavy-duty aluminum foil, shiny side down. Sprinkle each side generously\
+      \ with the rub, and pat it into the meat. Wrap the foil around the ribs, place\
+      \ on a large baking sheet, and refrigerate for a minimum of 1 hour, preferably\
+      \ overnight.\r\n\r\nAfter ribs have been refrigerated, combine all braising\
+      \ liquid ingredients in a microwave-safe bowl, and microwave on high for 1 minute.\
+      \ Open one end of the foil on each slab and pour in the braising liquid. Tilt\
+      \ to equally distribute the liquid, then braise the ribs in a 250F oven for\
+      \ at least 2 hours.\r\n\r\nWhen ribs are tender, remove from oven and pour the\
+      \ remaining braising liquid into a sauce pot. Boil on high, stirring constantly,\
+      \ until the liquid reduces and begins to thicken. Brush onto the ribs, and place\
+      \ under a broiler just until the glaze begins to carmelize. Repeat brushing\
+      \ and broiling if desired, for a thicker glaze. Remove ribs from the oven, slice\
+      \ into portions, and top with the remaining glaze.", inactive_prep_minutes: 480,
+    name: 'Who Loves Ya Baby-Back?', num_portions: 6, portion: 4, preheat: '', prep_minutes: 15,
+    rating: 5, source: Alton Brown}
   model: cookbook.recipe
   pk: 14
-- fields: {category: 1, directions: 'In a large skippet, brown beef, onion, and pepper.
-      Stir in remaining ingredients and simmer for 30 minutes. Season with salt and
-      pepper', name: Homemade Sloppy Joe, num_portions: 4, portion: 4, preheat: '',
-    rating: 4, source: ''}
+- fields: {category: 1, cook_minutes: 30, directions: 'In a large skippet, brown beef,
+      onion, and pepper. Stir in remaining ingredients and simmer for 30 minutes.
+      Season with salt and pepper', inactive_prep_minutes: null, name: Homemade Sloppy
+      Joe, num_portions: 4, portion: 4, preheat: '', prep_minutes: 10, rating: 4,
+    source: ''}
   model: cookbook.recipe
   pk: 15
-- fields: {category: 1, directions: "Combine provolone, mushrooms and pepper in a\
-      \ small bowl. Lightly beat the egg white with a fork in a medium bowl. Mix bread\
-      \ crumbs and salt in a shallow dish.\r\n\r\nCut a horizontal slit along the\
-      \ thin, long edge of each chicken breast, nearly through to the other side.\
-      \ Open up each breast and place 1/4 of the cheese filling in the center. Close\
-      \ the breasts over the filling, pressing the edges firmly together to seal.\r\
-      \n\r\nHolding each chicken breast together, dip in egg white, then dredge in\
-      \ bread crumbs. Heat oil in a large nonstick skillet over medium-high heat.\
-      \ Cook chicken in skillet until browned on one side, about 2 minutes. Lightly\
-      \ coat a baking sheet with cooking spray, then place the chicken browned-side\
+- fields: {category: 1, cook_minutes: null, directions: "Combine provolone, mushrooms\
+      \ and pepper in a small bowl. Lightly beat the egg white with a fork in a medium\
+      \ bowl. Mix bread crumbs and salt in a shallow dish.\r\n\r\nCut a horizontal\
+      \ slit along the thin, long edge of each chicken breast, nearly through to the\
+      \ other side. Open up each breast and place 1/4 of the cheese filling in the\
+      \ center. Close the breasts over the filling, pressing the edges firmly together\
+      \ to seal.\r\n\r\nHolding each chicken breast together, dip in egg white, then\
+      \ dredge in bread crumbs. Heat oil in a large nonstick skillet over medium-high\
+      \ heat. Cook chicken in skillet until browned on one side, about 2 minutes.\
+      \ Lightly coat a baking sheet with cooking spray, then place the chicken browned-side\
       \ up on the sheet. Bake chicken about 20 minutes, or until it reaches an internal\
-      \ temperature of 170F,", name: Provolone & Crimini Stuffed Chicken Breasts,
-    num_portions: 4, portion: 4, preheat: 400 F, rating: 4, source: ''}
+      \ temperature of 170F,", inactive_prep_minutes: null, name: Provolone & Crimini
+      Stuffed Chicken Breasts, num_portions: 4, portion: 4, preheat: 400 F, prep_minutes: null,
+    rating: 4, source: ''}
   model: cookbook.recipe
   pk: 16
-- fields: {category: 1, directions: "Cook the spaghetti in boiling salted water. Meanwhile,\
-      \ in a large covered saucepan cook the mushrooms and bell pepper in a small\
-      \ amount of boiling water about 3 minutes or until the vegetables are tender.\
-      \ Drain and return to the saucepan.\r\n\r\nIn a screw-top jar combine 1/2 cup\
-      \ cold water and flour; cover and shake well. Stir into the vegetable mixture\
-      \ in saucepan. Stir in the evaporated milk, boullion, black pepper and salt.\
-      \ Cook and stir until thickened and bubbly. Stir in the cooked spaghetti, turkey,\
-      \ parmesan cheese and dry sherry.\r\n\r\nLightly coat a 2-quart square baking\
-      \ dish with nonstick spray. Spoon spaghetti mixture into the dish, and sprinkle\
-      \ with almonds. Bake uncovered for 10 minutes or until heated through and the\
-      \ nuts are lightly toasted.", name: Turkey Tetrazzini, num_portions: 4, portion: 4,
-    preheat: 400 F, rating: 4, source: ''}
+- fields: {category: 1, cook_minutes: null, directions: "Cook the spaghetti in boiling\
+      \ salted water. Meanwhile, in a large covered saucepan cook the mushrooms and\
+      \ bell pepper in a small amount of boiling water about 3 minutes or until the\
+      \ vegetables are tender. Drain and return to the saucepan.\r\n\r\nIn a screw-top\
+      \ jar combine 1/2 cup cold water and flour; cover and shake well. Stir into\
+      \ the vegetable mixture in saucepan. Stir in the evaporated milk, boullion,\
+      \ black pepper and salt. Cook and stir until thickened and bubbly. Stir in the\
+      \ cooked spaghetti, turkey, parmesan cheese and dry sherry.\r\n\r\nLightly coat\
+      \ a 2-quart square baking dish with nonstick spray. Spoon spaghetti mixture\
+      \ into the dish, and sprinkle with almonds. Bake uncovered for 10 minutes or\
+      \ until heated through and the nuts are lightly toasted.", inactive_prep_minutes: null,
+    name: Turkey Tetrazzini, num_portions: 4, portion: 4, preheat: 400 F, prep_minutes: null,
+    rating: 4, source: ''}
   model: cookbook.recipe
   pk: 17
-- fields: {category: 1, directions: "In a large saucepan, cook beef, onion, and garlic\
-      \ over medium heat until meat is no longer pink. Drain. Stir in remaining sauce\
-      \ ingredients and bring to a boil. Reduce heat, then cover and simmer for 1\
-      \ hour, stirring occasionally.\r\n\r\nMeanwhile, in a mixing bowl, lightly beat\
-      \ 2 of the eggs. Stir in the rice, butter, Parmesan cheese, parsley, salt and\
-      \ pepper. Cover and refrigerate for 20 minutes. Roll into 1-1/2\" balls. Press\
-      \ a mozzarella cube into each, and reshape the balls.\r\n\r\nIn a small bowl,\
-      \ lightly beat the remaining egg. Dip each ball into egg, then roll in bread\
-      \ crumbs. In a deep-fat fryer or electric skillet, heat oil to 375 F. Fry rice\
-      \ balls until golden brown, about 4 minutes. Drain on paper towels. Discard\
-      \ bay leaf from meat sauce, and serve.", name: Rice Balls with Meat Sauce, num_portions: 6,
-    portion: 4, preheat: '', rating: 5, source: Taste of Home}
+- fields: {category: 1, cook_minutes: 60, directions: "In a large saucepan, cook beef,\
+      \ onion, and garlic over medium heat until meat is no longer pink. Drain. Stir\
+      \ in remaining sauce ingredients and bring to a boil. Reduce heat, then cover\
+      \ and simmer for 1 hour, stirring occasionally.\r\n\r\nMeanwhile, in a mixing\
+      \ bowl, lightly beat 2 of the eggs. Stir in the rice, butter, Parmesan cheese,\
+      \ parsley, salt and pepper. Cover and refrigerate for 20 minutes. Roll into\
+      \ 1-1/2\" balls. Press a mozzarella cube into each, and reshape the balls.\r\
+      \n\r\nIn a small bowl, lightly beat the remaining egg. Dip each ball into egg,\
+      \ then roll in bread crumbs. In a deep-fat fryer or electric skillet, heat oil\
+      \ to 375 F. Fry rice balls until golden brown, about 4 minutes. Drain on paper\
+      \ towels. Discard bay leaf from meat sauce, and serve.", inactive_prep_minutes: null,
+    name: Rice Balls with Meat Sauce, num_portions: 6, portion: 4, preheat: '', prep_minutes: 30,
+    rating: 5, source: Taste of Home}
   model: cookbook.recipe
   pk: 18
+- fields: {category: 6, cook_minutes: 15, directions: "Combine chocolate chips, sugar,\
+      \ and 1 cup of milk in a medium saucepan over medium-high heat. Whisk constantly\
+      \ until the chocolate chips are fully dissolved and mixture begins to boil.\
+      \ Continue boiling for 1 minute, then add remaining milk and heat through (but\
+      \ do not boil).\r\n\r\nPour into mugs. Top with whipped cream and nutmeg if\
+      \ desired.", inactive_prep_minutes: null, name: Hot Chocolate, num_portions: 2,
+    portion: 4, preheat: '', prep_minutes: null, rating: 5, source: Eric Pierce}
+  model: cookbook.recipe
+  pk: 19
+- fields: {category: 2, cook_minutes: 60, directions: 'Beat eggs for 3 minutes. Add
+      flour, sugar, and brown sugar and beat well. Add softened butter. Stir in chocolate
+      chips and nuts. Pour into pie shell. Bake for one hour. Chill thoroughly before
+      serving.', inactive_prep_minutes: null, name: Toll House Pie, num_portions: 8,
+    portion: 5, preheat: 325 F, prep_minutes: 20, rating: 5, source: 'Fryemont Inn,
+      Bryson City, NC'}
+  model: cookbook.recipe
+  pk: 20
+- fields: {category: 2, cook_minutes: null, directions: "Put cereal in a large bowl.\
+      \ Melt chocolate chips, peanut butter, and butter. Remove from heat and stir\
+      \ in vanilla.\r\n\r\nPour chocolate mixture over cereal and stir to coat. Add\
+      \ powdered sugar, put the lid on the bowl and shake well to coat.\r\n\r\nSpread\
+      \ evenly on wax paper to cool.", inactive_prep_minutes: null, name: Chex Mix
+      Puppy Chow, num_portions: 9, portion: 4, preheat: '', prep_minutes: 30, rating: 4,
+    source: ''}
+  model: cookbook.recipe
+  pk: 21
+- fields: {category: 1, cook_minutes: 20, directions: "Wash potatoes and pat dry.\
+      \ Toss in a bowl with oil and kosher salt, then bake directly on the middle\
+      \ oven rack for 1 hour. Towards the end of baking, chop bacon and fry in a large\
+      \ skillet until crispy. Drain on paper towels.\r\n\r\nRemove potatoes from oven\
+      \ and cool briefly. Slice each potato lengthwise and scoop out the insides with\
+      \ a spoon, leaving about 1/4\" of peel. Reserve innards for another recipe.\
+      \ Place halves on a cookie sheet and sprinkle with cheese and bacon or ham.\
+      \ Bake at 350 F for another 15 minutes or until cheese begins to brown. Serve\
+      \ with sour cream and chives.", inactive_prep_minutes: null, name: Potato Skins,
+    num_portions: 4, portion: 4, preheat: 350 F, prep_minutes: 60, rating: 5, source: Eric
+      Pierce}
+  model: cookbook.recipe
+  pk: 22
+- fields: {category: null, food: 132, optional: false, preparation: null, quantity: 9.0,
+    recipe: 21, unit: 1}
+  model: cookbook.ingredient
+  pk: 200
 - fields: {category: null, food: 125, optional: false, preparation: 3, quantity: 1.0,
     recipe: 17, unit: 3}
   model: cookbook.ingredient
@@ -287,6 +351,10 @@
     recipe: 11, unit: 17}
   model: cookbook.ingredient
   pk: 108
+- fields: {category: null, food: 21, optional: false, preparation: 1, quantity: 8.0,
+    recipe: 22, unit: 17}
+  model: cookbook.ingredient
+  pk: 209
 - fields: {category: null, food: 105, optional: false, preparation: null, quantity: 6.0,
     recipe: 12, unit: null}
   model: cookbook.ingredient
@@ -323,6 +391,10 @@
     recipe: 15, unit: 2}
   model: cookbook.ingredient
   pk: 142
+- fields: {category: null, food: 56, optional: false, preparation: null, quantity: 0.5,
+    recipe: 20, unit: 1}
+  model: cookbook.ingredient
+  pk: 195
 - fields: {category: null, food: 9, optional: false, preparation: 6, quantity: 1.0,
     recipe: 5, unit: 3}
   model: cookbook.ingredient
@@ -331,6 +403,14 @@
     recipe: 13, unit: 3}
   model: cookbook.ingredient
   pk: 122
+- fields: {category: null, food: 9, optional: false, preparation: 12, quantity: 0.25,
+    recipe: 20, unit: 1}
+  model: cookbook.ingredient
+  pk: 196
+- fields: {category: null, food: 9, optional: false, preparation: null, quantity: 0.25,
+    recipe: 21, unit: 1}
+  model: cookbook.ingredient
+  pk: 203
 - fields: {category: null, food: 38, optional: false, preparation: 8, quantity: 5.0,
     recipe: 11, unit: 4}
   model: cookbook.ingredient
@@ -339,6 +419,10 @@
     recipe: 13, unit: 1}
   model: cookbook.ingredient
   pk: 121
+- fields: {category: null, food: 38, optional: false, preparation: null, quantity: 8.0,
+    recipe: 22, unit: 4}
+  model: cookbook.ingredient
+  pk: 210
 - fields: {category: null, food: 69, optional: false, preparation: null, quantity: 1.0,
     recipe: 17, unit: 2}
   model: cookbook.ingredient
@@ -347,6 +431,22 @@
     recipe: 16, unit: null}
   model: cookbook.ingredient
   pk: 146
+- fields: {category: null, food: 134, optional: false, preparation: null, quantity: 1.0,
+    recipe: 22, unit: 2}
+  model: cookbook.ingredient
+  pk: 212
+- fields: {category: null, food: 19, optional: false, preparation: null, quantity: 0.5,
+    recipe: 19, unit: 1}
+  model: cookbook.ingredient
+  pk: 187
+- fields: {category: null, food: 19, optional: false, preparation: null, quantity: 1.0,
+    recipe: 20, unit: 1}
+  model: cookbook.ingredient
+  pk: 198
+- fields: {category: null, food: 19, optional: false, preparation: null, quantity: 1.0,
+    recipe: 21, unit: 1}
+  model: cookbook.ingredient
+  pk: 201
 - fields: {category: null, food: 123, optional: false, preparation: 1, quantity: 1.0,
     recipe: 17, unit: 1}
   model: cookbook.ingredient
@@ -363,6 +463,10 @@
     recipe: 7, unit: null}
   model: cookbook.ingredient
   pk: 62
+- fields: {category: null, food: 2, optional: false, preparation: null, quantity: 2.0,
+    recipe: 20, unit: null}
+  model: cookbook.ingredient
+  pk: 192
 - fields: {category: null, food: 119, optional: false, preparation: 4, quantity: 1.0,
     recipe: 16, unit: null}
   model: cookbook.ingredient
@@ -383,6 +487,10 @@
     recipe: 17, unit: 1}
   model: cookbook.ingredient
   pk: 155
+- fields: {category: null, food: 1, optional: false, preparation: null, quantity: 0.5,
+    recipe: 20, unit: 1}
+  model: cookbook.ingredient
+  pk: 194
 - fields: {category: null, food: 116, optional: false, preparation: null, quantity: 0.5,
     recipe: 15, unit: 2}
   model: cookbook.ingredient
@@ -419,6 +527,10 @@
     recipe: 16, unit: 2}
   model: cookbook.ingredient
   pk: 149
+- fields: {category: null, food: 109, optional: false, preparation: null, quantity: 0.5,
+    recipe: 22, unit: 2}
+  model: cookbook.ingredient
+  pk: 208
 - fields: {category: null, food: 95, optional: false, preparation: null, quantity: 0.25,
     recipe: 7, unit: 1}
   model: cookbook.ingredient
@@ -435,10 +547,18 @@
     recipe: 13, unit: 1}
   model: cookbook.ingredient
   pk: 123
+- fields: {category: null, food: 3, optional: false, preparation: null, quantity: 2.0,
+    recipe: 19, unit: 1}
+  model: cookbook.ingredient
+  pk: 188
 - fields: {category: null, food: 121, optional: false, preparation: 3, quantity: 1.5,
     recipe: 17, unit: 1}
   model: cookbook.ingredient
   pk: 152
+- fields: {category: null, food: 92, optional: false, preparation: 13, quantity: 1.0,
+    recipe: 19, unit: 16}
+  model: cookbook.ingredient
+  pk: 191
 - fields: {category: null, food: 29, optional: false, preparation: null, quantity: 2.0,
     recipe: 16, unit: 2}
   model: cookbook.ingredient
@@ -459,6 +579,14 @@
     recipe: 17, unit: 1}
   model: cookbook.ingredient
   pk: 161
+- fields: {category: null, food: 133, optional: false, preparation: null, quantity: 0.5,
+    recipe: 21, unit: 1}
+  model: cookbook.ingredient
+  pk: 202
+- fields: {category: null, food: 130, optional: false, preparation: null, quantity: 1.0,
+    recipe: 20, unit: 1}
+  model: cookbook.ingredient
+  pk: 197
 - fields: {category: null, food: 108, optional: false, preparation: null, quantity: 2.0,
     recipe: 14, unit: 18}
   model: cookbook.ingredient
@@ -475,6 +603,14 @@
     recipe: 13, unit: null}
   model: cookbook.ingredient
   pk: 120
+- fields: {category: null, food: 20, optional: false, preparation: null, quantity: 4.0,
+    recipe: 22, unit: null}
+  model: cookbook.ingredient
+  pk: 206
+- fields: {category: null, food: 89, optional: false, preparation: null, quantity: 1.5,
+    recipe: 21, unit: 1}
+  model: cookbook.ingredient
+  pk: 205
 - fields: {category: null, food: 107, optional: false, preparation: null, quantity: 1.0,
     recipe: 12, unit: 1}
   model: cookbook.ingredient
@@ -511,18 +647,42 @@
     recipe: 11, unit: 4}
   model: cookbook.ingredient
   pk: 110
+- fields: {category: null, food: 50, optional: false, preparation: null, quantity: 0.25,
+    recipe: 22, unit: 1}
+  model: cookbook.ingredient
+  pk: 211
 - fields: {category: null, food: 59, optional: false, preparation: null, quantity: 6.0,
     recipe: 17, unit: 4}
   model: cookbook.ingredient
   pk: 151
+- fields: {category: null, food: 13, optional: false, preparation: null, quantity: 0.25,
+    recipe: 19, unit: 1}
+  model: cookbook.ingredient
+  pk: 189
+- fields: {category: null, food: 13, optional: false, preparation: null, quantity: 0.5,
+    recipe: 20, unit: 1}
+  model: cookbook.ingredient
+  pk: 193
 - fields: {category: null, food: 62, optional: false, preparation: null, quantity: 15.0,
     recipe: 12, unit: 4}
   model: cookbook.ingredient
   pk: 117
+- fields: {category: null, food: 131, optional: false, preparation: null, quantity: 1.0,
+    recipe: 20, unit: null}
+  model: cookbook.ingredient
+  pk: 199
+- fields: {category: null, food: 83, optional: false, preparation: null, quantity: 0.25,
+    recipe: 21, unit: 2}
+  model: cookbook.ingredient
+  pk: 204
 - fields: {category: null, food: 28, optional: false, preparation: null, quantity: 1.0,
     recipe: 8, unit: 3}
   model: cookbook.ingredient
   pk: 69
+- fields: {category: null, food: 28, optional: false, preparation: null, quantity: 1.0,
+    recipe: 22, unit: 2}
+  model: cookbook.ingredient
+  pk: 207
 - fields: {category: null, food: 52, optional: false, preparation: null, quantity: 1.0,
     recipe: 7, unit: 2}
   model: cookbook.ingredient
@@ -531,6 +691,10 @@
     recipe: 17, unit: 1}
   model: cookbook.ingredient
   pk: 154
+- fields: {category: null, food: 129, optional: true, preparation: null, quantity: 0.25,
+    recipe: 19, unit: 1}
+  model: cookbook.ingredient
+  pk: 190
 - fields: {category: null, food: 73, optional: false, preparation: null, quantity: 1.0,
     recipe: 7, unit: 2}
   model: cookbook.ingredient

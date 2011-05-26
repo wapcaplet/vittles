@@ -79,6 +79,9 @@
 - fields: {name: vegetables, parent: 14}
   model: core.category
   pk: 1
+- fields: {category: 4, name: Chex cereal}
+  model: core.food
+  pk: 132
 - fields: {category: 15, name: Dr. Pepper}
   model: core.food
   pk: 45
@@ -172,6 +175,9 @@
 - fields: {category: 8, name: chili powder}
   model: core.food
   pk: 110
+- fields: {category: 8, name: chive}
+  model: core.food
+  pk: 134
 - fields: {category: 9, name: chocolate chips}
   model: core.food
   pk: 19
@@ -346,12 +352,18 @@
 - fields: {category: 21, name: pasta sauce}
   model: core.food
   pk: 64
+- fields: {category: 26, name: peanut butter}
+  model: core.food
+  pk: 133
 - fields: {category: 2, name: peanut oil}
   model: core.food
   pk: 128
 - fields: {category: 1, name: peas}
   model: core.food
   pk: 7
+- fields: {category: 26, name: pecan}
+  model: core.food
+  pk: 130
 - fields: {category: 3, name: pineapple}
   model: core.food
   pk: 4
@@ -421,6 +433,9 @@
 - fields: {category: 20, name: turkey breast}
   model: core.food
   pk: 44
+- fields: {category: 4, name: unbaked pie shell}
+  model: core.food
+  pk: 131
 - fields: {category: null, name: unsweetened cocoa powder}
   model: core.food
   pk: 93
@@ -442,6 +457,9 @@
 - fields: {category: 10, name: water}
   model: core.food
   pk: 15
+- fields: {category: 7, name: whipped cream}
+  model: core.food
+  pk: 129
 - fields: {category: 24, name: white wine}
   model: core.food
   pk: 75

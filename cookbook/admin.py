@@ -40,9 +40,10 @@ class RecipeAdmin (admin.ModelAdmin):
             'fields': (
                 ('name', 'category'),
                 'preheat',
+                ('prep_minutes', 'inactive_prep_minutes', 'cook_minutes'),
                 'directions',
                 ('num_portions', 'portion'),
-                ('rating', 'source')
+                ('rating', 'source'),
             )
         }),
     )

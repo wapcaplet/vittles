@@ -57,6 +57,9 @@ class Recipe (ModelWrapper):
     source       = models.CharField(max_length=100, blank=True, null=True)
     rating       = models.IntegerField(blank=True, null=True)
     category     = models.ForeignKey(RecipeCategory, blank=True, null=True)
+    prep_minutes = models.IntegerField(blank=True, null=True)
+    inactive_prep_minutes = models.IntegerField(blank=True, null=True)
+    cook_minutes = models.IntegerField(blank=True, null=True)
 
     def __unicode__(self):
         string = "%s" % self.name
