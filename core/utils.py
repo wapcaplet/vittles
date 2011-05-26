@@ -97,20 +97,36 @@ def pluralize(noun):
     """Pluralize the given noun, using a simple heuristic. Will pluralize
     some nouns incorrectly because English is beastly complicated.
 
-    Examples:
+    Consonant + 'o' gets '-es':
+
+        >>> pluralize('potato')
+        'potatoes'
+
+    Sibilants get '-es':
+
+        >>> pluralize('batch')
+        'batches'
+        >>> pluralize('box')
+        'boxes'
+
+    Consonant + 'y' becomes '-ies':
+
+        >>> pluralize('cherry')
+        'cherries'
+
+    Endings of 'f' or 'fe' become '-ves':
+
+        >>> pluralize('loaf')
+        'loaves'
+        >>> pluralize('bay leaf')
+        'bay leaves'
+        >>> pluralize('knife')
+        'knives'
+
+    Simple 's' ending:
 
         >>> pluralize('ounce')
         'ounces'
-        >>> pluralize('batch')
-        'batches'
-        >>> pluralize('cherry')
-        'cherries'
-        >>> pluralize('loaf')
-        'loaves'
-        >>> pluralize('knife')
-        'knives'
-        >>> pluralize('potato')
-        'potatoes'
         >>> pluralize('egg')
         'eggs'
 
@@ -121,16 +137,17 @@ def pluralize(noun):
     consonant = '[bcdfghjklmnpqrstvwxz]'
 
     # Nouns ending in 'o' preceded by a consonant are pluralized with '-es'
+    # (vowel + 'o' will fall back on '-s')
     if re.search(consonant + 'o$', noun):
         return noun + 'es'
 
     # Nouns ending in 'y' preceded by a consonant drop the 'y' and add '-ies'
+    # (vowel + 'y' will fall back on '-s')
     elif re.search(consonant + 'y$', noun):
         return noun[:-1] + 'ies'
 
-    # Nouns ending in a sibilant sound are pluralized with an 'iz' sound, which
-    # usually means '-es' unless the noun already ends in 'e'
-    elif re.search('(ss|sh|ch)$', noun):
+    # Nouns ending with x, z, s, sh, ch usually get pluralized with '-es'
+    elif re.search('(x|z|s|sh|ch)$', noun):
         return noun + 'es'
 
     # Nouns ending in 'f' drop the 'f' and add '-ves'
