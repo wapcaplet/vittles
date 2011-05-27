@@ -67,6 +67,9 @@
 - fields: {name: soups, parent: null}
   model: core.category
   pk: 22
+- fields: {name: spices, parent: 8}
+  model: core.category
+  pk: 29
 - fields: {name: sweets, parent: null}
   model: core.category
   pk: 9
@@ -112,10 +115,10 @@
 - fields: {category: 3, name: banana}
   model: core.food
   pk: 80
-- fields: {category: 8, name: basil}
+- fields: {category: 29, name: basil}
   model: core.food
   pk: 102
-- fields: {category: 8, name: bay leaf}
+- fields: {category: 29, name: bay leaf}
   model: core.food
   pk: 98
 - fields: {category: 22, name: beef boullion}
@@ -124,7 +127,7 @@
 - fields: {category: 1, name: bell pepper}
   model: core.food
   pk: 105
-- fields: {category: 8, name: black pepper}
+- fields: {category: 29, name: black pepper}
   model: core.food
   pk: 96
 - fields: {category: 3, name: blueberries}
@@ -136,6 +139,9 @@
 - fields: {category: 4, name: bread flour}
   model: core.food
   pk: 36
+- fields: {category: 1, name: broccoli}
+  model: core.food
+  pk: 135
 - fields: {category: 23, name: brown mustard}
   model: core.food
   pk: 72
@@ -154,6 +160,9 @@
 - fields: {category: 1, name: carrot}
   model: core.food
   pk: 17
+- fields: {category: 29, name: cayenne pepper}
+  model: core.food
+  pk: 139
 - fields: {category: 1, name: celery}
   model: core.food
   pk: 18
@@ -172,10 +181,10 @@
 - fields: {category: 17, name: chicken nugget}
   model: core.food
   pk: 25
-- fields: {category: 8, name: chili powder}
+- fields: {category: 29, name: chili powder}
   model: core.food
   pk: 110
-- fields: {category: 8, name: chive}
+- fields: {category: 29, name: chive}
   model: core.food
   pk: 134
 - fields: {category: 9, name: chocolate chips}
@@ -184,7 +193,7 @@
 - fields: {category: 9, name: chocolate syrup}
   model: core.food
   pk: 30
-- fields: {category: 8, name: cinnamon}
+- fields: {category: 29, name: cinnamon}
   model: core.food
   pk: 81
 - fields: {category: 10, name: coffee}
@@ -220,6 +229,9 @@
 - fields: {category: 1, name: crimini mushrooms}
   model: core.food
   pk: 118
+- fields: {category: 29, name: cumin}
+  model: core.food
+  pk: 140
 - fields: {category: 9, name: dark corn syrup}
   model: core.food
   pk: 55
@@ -250,13 +262,13 @@
 - fields: {category: 1, name: garlic}
   model: core.food
   pk: 115
-- fields: {category: 8, name: garlic powder}
+- fields: {category: 29, name: garlic powder}
   model: core.food
   pk: 116
-- fields: {category: 8, name: garlic salt}
+- fields: {category: 29, name: garlic salt}
   model: core.food
   pk: 106
-- fields: {category: 8, name: ginger}
+- fields: {category: 29, name: ginger}
   model: core.food
   pk: 91
 - fields: {category: 1, name: green beans}
@@ -277,6 +289,9 @@
 - fields: {category: 26, name: hazelnuts}
   model: core.food
   pk: 94
+- fields: {category: 7, name: heavy cream}
+  model: core.food
+  pk: 137
 - fields: {category: 9, name: honey}
   model: core.food
   pk: 114
@@ -310,10 +325,10 @@
 - fields: {category: 1, name: mushroom}
   model: core.food
   pk: 121
-- fields: {category: 8, name: mustard}
+- fields: {category: 29, name: mustard}
   model: core.food
   pk: 97
-- fields: {category: 8, name: nutmeg}
+- fields: {category: 29, name: nutmeg}
   model: core.food
   pk: 92
 - fields: {category: 26, name: nuts}
@@ -331,22 +346,22 @@
 - fields: {category: 13, name: orange juice}
   model: core.food
   pk: 47
-- fields: {category: 8, name: oregano}
+- fields: {category: 29, name: oregano}
   model: core.food
   pk: 127
-- fields: {category: 8, name: other spices}
+- fields: {category: 29, name: other spices}
   model: core.food
   pk: 111
 - fields: {category: 4, name: panko bread crumbs}
   model: core.food
   pk: 101
-- fields: {category: 8, name: paprika}
+- fields: {category: 29, name: paprika}
   model: core.food
   pk: 99
 - fields: {category: 16, name: parmesan}
   model: core.food
   pk: 41
-- fields: {category: 8, name: parsley}
+- fields: {category: 29, name: parsley}
   model: core.food
   pk: 103
 - fields: {category: 21, name: pasta sauce}
@@ -424,6 +439,12 @@
 - fields: {category: 9, name: sugar}
   model: core.food
   pk: 13
+- fields: {category: 16, name: swiss}
+  model: core.food
+  pk: 138
+- fields: {category: 29, name: thyme}
+  model: core.food
+  pk: 136
 - fields: {category: 1, name: tomato paste}
   model: core.food
   pk: 63
