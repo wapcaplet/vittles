@@ -31,6 +31,7 @@ class FoodAdmin (admin.ModelAdmin):
     ordering = ('name',)
     list_display = ('name', 'category')
     list_filter = ('category',)
+    list_editable = ('category',)
     search_fields = ('name',)
 
 class UnitAdmin (admin.ModelAdmin):

@@ -1,7 +1,6 @@
-import re
 from django.db import models
 from vittles.core.models import ModelWrapper, Food, Preparation, Unit
-from vittles.core.utils import format_food_unit, fraction_to_float
+from vittles.core.utils import format_food_unit
 
 
 class Portion (ModelWrapper):
@@ -111,9 +110,6 @@ class Ingredient (ModelWrapper):
     preparation = models.ForeignKey(Preparation, blank=True, null=True)
     food        = models.ForeignKey(Food)
     optional    = models.BooleanField(default=False)
-
-    class Meta:
-        ordering = ['category', 'food']
 
     def __unicode__(self):
         string = format_food_unit(self.quantity, self.unit, self.food)

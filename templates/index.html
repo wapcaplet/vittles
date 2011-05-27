@@ -1,38 +1,12 @@
 {% extends "base.html" %}
-{% load cookbook_extras %}
 {% block title %}Vittles{% endblock %}
+
+{% block header %}Vittles{% endblock %}
 
 {% block content %}
 
-<div class="header">
-  <h1>Vittles</h1>
-</div>
-
-<div class="nav">
-  <p><a href="/admin">Admin site</a></p>
-  <form>
-    <label for="search">Search</label> <input type="text" id="search" size="30" />
-  </form>
-  <script type="text/javascript">
-    $(function () {
-      $('input#search').quicksearch('ul li');
-    });
-  </script>
-</div>
-
-<div class="recipes">
-  {% for category, recipes in recipe_categories %}
-    {% if category %} <h2>{{ category }}</h2> {% endif %}
-    <ul>
-      {% for recipe in recipes %}
-      <li>
-        <a href="/cookbook/{{ recipe.id }}/">
-          {% include "recipe_summary.html" %}
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
-  {% endfor %}
-</div>
+  <ul>
+    <li><a href="/cookbook">Cookbook</a></li>
+  </ul>
 
 {% endblock %}

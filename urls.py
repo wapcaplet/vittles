@@ -1,20 +1,17 @@
-from django.conf.urls.defaults import *
+from django.conf.urls.defaults import include, patterns
 
-# Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
-    # Example:
-    # (r'^vittles/', include('vittles.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
+urlpatterns = patterns(
+    '',
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
-
-    (r'^cookbook/$', 'vittles.cookbook.views.index'),
-    (r'^cookbook/(?P<recipe_id>\w+)/$', 'vittles.cookbook.views.show_recipe'),
+    (r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'index.html'}),
 )
 
+urlpatterns += patterns(
+    'vittles.cookbook.views',
+    (r'^cookbook/$', 'cookbook'),
+    (r'^cookbook/(?P<recipe_id>\w+)/$', 'show_recipe'),
+)

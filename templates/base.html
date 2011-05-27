@@ -2,11 +2,15 @@
 <html lang="en">
   <head>
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/cookbook.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/vittles.css" />
     <script type="text/javascript" src="/static/js/jquery-1.6.1.js"></script>
     <script type="text/javascript" src="/static/js/jquery.quicksearch.js"></script>
   </head>
   <body>
+    <div class="header">
+      <h1>{% block header %}{% endblock %}</h1>
+      <a href="/admin">Go to admin site</a>
+    </div>
     {% block content %}{% endblock %}
   </body>
 </html>

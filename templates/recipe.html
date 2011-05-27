@@ -1,10 +1,15 @@
 {% extends "base.html" %}
 {% block title %}{{ recipe.name }}{% endblock %}
 
+{% block header %}
+  {% include "recipe_summary.html" %}
+{% endblock %}
+
 {% block content %}
 
-<div class="header">
-  <h1>{% include "recipe_summary.html" %}</h1>
+<div class="breadcrumbs">
+  &larr; <a href="/">Vittles</a>
+  &larr; <a href="/cookbook">Cookbook</a>
 </div>
 
 <div class="left-column">

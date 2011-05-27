@@ -1,7 +1,7 @@
 from django.shortcuts import render_to_response
 from vittles.cookbook.models import Recipe
 
-def index(request):
+def cookbook(request):
     """Cookbook homepage.
     """
     recipes = Recipe.objects.all()
@@ -15,7 +15,7 @@ def index(request):
     variables = {
         'recipe_categories': recipe_categories,
     }
-    return render_to_response('index.html', variables)
+    return render_to_response('cookbook.html', variables)
 
 
 def show_recipe(request, recipe_id):
