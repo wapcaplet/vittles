@@ -29,14 +29,15 @@ class CategoryAdmin (admin.ModelAdmin):
 
 class FoodAdmin (admin.ModelAdmin):
     ordering = ('name',)
-    list_display = ('name', 'category')
+    list_display = ('name', 'category', 'density')
     list_filter = ('category',)
-    list_editable = ('category',)
+    list_editable = ('category', 'density')
     search_fields = ('name',)
 
 class UnitAdmin (admin.ModelAdmin):
     ordering = ('name',)
-    list_display = ('name', 'abbreviation')
+    list_display = ('name', 'abbreviation', 'kind')
+    list_editable = ('abbreviation', 'kind')
     inlines = [EquivalenceInline]
 
 class EquivalenceAdmin (admin.ModelAdmin):

@@ -38,6 +38,7 @@ class Food (ModelWrapper):
     """Something edible.
     """
     name = models.CharField(max_length=50, unique=True)
+    density = models.FloatField(default=1.0, help_text="grams per mililiter")
     category = models.ForeignKey(Category, null=True, blank=True)
 
     def __unicode__(self):
@@ -50,8 +51,14 @@ class Food (ModelWrapper):
 class Unit (ModelWrapper):
     """A form of measurement.
     """
+    _kind_choices = (
+        ('weight', 'Weight'),
+        ('volume', 'Volume'),
+        ('individual', 'Individual'),
+    )
     name = models.CharField(max_length=50, unique=True)
     abbreviation = models.CharField(max_length=10, blank=True)
+    kind = models.CharField(max_length=10, choices=_kind_choices)
 
     def __unicode__(self):
         return self.name
