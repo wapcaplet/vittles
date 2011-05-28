@@ -147,6 +147,7 @@ INSTALLED_APPS = (
     'vittles.core',
     'vittles.cookbook',
     'vittles.inventory',
+    'vittles.nutrition',
 
     # Add-ons
     'lettuce.django',

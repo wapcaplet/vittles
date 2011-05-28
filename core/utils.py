@@ -164,18 +164,44 @@ def pluralize(noun):
 
 
 def format_food_unit(quantity, unit, food):
-    """Return a string describing the given quantity of food.
+    """Return a string describing the given quantity of food. `quantity` may be
+    an actual number (int or float), or a string containing a decimal or
+    fraction as understood by `fraction_to_float`.
 
-    Examples:
+    If a unit is given, the unit is pluralized when appropriate:
 
         >>> format_food_unit(2, 'cup', 'flour')
         "2 cups flour"
-        >>> format_food_unit(0.5, 'cup', 'oil')
-        "1/2 cup oil"
+        >>> format_food_unit(1.5, 'teaspoon', 'salt')
+        "1-1/2 teaspoons salt"
+        >>> format_food_unit('1-3/4', 'ounce', 'butter')
+        "1-3/4 ounces butter"
+
+    If no unit is given, the food is pluralized:
+
         >>> format_food_unit(3, None, 'egg')
         "3 eggs"
+        >>> format_food_unit(2, None, 'potato')
+        "2 potatoes"
+        >>> format_food_unit('4-1/2', None, 'bell pepper')
+        "4-1/2 bell peppers"
+
+    In all cases, if the quantity is <= 1, no pluralization is done:
+
+        >>> format_food_unit(1, None, 'egg')
+        "1 egg"
+        >>> format_food_unit(0.75, 'cup', 'flour')
+        "3/4 cup flour"
+        >>> format_food_unit(0.5, 'cup', 'oil')
+        "1/2 cup oil"
+        >>> format_food_unit('1/4', 'teaspoon', 'baking powder')
+        "1/4 teaspoon baking powder"
 
     """
+    # Convert quantity from string if necessary
+    if type(quantity) in [str, unicode]:
+        quantity = fraction_to_float(quantity)
+
     # Pluralize the unit or the food
     if quantity > 1.0:
         if unit:
@@ -183,9 +209,10 @@ def format_food_unit(quantity, unit, food):
         else:
             food = pluralize(food)
 
+    # Convert quantity back to a string
     string = float_to_fraction(quantity)
 
-    # Optional unit
+    # Add optional unit
     if unit:
         string += " %s %s" % (unit, food)
     else:

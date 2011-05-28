@@ -1,5 +1,7 @@
 from django.db import models
 from vittles.core.models import ModelWrapper, Food, Preparation, Unit
+from vittles.core.helpers import NoEquivalence
+from vittles.nutrition.models import NutritionInfo
 from vittles.core.utils import format_food_unit
 
 
@@ -100,6 +102,13 @@ class Recipe (ModelWrapper):
         return groups
 
 
+    def nutrition_info(self):
+        """Return total NutritionInfo for this recipe.
+        """
+        nutritions = [ingred.nutrition_info() for ingred in self.ingredients.all()]
+        return sum(nutritions[1:], nutritions[0])
+
+
 class Ingredient (ModelWrapper):
     """A quantity of food used in a recipe.
     """
@@ -118,5 +127,17 @@ class Ingredient (ModelWrapper):
         if self.optional:
             string += " (optional)"
         return string
+
+
+    def nutrition_info(self):
+        """Return the total nutritional information for the given ingredient.
+        """
+        food_nutrition = NutritionInfo.get(food=self.food)
+        # See if this nutrition info can be converted to current amount
+        try:
+            return food_nutrition.for_amount(self.quantity, self.unit)
+        # FIXME: Find a better way to handle this situation
+        except NoEquivalence:
+            return food_nutrition * 0.0
 
 
