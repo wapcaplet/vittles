@@ -37,9 +37,9 @@ class Category (ModelWrapper):
 class Food (ModelWrapper):
     """Something edible.
     """
-    name = models.CharField(max_length=50, unique=True)
-    density = models.FloatField(default=1.0, help_text="grams per mililiter")
-    category = models.ForeignKey(Category, null=True, blank=True)
+    name         = models.CharField(max_length=50, unique=True)
+    category     = models.ForeignKey(Category, null=True, blank=True)
+    grams_per_ml = models.FloatField(default=1.0)
 
     def __unicode__(self):
         return self.name

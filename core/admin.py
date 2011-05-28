@@ -29,9 +29,9 @@ class CategoryAdmin (admin.ModelAdmin):
 
 class FoodAdmin (admin.ModelAdmin):
     ordering = ('name',)
-    list_display = ('name', 'category', 'density')
+    list_display = ('name', 'category', 'grams_per_ml')
     list_filter = ('category',)
-    list_editable = ('category', 'density')
+    list_editable = ('category', 'grams_per_ml')
     search_fields = ('name',)
 
 class UnitAdmin (admin.ModelAdmin):
