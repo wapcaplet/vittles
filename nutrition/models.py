@@ -21,7 +21,17 @@ class NutritionInfo (ModelWrapper):
         verbose_name_plural = "Nutrition information"
 
 
+    @classmethod
+    def undefined(cls):
+        """Return a special "undefined" NutritionInfo instance.
+        """
+        return NutritionInfo(serving_size=0)
+
+
     def __unicode__(self):
+        if self.serving_size == 0:
+            return "Unknown nutrition"
+
         if self.food:
             string = "%s" % self.food
         else:

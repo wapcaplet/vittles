@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ObjectDoesNotExist
 from vittles.core.models import ModelWrapper, Food, Preparation, Unit
 from vittles.core.helpers import NoEquivalence
 from vittles.nutrition.models import NutritionInfo
@@ -132,7 +133,10 @@ class Ingredient (ModelWrapper):
     def nutrition_info(self):
         """Return the total nutritional information for the given ingredient.
         """
-        food_nutrition = NutritionInfo.get(food=self.food)
+        try:
+            food_nutrition = NutritionInfo.objects.get(food=self.food)
+        except ObjectDoesNotExist:
+            return NutritionInfo.undefined()
         # See if this nutrition info can be converted to current amount
         try:
             return food_nutrition.for_amount(self.quantity, self.unit)
