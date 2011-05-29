@@ -137,11 +137,11 @@ class Ingredient (ModelWrapper):
             food_nutrition = NutritionInfo.objects.get(food=self.food)
         except ObjectDoesNotExist:
             return NutritionInfo.undefined()
+
         # See if this nutrition info can be converted to current amount
         try:
             return food_nutrition.for_amount(self.quantity, self.unit)
-        # FIXME: Find a better way to handle this situation
         except NoEquivalence:
-            return food_nutrition * 0.0
+            return NutritionInfo.undefined()
 
 

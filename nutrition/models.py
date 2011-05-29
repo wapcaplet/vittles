@@ -1,12 +1,12 @@
 from django.db import models
 from vittles.core.models import ModelWrapper, Food, Unit
-from vittles.core.helpers import convert_amount
+from vittles.core.helpers import to_grams
 
 class NutritionInfo (ModelWrapper):
     """Nutritional information for a food.
     """
     food              = models.OneToOneField(Food, null=True, blank=True, related_name='nutrition_info')
-    serving_size      = models.FloatField(default=1)
+    serving_size      = models.FloatField(default=0)
     serving_unit      = models.ForeignKey(Unit, null=True, blank=True)
     calories          = models.FloatField(default=0)
     fat_calories      = models.FloatField(default=0)
@@ -50,7 +50,17 @@ class NutritionInfo (ModelWrapper):
     def for_amount(self, to_quantity, to_unit):
         """Return the nutritional information for the given quantity and unit.
         """
-        factor = to_quantity / convert_amount(self.serving_size, self.serving_unit, to_unit)
+        if to_unit:
+            # Scaling factor for a 1-gram serving size
+            gram_serving = 1.0 / (to_grams(self.serving_unit, self.food) * self.serving_size)
+            # Target quantity in grams
+            target_grams = to_grams(to_unit, self.food) * to_quantity
+            # Overall scaling factor to apply to all nutritional info
+            factor = gram_serving * target_grams
+        # If unit is undefined, use to_quantity as the scaling factor
+        else:
+            factor = to_quantity
+
         return NutritionInfo(
             serving_size = to_quantity,
             serving_unit = to_unit,

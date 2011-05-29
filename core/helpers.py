@@ -15,7 +15,7 @@ def convert_unit(unit, to_unit):
     if str(unit) == str(to_unit):
         return 1.0
 
-    # Otherwise, try to find a direct mapping between units
+    # Try to find a direct mapping between units
     try:
         equivalence = Equivalence.objects.get(unit__name=unit, to_unit__name=to_unit)
     except ObjectDoesNotExist:
@@ -71,7 +71,6 @@ def convert_amount(quantity, unit, to_unit):
     unit. Requires that an `Equivalence` be defined for the relevant units; if
     no `Equivalence` is found, raise a `NoEquivalence` exception.
     """
-    # If units are the same, no conversion is necessary
     if unit == to_unit:
         return quantity
     else:
