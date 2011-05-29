@@ -1,15 +1,15 @@
-:mod:`vittles.nutrition`
+:mod:`nutrition`
 =========================================
 
-:mod:`vittles.nutrition.admin`
+:mod:`nutrition.admin`
 -----------------------------------------
 
-.. automodule:: vittles.nutrition.admin
+.. automodule:: nutrition.admin
 
-:mod:`vittles.nutrition.models`
+:mod:`nutrition.models`
 -----------------------------------------
 
-.. automodule:: vittles.nutrition.models
+.. automodule:: nutrition.models
 
 
 

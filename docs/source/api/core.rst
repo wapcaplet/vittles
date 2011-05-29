@@ -1,23 +1,23 @@
-:mod:`vittles.core`
+:mod:`core`
 =========================================
 
-:mod:`vittles.core.admin`
+:mod:`core.admin`
 -----------------------------------------
 
-.. automodule:: vittles.core.admin
+.. automodule:: core.admin
 
-:mod:`vittles.core.models`
+:mod:`core.models`
 -----------------------------------------
 
-.. automodule:: vittles.core.models
+.. automodule:: core.models
 
-:mod:`vittles.core.utils`
+:mod:`core.utils`
 -----------------------------------------
 
-.. automodule:: vittles.core.utils
+.. automodule:: core.utils
 
-:mod:`vittles.core.helpers`
+:mod:`core.helpers`
 -----------------------------------------
 
-.. automodule:: vittles.core.helpers
+.. automodule:: core.helpers
 

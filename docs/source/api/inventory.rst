@@ -1,15 +1,15 @@
-:mod:`vittles.inventory`
+:mod:`inventory`
 =========================================
 
-:mod:`vittles.inventory.admin`
+:mod:`inventory.admin`
 -----------------------------------------
 
-.. automodule:: vittles.inventory.admin
+.. automodule:: inventory.admin
 
-:mod:`vittles.inventory.models`
+:mod:`inventory.models`
 -----------------------------------------
 
-.. automodule:: vittles.inventory.models
+.. automodule:: inventory.models
 
 
 

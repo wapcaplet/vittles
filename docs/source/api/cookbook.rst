@@ -1,14 +1,14 @@
-:mod:`vittles.cookbook`
+:mod:`cookbook`
 =========================================
 
-:mod:`vittles.cookbook.admin`
+:mod:`cookbook.admin`
 -----------------------------------------
 
-.. automodule:: vittles.cookbook.admin
+.. automodule:: cookbook.admin
 
-:mod:`vittles.cookbook.models`
+:mod:`cookbook.models`
 -----------------------------------------
 
-.. automodule:: vittles.cookbook.models
+.. automodule:: cookbook.models
 
 
