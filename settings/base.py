@@ -1,7 +1,7 @@
 # Django settings for vittles project.
 
 import os
-PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
+PROJECT_ROOT = os.path.realpath(os.path.dirname(os.path.dirname(__file__)))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -15,7 +15,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/usr/local/db/vittles_dev.sqlite3',
+        'NAME': os.path.join(PROJECT_ROOT, 'db', 'vittles_dev.sqlite3'),
     }
 }
 
