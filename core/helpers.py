@@ -37,6 +37,9 @@ def to_grams(unit, food=None):
     to convert based on the given `food`'s density (g/ml). If `food` is not
     given, assume a density of 1.0 g/ml.
     """
+    if not unit:
+        raise NoEquivalence("Cannot convert '%s' to grams" % (unit))
+
     if unit.kind == 'weight':
         return convert_unit(unit, 'gram')
     elif unit.kind == 'volume':
@@ -54,6 +57,9 @@ def to_ml(unit, food=None):
     attempt to convert based on the given `food`'s density (g/ml). If `food` is
     not given, assume a density of 1.0 g/ml.
     """
+    if not unit:
+        raise NoEquivalence("Cannot convert '%s' to grams" % (unit))
+
     if unit.kind == 'volume':
         return convert_unit(unit, 'milliliter')
     elif unit.kind == 'weight':

@@ -137,8 +137,19 @@ class Ingredient (ModelWrapper):
     def nutrition_info(self):
         """Return the total nutritional information for the given ingredient.
         """
+        # TODO: Maybe move some of this code into a NutritionInfo method?
+
+        # If a unit is defined, look for NutritionInfo for the given food
+        # having a convertable unit (volume or weight)
+        if self.unit:
+            null_unit = False
+        else:
+            null_unit = True
+
+        # Try to find nutrition info for this food (with or without unit)
         try:
-            food_nutrition = NutritionInfo.objects.get(food=self.food)
+            food_nutrition = NutritionInfo.objects.get(
+                food=self.food, serving_unit__isnull=null_unit)
         except ObjectDoesNotExist:
             return NutritionInfo.undefined()
 

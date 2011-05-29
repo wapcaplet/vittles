@@ -145,6 +145,9 @@
 - fields: {category: 23, grams_per_ml: 1.0, name: brown mustard}
   model: core.food
   pk: 72
+- fields: {category: 4, grams_per_ml: 1.0, name: brown rice}
+  model: core.food
+  pk: 142
 - fields: {category: 9, grams_per_ml: 0.84999999999999998, name: brown sugar}
   model: core.food
   pk: 56
@@ -511,7 +514,7 @@
 - fields: {abbreviation: C., kind: volume, name: cup}
   model: core.unit
   pk: 1
-- fields: {abbreviation: '', kind: individual, name: dash}
+- fields: {abbreviation: '', kind: volume, name: dash}
   model: core.unit
   pk: 16
 - fields: {abbreviation: fl. oz., kind: volume, name: fluid ounce}
@@ -538,7 +541,7 @@
 - fields: {abbreviation: oz., kind: weight, name: ounce}
   model: core.unit
   pk: 4
-- fields: {abbreviation: '', kind: individual, name: pinch}
+- fields: {abbreviation: '', kind: volume, name: pinch}
   model: core.unit
   pk: 7
 - fields: {abbreviation: pt., kind: volume, name: pint}
@@ -676,6 +679,12 @@
 - fields: {to_quantity: 0.47299999999999998, to_unit: 11, unit: 10}
   model: core.equivalence
   pk: 39
+- fields: {to_quantity: 0.5, to_unit: 14, unit: 16}
+  model: core.equivalence
+  pk: 40
+- fields: {to_quantity: 0.5, to_unit: 14, unit: 7}
+  model: core.equivalence
+  pk: 41
 - fields: {name: beaten}
   model: core.preparation
   pk: 4
