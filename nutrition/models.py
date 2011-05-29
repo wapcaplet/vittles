@@ -28,6 +28,10 @@ class NutritionInfo (ModelWrapper):
         return NutritionInfo(serving_size=0)
 
 
+    def is_defined(self):
+        return self.serving_size > 0
+
+
     def __unicode__(self):
         if self.serving_size == 0:
             return "Unknown nutrition"

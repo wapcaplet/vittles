@@ -22,12 +22,18 @@
 
       <ul>
         {% for ingredient in ingredients %}
-          <li>{{ ingredient }}</li>
+        <li>
+        {{ ingredient }}
+        {% if not ingredient.nutrition_info.is_defined %}
+          *
+        {% endif %}
+        </li>
         {% endfor %}
       </ul>
     {% endfor %}
   </div>
 
+  <p><em>* Missing nutrition information</em></p>
 </div>
 
 <div style="float: right;">
