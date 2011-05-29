@@ -19,8 +19,10 @@ class NutritionInfoTest (NutritionTest):
     def assert_nutrition_info_equals(self, nutrition_info, **attrs):
         """Assert that the given `NutritionInfo` has attributes matching `attrs`.
         """
-        for name, value in attrs.iteritems():
-            self.assertEqual(nutrition_info.__getattribute__(name), value)
+        for name, expect in attrs.iteritems():
+            actual = nutrition_info.__getattribute__(name)
+            self.assertEqual(nutrition_info.__getattribute__(name), expect,
+                            "Expected %s == %s, got %s instead" % (name, expect, actual))
 
 
     def test_convert_nutrition_info(self):
@@ -36,7 +38,7 @@ class NutritionInfoTest (NutritionTest):
             cholesterol  = 0,
         )
 
-        one_kilo = nutrition.for_amount(1.0, self.kilogram)
+        one_kilo = nutrition.for_amount(1, self.kilogram)
         self.assert_nutrition_info_equals(
             one_kilo,
             serving_size = 1.0,
@@ -50,10 +52,10 @@ class NutritionInfoTest (NutritionTest):
             cholesterol  = 0,
         )
 
-        five_grams = nutrition.for_amount(5.0, self.gram)
+        five_grams = nutrition.for_amount(5, self.gram)
         self.assert_nutrition_info_equals(
             five_grams,
-            serving_size = 5.0,
+            serving_size = 5,
             serving_unit = self.gram,
             calories     = 50,
             fat_calories = 40,
@@ -193,7 +195,7 @@ class NutritionInfoTest (NutritionTest):
         nutrition = NutritionInfo.get(food=meat)
         self.assert_nutrition_info_equals(
             nutrition,
-            serving_size = 0,
+            serving_size = 1,
             serving_unit = None,
             calories     = 0,
             fat_calories = 0,

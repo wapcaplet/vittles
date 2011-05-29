@@ -54,9 +54,9 @@ class NutritionInfo (ModelWrapper):
     def for_amount(self, to_quantity, to_unit):
         """Return the nutritional information for the given quantity and unit.
         """
-        # If units are the same, no conversion is needed
+        # If units are the same, scale by quantity alone
         if self.serving_unit == to_unit:
-            factor = to_quantity
+            factor = float(to_quantity) / self.serving_size
         else:
             # Scaling factor for a 1-gram serving size
             gram_serving = 1.0 / (to_grams(self.serving_unit, self.food) * self.serving_size)
