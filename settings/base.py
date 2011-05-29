@@ -144,10 +144,10 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
 
     # Local apps
-    'vittles.core',
-    'vittles.cookbook',
-    'vittles.inventory',
-    'vittles.nutrition',
+    'core',
+    'cookbook',
+    'inventory',
+    'nutrition',
 
     # Add-ons
     'lettuce.django',
