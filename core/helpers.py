@@ -7,9 +7,9 @@ class NoEquivalence (Exception):
 
 
 def convert_unit(unit, to_unit):
-    """Convert a given unit to the equivalent quantity in another unit.
-    Requires that an `Equivalence` be defined for the relevant units; if
-    no `Equivalence` is found, raise a `NoEquivalence` exception.
+    """Convert `unit` to the equivalent quantity `to_unit`. Requires that an
+    :py:class:`Equivalence` be defined for the relevant units; if no `Equivalence` is
+    found, raise a `NoEquivalence` exception.
     """
     # Degenerate case
     if str(unit) == str(to_unit):
@@ -34,7 +34,7 @@ def convert_unit(unit, to_unit):
 
 def to_grams(unit, food=None):
     """Return the given unit in terms of grams. If `unit` is a volume, attempt
-    to convert based on the given `food`'s density (g/ml). If `food` is not
+    to convert based on the given food's density (g/ml). If `food` is not
     given, assume a density of 1.0 g/ml.
     """
     if not unit:

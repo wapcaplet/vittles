@@ -72,7 +72,7 @@ release = '0.1'
 exclude_patterns = []
 
 # The reST default role (used for this markup: `text`) to use for all documents.
-#default_role = None
+default_role = 'py:obj'
 
 # If true, '()' will be appended to :func: etc. cross-reference text.
 #add_function_parentheses = True
@@ -219,3 +219,8 @@ man_pages = [
     ('index', 'vittles', u'Vittles Documentation',
      [u'Eric Pierce'], 1)
 ]
+
+# Default configuration for autodoc
+autodoc_default_flags = ['members']
+autodoc_member_order = 'bysource'
+

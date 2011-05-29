@@ -104,7 +104,7 @@ class Recipe (ModelWrapper):
 
 
     def nutrition_info(self):
-        """Return total NutritionInfo for this recipe.
+        """Return total `NutritionInfo` for this recipe.
         """
         nutritions = [ingred.nutrition_info() for ingred in self.ingredients.all()]
         total = sum(nutritions[1:], nutritions[0])
@@ -135,7 +135,7 @@ class Ingredient (ModelWrapper):
 
 
     def nutrition_info(self):
-        """Return the total nutritional information for the given ingredient.
+        """Return total `NutritionInfo` for this ingredient.
         """
         # TODO: Maybe move some of this code into a NutritionInfo method?
 

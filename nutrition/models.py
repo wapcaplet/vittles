@@ -23,7 +23,7 @@ class NutritionInfo (ModelWrapper):
 
     @classmethod
     def undefined(cls):
-        """Return a special "undefined" NutritionInfo instance.
+        """Return a special "undefined" `NutritionInfo` instance.
         """
         return NutritionInfo(serving_size=0)
 
@@ -52,7 +52,7 @@ class NutritionInfo (ModelWrapper):
 
 
     def for_amount(self, to_quantity, to_unit):
-        """Return the nutritional information for the given quantity and unit.
+        """Return `NutritionInfo` for the given quantity and unit.
         """
         # If units are the same, scale by quantity alone
         if self.serving_unit == to_unit:
@@ -79,8 +79,8 @@ class NutritionInfo (ModelWrapper):
 
 
     def __add__(self, other):
-        """Add this NutritionInfo to another, and return the sum.
-        The returned NutritionInfo has a quantity of 1, and no Unit.
+        """Add this `NutritionInfo` to another, and return the sum.
+        The returned `NutritionInfo` has a quantity of 1, and no `Unit`.
         """
         return NutritionInfo(
             calories     = self.calories + other.calories,
@@ -94,7 +94,7 @@ class NutritionInfo (ModelWrapper):
 
 
     def __mul__(self, factor):
-        """Multiply this NutritionInfo by the given amount.
+        """Multiply this `NutritionInfo` by `factor`.
         """
         return NutritionInfo(
             serving_size = factor * self.serving_size,

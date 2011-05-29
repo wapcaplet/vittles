@@ -47,7 +47,7 @@ class ConvertDifferentUnitKindsTest (CoreTest):
             to_unit=self.gram,
         )
 
-    def test_convert_volume_to_weight(self):
+    def test_convert_volume_to_grams(self):
         # Without food, assume 1.0 g/ml
         self.failUnlessEqual(to_grams(self.ml), 1.0)
         self.failUnlessEqual(to_grams(self.cup), 1.0 * 236.6)
@@ -57,7 +57,7 @@ class ConvertDifferentUnitKindsTest (CoreTest):
         self.failUnlessEqual(to_grams(self.cup, self.syrup), 1.2 * 236.6)
         self.failUnlessEqual(to_grams(self.cup, self.powder), 0.5 * 236.6)
 
-    def test_convert_weight_to_volume(self):
+    def test_convert_weight_to_ml(self):
         # Without food, assume 1.0 g/ml
         self.failUnlessEqual(to_ml(self.gram), 1.0)
         self.failUnlessEqual(to_ml(self.ounce), 28.35)

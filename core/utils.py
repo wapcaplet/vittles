@@ -2,7 +2,7 @@ import re
 from fractions import Fraction
 
 def float_to_fraction(quantity, denominator=16):
-    """Convert the given quantity into a fraction, rounded to the nearest
+    """Convert the given quantity into a fraction string, rounded to the nearest
     ``1 / denominator`` increment. For example, if `denominator` is 16, round
     the result to the nearest 1/16th.
 
@@ -62,7 +62,7 @@ def float_to_fraction(quantity, denominator=16):
 def fraction_to_float(fraction_string):
     """Convert a fraction string into a floating-point value.
 
-    Simple fractions take the form of ``numerator/denominator``:
+    Simple fractions take the form of "n/d":
 
         >>> fraction_to_float("1/2")
         0.5
@@ -166,7 +166,7 @@ def pluralize(noun):
 def format_food_unit(quantity, unit, food):
     """Return a string describing the given quantity of food. `quantity` may be
     an actual number (int or float), or a string containing a decimal or
-    fraction as understood by `fraction_to_float`.
+    fraction as understood by :py:func:`fraction_to_float`.
 
     If a unit is given, the unit is pluralized when appropriate:
 
