@@ -1,6 +1,6 @@
 from django.test import TestCase
-from vittles.core.models import Unit, Equivalence, Food
-from vittles.nutrition.models import NutritionInfo
+from core.models import Unit, Equivalence, Food
+from nutrition.models import NutritionInfo
 
 class NutritionTest (TestCase):
     """Initialization shared by all test cases

@@ -1,9 +1,9 @@
 from django.db import models
 from django.core.exceptions import ObjectDoesNotExist
-from vittles.core.models import ModelWrapper, Food, Preparation, Unit
-from vittles.core.helpers import NoEquivalence
-from vittles.nutrition.models import NutritionInfo
-from vittles.core.utils import format_food_unit
+from core.models import ModelWrapper, Food, Preparation, Unit
+from core.helpers import NoEquivalence
+from nutrition.models import NutritionInfo
+from core.utils import format_food_unit
 
 
 class Portion (ModelWrapper):

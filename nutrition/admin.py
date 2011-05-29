@@ -1,5 +1,5 @@
 from django.contrib import admin
-from vittles.nutrition.models import NutritionInfo
+from nutrition.models import NutritionInfo
 
 class NutritionInfoAdmin (admin.ModelAdmin):
     list_display = (

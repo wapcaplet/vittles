@@ -1,6 +1,6 @@
 from django.db import models
-from vittles.core.models import ModelWrapper, Food, Unit
-from vittles.core.utils import format_food_unit
+from core.models import ModelWrapper, Food, Unit
+from core.utils import format_food_unit
 
 class ShoppingList (ModelWrapper):
     """A list of foods to shop for.

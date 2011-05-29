@@ -1,5 +1,5 @@
 from django.db import models
-from vittles.core import utils
+from core import utils
 
 class ModelWrapper (models.Model):
     """Abstract base class for models.

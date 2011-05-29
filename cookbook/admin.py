@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib import admin
-from vittles.cookbook.models import Ingredient, Recipe, Portion, IngredientCategory, RecipeCategory
-from vittles.core.utils import fraction_to_float
+from cookbook.models import Ingredient, Recipe, Portion, IngredientCategory, RecipeCategory
+from core.utils import fraction_to_float
 
 # Custom forms and fields
 

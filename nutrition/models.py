@@ -1,6 +1,6 @@
 from django.db import models
-from vittles.core.models import ModelWrapper, Food, Unit
-from vittles.core.helpers import to_grams
+from core.models import ModelWrapper, Food, Unit
+from core.helpers import to_grams
 
 class NutritionInfo (ModelWrapper):
     """Nutritional information for a food.

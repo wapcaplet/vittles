@@ -1,5 +1,5 @@
 from django.shortcuts import render_to_response
-from vittles.cookbook.models import Recipe
+from cookbook.models import Recipe
 
 def cookbook(request):
     """Cookbook homepage.
