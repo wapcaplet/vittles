@@ -107,7 +107,11 @@ class Recipe (ModelWrapper):
         """Return total NutritionInfo for this recipe.
         """
         nutritions = [ingred.nutrition_info() for ingred in self.ingredients.all()]
-        return sum(nutritions[1:], nutritions[0])
+        total = sum(nutritions[1:], nutritions[0])
+        if self.num_portions:
+            return total * (1.0 / self.num_portions)
+        else:
+            return total
 
 
 class Ingredient (ModelWrapper):

@@ -6,7 +6,7 @@ class NutritionInfo (ModelWrapper):
     """Nutritional information for a food.
     """
     food              = models.OneToOneField(Food, null=True, blank=True, related_name='nutrition_info')
-    serving_size      = models.FloatField(default=0)
+    serving_size      = models.FloatField(default=1)
     serving_unit      = models.ForeignKey(Unit, null=True, blank=True)
     calories          = models.FloatField(default=0)
     fat_calories      = models.FloatField(default=0)
@@ -50,7 +50,7 @@ class NutritionInfo (ModelWrapper):
     def for_amount(self, to_quantity, to_unit):
         """Return the nutritional information for the given quantity and unit.
         """
-        if to_unit:
+        if self.serving_unit and to_unit:
             # Scaling factor for a 1-gram serving size
             gram_serving = 1.0 / (to_grams(self.serving_unit, self.food) * self.serving_size)
             # Target quantity in grams
