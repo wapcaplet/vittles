@@ -35,6 +35,8 @@ class IngredientAdmin (admin.ModelAdmin):
 
 class RecipeAdmin (admin.ModelAdmin):
     inlines = [IngredientInline]
+    list_display = ('name', 'source')
+    search_fields = ('name', 'source')
     fieldsets = (
         (None, {
             'fields': (
