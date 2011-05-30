@@ -106,12 +106,23 @@ class Recipe (ModelWrapper):
     def nutrition_info(self):
         """Return total `NutritionInfo` for this recipe.
         """
+        # FIXME: This is horribly inefficient, because all nutrition info
+        # is recalculated every time this function is called. Some day, need
+        # to find a way to cache this and rebuild it only when requested.
         nutritions = [ingred.nutrition_info() for ingred in self.ingredients.all()]
         total = sum(nutritions[1:], nutritions[0])
         if self.num_portions:
             return total * (1.0 / self.num_portions)
         else:
             return total
+
+
+    def nutrition_info_is_incomplete(self):
+        """Return True if this recipe's nutrition information is incomplete
+        (that is, if any ingredients are missing nutrition info).
+        """
+        nutritions = [ingred.nutrition_info() for ingred in self.ingredients.all()]
+        return not all(info.is_defined() for info in nutritions)
 
 
 class Ingredient (ModelWrapper):

@@ -1,13 +1,20 @@
 <div class="nutrition_info">
   <h2>Nutrition</h2>
   <p>Per serving</p>
-  <ul>
-    <li><b>Calories</b> {{ nutrition_info.calories|floatformat }}</li>
-    <li><b>Calories from Fat</b> {{ nutrition_info.fat_calories|floatformat }}</li>
-    <li><b>Fat</b> {{ nutrition_info.fat|floatformat }} g</li>
-    <li><b>Carbohydrate</b> {{ nutrition_info.carb|floatformat }} g</li>
-    <li><b>Sodium</b> {{ nutrition_info.sodium|floatformat }} mg</li>
-    <li><b>Protein</b> {{ nutrition_info.protein|floatformat }} g</li>
-    <li><b>Cholesterol</b> {{ nutrition_info.cholesterol|floatformat }} mg</li>
-  </ul>
+  <table>
+    <tr><th>Calories</th>          <td>{{ nutrition_info.calories|floatformat }}</td></tr>
+    <tr><th>Calories from Fat</th> <td>{{ nutrition_info.fat_calories|floatformat }}</td></tr>
+    <tr><th>Fat</th>               <td>{{ nutrition_info.fat|floatformat }} g</td></tr>
+    <tr><th>Carbohydrate</th>      <td>{{ nutrition_info.carb|floatformat }} g</td></tr>
+    <tr><th>Sodium</th>            <td>{{ nutrition_info.sodium|floatformat }} mg</td></tr>
+    <tr><th>Protein</th>           <td>{{ nutrition_info.protein|floatformat }} g</td></tr>
+    <tr><th>Cholesterol</th>       <td>{{ nutrition_info.cholesterol|floatformat }} mg</td></tr>
+  </table>
 </div>
+
+
+
+
+
+
+

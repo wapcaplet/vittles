@@ -138,30 +138,31 @@ a:hover, a:active {
 }
 
 .nutrition_info {
+  /*
   background: white;
   border: 2px solid black;
+  */
   padding: 4px 6px;
-  margin: 1em;
+  margin: 0;
   display: inline-block;
 }
 .nutrition_info p {
   margin: 0;
   padding: 3px 0;
 }
-
-.nutrition_info ul {
-  list-style: none;
+.nutrition_info table {
   margin: 0;
   padding: 3px 0;
-  border-top: 3px solid black;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+.nutrition_info th {
+  text-align: left;
+  font-weight: bold;
+}
+.nutrition_info td {
+  text-align: right;
+  font-weight: normal;
 }
 
-.nutrition_info ul li {
-  padding: 3px 0;
-  border-bottom: 1px solid black;
-}
-
-.nutrition_info ul li:last-child {
-  border-bottom: none;
-}
 

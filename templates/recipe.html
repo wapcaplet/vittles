@@ -33,12 +33,13 @@
     {% endfor %}
   </div>
 
-  <p><em>* Missing nutrition information</em></p>
-</div>
+  {% if recipe.nutrition_info_is_incomplete %}
+    <p><em>* Missing nutrition information</em></p>
+  {% endif %}
 
-<div style="float: right;">
   {% include "nutrition_info.html" %}
 </div>
+
 
 <div class="directions">
   <h2>Directions</h2>
