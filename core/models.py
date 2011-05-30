@@ -1,5 +1,6 @@
 from django.db import models
 from core import utils
+from core import filters
 
 class ModelWrapper (models.Model):
     """Abstract base class for models.
@@ -40,6 +41,9 @@ class Food (ModelWrapper):
     name         = models.CharField(max_length=50, unique=True)
     category     = models.ForeignKey(Category, null=True, blank=True)
     grams_per_ml = models.FloatField(default=1.0)
+
+    # Use range-based flitering for grams_per_ml
+    grams_per_ml.list_filter_range = [0.5, 1.0]
 
     def __unicode__(self):
         return self.name
