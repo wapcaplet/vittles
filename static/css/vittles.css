@@ -155,14 +155,25 @@ a:hover, a:active {
   padding: 3px 0;
   border-top: 2px solid black;
   border-bottom: 2px solid black;
+  border-spacing: 0;
+  font-size: 0.9em;
+}
+.nutrition_info tr th,
+.nutrition_info tr td {
+  padding: 3px 0;
+  margin: 0;
+  font-weight: normal;
+  border-bottom: 1px solid black;
+}
+.nutrition_info tr:last-child th,
+.nutrition_info tr:last-child td {
+  border-bottom: none;
 }
 .nutrition_info th {
   text-align: left;
-  font-weight: bold;
 }
 .nutrition_info td {
   text-align: right;
-  font-weight: normal;
 }
 
 

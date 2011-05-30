@@ -3,7 +3,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from core.models import ModelWrapper, Food, Preparation, Unit
 from core.helpers import NoEquivalence
 from nutrition.models import NutritionInfo
-from core.utils import format_food_unit
+from core.utils import format_food_unit, pluralize
 
 
 class Portion (ModelWrapper):
@@ -11,7 +11,6 @@ class Portion (ModelWrapper):
     Examples: muffin, roll, loaf, serving.
     """
     name = models.CharField(max_length=50, unique=True)
-    plural = models.CharField(max_length=50)
 
     class Meta:
         ordering = ['name']
@@ -76,9 +75,9 @@ class Recipe (ModelWrapper):
         string = "%d" % self.num_portions
         if self.portion:
             if self.num_portions > 1:
-                string += " %s" % self.portion.plural
+                string += " %s" % pluralize(self.portion)
             else:
-                string += " %s" % self.portion.name
+                string += " %s" % self.portion
         return string
 
 

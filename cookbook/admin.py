@@ -49,7 +49,7 @@ class RecipeAdmin (admin.ModelAdmin):
     )
 
 class PortionAdmin (admin.ModelAdmin):
-    list_display = ('name', 'plural')
+    list_display = ('name',)
 
 admin.site.register(Ingredient, IngredientAdmin)
 admin.site.register(Recipe, RecipeAdmin)
