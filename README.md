@@ -7,6 +7,7 @@ has basic functionality for entering foods, units, ingredients, recipes, and
 nutritional information through the Django admin interface, as well as for
 viewing recipes in an easy-to-read format.
 
+Additional documentation is on [ReadTheDocs](http://vittles.rtfd.org).
 
 Setup
 -----
