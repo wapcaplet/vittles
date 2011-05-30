@@ -16,6 +16,50 @@ The only required field is **Name**; all others are optional. Some dropdown
 fields include a green **+** button, which you can use to add new values if the
 one you want isn't present in the dropdown already.
 
+
+Prep Time
+---------
+
+These optional fields indicate how long your recipe takes to prepare and cook;
+you can use them in whatever way makes sense to you, but the intended usage is
+something like this:
+
+    Prep minutes
+        Time spent gathering, preparing, and mixing the ingredients
+    Inactive prep minutes
+        Time spent waiting, for example when meat is marinating, or bread dough
+        is rising
+    Cook minutes
+        Time spent actually cooking or baking
+
+Again, you can leave these blank if you don't feel like estimating them, but
+many published recipes already include this information, so it's easy to enter
+if you're so inclined.
+
+
+Servings
+--------
+
+Each recipe is presumed to make some number of servings, but it's up to you how
+you would like to define your servings. Obviously, some people eat bigger
+servings than others, so you may want to specify what exactly you mean by "Makes
+4 servings".
+
+For example, a muffin recipe may make 12 muffins. If that's the case, you can
+enter a **Yield** of "12", and a **Portion** of "muffin". When you're making
+pancakes, you can specify how many pancakes the recipe makes, and how big the
+pancakes are. If you like big pancakes, your recipe may have Yield = "4",
+Portion = "6-inch pancake", but if you're going for silver-dollar-size, you
+might enter Yield = "24", Portion = "2-inch pancake".
+
+Note that the **Portion** field is singular, and will be automatically
+pluralized when the context calls for it. So don't use a portion of "2-inch
+pancakes", or else your servings will be Gollumized into "24 2-inch pancakeses."
+
+
+Ingredients
+-----------
+
 When creating a new recipe, you'll have several empty **Ingredient** rows; the
 most effective way to navigate these is with the keyboard, since many of the
 fields are dropdowns. When you're in a dropdown, as soon as you start typing a

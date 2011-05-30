@@ -1,14 +1,6 @@
 from django.contrib import admin
 from nutrition.models import NutritionInfo
 
-def normalize_nutrition_info(modeladmin, request, queryset):
-    """Custom admin action to "normalize" all the given `NutritionInfo`
-    objects, setting their serving size to 1, and adjusting all other
-    attributes accordingly.
-    """
-    for nutrition_info in queryset:
-        nutrition_info.normalize()
-normalize_nutrition_info.short_description = "Adjust serving size to 1.0"
 
 
 class NutritionInfoAdmin (admin.ModelAdmin):
@@ -27,7 +19,17 @@ class NutritionInfoAdmin (admin.ModelAdmin):
         }),
     )
     list_filter = ('unit',)
-    actions = [normalize_nutrition_info]
+
+    actions = ['normalize_nutrition_info']
+
+    def normalize_nutrition_info(self, request, queryset):
+        """Custom admin action to "normalize" all the given `NutritionInfo`
+        objects, setting their serving size to 1, and adjusting all other
+        attributes accordingly.
+        """
+        for nutrition_info in queryset:
+            nutrition_info.normalize()
+    normalize_nutrition_info.short_description = "Normalize quantity to 1.0"
 
 admin.site.register(NutritionInfo, NutritionInfoAdmin)
 

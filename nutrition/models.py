@@ -81,8 +81,10 @@ class NutritionInfo (ModelWrapper):
     def normalize(self):
         """Adjust this `NutritionInfo` to have `quantity` of 1.0.
         """
-        if not self.is_defined():
+        # Don't normalize undefined or already-normalized nutrition info
+        if (not self.is_defined()) or (self.quantity == 1.0):
             return
+
         scale = 1.0 / self.quantity
         self.quantity     = 1.0
         self.calories     = scale * self.calories
