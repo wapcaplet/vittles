@@ -13,9 +13,10 @@ Vittles is a Django_ web application for entering and viewing recipes.
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 2
 
-   api/index
+    user_manual/index
+    api/index
 
 Indices and tables
 ==================
