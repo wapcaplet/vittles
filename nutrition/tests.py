@@ -27,8 +27,8 @@ class NutritionInfoTest (NutritionTest):
 
     def test_convert_nutrition_info(self):
         nutrition = NutritionInfo(
-            serving_size = 10,
-            serving_unit = self.gram,
+            quantity     = 10,
+            unit         = self.gram,
             calories     = 100,
             fat_calories = 80,
             fat          = 50,
@@ -41,8 +41,8 @@ class NutritionInfoTest (NutritionTest):
         one_kilo = nutrition.for_amount(1, self.kilogram)
         self.assert_nutrition_info_equals(
             one_kilo,
-            serving_size = 1.0,
-            serving_unit = self.kilogram,
+            quantity     = 1.0,
+            unit         = self.kilogram,
             calories     = 10000,
             fat_calories = 8000,
             fat          = 5000,
@@ -55,8 +55,8 @@ class NutritionInfoTest (NutritionTest):
         five_grams = nutrition.for_amount(5, self.gram)
         self.assert_nutrition_info_equals(
             five_grams,
-            serving_size = 5,
-            serving_unit = self.gram,
+            quantity     = 5,
+            unit         = self.gram,
             calories     = 50,
             fat_calories = 40,
             fat          = 25,
@@ -79,8 +79,8 @@ class NutritionInfoTest (NutritionTest):
         )
         butter_nutrition = NutritionInfo(
             food         = butter,
-            serving_size = 14.0,
-            serving_unit = self.gram,
+            quantity     = 14.0,
+            unit         = self.gram,
             calories     = 100,
             fat_calories = 100,
             fat          = 11,
@@ -101,8 +101,8 @@ class NutritionInfoTest (NutritionTest):
         butter_nutrition_cup = butter_nutrition.for_amount(1, cup)
         self.assert_nutrition_info_equals(
             butter_nutrition_cup,
-            serving_size = 1.0,
-            serving_unit = cup,
+            quantity     = 1.0,
+            unit         = cup,
             calories     = servings_per_cup * 100,
             fat_calories = servings_per_cup * 100,
             fat          = servings_per_cup * 11,
@@ -124,8 +124,8 @@ class NutritionInfoTest (NutritionTest):
         )
         peanut_butter_nutrition = NutritionInfo(
             food         = peanut_butter,
-            serving_size = 2.0,
-            serving_unit = tbs,
+            quantity     = 2.0,
+            unit         = tbs,
             calories     = 180,
             fat_calories = 110,
             fat          = 12,
@@ -142,8 +142,8 @@ class NutritionInfoTest (NutritionTest):
         peanut_butter_nutrition_kg = peanut_butter_nutrition.for_amount(1, self.kilogram)
         self.assert_nutrition_info_equals(
             peanut_butter_nutrition_kg,
-            serving_size = 1.0,
-            serving_unit = self.kilogram,
+            quantity     = 1.0,
+            unit         = self.kilogram,
             calories     = servings_per_kg * 180,
             fat_calories = servings_per_kg * 110,
             fat          = servings_per_kg * 12,
@@ -195,8 +195,8 @@ class NutritionInfoTest (NutritionTest):
         nutrition = NutritionInfo.get(food=meat)
         self.assert_nutrition_info_equals(
             nutrition,
-            serving_size = 1,
-            serving_unit = None,
+            quantity     = 1,
+            unit         = None,
             calories     = 0,
             fat_calories = 0,
             fat          = 0,

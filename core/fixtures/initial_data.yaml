@@ -82,7 +82,7 @@
 - fields: {name: vegetables, parent: 14}
   model: core.category
   pk: 1
-- fields: {category: 4, grams_per_ml: 1.0, name: Chex cereal}
+- fields: {category: 4, grams_per_ml: 0.13, name: Chex cereal}
   model: core.food
   pk: 132
 - fields: {category: 15, grams_per_ml: 1.0, name: Dr. Pepper}
@@ -172,7 +172,7 @@
 - fields: {category: 16, grams_per_ml: 0.51000000000000001, name: cheddar}
   model: core.food
   pk: 38
-- fields: {category: 22, grams_per_ml: 1.0, name: chicken boullion}
+- fields: {category: 22, grams_per_ml: 1.0, name: chicken bouillon}
   model: core.food
   pk: 69
 - fields: {category: 17, grams_per_ml: 1.0, name: chicken breast}
@@ -229,7 +229,7 @@
 - fields: {category: 22, grams_per_ml: 1.0, name: cream of mushroom soup}
   model: core.food
   pk: 65
-- fields: {category: 1, grams_per_ml: 1.0, name: crimini mushrooms}
+- fields: {category: 1, grams_per_ml: 0.29999999999999999, name: crimini mushrooms}
   model: core.food
   pk: 118
 - fields: {category: 29, grams_per_ml: 1.0, name: cumin}
@@ -289,7 +289,7 @@
 - fields: {category: 19, grams_per_ml: 1.0, name: ham}
   model: core.food
   pk: 43
-- fields: {category: 26, grams_per_ml: 1.0, name: hazelnuts}
+- fields: {category: 26, grams_per_ml: 0.56999999999999995, name: hazelnuts}
   model: core.food
   pk: 94
 - fields: {category: 7, grams_per_ml: 1.0, name: heavy cream}
@@ -322,7 +322,7 @@
 - fields: {category: 9, grams_per_ml: 1.0, name: molasses}
   model: core.food
   pk: 53
-- fields: {category: 16, grams_per_ml: 1.0, name: mozarella}
+- fields: {category: 16, grams_per_ml: 1.0, name: mozzarella}
   model: core.food
   pk: 40
 - fields: {category: 1, grams_per_ml: 0.29999999999999999, name: mushroom}
@@ -379,7 +379,7 @@
 - fields: {category: 1, grams_per_ml: 0.64000000000000001, name: peas}
   model: core.food
   pk: 7
-- fields: {category: 26, grams_per_ml: 1.0, name: pecan}
+- fields: {category: 26, grams_per_ml: 0.46000000000000002, name: pecan}
   model: core.food
   pk: 130
 - fields: {category: 3, grams_per_ml: 1.0, name: pineapple}
@@ -478,7 +478,7 @@
 - fields: {category: null, grams_per_ml: 1.0, name: vinegar}
   model: core.food
   pk: 52
-- fields: {category: 26, grams_per_ml: 1.0, name: walnuts}
+- fields: {category: 26, grams_per_ml: 0.5, name: walnuts}
   model: core.food
   pk: 85
 - fields: {category: 10, grams_per_ml: 1.0, name: water}
@@ -496,7 +496,7 @@
 - fields: {category: 4, grams_per_ml: 1.0, name: whole wheat flour}
   model: core.food
   pk: 35
-- fields: {category: 8, grams_per_ml: 1.0, name: worchestershire sauce}
+- fields: {category: 8, grams_per_ml: 1.0, name: worcestershire sauce}
   model: core.food
   pk: 113
 - fields: {category: 5, grams_per_ml: 1.23, name: yeast}

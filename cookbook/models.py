@@ -159,7 +159,7 @@ class Ingredient (ModelWrapper):
         # Try to find nutrition info for this food (with or without unit)
         try:
             food_nutrition = NutritionInfo.objects.get(
-                food=self.food, serving_unit__isnull=null_unit)
+                food=self.food, unit__isnull=null_unit)
         except ObjectDoesNotExist:
             return NutritionInfo.undefined()
 
