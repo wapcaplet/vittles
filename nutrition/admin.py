@@ -2,8 +2,10 @@ from django.contrib import admin
 from nutrition.models import NutritionInfo
 
 
-
 class NutritionInfoAdmin (admin.ModelAdmin):
+    class Media:
+        css = {'all': ('css/nutrition.css',)}
+
     list_display = (
         '__unicode__', 'quantity', 'unit',
         'calories', 'fat_calories',

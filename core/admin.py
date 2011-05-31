@@ -1,5 +1,6 @@
 from django.contrib import admin
 from core.models import Category, Food, Unit, Equivalence, Preparation
+from nutrition.models import NutritionInfo
 
 # Inline forms
 
@@ -19,6 +20,10 @@ class FoodInline (admin.TabularInline):
     model = Food
     extra = 5
 
+class NutritionInfoInline (admin.TabularInline):
+    model = NutritionInfo
+    extra = 1
+
 # Main forms
 
 class CategoryAdmin (admin.ModelAdmin):
@@ -28,6 +33,7 @@ class CategoryAdmin (admin.ModelAdmin):
     inlines = [FoodInline, CategoryInline]
 
 class FoodAdmin (admin.ModelAdmin):
+    inlines = [NutritionInfoInline]
     ordering = ('name',)
     list_display = ('name', 'category', 'grams_per_ml')
     list_filter = ('category', 'grams_per_ml')
