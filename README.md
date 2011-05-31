@@ -20,7 +20,7 @@ those projects' docs for instructions.
 Once you have a virtual environment activated, install Vittles' dependencies:
 
     $ cd /path/to/vittles
-    $ pip install < reqs.txt
+    $ pip install -r reqs.txt
 
 Edit `settings.py` and define where you want the database to live:
 
@@ -51,7 +51,7 @@ Copyright
 
 The MIT License
 
-Copyright (c) 2010 Eric Pierce
+Copyright (c) 2011 Eric Pierce
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
