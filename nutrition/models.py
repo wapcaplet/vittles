@@ -10,11 +10,11 @@ class NutritionInfo (ModelWrapper):
     unit         = models.ForeignKey(Unit, null=True, blank=True)
     calories     = models.FloatField(default=0)
     fat_calories = models.FloatField(default=0)
-    fat          = models.FloatField(default=0, help_text="grams")
-    carb         = models.FloatField(default=0, help_text="grams")
-    sodium       = models.FloatField(default=0, help_text="milligrams")
-    protein      = models.FloatField(default=0, help_text="grams")
-    cholesterol  = models.FloatField(default=0, help_text="milligrams")
+    fat          = models.FloatField("Fat (g)", default=0)
+    carb         = models.FloatField("Carb (g)", default=0)
+    sodium       = models.FloatField("Sodium (mg)", default=0)
+    protein      = models.FloatField("Protein (g)", default=0)
+    cholesterol  = models.FloatField("Cholesterol (mg)", default=0)
 
     class Meta:
         ordering = ['food']

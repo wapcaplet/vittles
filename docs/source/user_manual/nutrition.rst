@@ -10,18 +10,27 @@ information is managed by the **Nutrition** app.
 
 .. image:: images/nutrition_administration.png
 
-Click the **Add** link to add nutritional information for any food, or
-**Change** to view the list of existing nutritional information. Adding new
-nutritional information is fairly simple:
+You can click the **Add** link to add nutritional information for any food, or
+**Change** to view the list of existing nutritional information. There are two
+ways to add new nutritional information; you can do it through via the
+**Nutrition** app, where you'll get a form like this:
 
 .. image:: images/add_nutrition_info.png
 
+An easier way is to add nutritional information directly to the **Food** form:
+
+.. image:: images/food_nutrition_info.png
+
 Using a standard nutrition label from the food you're entering, simply enter the
-numeric values for each nutrient. It's best to use a serving unit of **gram**
-whenever possible, though you may want to omit the units for certain foods if
-they are not normally measured by weight or volume. For example, the nutritional
-info for one egg would have a **Serving size** of 1, with the **Serving unit**
+numeric values for each nutrient. It's best to use a quantity with a **Unit** of
+**gram** whenever possible, though you may want to omit the unit for certain
+foods if they are not normally measured by weight or volume. For example, the
+nutritional info for one egg could have a **Quantity** of 1, with the **Unit**
 omitted.
+
+
+Density
+-------
 
 The most accurate way to measure nutritional information is by weight, and
 Vittles uses grams as a basline for all calculations related to nutritional
