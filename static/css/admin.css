@@ -1,0 +1,6 @@
+/* Customizations to default Django admin interface */
+
+#nutrition_infos-group input {
+  max-width: 5em;
+}
+
