@@ -67,11 +67,12 @@ few letters, the first match will be selected. You can then use the arrow keys
 to select the value you're looking for. Many times, it only takes two or three
 keystrokes to enter the desired value.
 
-The **Category** field for each ingredient allows you to divide up the ingredients
-into logical groups. For example, muffins call for combining the *wet*
-ingredients and *dry* ingredients separately. You could also use it to separate
-the *cake* ingredients from the *icing* ingredients. Add new categories if the
-existing ones don't suit your needs.
+The optional **Category** field for each ingredient allows you to divide up the
+ingredients into logical groups. For example, muffins call for combining the
+*wet* ingredients and *dry* ingredients separately. You could also use it to
+separate the *cake* ingredients from the *icing* ingredients. Add new categories
+if the existing ones don't suit your needs. For simple recipes, you can omit
+this field entirely.
 
 The **Quantity** field accepts both decimals and fractions. For example, if your
 recipe calls for two and one-half cups of flour, you could enter "2.5" or

@@ -32,10 +32,10 @@ measuring.
 
 Water has a density of 1.0 grams per milliliter, but most foods have a higher or
 lower density. For example, all-purpose flour weighs about 0.42 g/ml, while
-honey weighs about 1.44 g/ml. If you have 1 cup of something, you don't know
-what it weighs unless you know what's in the cup. If it's flour, it weighs
-around 100 grams, but if it's honey, it weighs about 340 grams. If it's material
-from the core of a white dwarf star, it weighs about 230 metric tons.
+honey weighs about 1.44 g/ml. If you have 1 cup of something, Vittles doesn't
+know what it weighs unless it knows what's in the cup. If it's flour, it weighs
+100 grams, but if it's honey, it weighs 340 grams. If it's material from the
+core of a white dwarf star, it weighs 230 metric tons.
 
 For this reason, correct calculation of nutritional value is very dependent on
 having correct densities for your foods. The default value of 1.0 g/ml may be a
