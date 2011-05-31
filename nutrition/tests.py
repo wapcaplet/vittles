@@ -189,20 +189,38 @@ class NutritionInfoTest (NutritionTest):
 
 
     def test_unknown_nutrition_info(self):
-        # Any food with an unknown nutritional value returns a NutritionInfo
-        # object with a quantity of 0
-        meat = Food.get(name='mystery meat')
-        nutrition = NutritionInfo.get(food=meat)
-        self.assert_nutrition_info_equals(
-            nutrition,
-            quantity     = 1,
-            unit         = None,
-            calories     = 0,
-            fat_calories = 0,
-            fat          = 0,
+        unknown_nutrition = NutritionInfo.undefined()
+        self.assertFalse(unknown_nutrition.is_defined())
+
+
+    def test_normalize_nutrition_info(self):
+        butter = Food.get(name='butter', grams_per_ml=0.97)
+        butter_nutrition = NutritionInfo(
+            food         = butter,
+            quantity     = 14.0,
+            unit         = self.gram,
+            calories     = 100,
+            fat_calories = 100,
+            fat          = 11,
             carb         = 0,
-            sodium       = 0,
+            sodium       = 90,
             protein      = 0,
-            cholesterol  = 0,
+            cholesterol  = 30,
         )
+
+        butter_nutrition.normalize()
+        self.assert_nutrition_info_equals(
+            butter_nutrition,
+            food         = butter,
+            quantity     = 1.0,
+            unit         = self.gram,
+            calories     = 7.14,
+            fat_calories = 7.14,
+            fat          = 0.79,
+            carb         = 0.0,
+            sodium       = 6.43,
+            protein      = 0.0,
+            cholesterol  = 2.14,
+        )
+
 

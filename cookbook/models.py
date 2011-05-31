@@ -149,24 +149,26 @@ class Ingredient (ModelWrapper):
         """
         # TODO: Maybe move some of this code into a NutritionInfo method?
 
-        # If a unit is defined, look for NutritionInfo for the given food
-        # having a convertable unit (volume or weight)
-        if self.unit:
-            null_unit = False
-        else:
-            null_unit = True
-
-        # Try to find nutrition info for this food (with or without unit)
+        # Find all nutritions for this food, or return undefined if none exist
         try:
-            food_nutrition = NutritionInfo.objects.get(
-                food=self.food, unit__isnull=null_unit)
+            nutritions = NutritionInfo.objects.filter(food=self.food)
         except ObjectDoesNotExist:
             return NutritionInfo.undefined()
 
-        # See if this nutrition info can be converted to current amount
-        try:
-            return food_nutrition.for_amount(self.quantity, self.unit)
-        except NoEquivalence:
-            return NutritionInfo.undefined()
+        # Are there any nutrition infos in terms of the current unit?
+        for matching_unit in nutritions.filter(unit=self.unit):
+            try:
+                return matching_unit.for_amount(self.quantity, self.unit)
+            except NoEquivalence:
+                pass
 
+        # No matching units. See if there's any other unit that can be converted
+        for other_unit in nutritions.filter(unit__isnull=False):
+            try:
+                return other_unit.for_amount(self.quantity, self.unit)
+            except NoEquivalence:
+                pass
+
+        # If we get here, no attempts at conversion succeeded
+        return NutritionInfo.undefined()
 
