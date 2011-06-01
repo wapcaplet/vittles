@@ -148,6 +148,7 @@ INSTALLED_APPS = (
     'cookbook',
     'inventory',
     'nutrition',
+    'diet',
 
     # Add-ons
     'lettuce.django',
