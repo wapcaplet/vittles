@@ -2,11 +2,20 @@
     food: 132, protein: 0.070000000000000007, quantity: 1.0, sodium: 9.0, unit: 5}
   model: nutrition.nutritioninfo
   pk: 142
+- fields: {calories: 3.3300000000000001, carb: 0.72999999999999998, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, food: 1, protein: 0.10000000000000001, quantity: 1.0,
+    sodium: 0.0, unit: 5}
+  model: nutrition.nutritioninfo
+  pk: 14
 - fields: {calories: 5.71, carb: 0.20999999999999999, cholesterol: 0.0, fat: 0.5,
     fat_calories: 4.6399999999999997, food: 125, protein: 0.20999999999999999, quantity: 1.0,
     sodium: 0.0, unit: 5}
   model: nutrition.nutritioninfo
   pk: 58
+- fields: {calories: 50.0, carb: 14.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    food: 145, protein: 0.0, quantity: 123.0, sodium: 0.0, unit: 5}
+  model: nutrition.nutritioninfo
+  pk: 150
 - fields: {calories: 43.0, carb: 0.0, cholesterol: 9.0, fat: 3.0, fat_calories: 30.0,
     food: 21, protein: 3.0, quantity: 1.0, sodium: 185.0, unit: 17}
   model: nutrition.nutritioninfo
@@ -184,11 +193,6 @@
     sodium: 1.1499999999999999, unit: 5}
   model: nutrition.nutritioninfo
   pk: 110
-- fields: {calories: 3.3300000000000001, carb: 0.72999999999999998, cholesterol: 0.0,
-    fat: 0.0, fat_calories: 0.0, food: 1, protein: 0.10000000000000001, quantity: 1.0,
-    sodium: 0.0, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 14
 - fields: {calories: 4.0, carb: 1.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
     food: 115, protein: 0.0, quantity: 1.0, sodium: 1.0, unit: 19}
   model: nutrition.nutritioninfo
@@ -420,6 +424,10 @@
     food: 112, protein: 0.0, quantity: 1.0, sodium: 0.080000000000000002, unit: 5}
   model: nutrition.nutritioninfo
   pk: 104
+- fields: {calories: 130.0, carb: 26.0, cholesterol: 0.0, fat: 1.0, fat_calories: 9.0,
+    food: 35, protein: 5.0, quantity: 35.0, sodium: 0.0, unit: 5}
+  model: nutrition.nutritioninfo
+  pk: 151
 - fields: {calories: 5.0, carb: 1.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
     food: 113, protein: 0.0, quantity: 1.0, sodium: 65.0, unit: 2}
   model: nutrition.nutritioninfo

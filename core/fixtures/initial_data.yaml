@@ -91,6 +91,9 @@
 - fields: {category: 12, grams_per_ml: 1.0, name: Earl Grey tea}
   model: core.food
   pk: 78
+- fields: {category: 4, grams_per_ml: 0.41999999999999998, name: all-purpose flour}
+  model: core.food
+  pk: 1
 - fields: {category: 26, grams_per_ml: 1.0, name: almond}
   model: core.food
   pk: 125
@@ -100,6 +103,9 @@
 - fields: {category: 13, grams_per_ml: 1.0, name: apple juice}
   model: core.food
   pk: 46
+- fields: {category: 3, grams_per_ml: 1.0, name: applesauce}
+  model: core.food
+  pk: 145
 - fields: {category: 1, grams_per_ml: 1.0, name: artichoke hearts}
   model: core.food
   pk: 126
@@ -259,9 +265,6 @@
 - fields: {category: 7, grams_per_ml: 1.0, name: evaporated milk}
   model: core.food
   pk: 122
-- fields: {category: 4, grams_per_ml: 0.41999999999999998, name: flour}
-  model: core.food
-  pk: 1
 - fields: {category: 1, grams_per_ml: 1.0, name: garlic}
   model: core.food
   pk: 115
@@ -496,7 +499,7 @@
 - fields: {category: null, grams_per_ml: 1.0, name: white wine vinegar}
   model: core.food
   pk: 112
-- fields: {category: 4, grams_per_ml: 1.0, name: whole wheat flour}
+- fields: {category: 4, grams_per_ml: 0.40000000000000002, name: whole wheat flour}
   model: core.food
   pk: 35
 - fields: {category: 8, grams_per_ml: 1.0, name: worcestershire sauce}
