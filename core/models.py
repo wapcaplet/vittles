@@ -83,7 +83,7 @@ class Equivalence (ModelWrapper):
             to_unit = utils.pluralize(self.to_unit)
         else:
             to_unit = self.to_unit
-        return "1 %s = %g %s" % (self.unit, self.to_quantity, to_unit)
+        return u"1 %s = %g %s" % (self.unit, self.to_quantity, to_unit)
 
 
 class Preparation (ModelWrapper):

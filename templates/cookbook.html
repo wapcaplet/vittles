@@ -27,7 +27,7 @@
     <ul>
       {% for recipe in recipes %}
       <li>
-        <a href="/cookbook/{{ recipe.id }}/">
+        <a href="{{ recipe.get_absolute_url }}">
           {% include "recipe_summary.html" %}
         </a>
       </li>

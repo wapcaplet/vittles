@@ -52,11 +52,11 @@ def float_to_fraction(quantity, denominator=16):
     frac = Fraction(str(quantity - whole)).limit_denominator(denominator)
     if whole > 0:
         if frac > 0:
-            return "%d-%s" % (whole, frac)
+            return u"%d-%s" % (whole, frac)
         else:
-            return "%d" % whole
+            return u"%d" % whole
     else:
-        return "%s" % frac
+        return u"%s" % frac
 
 
 def fraction_to_float(fraction_string):
@@ -164,9 +164,9 @@ def pluralize(noun):
 
 
 def format_food_unit(quantity, unit, food):
-    """Return a string describing the given quantity of food. `quantity` may be
-    an actual number (int or float), or a string containing a decimal or
-    fraction as understood by :py:func:`fraction_to_float`.
+    """Return a unicode string describing the given quantity of food.
+    `quantity` may be an actual number (int or float), or a string containing a
+    decimal or fraction as understood by :py:func:`fraction_to_float`.
 
     If a unit is given, the unit is pluralized when appropriate:
 

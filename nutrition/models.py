@@ -34,12 +34,12 @@ class NutritionInfo (ModelWrapper):
 
     def __unicode__(self):
         if self.quantity == 0:
-            return "Unknown nutrition"
+            return u"Unknown nutrition"
 
         if self.food:
-            string = "%s" % self.food
+            string = u"%s" % self.food
         else:
-            string = "%i calories" % self.calories
+            string = u"%i calories" % self.calories
         return string
 
 
