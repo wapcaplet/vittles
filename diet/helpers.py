@@ -39,7 +39,7 @@ class MealCalendar (HTMLCalendar):
             for meal in self.meals[day]:
                 body.append('<li>')
                 #body.append('<a href="%s">' % meal.get_absolute_url())
-                body.append(esc(meal.kind))
+                body.append(esc(str(meal)))
                 #body.append('</a>')
                 body.append('</li>')
             body.append('</ul>')

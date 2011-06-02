@@ -1,6 +1,5 @@
 from django.db import models
 from core import utils
-from core import filters
 
 class ModelWrapper (models.Model):
     """Abstract base class for models.
