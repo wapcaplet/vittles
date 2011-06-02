@@ -1,5 +1,5 @@
 from django.db import models
-from core.models import ModelWrapper, Category, Unit
+from core.models import ModelWrapper, FoodGroup, Unit
 from core.utils import pluralize
 from nutrition.models import NutritionInfo
 from cookbook.models import Recipe
@@ -42,7 +42,7 @@ class TargetServing (ModelWrapper):
     """Target amount of a given food group as part of a diet plan.
     """
     diet_plan  = models.ForeignKey(DietPlan)
-    food_group = models.ForeignKey(Category)
+    food_group = models.ForeignKey(FoodGroup)
     quantity   = models.FloatField()
     unit       = models.ForeignKey(Unit)
 

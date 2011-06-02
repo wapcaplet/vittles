@@ -20,11 +20,11 @@ class ModelWrapper (models.Model):
         return obj
 
 
-class Category (ModelWrapper):
+class FoodGroup (ModelWrapper):
     """A classification for something.
     """
     name = models.CharField(max_length=50, unique=True)
-    parent = models.ForeignKey('Category', null=True, blank=True)
+    parent = models.ForeignKey('FoodGroup', null=True, blank=True)
 
     def __unicode__(self):
         return self.name
@@ -38,7 +38,7 @@ class Food (ModelWrapper):
     """Something edible.
     """
     name         = models.CharField(max_length=50, unique=True)
-    category     = models.ForeignKey(Category, null=True, blank=True)
+    food_group   = models.ForeignKey(FoodGroup, null=True, blank=True)
     grams_per_ml = models.FloatField(default=1.0)
 
     # Use range-based flitering for grams_per_ml

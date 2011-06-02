@@ -1,15 +1,15 @@
 from django.contrib import admin
-from core.models import Category, Food, Unit, Equivalence, Preparation
+from core.models import FoodGroup, Food, Unit, Equivalence, Preparation
 from nutrition.models import NutritionInfo
 
 # Inline forms
 
-class CategoryInline (admin.TabularInline):
-    model = Category
+class FoodGroupInline (admin.TabularInline):
+    model = FoodGroup
     extra = 5
     fk_name = 'parent'
-    verbose_name = 'Subcategory'
-    verbose_name_plural = 'Subcategories'
+    verbose_name = 'Sub-group'
+    verbose_name_plural = 'Sub-groups'
 
 class EquivalenceInline (admin.TabularInline):
     model = Equivalence
@@ -26,18 +26,18 @@ class NutritionInfoInline (admin.TabularInline):
 
 # Main forms
 
-class CategoryAdmin (admin.ModelAdmin):
+class FoodGroupAdmin (admin.ModelAdmin):
     ordering = ('name',)
     list_display = ('name', 'parent')
     list_filter = ('parent',)
-    inlines = [FoodInline, CategoryInline]
+    inlines = [FoodInline, FoodGroupInline]
 
 class FoodAdmin (admin.ModelAdmin):
     inlines = [NutritionInfoInline]
     ordering = ('name',)
-    list_display = ('name', 'category', 'grams_per_ml')
-    list_filter = ('category', 'grams_per_ml')
-    list_editable = ('category', 'grams_per_ml')
+    list_display = ('name', 'food_group', 'grams_per_ml')
+    list_filter = ('food_group', 'grams_per_ml')
+    list_editable = ('food_group', 'grams_per_ml')
     search_fields = ('name',)
 
 class UnitAdmin (admin.ModelAdmin):
@@ -54,7 +54,7 @@ class EquivalenceAdmin (admin.ModelAdmin):
 class PreparationAdmin (admin.ModelAdmin):
     ordering = ('name',)
 
-admin.site.register(Category, CategoryAdmin)
+admin.site.register(FoodGroup, FoodGroupAdmin)
 admin.site.register(Food, FoodAdmin)
 admin.site.register(Unit, UnitAdmin)
 admin.site.register(Equivalence, EquivalenceAdmin)
