@@ -7,20 +7,20 @@ class NutritionInfoAdmin (admin.ModelAdmin):
         css = {'all': ('css/nutrition.css',)}
 
     list_display = (
-        '__unicode__', 'quantity', 'unit',
+        #'__unicode__', 'quantity', 'unit',
         'calories', 'fat_calories',
         'fat', 'carb', 'sodium', 'protein', 'cholesterol')
     fieldsets = (
         (None, {
             'fields': (
-                'food',
-                ('quantity', 'unit'),
+                #'food',
+                #('quantity', 'unit'),
                 ('calories', 'fat_calories'),
                 'fat', 'carb', 'sodium', 'protein', 'cholesterol',
             )
         }),
     )
-    list_filter = ('unit',)
+    #list_filter = ('unit',)
 
     actions = ['normalize_nutrition_info']
 

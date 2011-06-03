@@ -1,13 +1,10 @@
 from django.db import models
-from core.models import ModelWrapper, Food, Unit
-from core.helpers import to_grams
+#from core.models import ModelWrapper
 
-class NutritionInfo (ModelWrapper):
-    """Nutritional information for a food.
+
+class NutritionInfo (models.Model):
+    """Generic nutritional information.
     """
-    food         = models.ForeignKey(Food, null=True, blank=True, related_name='nutrition_infos')
-    quantity     = models.FloatField(default=1)
-    unit         = models.ForeignKey(Unit, null=True, blank=True)
     calories     = models.FloatField(default=0)
     fat_calories = models.FloatField(default=0)
     fat          = models.FloatField("Fat (g)", default=0)
@@ -17,29 +14,11 @@ class NutritionInfo (ModelWrapper):
     cholesterol  = models.FloatField("Cholesterol (mg)", default=0)
 
     class Meta:
-        ordering = ['food']
         verbose_name_plural = "Nutrition information"
 
 
-    @classmethod
-    def undefined(cls):
-        """Return a special "undefined" `NutritionInfo` instance.
-        """
-        return NutritionInfo(quantity=0)
-
-
-    def is_defined(self):
-        return self.quantity > 0
-
-
     def __unicode__(self):
-        if self.quantity == 0:
-            return u"Unknown nutrition"
-
-        if self.food:
-            string = u"%s" % self.food
-        else:
-            string = u"%i calories" % self.calories
+        string = u"%i calories" % self.calories
         return string
 
 
@@ -51,55 +30,21 @@ class NutritionInfo (ModelWrapper):
         return string
 
 
-    def for_amount(self, to_quantity, to_unit):
-        """Return `NutritionInfo` for the given quantity and unit.
+    def set_equal(self, other):
+        """Set this `NutritionInfo` equal to another.
         """
-        # If units are the same, scale by quantity alone
-        if self.unit == to_unit:
-            factor = float(to_quantity) / self.quantity
-        else:
-            # Scaling factor for a 1-gram serving size
-            gram_serving = 1.0 / (to_grams(self.unit, self.food) * self.quantity)
-            # Target quantity in grams
-            target_grams = to_grams(to_unit, self.food) * to_quantity
-            # Overall scaling factor to apply to all nutritional info
-            factor = gram_serving * target_grams
-
-        return NutritionInfo(
-            quantity     = to_quantity,
-            unit         = to_unit,
-            calories     = factor * self.calories,
-            fat_calories = factor * self.fat_calories,
-            fat          = factor * self.fat,
-            carb         = factor * self.carb,
-            sodium       = factor * self.sodium,
-            protein      = factor * self.protein,
-            cholesterol  = factor * self.cholesterol
-        )
-
-
-    def normalize(self):
-        """Adjust this `NutritionInfo` to have `quantity` of 1.0.
-        """
-        # Don't normalize undefined nutrition info
-        if not self.is_defined():
-            return
-
-        scale = 1.0 / self.quantity
-        self.quantity     = 1.0
-        self.calories     = round(scale * self.calories, 2)
-        self.fat_calories = round(scale * self.fat_calories, 2)
-        self.fat          = round(scale * self.fat, 2)
-        self.carb         = round(scale * self.carb, 2)
-        self.sodium       = round(scale * self.sodium, 2)
-        self.protein      = round(scale * self.protein, 2)
-        self.cholesterol  = round(scale * self.cholesterol, 2)
+        self.calories = other.calories
+        self.fat_calories = other.fat_calories
+        self.fat = other.fat
+        self.carb = other.carb
+        self.sodium = other.sodium
+        self.protein = other.protein
+        self.cholesterol = other.cholesterol
         self.save()
 
 
     def __add__(self, other):
         """Add this `NutritionInfo` to another, and return the sum.
-        The returned `NutritionInfo` has a quantity of 1, and no `Unit`.
         """
         return NutritionInfo(
             calories     = self.calories + other.calories,
@@ -116,8 +61,6 @@ class NutritionInfo (ModelWrapper):
         """Multiply this `NutritionInfo` by `factor`.
         """
         return NutritionInfo(
-            quantity     = factor * self.quantity,
-            unit         = self.unit,
             calories     = factor * self.calories,
             fat_calories = factor * self.fat_calories,
             fat          = factor * self.fat,
@@ -126,4 +69,5 @@ class NutritionInfo (ModelWrapper):
             protein      = factor * self.protein,
             cholesterol  = factor * self.cholesterol
         )
+
 

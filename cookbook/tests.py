@@ -1,5 +1,5 @@
 from django.test import TestCase
-from core.models import Unit, Equivalence, Food
+from core.models import Unit, Equivalence, Food, FoodNutritionInfo
 from nutrition.models import NutritionInfo
 from cookbook.models import Recipe, Ingredient
 
@@ -28,7 +28,7 @@ class RecipeTest (CookbookTest):
         flour = Food.get(name='flour')
 
         # Nutrition Infos
-        egg_nutrition = NutritionInfo.get(
+        egg_nutrition, created = FoodNutritionInfo.objects.get_or_create(
             food         = egg,
             quantity     = 1,
             unit         = None,
@@ -40,7 +40,7 @@ class RecipeTest (CookbookTest):
             protein      = 6.3,
             cholesterol  = 186,
         )
-        flour_nutrition = NutritionInfo.get(
+        flour_nutrition, created = FoodNutritionInfo.objects.get_or_create(
             food         = flour,
             quantity     = 1,
             unit         = cup,
@@ -56,11 +56,10 @@ class RecipeTest (CookbookTest):
         noodles = Recipe.get(name='Pancakes')
         noodles.ingredients.create(quantity=1, food=egg)
         noodles.ingredients.create(quantity=1, unit=cup, food=flour)
-
-        noodles_nutrition = noodles.nutrition_info()
+        noodles.save()
 
         self.assert_nutrition_info_equals(
-            noodles_nutrition,
+            noodles.nutrition_info,
             calories     = 472,
             fat_calories = 20,
             fat          = 4.8,

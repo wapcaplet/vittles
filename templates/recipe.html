@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load cookbook_extras %}
 {% block title %}{{ recipe.name }}{% endblock %}
 
 {% block header %}
@@ -22,24 +23,30 @@
 
       <ul>
         {% for ingredient in ingredients %}
-        <li>
-        {{ ingredient }}
-        {% if not ingredient.nutrition_info.is_defined %}
-          *
-        {% endif %}
+        <li class="ingredient" id="ingredient_{{ ingredient.id }}">
+          {{ ingredient }}
+          <div class="nutrition_popup" style="display: none;">
+            {% show_nutrition ingredient.nutrition_info %}
+          </div>
         </li>
         {% endfor %}
       </ul>
     {% endfor %}
   </div>
 
-  {% if recipe.nutrition_info_is_incomplete %}
-    <p><em>* Missing nutrition information</em></p>
-  {% endif %}
-
+  <h2>Nutrition</h2>
+  <p>Per {{ serving }}</p>
   {% include "nutrition_info.html" %}
 </div>
 
+<script type="text/javascript">
+  // Display nutrition info when hovering over an ingredient
+  $('li.ingredient').mouseover(function(event) {
+    $('#' + this.id + ' .nutrition_popup').show();
+  }).mouseout(function() {
+    $('#' + this.id + ' .nutrition_popup').hide();
+  });
+</script>
 
 <div class="directions">
   <h2>Directions</h2>

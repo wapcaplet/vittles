@@ -1,5 +1,4 @@
 from django.core.exceptions import ObjectDoesNotExist
-from vittles.core.models import Equivalence
 
 
 class NoEquivalence (Exception):
@@ -11,6 +10,8 @@ def convert_unit(unit, to_unit):
     :py:class:`Equivalence` be defined for the relevant units; if no `Equivalence` is
     found, raise a `NoEquivalence` exception.
     """
+    from core.models import Equivalence
+
     # Degenerate case
     if str(unit) == str(to_unit):
         return 1.0

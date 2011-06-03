@@ -1,5 +1,7 @@
 from django.db import models
-from core import utils
+from core import utils, helpers
+from nutrition.models import NutritionInfo
+
 
 class ModelWrapper (models.Model):
     """Abstract base class for models.
@@ -68,6 +70,57 @@ class Unit (ModelWrapper):
 
     class Meta:
         ordering = ['name']
+
+
+class FoodNutritionInfo (NutritionInfo):
+    """Nutritional information for a Food.
+    """
+    food     = models.ForeignKey(Food, related_name='nutrition_infos')
+    quantity = models.FloatField(default=1)
+    unit     = models.ForeignKey(Unit, null=True, blank=True)
+
+    def for_amount(self, to_quantity, to_unit):
+        """Return a `FoodNutritionInfo` for the given quantity and unit.
+        """
+        # If units are the same, scale by quantity alone
+        if self.unit == to_unit:
+            factor = float(to_quantity) / self.quantity
+        else:
+            # Scaling factor for a 1-gram serving size
+            gram_serving = 1.0 / (helpers.to_grams(self.unit, self.food) * self.quantity)
+            # Target quantity in grams
+            target_grams = helpers.to_grams(to_unit, self.food) * to_quantity
+            # Overall scaling factor to apply to all nutritional info
+            factor = gram_serving * target_grams
+
+        return FoodNutritionInfo(
+            food         = self.food,
+            quantity     = to_quantity,
+            unit         = to_unit,
+            calories     = factor * self.calories,
+            fat_calories = factor * self.fat_calories,
+            fat          = factor * self.fat,
+            carb         = factor * self.carb,
+            sodium       = factor * self.sodium,
+            protein      = factor * self.protein,
+            cholesterol  = factor * self.cholesterol
+        )
+
+
+    def normalize(self):
+        """Adjust this `NutritionInfo` to have `quantity` of 1.0.
+        """
+        # FIXME: Catch possibility of self.quantity == 0
+        scale = 1.0 / self.quantity
+        self.quantity     = 1.0
+        self.calories     = round(scale * self.calories, 2)
+        self.fat_calories = round(scale * self.fat_calories, 2)
+        self.fat          = round(scale * self.fat, 2)
+        self.carb         = round(scale * self.carb, 2)
+        self.sodium       = round(scale * self.sodium, 2)
+        self.protein      = round(scale * self.protein, 2)
+        self.cholesterol  = round(scale * self.cholesterol, 2)
+        self.save()
 
 
 class Equivalence (ModelWrapper):

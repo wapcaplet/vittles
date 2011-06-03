@@ -1,443 +1,1918 @@
-- fields: {calories: 4.0, carb: 0.87, cholesterol: 0.0, fat: 0.02, fat_calories: 0.17000000000000001,
-    food: 132, protein: 0.070000000000000007, quantity: 1.0, sodium: 9.0, unit: 5}
+- fields: {calories: 90.0, carb: 6.0, cholesterol: 0.0, fat: 6.0, fat_calories: 55.0,
+    protein: 3.5, sodium: 55.0}
   model: nutrition.nutritioninfo
-  pk: 142
-- fields: {calories: 3.3300000000000001, carb: 0.72999999999999998, cholesterol: 0.0,
-    fat: 0.0, fat_calories: 0.0, food: 1, protein: 0.10000000000000001, quantity: 1.0,
-    sodium: 0.0, unit: 5}
+  pk: 1
+- fields: {calories: 60.0, carb: 17.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
   model: nutrition.nutritioninfo
-  pk: 14
-- fields: {calories: 5.71, carb: 0.20999999999999999, cholesterol: 0.0, fat: 0.5,
-    fat_calories: 4.6399999999999997, food: 125, protein: 0.20999999999999999, quantity: 1.0,
-    sodium: 0.0, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 58
-- fields: {calories: 50.0, carb: 14.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
-    food: 145, protein: 0.0, quantity: 123.0, sodium: 0.0, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 150
-- fields: {calories: 43.0, carb: 0.0, cholesterol: 9.0, fat: 3.0, fat_calories: 30.0,
-    food: 21, protein: 3.0, quantity: 1.0, sodium: 185.0, unit: 17}
-  model: nutrition.nutritioninfo
-  pk: 118
+  pk: 2
 - fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
-    food: 10, protein: 0.0, quantity: 1.0, sodium: 108.33, unit: 5}
+    protein: 0.0, sodium: 108.33}
   model: nutrition.nutritioninfo
   pk: 3
 - fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
-    food: 11, protein: 0.0, quantity: 1.0, sodium: 250.0, unit: 5}
+    protein: 0.0, sodium: 250.0}
   model: nutrition.nutritioninfo
   pk: 4
-- fields: {calories: 0.89000000000000001, carb: 0.23000000000000001, cholesterol: 0.0,
-    fat: 0.0, fat_calories: 0.029999999999999999, food: 80, protein: 0.01, quantity: 1.0,
-    sodium: 0.01, unit: 5}
+- fields: {calories: 2.0, carb: 0.59999999999999998, cholesterol: 0.0, fat: 0.10000000000000001,
+    fat_calories: 1.0, protein: 0.0, sodium: 0.0}
   model: nutrition.nutritioninfo
-  pk: 128
-- fields: {calories: 121.0, carb: 31.0, cholesterol: 0.0, fat: 0.0, fat_calories: 4.0,
-    food: 80, protein: 1.0, quantity: 1.0, sodium: 1.0, unit: null}
-  model: nutrition.nutritioninfo
-  pk: 129
-- fields: {calories: 3.0, carb: 1.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
-    food: 102, protein: 0.0, quantity: 1.0, sodium: 0.0, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 80
-- fields: {calories: 33.0, carb: 8.0, cholesterol: 0.0, fat: 0.0, fat_calories: 2.0,
-    food: 105, protein: 1.0, quantity: 1.0, sodium: 5.0, unit: null}
-  model: nutrition.nutritioninfo
-  pk: 96
-- fields: {calories: 0.20000000000000001, carb: 0.050000000000000003, cholesterol: 0.0,
-    fat: 0.0, fat_calories: 0.01, food: 105, protein: 0.01, quantity: 1.0, sodium: 0.029999999999999999,
-    unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 113
-- fields: {calories: 2.6699999999999999, carb: 0.67000000000000004, cholesterol: 0.0,
-    fat: 0.0, fat_calories: 0.33000000000000002, food: 96, protein: 0.17000000000000001,
-    quantity: 1.0, sodium: 0.5, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 89
-- fields: {calories: 0.56999999999999995, carb: 0.14000000000000001, cholesterol: 0.0,
-    fat: 0.0, fat_calories: 0.029999999999999999, food: 32, protein: 0.01, quantity: 1.0,
-    sodium: 0.01, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 122
-- fields: {calories: 3.9500000000000002, carb: 0.71999999999999997, cholesterol: 0.0,
-    fat: 0.050000000000000003, fat_calories: 0.46999999999999997, food: 120, protein: 0.13,
-    quantity: 1.0, sodium: 7.3200000000000003, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 108
-- fields: {calories: 3.5499999999999998, carb: 0.70999999999999996, cholesterol: 0.0,
-    fat: 0.0, fat_calories: 0.0, food: 36, protein: 0.13, quantity: 1.0, sodium: 0.0,
-    unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 144
-- fields: {calories: 0.34000000000000002, carb: 0.070000000000000007, cholesterol: 0.0,
-    fat: 0.0, fat_calories: 0.029999999999999999, food: 135, protein: 0.029999999999999999,
-    quantity: 1.0, sodium: 0.33000000000000002, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 145
-- fields: {calories: 1.1100000000000001, carb: 0.23000000000000001, cholesterol: 0.0,
-    fat: 0.01, fat_calories: 0.080000000000000002, food: 142, protein: 0.029999999999999999,
-    quantity: 1.0, sodium: 0.050000000000000003, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 101
-- fields: {calories: 3.7999999999999998, carb: 0.97999999999999998, cholesterol: 0.0,
-    fat: 0.0, fat_calories: 0.0, food: 56, protein: 0.0, quantity: 1.0, sodium: 0.28000000000000003,
-    unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 93
+  pk: 5
 - fields: {calories: 7.1399999999999997, carb: 0.0, cholesterol: 2.1400000000000001,
-    fat: 0.79000000000000004, fat_calories: 7.1399999999999997, food: 9, protein: 0.0,
-    quantity: 1.0, sodium: 6.4299999999999997, unit: 5}
+    fat: 0.79000000000000004, fat_calories: 7.1399999999999997, protein: 0.0, sodium: 6.4299999999999997}
   model: nutrition.nutritioninfo
   pk: 6
-- fields: {calories: 0.56000000000000005, carb: 0.050000000000000003, cholesterol: 0.080000000000000002,
-    fat: 0.02, fat_calories: 0.17999999999999999, food: 87, protein: 0.040000000000000001,
-    quantity: 1.0, sodium: 0.85999999999999999, unit: 5}
+- fields: {calories: 3.3300000000000001, carb: 0.72999999999999998, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.10000000000000001, sodium: 0.0}
   model: nutrition.nutritioninfo
-  pk: 94
-- fields: {calories: 3.6200000000000001, carb: 0.78000000000000003, cholesterol: 0.0,
-    fat: 0.01, fat_calories: 0.070000000000000007, food: 90, protein: 0.080000000000000002,
-    quantity: 1.0, sodium: 0.02, unit: 5}
+  pk: 14
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 1003.4}
   model: nutrition.nutritioninfo
-  pk: 121
+  pk: 16
+- fields: {calories: 3.3300000000000001, carb: 0.070000000000000007, cholesterol: 1.0,
+    fat: 0.33000000000000002, fat_calories: 3.0, protein: 0.070000000000000007, sodium: 3.5}
+  model: nutrition.nutritioninfo
+  pk: 19
+- fields: {calories: 0.54000000000000004, carb: 0.050000000000000003, cholesterol: 0.080000000000000002,
+    fat: 0.02, fat_calories: 0.19, protein: 0.029999999999999999, sodium: 0.54000000000000004}
+  model: nutrition.nutritioninfo
+  pk: 20
+- fields: {calories: 110.0, carb: 26.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 3.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 30
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 400.0}
+  model: nutrition.nutritioninfo
+  pk: 34
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 20.0}
+  model: nutrition.nutritioninfo
+  pk: 35
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 11.0}
+  model: nutrition.nutritioninfo
+  pk: 42
+- fields: {calories: 1.1799999999999999, carb: 0.28999999999999998, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 10.0}
+  model: nutrition.nutritioninfo
+  pk: 43
+- fields: {calories: 3.6800000000000002, carb: 0.0, cholesterol: 0.79000000000000004,
+    fat: 0.26000000000000001, fat_calories: 2.3700000000000001, protein: 0.26000000000000001,
+    sodium: 8.9499999999999993}
+  model: nutrition.nutritioninfo
+  pk: 44
+- fields: {calories: 8.5700000000000003, carb: 0.0, cholesterol: 0.0, fat: 1.0, fat_calories: 8.5700000000000003,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 49
+- fields: {calories: 5.71, carb: 0.20999999999999999, cholesterol: 0.0, fat: 0.5,
+    fat_calories: 4.6399999999999997, protein: 0.20999999999999999, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 58
+- fields: {calories: 1.3300000000000001, carb: 0.070000000000000007, cholesterol: 0.33000000000000002,
+    fat: 0.080000000000000002, fat_calories: 0.82999999999999996, protein: 0.070000000000000007,
+    sodium: 0.82999999999999996}
+  model: nutrition.nutritioninfo
+  pk: 68
+- fields: {calories: 1.3300000000000001, carb: 0.13, cholesterol: 0.33000000000000002,
+    fat: 0.10000000000000001, fat_calories: 1.0, protein: 0.0, sodium: 8.6699999999999999}
+  model: nutrition.nutritioninfo
+  pk: 74
+- fields: {calories: 9.1699999999999999, carb: 0.0, cholesterol: 0.0, fat: 1.0, fat_calories: 9.1699999999999999,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 75
+- fields: {calories: 4.6699999999999999, carb: 1.0700000000000001, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 1.3300000000000001}
+  model: nutrition.nutritioninfo
+  pk: 76
+- fields: {calories: 105.0, carb: 20.0, cholesterol: 35.0, fat: 1.25, fat_calories: 12.5,
+    protein: 4.0, sodium: 7.5}
+  model: nutrition.nutritioninfo
+  pk: 77
+- fields: {calories: 72.0, carb: 0.40000000000000002, cholesterol: 186.0, fat: 4.7999999999999998,
+    fat_calories: 20.0, protein: 6.2999999999999998, sodium: 71.0}
+  model: nutrition.nutritioninfo
+  pk: 78
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 79
+- fields: {calories: 3.0, carb: 1.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 80
+- fields: {calories: 3.0, carb: 0.5, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.5}
+  model: nutrition.nutritioninfo
+  pk: 81
+- fields: {calories: 4.0, carb: 1.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 7.0}
+  model: nutrition.nutritioninfo
+  pk: 82
+- fields: {calories: 0.40000000000000002, carb: 0.089999999999999997, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.01, sodium: 0.040000000000000001}
+  model: nutrition.nutritioninfo
+  pk: 83
 - fields: {calories: 0.40999999999999998, carb: 0.089999999999999997, cholesterol: 0.0,
-    fat: 0.0, fat_calories: 0.0, food: 17, protein: 0.01, quantity: 1.0, sodium: 0.68999999999999995,
-    unit: 5}
+    fat: 0.0, fat_calories: 0.0, protein: 0.01, sodium: 0.68999999999999995}
   model: nutrition.nutritioninfo
   pk: 84
 - fields: {calories: 0.16, carb: 0.040000000000000001, cholesterol: 0.0, fat: 0.0,
-    fat_calories: 0.0, food: 18, protein: 0.01, quantity: 1.0, sodium: 0.80000000000000004,
-    unit: 5}
+    fat_calories: 0.0, protein: 0.01, sodium: 0.80000000000000004}
   model: nutrition.nutritioninfo
   pk: 85
+- fields: {calories: 2.71, carb: 0.0, cholesterol: 0.91000000000000003, fat: 0.17999999999999999,
+    fat_calories: 1.6100000000000001, protein: 0.26000000000000001, sodium: 0.75}
+  model: nutrition.nutritioninfo
+  pk: 86
 - fields: {calories: 4.0300000000000002, carb: 0.02, cholesterol: 1.05, fat: 0.33000000000000002,
-    fat_calories: 2.9199999999999999, food: 38, protein: 0.25, quantity: 1.0, sodium: 6.21,
-    unit: 5}
+    fat_calories: 2.9199999999999999, protein: 0.25, sodium: 6.21}
   model: nutrition.nutritioninfo
   pk: 87
-- fields: {calories: 2.5, carb: 0.33000000000000002, cholesterol: 0.0, fat: 0.080000000000000002,
-    fat_calories: 0.82999999999999996, food: 69, protein: 0.17000000000000001, quantity: 1.0,
-    sodium: 113.33, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 138
-- fields: {calories: 143.0, carb: 0.0, cholesterol: 73.0, fat: 3.0, fat_calories: 26.0,
-    food: 24, protein: 28.0, quantity: 1.0, sodium: 60.0, unit: null}
-  model: nutrition.nutritioninfo
-  pk: 107
 - fields: {calories: 0.16, carb: 0.01, cholesterol: 0.0, fat: 0.0, fat_calories: 0.050000000000000003,
-    food: 67, protein: 0.02, quantity: 1.0, sodium: 0.29999999999999999, unit: 5}
+    protein: 0.02, sodium: 0.29999999999999999}
   model: nutrition.nutritioninfo
   pk: 88
-- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
-    food: 110, protein: 0.0, quantity: 1.0, sodium: 20.0, unit: 5}
+- fields: {calories: 2.6699999999999999, carb: 0.67000000000000004, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.33000000000000002, protein: 0.17000000000000001, sodium: 0.5}
   model: nutrition.nutritioninfo
-  pk: 35
-- fields: {calories: 3.1099999999999999, carb: 0.64000000000000001, cholesterol: 0.0,
-    fat: 0.040000000000000001, fat_calories: 0.28999999999999998, food: 134, protein: 0.20999999999999999,
-    quantity: 1.0, sodium: 0.69999999999999996, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 119
-- fields: {calories: 5.3300000000000001, carb: 0.67000000000000004, cholesterol: 0.0,
-    fat: 0.27000000000000002, fat_calories: 2.3999999999999999, food: 19, protein: 0.070000000000000007,
-    quantity: 1.0, sodium: 0.67000000000000004, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 133
-- fields: {calories: 2.4700000000000002, carb: 0.81000000000000005, cholesterol: 0.0,
-    fat: 0.01, fat_calories: 0.10000000000000001, food: 81, protein: 0.040000000000000001,
-    quantity: 1.0, sodium: 0.10000000000000001, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 120
-- fields: {calories: 1.7, carb: 0.0, cholesterol: 0.76000000000000001, fat: 0.050000000000000003,
-    fat_calories: 0.45000000000000001, food: 123, protein: 0.28999999999999998, quantity: 1.0,
-    sodium: 0.69999999999999996, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 112
-- fields: {calories: 3.6899999999999999, carb: 0.79000000000000004, cholesterol: 0.0,
-    fat: 0.02, fat_calories: 0.16, food: 143, protein: 0.070000000000000007, quantity: 1.0,
-    sodium: 0.070000000000000007, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 143
-- fields: {calories: 3.3300000000000001, carb: 0.070000000000000007, cholesterol: 1.0,
-    fat: 0.33000000000000002, fat_calories: 3.0, food: 88, protein: 0.070000000000000007,
-    quantity: 1.0, sodium: 3.5, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 19
-- fields: {calories: 0.27000000000000002, carb: 0.040000000000000001, cholesterol: 0.0,
-    fat: 0.0, fat_calories: 0.01, food: 118, protein: 0.029999999999999999, quantity: 1.0,
-    sodium: 0.059999999999999998, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 109
-- fields: {calories: 72.0, carb: 0.40000000000000002, cholesterol: 186.0, fat: 4.7999999999999998,
-    fat_calories: 20.0, food: 2, protein: 6.2999999999999998, quantity: 1.0, sodium: 71.0,
-    unit: null}
-  model: nutrition.nutritioninfo
-  pk: 78
-- fields: {calories: 105.0, carb: 20.0, cholesterol: 35.0, fat: 1.25, fat_calories: 12.5,
-    food: 61, protein: 4.0, quantity: 1.0, sodium: 7.5, unit: 4}
-  model: nutrition.nutritioninfo
-  pk: 77
-- fields: {calories: 16.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 1.0,
-    food: 119, protein: 4.0, quantity: 1.0, sodium: 55.0, unit: null}
-  model: nutrition.nutritioninfo
-  pk: 91
+  pk: 89
 - fields: {calories: 54.0, carb: 1.0, cholesterol: 210.0, fat: 5.0, fat_calories: 41.0,
-    food: 86, protein: 3.0, quantity: 1.0, sodium: 8.0, unit: null}
+    protein: 3.0, sodium: 8.0}
   model: nutrition.nutritioninfo
   pk: 90
-- fields: {calories: 3.71, carb: 0.75, cholesterol: 0.0, fat: 0.02, fat_calories: 0.13,
-    food: 100, protein: 0.13, quantity: 1.0, sodium: 0.059999999999999998, unit: 5}
+- fields: {calories: 16.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 1.0,
+    protein: 4.0, sodium: 55.0}
   model: nutrition.nutritioninfo
-  pk: 130
-- fields: {calories: 0.78000000000000003, carb: 0.11, cholesterol: 0.040000000000000001,
-    fat: 0.0, fat_calories: 0.02, food: 122, protein: 0.080000000000000002, quantity: 1.0,
-    sodium: 1.1499999999999999, unit: 5}
+  pk: 91
+- fields: {calories: 3.75, carb: 1.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
   model: nutrition.nutritioninfo
-  pk: 110
+  pk: 92
+- fields: {calories: 3.7999999999999998, carb: 0.97999999999999998, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 0.28000000000000003}
+  model: nutrition.nutritioninfo
+  pk: 93
+- fields: {calories: 0.56000000000000005, carb: 0.050000000000000003, cholesterol: 0.080000000000000002,
+    fat: 0.02, fat_calories: 0.17999999999999999, protein: 0.040000000000000001, sodium: 0.85999999999999999}
+  model: nutrition.nutritioninfo
+  pk: 94
+- fields: {calories: 3.8900000000000001, carb: 1.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.01,
+    protein: 0.0, sodium: 0.01}
+  model: nutrition.nutritioninfo
+  pk: 95
+- fields: {calories: 33.0, carb: 8.0, cholesterol: 0.0, fat: 0.0, fat_calories: 2.0,
+    protein: 1.0, sodium: 5.0}
+  model: nutrition.nutritioninfo
+  pk: 96
+- fields: {calories: 0.23999999999999999, carb: 0.059999999999999998, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.02, protein: 0.01, sodium: 5.2400000000000002}
+  model: nutrition.nutritioninfo
+  pk: 97
+- fields: {calories: 8.8399999999999999, carb: 0.0, cholesterol: 0.0, fat: 1.0, fat_calories: 8.8399999999999999,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 98
+- fields: {calories: 2.9199999999999999, carb: 0.41999999999999998, cholesterol: 0.0,
+    fat: 0.080000000000000002, fat_calories: 0.41999999999999998, protein: 0.41999999999999998,
+    sodium: 0.5}
+  model: nutrition.nutritioninfo
+  pk: 99
+- fields: {calories: 0.96999999999999997, carb: 0.20999999999999999, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.02, protein: 0.02, sodium: 0.050000000000000003}
+  model: nutrition.nutritioninfo
+  pk: 100
+- fields: {calories: 1.1100000000000001, carb: 0.23000000000000001, cholesterol: 0.0,
+    fat: 0.01, fat_calories: 0.080000000000000002, protein: 0.029999999999999999,
+    sodium: 0.050000000000000003}
+  model: nutrition.nutritioninfo
+  pk: 101
+- fields: {calories: 0.81999999999999995, carb: 0.029999999999999999, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 0.050000000000000003}
+  model: nutrition.nutritioninfo
+  pk: 102
+- fields: {calories: 0.17999999999999999, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.02}
+  model: nutrition.nutritioninfo
+  pk: 103
+- fields: {calories: 0.19, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.080000000000000002}
+  model: nutrition.nutritioninfo
+  pk: 104
 - fields: {calories: 4.0, carb: 1.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
-    food: 115, protein: 0.0, quantity: 1.0, sodium: 1.0, unit: 19}
+    protein: 0.0, sodium: 1.0}
   model: nutrition.nutritioninfo
   pk: 105
 - fields: {calories: 3.3799999999999999, carb: 0.75, cholesterol: 0.0, fat: 0.0, fat_calories: 0.13,
-    food: 116, protein: 0.13, quantity: 1.0, sodium: 0.25, unit: 5}
+    protein: 0.13, sodium: 0.25}
   model: nutrition.nutritioninfo
   pk: 106
-- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
-    food: 106, protein: 0.0, quantity: 1.0, sodium: 960.0, unit: 2}
+- fields: {calories: 143.0, carb: 0.0, cholesterol: 73.0, fat: 3.0, fat_calories: 26.0,
+    protein: 28.0, sodium: 60.0}
   model: nutrition.nutritioninfo
-  pk: 134
-- fields: {calories: 3.4700000000000002, carb: 0.70999999999999996, cholesterol: 0.0,
-    fat: 0.059999999999999998, fat_calories: 0.5, food: 91, protein: 0.089999999999999997,
-    quantity: 1.0, sodium: 0.32000000000000001, unit: 5}
+  pk: 107
+- fields: {calories: 3.9500000000000002, carb: 0.71999999999999997, cholesterol: 0.0,
+    fat: 0.050000000000000003, fat_calories: 0.46999999999999997, protein: 0.13, sodium: 7.3200000000000003}
   model: nutrition.nutritioninfo
-  pk: 124
-- fields: {calories: 0.25, carb: 0.059999999999999998, cholesterol: 0.0, fat: 0.0,
-    fat_calories: 0.01, food: 104, protein: 0.02, quantity: 1.0, sodium: 0.040000000000000001,
-    unit: 5}
+  pk: 108
+- fields: {calories: 0.27000000000000002, carb: 0.040000000000000001, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.01, protein: 0.029999999999999999, sodium: 0.059999999999999998}
   model: nutrition.nutritioninfo
-  pk: 126
-- fields: {calories: 2.71, carb: 0.0, cholesterol: 0.91000000000000003, fat: 0.17999999999999999,
-    fat_calories: 1.6100000000000001, food: 23, protein: 0.26000000000000001, quantity: 1.0,
-    sodium: 0.75, unit: 5}
+  pk: 109
+- fields: {calories: 0.78000000000000003, carb: 0.11, cholesterol: 0.040000000000000001,
+    fat: 0.0, fat_calories: 0.02, protein: 0.080000000000000002, sodium: 1.1499999999999999}
   model: nutrition.nutritioninfo
-  pk: 86
-- fields: {calories: 110.0, carb: 21.0, cholesterol: 0.0, fat: 1.5, fat_calories: 13.0,
-    food: 144, protein: 3.0, quantity: 1.0, sodium: 220.0, unit: null}
+  pk: 110
+- fields: {calories: 2.6499999999999999, carb: 0.01, cholesterol: 0.88, fat: 0.20000000000000001,
+    fat_calories: 1.8, protein: 0.20000000000000001, sodium: 15.289999999999999}
   model: nutrition.nutritioninfo
-  pk: 149
-- fields: {calories: 6.2800000000000002, carb: 0.17000000000000001, cholesterol: 0.0,
-    fat: 0.60999999999999999, fat_calories: 5.0800000000000001, food: 94, protein: 0.14999999999999999,
-    quantity: 1.0, sodium: 0.0, unit: 5}
+  pk: 111
+- fields: {calories: 1.7, carb: 0.0, cholesterol: 0.76000000000000001, fat: 0.050000000000000003,
+    fat_calories: 0.45000000000000001, protein: 0.28999999999999998, sodium: 0.69999999999999996}
   model: nutrition.nutritioninfo
-  pk: 127
-- fields: {calories: 3.3300000000000001, carb: 0.070000000000000007, cholesterol: 1.3300000000000001,
-    fat: 0.33000000000000002, fat_calories: 3.0, food: 137, protein: 0.0, quantity: 1.0,
-    sodium: 0.33000000000000002, unit: 5}
+  pk: 112
+- fields: {calories: 0.20000000000000001, carb: 0.050000000000000003, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.01, protein: 0.01, sodium: 0.029999999999999999}
   model: nutrition.nutritioninfo
-  pk: 148
-- fields: {calories: 60.0, carb: 17.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
-    food: 114, protein: 0.0, quantity: 1.0, sodium: 0.0, unit: 3}
+  pk: 113
+- fields: {calories: 44.0, carb: 10.0, cholesterol: 0.0, fat: 0.0, fat_calories: 1.0,
+    protein: 1.0, sodium: 4.0}
   model: nutrition.nutritioninfo
-  pk: 2
-- fields: {calories: 1.1799999999999999, carb: 0.28999999999999998, cholesterol: 0.0,
-    fat: 0.0, fat_calories: 0.0, food: 71, protein: 0.0, quantity: 1.0, sodium: 10.0,
-    unit: 5}
+  pk: 114
+- fields: {calories: 0.77000000000000002, carb: 0.14000000000000001, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.029999999999999999, protein: 0.050000000000000003, sodium: 1.0800000000000001}
   model: nutrition.nutritioninfo
-  pk: 43
-- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
-    food: 109, protein: 0.0, quantity: 1.0, sodium: 400.0, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 34
-- fields: {calories: 1.3300000000000001, carb: 0.13, cholesterol: 0.33000000000000002,
-    fat: 0.10000000000000001, fat_calories: 1.0, food: 95, protein: 0.0, quantity: 1.0,
-    sodium: 8.6699999999999999, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 74
-- fields: {calories: 0.54000000000000004, carb: 0.050000000000000003, cholesterol: 0.080000000000000002,
-    fat: 0.02, fat_calories: 0.19, food: 3, protein: 0.029999999999999999, quantity: 1.0,
-    sodium: 0.54000000000000004, unit: 14}
-  model: nutrition.nutritioninfo
-  pk: 20
-- fields: {calories: 4.6699999999999999, carb: 1.0700000000000001, cholesterol: 0.0,
-    fat: 0.0, fat_calories: 0.0, food: 53, protein: 0.0, quantity: 1.0, sodium: 1.3300000000000001,
-    unit: 14}
-  model: nutrition.nutritioninfo
-  pk: 76
+  pk: 115
 - fields: {calories: 2.54, carb: 0.029999999999999999, cholesterol: 0.64000000000000001,
-    fat: 0.16, fat_calories: 1.3999999999999999, food: 40, protein: 0.23999999999999999,
-    quantity: 1.0, sodium: 6.1900000000000004, unit: 5}
+    fat: 0.16, fat_calories: 1.3999999999999999, protein: 0.23999999999999999, sodium: 6.1900000000000004}
   model: nutrition.nutritioninfo
   pk: 116
 - fields: {calories: 0.22, carb: 0.029999999999999999, cholesterol: 0.0, fat: 0.0,
-    fat_calories: 0.029999999999999999, food: 121, protein: 0.029999999999999999,
-    quantity: 1.0, sodium: 0.050000000000000003, unit: 5}
+    fat_calories: 0.029999999999999999, protein: 0.029999999999999999, sodium: 0.050000000000000003}
   model: nutrition.nutritioninfo
   pk: 117
+- fields: {calories: 43.0, carb: 0.0, cholesterol: 9.0, fat: 3.0, fat_calories: 30.0,
+    protein: 3.0, sodium: 185.0}
+  model: nutrition.nutritioninfo
+  pk: 118
+- fields: {calories: 3.1099999999999999, carb: 0.64000000000000001, cholesterol: 0.0,
+    fat: 0.040000000000000001, fat_calories: 0.28999999999999998, protein: 0.20999999999999999,
+    sodium: 0.69999999999999996}
+  model: nutrition.nutritioninfo
+  pk: 119
+- fields: {calories: 2.4700000000000002, carb: 0.81000000000000005, cholesterol: 0.0,
+    fat: 0.01, fat_calories: 0.10000000000000001, protein: 0.040000000000000001, sodium: 0.10000000000000001}
+  model: nutrition.nutritioninfo
+  pk: 120
+- fields: {calories: 3.6200000000000001, carb: 0.78000000000000003, cholesterol: 0.0,
+    fat: 0.01, fat_calories: 0.070000000000000007, protein: 0.080000000000000002,
+    sodium: 0.02}
+  model: nutrition.nutritioninfo
+  pk: 121
+- fields: {calories: 0.56999999999999995, carb: 0.14000000000000001, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.029999999999999999, protein: 0.01, sodium: 0.01}
+  model: nutrition.nutritioninfo
+  pk: 122
 - fields: {calories: 5.25, carb: 0.48999999999999999, cholesterol: 0.0, fat: 0.35999999999999999,
-    fat_calories: 3.04, food: 92, protein: 0.059999999999999998, quantity: 1.0, sodium: 0.16,
-    unit: 5}
+    fat_calories: 3.04, protein: 0.059999999999999998, sodium: 0.16}
   model: nutrition.nutritioninfo
   pk: 123
-- fields: {calories: 8.5700000000000003, carb: 0.0, cholesterol: 0.0, fat: 1.0, fat_calories: 8.5700000000000003,
-    food: 29, protein: 0.0, quantity: 1.0, sodium: 0.0, unit: 5}
+- fields: {calories: 3.4700000000000002, carb: 0.70999999999999996, cholesterol: 0.0,
+    fat: 0.059999999999999998, fat_calories: 0.5, protein: 0.089999999999999997, sodium: 0.32000000000000001}
   model: nutrition.nutritioninfo
-  pk: 49
-- fields: {calories: 0.40000000000000002, carb: 0.089999999999999997, cholesterol: 0.0,
-    fat: 0.0, fat_calories: 0.0, food: 16, protein: 0.01, quantity: 1.0, sodium: 0.040000000000000001,
-    unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 83
-- fields: {calories: 44.0, carb: 10.0, cholesterol: 0.0, fat: 0.0, fat_calories: 1.0,
-    food: 16, protein: 1.0, quantity: 1.0, sodium: 4.0, unit: null}
-  model: nutrition.nutritioninfo
-  pk: 114
-- fields: {calories: 3.0, carb: 0.5, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
-    food: 99, protein: 0.0, quantity: 1.0, sodium: 0.5, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 81
-- fields: {calories: 2.6499999999999999, carb: 0.01, cholesterol: 0.88, fat: 0.20000000000000001,
-    fat_calories: 1.8, food: 41, protein: 0.20000000000000001, quantity: 1.0, sodium: 15.289999999999999,
-    unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 111
-- fields: {calories: 4.0, carb: 1.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
-    food: 103, protein: 0.0, quantity: 1.0, sodium: 7.0, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 82
-- fields: {calories: 90.0, carb: 6.0, cholesterol: 0.0, fat: 6.0, fat_calories: 55.0,
-    food: 133, protein: 3.5, quantity: 1.0, sodium: 55.0, unit: 3}
-  model: nutrition.nutritioninfo
-  pk: 1
-- fields: {calories: 0.77000000000000002, carb: 0.14000000000000001, cholesterol: 0.0,
-    fat: 0.0, fat_calories: 0.029999999999999999, food: 7, protein: 0.050000000000000003,
-    quantity: 1.0, sodium: 1.0800000000000001, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 115
-- fields: {calories: 7.0, carb: 0.14000000000000001, cholesterol: 0.0, fat: 0.70999999999999996,
-    fat_calories: 6.54, food: 130, protein: 0.089999999999999997, quantity: 1.0, sodium: 0.0,
-    unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 139
-- fields: {calories: 790.0, carb: 0.0, cholesterol: 222.0, fat: 61.0, fat_calories: 550.0,
-    food: 108, protein: 56.0, quantity: 1.0, sodium: 125.0, unit: 18}
-  model: nutrition.nutritioninfo
-  pk: 136
-- fields: {calories: 110.0, carb: 26.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
-    food: 20, protein: 3.0, quantity: 1.0, sodium: 0.0, unit: null}
-  model: nutrition.nutritioninfo
-  pk: 30
+  pk: 124
 - fields: {calories: 0.77000000000000002, carb: 0.17999999999999999, cholesterol: 0.0,
-    fat: 0.0, fat_calories: 0.01, food: 20, protein: 0.02, quantity: 1.0, sodium: 0.059999999999999998,
-    unit: 5}
+    fat: 0.0, fat_calories: 0.01, protein: 0.02, sodium: 0.059999999999999998}
   model: nutrition.nutritioninfo
   pk: 125
-- fields: {calories: 3.8900000000000001, carb: 1.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.01,
-    food: 89, protein: 0.0, quantity: 1.0, sodium: 0.01, unit: 5}
+- fields: {calories: 0.25, carb: 0.059999999999999998, cholesterol: 0.0, fat: 0.0,
+    fat_calories: 0.01, protein: 0.02, sodium: 0.040000000000000001}
   model: nutrition.nutritioninfo
-  pk: 95
-- fields: {calories: 3.6800000000000002, carb: 0.0, cholesterol: 0.79000000000000004,
-    fat: 0.26000000000000001, fat_calories: 2.3700000000000001, food: 117, protein: 0.26000000000000001,
-    quantity: 1.0, sodium: 8.9499999999999993, unit: 5}
+  pk: 126
+- fields: {calories: 6.2800000000000002, carb: 0.17000000000000001, cholesterol: 0.0,
+    fat: 0.60999999999999999, fat_calories: 5.0800000000000001, protein: 0.14999999999999999,
+    sodium: 0.0}
   model: nutrition.nutritioninfo
-  pk: 44
+  pk: 127
+- fields: {calories: 0.89000000000000001, carb: 0.23000000000000001, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.029999999999999999, protein: 0.01, sodium: 0.01}
+  model: nutrition.nutritioninfo
+  pk: 128
+- fields: {calories: 121.0, carb: 31.0, cholesterol: 0.0, fat: 0.0, fat_calories: 4.0,
+    protein: 1.0, sodium: 1.0}
+  model: nutrition.nutritioninfo
+  pk: 129
+- fields: {calories: 3.71, carb: 0.75, cholesterol: 0.0, fat: 0.02, fat_calories: 0.13,
+    protein: 0.13, sodium: 0.059999999999999998}
+  model: nutrition.nutritioninfo
+  pk: 130
 - fields: {calories: 2.9900000000000002, carb: 0.79000000000000004, cholesterol: 0.0,
-    fat: 0.0, fat_calories: 0.040000000000000001, food: 84, protein: 0.029999999999999999,
-    quantity: 1.0, sodium: 0.11, unit: 5}
+    fat: 0.0, fat_calories: 0.040000000000000001, protein: 0.029999999999999999, sodium: 0.11}
   model: nutrition.nutritioninfo
   pk: 131
-- fields: {calories: 0.96999999999999997, carb: 0.20999999999999999, cholesterol: 0.0,
-    fat: 0.0, fat_calories: 0.02, food: 107, protein: 0.02, quantity: 1.0, sodium: 0.050000000000000003,
-    unit: 5}
+- fields: {calories: 6.54, carb: 0.14000000000000001, cholesterol: 0.0, fat: 0.65000000000000002,
+    fat_calories: 5.46, protein: 0.14999999999999999, sodium: 0.02}
   model: nutrition.nutritioninfo
-  pk: 100
+  pk: 132
+- fields: {calories: 5.3300000000000001, carb: 0.67000000000000004, cholesterol: 0.0,
+    fat: 0.27000000000000002, fat_calories: 2.3999999999999999, protein: 0.070000000000000007,
+    sodium: 0.67000000000000004}
+  model: nutrition.nutritioninfo
+  pk: 133
 - fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
-    food: 12, protein: 0.0, quantity: 1.0, sodium: 1003.4, unit: 14}
+    protein: 0.0, sodium: 960.0}
   model: nutrition.nutritioninfo
-  pk: 16
-- fields: {calories: 9.1699999999999999, carb: 0.0, cholesterol: 0.0, fat: 1.0, fat_calories: 9.1699999999999999,
-    food: 14, protein: 0.0, quantity: 1.0, sodium: 0.0, unit: 5}
+  pk: 134
+- fields: {calories: 5.0, carb: 1.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 65.0}
   model: nutrition.nutritioninfo
-  pk: 75
-- fields: {calories: 1.3300000000000001, carb: 0.070000000000000007, cholesterol: 0.33000000000000002,
-    fat: 0.080000000000000002, fat_calories: 0.82999999999999996, food: 50, protein: 0.070000000000000007,
-    quantity: 1.0, sodium: 0.82999999999999996, unit: 5}
+  pk: 135
+- fields: {calories: 790.0, carb: 0.0, cholesterol: 222.0, fat: 61.0, fat_calories: 550.0,
+    protein: 56.0, sodium: 125.0}
   model: nutrition.nutritioninfo
-  pk: 68
+  pk: 136
 - fields: {calories: 1.5800000000000001, carb: 0.31, cholesterol: 0.0, fat: 0.01,
-    fat_calories: 0.089999999999999997, food: 59, protein: 0.059999999999999998, quantity: 1.0,
-    sodium: 0.01, unit: 5}
+    fat_calories: 0.089999999999999997, protein: 0.059999999999999998, sodium: 0.01}
   model: nutrition.nutritioninfo
   pk: 137
-- fields: {calories: 3.75, carb: 1.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
-    food: 13, protein: 0.0, quantity: 1.0, sodium: 0.0, unit: 5}
+- fields: {calories: 2.5, carb: 0.33000000000000002, cholesterol: 0.0, fat: 0.080000000000000002,
+    fat_calories: 0.82999999999999996, protein: 0.17000000000000001, sodium: 113.33}
   model: nutrition.nutritioninfo
-  pk: 92
+  pk: 138
+- fields: {calories: 7.0, carb: 0.14000000000000001, cholesterol: 0.0, fat: 0.70999999999999996,
+    fat_calories: 6.54, protein: 0.089999999999999997, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 139
+- fields: {calories: 649.0, carb: 62.600000000000001, cholesterol: 5.0, fat: 41.5,
+    fat_calories: 373.0, protein: 5.5, sodium: 818.0}
+  model: nutrition.nutritioninfo
+  pk: 140
+- fields: {calories: 2.8599999999999999, carb: 0.12, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 141
+- fields: {calories: 4.0, carb: 0.87, cholesterol: 0.0, fat: 0.02, fat_calories: 0.17000000000000001,
+    protein: 0.070000000000000007, sodium: 9.0}
+  model: nutrition.nutritioninfo
+  pk: 142
+- fields: {calories: 3.6899999999999999, carb: 0.79000000000000004, cholesterol: 0.0,
+    fat: 0.02, fat_calories: 0.16, protein: 0.070000000000000007, sodium: 0.070000000000000007}
+  model: nutrition.nutritioninfo
+  pk: 143
+- fields: {calories: 3.5499999999999998, carb: 0.70999999999999996, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.13, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 144
+- fields: {calories: 0.34000000000000002, carb: 0.070000000000000007, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.029999999999999999, protein: 0.029999999999999999, sodium: 0.33000000000000002}
+  model: nutrition.nutritioninfo
+  pk: 145
 - fields: {calories: 3.79, carb: 0.050000000000000003, cholesterol: 0.93000000000000005,
-    fat: 0.28000000000000003, fat_calories: 2.5, food: 138, protein: 0.27000000000000002,
-    quantity: 1.0, sodium: 1.9299999999999999, unit: 5}
+    fat: 0.28000000000000003, fat_calories: 2.5, protein: 0.27000000000000002, sodium: 1.9299999999999999}
   model: nutrition.nutritioninfo
   pk: 146
 - fields: {calories: 12.5, carb: 0.41999999999999998, cholesterol: 0.0, fat: 0.080000000000000002,
-    fat_calories: 0.82999999999999996, food: 136, protein: 0.080000000000000002, quantity: 1.0,
-    sodium: 0.0, unit: 5}
+    fat_calories: 0.82999999999999996, protein: 0.080000000000000002, sodium: 0.0}
   model: nutrition.nutritioninfo
   pk: 147
-- fields: {calories: 0.23999999999999999, carb: 0.059999999999999998, cholesterol: 0.0,
-    fat: 0.0, fat_calories: 0.02, food: 62, protein: 0.01, quantity: 1.0, sodium: 5.2400000000000002,
-    unit: 5}
+- fields: {calories: 3.3300000000000001, carb: 0.070000000000000007, cholesterol: 1.3300000000000001,
+    fat: 0.33000000000000002, fat_calories: 3.0, protein: 0.0, sodium: 0.33000000000000002}
   model: nutrition.nutritioninfo
-  pk: 97
-- fields: {calories: 649.0, carb: 62.600000000000001, cholesterol: 5.0, fat: 41.5,
-    fat_calories: 373.0, food: 131, protein: 5.5, quantity: 1.0, sodium: 818.0, unit: null}
+  pk: 148
+- fields: {calories: 110.0, carb: 21.0, cholesterol: 0.0, fat: 1.5, fat_calories: 13.0,
+    protein: 3.0, sodium: 220.0}
   model: nutrition.nutritioninfo
-  pk: 140
-- fields: {calories: 2.0, carb: 0.59999999999999998, cholesterol: 0.0, fat: 0.10000000000000001,
-    fat_calories: 1.0, food: 93, protein: 0.0, quantity: 1.0, sodium: 0.0, unit: 5}
+  pk: 149
+- fields: {calories: 50.0, carb: 14.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
   model: nutrition.nutritioninfo
-  pk: 5
-- fields: {calories: 2.8599999999999999, carb: 0.12, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
-    food: 83, protein: 0.0, quantity: 1.0, sodium: 0.0, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 141
-- fields: {calories: 8.8399999999999999, carb: 0.0, cholesterol: 0.0, fat: 1.0, fat_calories: 8.8399999999999999,
-    food: 28, protein: 0.0, quantity: 1.0, sodium: 0.0, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 98
-- fields: {calories: 0.17999999999999999, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
-    food: 52, protein: 0.0, quantity: 1.0, sodium: 0.02, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 103
-- fields: {calories: 6.54, carb: 0.14000000000000001, cholesterol: 0.0, fat: 0.65000000000000002,
-    fat_calories: 5.46, food: 85, protein: 0.14999999999999999, quantity: 1.0, sodium: 0.02,
-    unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 132
-- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
-    food: 15, protein: 0.0, quantity: 1.0, sodium: 0.0, unit: 14}
-  model: nutrition.nutritioninfo
-  pk: 79
-- fields: {calories: 0.81999999999999995, carb: 0.029999999999999999, cholesterol: 0.0,
-    fat: 0.0, fat_calories: 0.0, food: 75, protein: 0.0, quantity: 1.0, sodium: 0.050000000000000003,
-    unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 102
-- fields: {calories: 0.19, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
-    food: 112, protein: 0.0, quantity: 1.0, sodium: 0.080000000000000002, unit: 5}
-  model: nutrition.nutritioninfo
-  pk: 104
+  pk: 150
 - fields: {calories: 130.0, carb: 26.0, cholesterol: 0.0, fat: 1.0, fat_calories: 9.0,
-    food: 35, protein: 5.0, quantity: 35.0, sodium: 0.0, unit: 5}
+    protein: 5.0, sodium: 0.0}
   model: nutrition.nutritioninfo
   pk: 151
-- fields: {calories: 5.0, carb: 1.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
-    food: 113, protein: 0.0, quantity: 1.0, sodium: 65.0, unit: 2}
+- fields: {calories: 216.0, carb: 4.0, cholesterol: 840.0, fat: 20.0, fat_calories: 164.0,
+    protein: 12.0, sodium: 32.0}
   model: nutrition.nutritioninfo
-  pk: 135
-- fields: {calories: 2.9199999999999999, carb: 0.41999999999999998, cholesterol: 0.0,
-    fat: 0.080000000000000002, fat_calories: 0.41999999999999998, food: 31, protein: 0.41999999999999998,
-    quantity: 1.0, sodium: 0.5, unit: 5}
+  pk: 153
+- fields: {calories: 72.0, carb: 0.40000000000000002, cholesterol: 186.0, fat: 4.7999999999999998,
+    fat_calories: 20.0, protein: 6.2999999999999998, sodium: 71.0}
   model: nutrition.nutritioninfo
-  pk: 99
+  pk: 154
+- fields: {calories: 179.668125, carb: 47.911500000000004, cholesterol: 0.0, fat: 0.0,
+    fat_calories: 0.0, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 155
+- fields: {calories: 615.01103999999998, carb: 0.0, cholesterol: 184.33104, fat: 68.047439999999995,
+    fat_calories: 615.01103999999998, protein: 0.0, sodium: 553.85447999999997}
+  model: nutrition.nutritioninfo
+  pk: 156
+- fields: {calories: 95.256000000000029, carb: 8.5050000000000008, cholesterol: 13.608000000000002,
+    fat: 3.4020000000000006, fat_calories: 30.618000000000002, protein: 6.8040000000000012,
+    sodium: 146.28600000000003}
+  model: nutrition.nutritioninfo
+  pk: 157
+- fields: {calories: 1888.1100000000001, carb: 413.90999999999997, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 56.700000000000003, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 158
+- fields: {calories: 39.597389999999997, carb: 5.6955150000000003, cholesterol: 0.0,
+    fat: 1.0848600000000002, fat_calories: 5.6955150000000003, protein: 5.6955150000000003,
+    sodium: 6.7803750000000003}
+  model: nutrition.nutritioninfo
+  pk: 159
 - fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
-    food: 73, protein: 0.0, quantity: 1.0, sodium: 11.0, unit: 5}
+    protein: 0.0, sodium: 6145.8249999999998}
   model: nutrition.nutritioninfo
-  pk: 42
+  pk: 160
+- fields: {calories: 861.84000000000003, carb: 222.26400000000001, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 63.504000000000012}
+  model: nutrition.nutritioninfo
+  pk: 161
+- fields: {calories: 18.643560000000004, carb: 6.1138800000000009, cholesterol: 0.0,
+    fat: 0.075480000000000005, fat_calories: 0.75480000000000014, protein: 0.30192000000000002,
+    sodium: 0.75480000000000014}
+  model: nutrition.nutritioninfo
+  pk: 162
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 501.69999999999999}
+  model: nutrition.nutritioninfo
+  pk: 163
+- fields: {calories: 151.81425000000002, carb: 0.0, cholesterol: 45.501750000000008,
+    fat: 16.797375000000002, fat_calories: 151.81425000000002, protein: 0.0, sodium: 136.71787500000002}
+  model: nutrition.nutritioninfo
+  pk: 164
+- fields: {calories: 236.01375000000002, carb: 4.9612500000000006, cholesterol: 70.875,
+    fat: 23.388750000000002, fat_calories: 212.625, protein: 4.9612500000000006, sodium: 248.0625}
+  model: nutrition.nutritioninfo
+  pk: 165
+- fields: {calories: 23.976000000000006, carb: 2.2200000000000002, cholesterol: 3.5520000000000005,
+    fat: 0.88800000000000012, fat_calories: 8.4360000000000017, protein: 1.3320000000000001,
+    sodium: 23.976000000000006}
+  model: nutrition.nutritioninfo
+  pk: 166
+- fields: {calories: 606.54825000000005, carb: 155.92500000000001, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 1.5592500000000002, protein: 0.0, sodium: 1.5592500000000002}
+  model: nutrition.nutritioninfo
+  pk: 167
+- fields: {calories: 923.64300000000003, carb: 199.01700000000002, cholesterol: 0.0,
+    fat: 2.5515000000000003, fat_calories: 17.860500000000002, protein: 20.412000000000003,
+    sodium: 5.1030000000000006}
+  model: nutrition.nutritioninfo
+  pk: 168
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 403.42092000000002}
+  model: nutrition.nutritioninfo
+  pk: 169
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 2458.3299999999999}
+  model: nutrition.nutritioninfo
+  pk: 170
+- fields: {calories: 8.5015000000000018, carb: 1.7395, cholesterol: 0.0, fat: 0.14699999999999999,
+    fat_calories: 1.2250000000000001, protein: 0.2205, sodium: 0.78400000000000003}
+  model: nutrition.nutritioninfo
+  pk: 171
+- fields: {calories: 404.83800000000002, carb: 0.0, cholesterol: 121.33800000000001,
+    fat: 44.793000000000006, fat_calories: 404.83800000000002, protein: 0.0, sodium: 364.58100000000002}
+  model: nutrition.nutritioninfo
+  pk: 172
+- fields: {calories: 539.0043750000001, carb: 143.73450000000003, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 173
+- fields: {calories: 72.0, carb: 0.40000000000000002, cholesterol: 186.0, fat: 4.7999999999999998,
+    fat_calories: 20.0, protein: 6.2999999999999998, sodium: 71.0}
+  model: nutrition.nutritioninfo
+  pk: 174
+- fields: {calories: 63.882000000000005, carb: 5.915, cholesterol: 9.4640000000000004,
+    fat: 2.3660000000000001, fat_calories: 22.477, protein: 3.5489999999999999, sodium: 63.882000000000005}
+  model: nutrition.nutritioninfo
+  pk: 175
+- fields: {calories: 242.39249999999998, carb: 59.535000000000004, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 12.7575, protein: 4.2525000000000004, sodium: 4.2525000000000004}
+  model: nutrition.nutritioninfo
+  pk: 176
+- fields: {calories: 359.33625000000001, carb: 95.823000000000008, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 177
+- fields: {calories: 153.94050000000001, carb: 33.169500000000006, cholesterol: 0.0,
+    fat: 0.42525000000000007, fat_calories: 2.9767500000000009, protein: 3.4020000000000006,
+    sodium: 0.85050000000000014}
+  model: nutrition.nutritioninfo
+  pk: 178
+- fields: {calories: 12.862500000000001, carb: 1.2005000000000001, cholesterol: 0.0,
+    fat: 0.88200000000000001, fat_calories: 7.4480000000000004, protein: 0.14699999999999999,
+    sodium: 0.39200000000000002}
+  model: nutrition.nutritioninfo
+  pk: 179
+- fields: {calories: 404.83800000000002, carb: 0.0, cholesterol: 121.33800000000001,
+    fat: 44.793000000000006, fat_calories: 404.83800000000002, protein: 0.0, sodium: 364.58100000000002}
+  model: nutrition.nutritioninfo
+  pk: 180
+- fields: {calories: 496.36313999999999, carb: 108.81233999999999, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 14.905799999999999, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 181
+- fields: {calories: 6.172530000000001, carb: 2.0241900000000004, cholesterol: 0.0,
+    fat: 0.024990000000000002, fat_calories: 0.24990000000000001, protein: 0.099960000000000007,
+    sodium: 0.24990000000000001}
+  model: nutrition.nutritioninfo
+  pk: 182
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 1065.75}
+  model: nutrition.nutritioninfo
+  pk: 183
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 403.42092000000002}
+  model: nutrition.nutritioninfo
+  pk: 184
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 4916.6599999999999}
+  model: nutrition.nutritioninfo
+  pk: 185
+- fields: {calories: 1045.7719999999999, carb: 0.0, cholesterol: 0.0, fat: 118.3,
+    fat_calories: 1045.7719999999999, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 186
+- fields: {calories: 808.50656250000009, carb: 215.60175000000001, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 187
+- fields: {calories: 276.23050000000001, carb: 63.290500000000002, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 78.669499999999999}
+  model: nutrition.nutritioninfo
+  pk: 188
+- fields: {calories: 7.0070000000000006, carb: 0.29399999999999998, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 189
+- fields: {calories: 97.005999999999986, carb: 21.293999999999997, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 2.3660000000000001, sodium: 163.25399999999999}
+  model: nutrition.nutritioninfo
+  pk: 190
+- fields: {calories: 707.43400000000008, carb: 186.91400000000002, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 9.4640000000000004, protein: 7.0979999999999999, sodium: 26.026}
+  model: nutrition.nutritioninfo
+  pk: 191
+- fields: {calories: 580.26149999999996, carb: 12.4215, cholesterol: 0.0, fat: 57.671250000000001,
+    fat_calories: 484.43849999999998, protein: 13.308749999999998, sodium: 1.7745}
+  model: nutrition.nutritioninfo
+  pk: 192
+- fields: {calories: 102.50184, carb: 0.0, cholesterol: 30.72184, fat: 11.341240000000001,
+    fat_calories: 102.50184, protein: 0.0, sodium: 92.309079999999994}
+  model: nutrition.nutritioninfo
+  pk: 193
+- fields: {calories: 448.42612500000001, carb: 98.303624999999997, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 13.46625, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 194
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 7374.9899999999998}
+  model: nutrition.nutritioninfo
+  pk: 195
+- fields: {calories: 144.0, carb: 0.80000000000000004, cholesterol: 372.0, fat: 9.5999999999999996,
+    fat_calories: 40.0, protein: 12.6, sodium: 142.0}
+  model: nutrition.nutritioninfo
+  pk: 196
+- fields: {calories: 127.76400000000001, carb: 11.83, cholesterol: 18.928000000000001,
+    fat: 4.7320000000000002, fat_calories: 44.954000000000001, protein: 7.0979999999999999,
+    sodium: 127.76400000000001}
+  model: nutrition.nutritioninfo
+  pk: 197
+- fields: {calories: 661.81752000000006, carb: 145.08312000000001, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 19.874400000000001, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 198
+- fields: {calories: 236.59999999999999, carb: 70.97999999999999, cholesterol: 0.0,
+    fat: 11.83, fat_calories: 118.3, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 199
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 1065.75}
+  model: nutrition.nutritioninfo
+  pk: 200
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 4916.6599999999999}
+  model: nutrition.nutritioninfo
+  pk: 201
+- fields: {calories: 615.01103999999998, carb: 0.0, cholesterol: 184.33104, fat: 68.047439999999995,
+    fat_calories: 615.01103999999998, protein: 0.0, sodium: 553.85447999999997}
+  model: nutrition.nutritioninfo
+  pk: 202
+- fields: {calories: 718.67250000000001, carb: 191.64600000000002, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 203
+- fields: {calories: 144.0, carb: 0.80000000000000004, cholesterol: 372.0, fat: 9.5999999999999996,
+    fat_calories: 40.0, protein: 12.6, sodium: 142.0}
+  model: nutrition.nutritioninfo
+  pk: 204
+- fields: {calories: 958.41928000000007, carb: 120.47672000000001, cholesterol: 0.0,
+    fat: 48.550320000000006, fat_calories: 431.55840000000001, protein: 12.587120000000001,
+    sodium: 120.47672000000001}
+  model: nutrition.nutritioninfo
+  pk: 205
+- fields: {calories: 635.20001999999999, carb: 17.194905000000002, cholesterol: 0.0,
+    fat: 61.699365, fat_calories: 513.82421999999997, protein: 15.171975, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 206
+- fields: {calories: 31.664600000000004, carb: 8.1400000000000006, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.081400000000000014, protein: 0.0, sodium: 0.081400000000000014}
+  model: nutrition.nutritioninfo
+  pk: 207
+- fields: {calories: 432.0, carb: 2.4000000000000004, cholesterol: 1116.0, fat: 28.799999999999997,
+    fat_calories: 120.0, protein: 37.799999999999997, sodium: 426.0}
+  model: nutrition.nutritioninfo
+  pk: 208
+- fields: {calories: 73.162635000000009, carb: 7.1512350000000007, cholesterol: 18.153135000000002,
+    fat: 5.5009500000000005, fat_calories: 55.009500000000003, protein: 0.0, sodium: 476.932365}
+  model: nutrition.nutritioninfo
+  pk: 209
+- fields: {calories: 0.88200000000000001, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.098000000000000004}
+  model: nutrition.nutritioninfo
+  pk: 210
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 53.900000000000006}
+  model: nutrition.nutritioninfo
+  pk: 211
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 614.58249999999998}
+  model: nutrition.nutritioninfo
+  pk: 212
+- fields: {calories: 1.335, carb: 0.33500000000000002, cholesterol: 0.0, fat: 0.0,
+    fat_calories: 0.16500000000000001, protein: 0.085000000000000006, sodium: 0.25}
+  model: nutrition.nutritioninfo
+  pk: 213
+- fields: {calories: 220.0, carb: 52.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 6.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 214
+- fields: {calories: 130.83199999999999, carb: 0.0, cholesterol: 0.0, fat: 14.800000000000001,
+    fat_calories: 130.83199999999999, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 215
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 2458.3299999999999}
+  model: nutrition.nutritioninfo
+  pk: 216
+- fields: {calories: 307.50551999999999, carb: 0.0, cholesterol: 92.165520000000001,
+    fat: 34.023719999999997, fat_calories: 307.50551999999999, protein: 0.0, sodium: 276.92723999999998}
+  model: nutrition.nutritioninfo
+  pk: 217
+- fields: {calories: 62.097839999999998, carb: 13.61304, cholesterol: 0.0, fat: 0.0,
+    fat_calories: 0.0, protein: 1.8648, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 218
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 219
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 220
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 221
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 222
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 223
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 224
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 225
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 226
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 227
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 228
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 229
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 230
+- fields: {calories: 615.16999999999996, carb: 0.0, cholesterol: 206.56999999999999,
+    fat: 40.859999999999999, fat_calories: 365.47000000000003, protein: 59.020000000000003,
+    sodium: 170.25}
+  model: nutrition.nutritioninfo
+  pk: 231
+- fields: {calories: 45.427200000000006, carb: 10.221120000000001, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 1.1356800000000002, sodium: 4.542720000000001}
+  model: nutrition.nutritioninfo
+  pk: 232
+- fields: {calories: 72.754499999999993, carb: 15.970499999999998, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 1.7745, sodium: 122.44049999999999}
+  model: nutrition.nutritioninfo
+  pk: 233
+- fields: {calories: 28.391999999999999, carb: 7.0979999999999999, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 1.7745, sodium: 141.96000000000001}
+  model: nutrition.nutritioninfo
+  pk: 234
+- fields: {calories: 1.617, carb: 0.53900000000000003, cholesterol: 0.0, fat: 0.0,
+    fat_calories: 0.0, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 235
+- fields: {calories: 1.1759999999999999, carb: 0.29399999999999998, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 2.0579999999999998}
+  model: nutrition.nutritioninfo
+  pk: 236
+- fields: {calories: 307.50551999999999, carb: 0.0, cholesterol: 92.165520000000001,
+    fat: 34.023719999999997, fat_calories: 307.50551999999999, protein: 0.0, sodium: 276.92723999999998}
+  model: nutrition.nutritioninfo
+  pk: 237
+- fields: {calories: 113.568, carb: 7.0979999999999999, cholesterol: 0.0, fat: 0.0,
+    fat_calories: 35.490000000000002, protein: 14.196, sodium: 212.93999999999997}
+  model: nutrition.nutritioninfo
+  pk: 238
+- fields: {calories: 553.83328000000006, carb: 129.46752000000001, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 7.1926399999999999, protein: 14.38528, sodium: 43.155839999999998}
+  model: nutrition.nutritioninfo
+  pk: 239
+- fields: {calories: 82.727190000000007, carb: 18.135390000000001, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 2.4843000000000002, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 240
+- fields: {calories: 914.00400000000013, carb: 4.5360000000000005, cholesterol: 238.14000000000001,
+    fat: 74.844000000000008, fat_calories: 662.25599999999997, protein: 56.700000000000003,
+    sodium: 1408.4280000000001}
+  model: nutrition.nutritioninfo
+  pk: 241
+- fields: {calories: 191.64599999999999, carb: 17.745000000000001, cholesterol: 28.391999999999999,
+    fat: 7.0979999999999999, fat_calories: 67.430999999999997, protein: 10.646999999999998,
+    sodium: 191.64599999999999}
+  model: nutrition.nutritioninfo
+  pk: 242
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 3687.4949999999999}
+  model: nutrition.nutritioninfo
+  pk: 243
+- fields: {calories: 3.27075, carb: 0.82075000000000009, cholesterol: 0.0, fat: 0.0,
+    fat_calories: 0.40425000000000005, protein: 0.20825000000000002, sodium: 0.61250000000000004}
+  model: nutrition.nutritioninfo
+  pk: 244
+- fields: {calories: 40.121445000000001, carb: 2.1116550000000003, cholesterol: 9.9549450000000004,
+    fat: 2.4133200000000001, fat_calories: 25.038194999999998, protein: 2.1116550000000003,
+    sodium: 25.038194999999998}
+  model: nutrition.nutritioninfo
+  pk: 245
+- fields: {calories: 102.50184, carb: 0.0, cholesterol: 30.72184, fat: 11.341240000000001,
+    fat_calories: 102.50184, protein: 0.0, sodium: 92.309079999999994}
+  model: nutrition.nutritioninfo
+  pk: 246
+- fields: {calories: 440.0, carb: 104.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 12.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 247
+- fields: {calories: 1092.4295200005461, carb: 0.0, cholesterol: 327.42285333349707,
+    fat: 120.87105333339377, fat_calories: 1092.4295200005461, protein: 0.0, sodium: 983.79857333382517}
+  model: nutrition.nutritioninfo
+  pk: 248
+- fields: {calories: 220.60584000011033, carb: 48.361040000024182, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 6.6248000000033134, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 249
+- fields: {calories: 766.58399999999995, carb: 70.980000000000004, cholesterol: 113.568,
+    fat: 28.391999999999999, fat_calories: 269.72399999999999, protein: 42.587999999999994,
+    sodium: 766.58399999999995}
+  model: nutrition.nutritioninfo
+  pk: 250
+- fields: {calories: 59.149999999999999, carb: 14.196, cholesterol: 0.0, fat: 0.0,
+    fat_calories: 2.3660000000000001, protein: 4.7320000000000002, sodium: 9.4640000000000004}
+  model: nutrition.nutritioninfo
+  pk: 251
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 3687.4949999999999}
+  model: nutrition.nutritioninfo
+  pk: 252
+- fields: {calories: 6.5415000000000001, carb: 1.6415000000000002, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.80850000000000011, protein: 0.41650000000000004, sodium: 1.2250000000000001}
+  model: nutrition.nutritioninfo
+  pk: 253
+- fields: {calories: 516.0, carb: 0.0, cholesterol: 108.0, fat: 36.0, fat_calories: 360.0,
+    protein: 36.0, sodium: 2220.0}
+  model: nutrition.nutritioninfo
+  pk: 254
+- fields: {calories: 571.25250000000005, carb: 2.835, cholesterol: 148.83750000000001,
+    fat: 46.777500000000003, fat_calories: 413.90999999999997, protein: 35.4375, sodium: 880.26750000000004}
+  model: nutrition.nutritioninfo
+  pk: 255
+- fields: {calories: 301.64400000000001, carb: 15.876000000000003, cholesterol: 74.844000000000008,
+    fat: 18.144000000000002, fat_calories: 188.244, protein: 15.876000000000003, sodium: 188.244}
+  model: nutrition.nutritioninfo
+  pk: 256
+- fields: {calories: 198.0, carb: 48.0, cholesterol: 0.0, fat: 0.0, fat_calories: 12.0,
+    protein: 6.0, sodium: 30.0}
+  model: nutrition.nutritioninfo
+  pk: 257
+- fields: {calories: 1230.3399999999999, carb: 0.0, cholesterol: 413.13999999999999,
+    fat: 81.719999999999999, fat_calories: 730.94000000000005, protein: 118.04000000000001,
+    sodium: 340.5}
+  model: nutrition.nutritioninfo
+  pk: 258
+- fields: {calories: 7.5776000000000012, carb: 1.7049600000000003, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.18944000000000003, sodium: 0.7577600000000001}
+  model: nutrition.nutritioninfo
+  pk: 259
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 4916.6599999999999}
+  model: nutrition.nutritioninfo
+  pk: 260
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 120.0}
+  model: nutrition.nutritioninfo
+  pk: 261
+- fields: {calories: 204.25678000000002, carb: 44.22054, cholesterol: 0.0, fat: 0.0,
+    fat_calories: 4.2114799999999999, protein: 4.2114799999999999, sodium: 10.528700000000001}
+  model: nutrition.nutritioninfo
+  pk: 262
+- fields: {calories: 102.06, carb: 25.515000000000001, cholesterol: 0.0, fat: 0.0,
+    fat_calories: 8.5050000000000008, protein: 4.2525000000000004, sodium: 2228.3099999999999}
+  model: nutrition.nutritioninfo
+  pk: 263
+- fields: {calories: 1230.3399999999999, carb: 0.0, cholesterol: 413.13999999999999,
+    fat: 81.719999999999999, fat_calories: 730.94000000000005, protein: 118.04000000000001,
+    sodium: 340.5}
+  model: nutrition.nutritioninfo
+  pk: 264
+- fields: {calories: 60.569600000000008, carb: 13.628159999999999, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 1.51424, sodium: 6.0569600000000001}
+  model: nutrition.nutritioninfo
+  pk: 265
+- fields: {calories: 440.0, carb: 104.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 12.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 266
+- fields: {calories: 486.28398000000004, carb: 2.4133200000000001, cholesterol: 126.69930000000001,
+    fat: 39.819780000000002, fat_calories: 352.34472, protein: 30.166499999999999,
+    sodium: 749.33586000000003}
+  model: nutrition.nutritioninfo
+  pk: 267
+- fields: {calories: 410.00736000000001, carb: 0.0, cholesterol: 122.88736, fat: 45.364960000000004,
+    fat_calories: 410.00736000000001, protein: 0.0, sodium: 369.23631999999998}
+  model: nutrition.nutritioninfo
+  pk: 268
+- fields: {calories: 31.941000000000003, carb: 2.9575, cholesterol: 4.7320000000000002,
+    fat: 1.1830000000000001, fat_calories: 11.2385, protein: 1.7745, sodium: 31.941000000000003}
+  model: nutrition.nutritioninfo
+  pk: 269
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 501.69999999999999}
+  model: nutrition.nutritioninfo
+  pk: 270
+- fields: {calories: 1.335, carb: 0.33500000000000002, cholesterol: 0.0, fat: 0.0,
+    fat_calories: 0.16500000000000001, protein: 0.085000000000000006, sodium: 0.25}
+  model: nutrition.nutritioninfo
+  pk: 271
+- fields: {calories: 1580.0, carb: 0.0, cholesterol: 444.0, fat: 122.0, fat_calories: 1100.0,
+    protein: 112.0, sodium: 250.0}
+  model: nutrition.nutritioninfo
+  pk: 272
+- fields: {calories: 382.43199999999996, carb: 98.627200000000002, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 28.179200000000002}
+  model: nutrition.nutritioninfo
+  pk: 273
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 17760.000000000004}
+  model: nutrition.nutritioninfo
+  pk: 274
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 296.0}
+  model: nutrition.nutritioninfo
+  pk: 275
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 276
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 277
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 278
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 279
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 280
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 281
+- fields: {calories: 1230.3399999999999, carb: 0.0, cholesterol: 413.13999999999999,
+    fat: 81.719999999999999, fat_calories: 730.94000000000005, protein: 118.04000000000001,
+    sodium: 340.5}
+  model: nutrition.nutritioninfo
+  pk: 282
+- fields: {calories: 15.142400000000002, carb: 3.4070399999999998, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.37856000000000001, sodium: 1.51424}
+  model: nutrition.nutritioninfo
+  pk: 283
+- fields: {calories: 11.83, carb: 2.9575, cholesterol: 0.0, fat: 0.0, fat_calories: 0.59150000000000003,
+    protein: 0.59150000000000003, sodium: 1.7745}
+  model: nutrition.nutritioninfo
+  pk: 284
+- fields: {calories: 8.2810000000000006, carb: 1.8375000000000001, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.31850000000000006, protein: 0.31850000000000006, sodium: 0.61250000000000004}
+  model: nutrition.nutritioninfo
+  pk: 285
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 53.900000000000006}
+  model: nutrition.nutritioninfo
+  pk: 286
+- fields: {calories: 209.39099999999996, carb: 51.460499999999996, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 1774.5}
+  model: nutrition.nutritioninfo
+  pk: 287
+- fields: {calories: 47.481000000000002, carb: 12.245100000000001, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 3.4986000000000006}
+  model: nutrition.nutritioninfo
+  pk: 288
+- fields: {calories: 217.672, carb: 0.0, cholesterol: 46.728500000000004, fat: 15.379,
+    fat_calories: 140.18549999999999, protein: 15.379, sodium: 529.39249999999993}
+  model: nutrition.nutritioninfo
+  pk: 289
+- fields: {calories: 3.5964000000000005, carb: 0.53280000000000005, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.13320000000000001, protein: 0.39960000000000001, sodium: 0.79920000000000002}
+  model: nutrition.nutritioninfo
+  pk: 290
+- fields: {calories: 1.335, carb: 0.33500000000000002, cholesterol: 0.0, fat: 0.0,
+    fat_calories: 0.16500000000000001, protein: 0.085000000000000006, sodium: 0.25}
+  model: nutrition.nutritioninfo
+  pk: 291
+- fields: {calories: 572.0, carb: 0.0, cholesterol: 292.0, fat: 12.0, fat_calories: 104.0,
+    protein: 112.0, sodium: 240.0}
+  model: nutrition.nutritioninfo
+  pk: 292
+- fields: {calories: 16.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 1.0,
+    protein: 4.0, sodium: 55.0}
+  model: nutrition.nutritioninfo
+  pk: 293
+- fields: {calories: 467.28500000000003, carb: 85.175999999999988, cholesterol: 0.0,
+    fat: 5.915, fat_calories: 55.600999999999992, protein: 15.379, sodium: 865.95600000000002}
+  model: nutrition.nutritioninfo
+  pk: 294
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 980.00000000000011}
+  model: nutrition.nutritioninfo
+  pk: 295
+- fields: {calories: 68.028660000000016, carb: 0.0, cholesterol: 0.0, fat: 7.9380000000000015,
+    fat_calories: 68.028660000000016, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 296
+- fields: {calories: 268.75800000000004, carb: 52.731000000000009, cholesterol: 0.0,
+    fat: 1.7010000000000003, fat_calories: 15.309000000000001, protein: 10.206000000000001,
+    sodium: 1.7010000000000003}
+  model: nutrition.nutritioninfo
+  pk: 297
+- fields: {calories: 23.423399999999997, carb: 3.1940999999999993, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 3.1940999999999993, protein: 3.1940999999999993, sodium: 5.3234999999999992}
+  model: nutrition.nutritioninfo
+  pk: 298
+- fields: {calories: 35.490000000000002, carb: 8.8725000000000005, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 1.7745, protein: 1.7745, sodium: 5.3234999999999992}
+  model: nutrition.nutritioninfo
+  pk: 299
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 300
+- fields: {calories: 82.727190000000007, carb: 18.135390000000001, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 2.4843000000000002, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 301
+- fields: {calories: 265.35600000000005, carb: 37.422000000000004, cholesterol: 13.608000000000002,
+    fat: 0.0, fat_calories: 6.8040000000000012, protein: 27.216000000000005, sodium: 391.23000000000002}
+  model: nutrition.nutritioninfo
+  pk: 302
+- fields: {calories: 12.25, carb: 1.6170000000000002, cholesterol: 0.0, fat: 0.39200000000000002,
+    fat_calories: 4.0670000000000002, protein: 0.83300000000000007, sodium: 555.31700000000001}
+  model: nutrition.nutritioninfo
+  pk: 303
+- fields: {calories: 3.27075, carb: 0.82075000000000009, cholesterol: 0.0, fat: 0.0,
+    fat_calories: 0.40425000000000005, protein: 0.20825000000000002, sodium: 0.61250000000000004}
+  model: nutrition.nutritioninfo
+  pk: 304
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 614.58249999999998}
+  model: nutrition.nutritioninfo
+  pk: 305
+- fields: {calories: 402.21999999999997, carb: 0.0, cholesterol: 179.816, fat: 11.83,
+    fat_calories: 106.47, protein: 68.61399999999999, sodium: 165.61999999999998}
+  model: nutrition.nutritioninfo
+  pk: 306
+- fields: {calories: 119.1281, carb: 0.44954, cholesterol: 39.559519999999999, fat: 8.9908000000000001,
+    fat_calories: 80.917200000000008, protein: 8.9908000000000001, sodium: 687.34665999999993}
+  model: nutrition.nutritioninfo
+  pk: 307
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 308
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 309
+- fields: {calories: 1230.3399999999999, carb: 0.0, cholesterol: 413.13999999999999,
+    fat: 81.719999999999999, fat_calories: 730.94000000000005, protein: 118.04000000000001,
+    sodium: 340.5}
+  model: nutrition.nutritioninfo
+  pk: 310
+- fields: {calories: 44.0, carb: 10.0, cholesterol: 0.0, fat: 0.0, fat_calories: 1.0,
+    protein: 1.0, sodium: 4.0}
+  model: nutrition.nutritioninfo
+  pk: 311
+- fields: {calories: 12.0, carb: 3.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 3.0}
+  model: nutrition.nutritioninfo
+  pk: 312
+- fields: {calories: 212.904, carb: 53.225999999999999, cholesterol: 0.0, fat: 0.0,
+    fat_calories: 17.742000000000001, protein: 8.8710000000000004, sodium: 4648.4040000000005}
+  model: nutrition.nutritioninfo
+  pk: 313
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 314
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 315
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 316
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 317
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 318
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 319
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 320
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 321
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 322
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 323
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 324
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 325
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 326
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 327
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 328
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 329
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 330
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 331
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 332
+- fields: {calories: 479.20964000000004, carb: 60.238360000000007, cholesterol: 0.0,
+    fat: 24.275160000000003, fat_calories: 215.7792, protein: 6.2935600000000003,
+    sodium: 60.238360000000007}
+  model: nutrition.nutritioninfo
+  pk: 333
+- fields: {calories: 255.52800000000002, carb: 23.66, cholesterol: 37.856000000000002,
+    fat: 9.4640000000000004, fat_calories: 89.908000000000001, protein: 14.196, sodium: 255.52800000000002}
+  model: nutrition.nutritioninfo
+  pk: 334
+- fields: {calories: 179.668125, carb: 47.911500000000004, cholesterol: 0.0, fat: 0.0,
+    fat_calories: 0.0, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 335
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 336
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 337
+- fields: {calories: 144.0, carb: 0.80000000000000004, cholesterol: 372.0, fat: 9.5999999999999996,
+    fat_calories: 40.0, protein: 12.6, sodium: 142.0}
+  model: nutrition.nutritioninfo
+  pk: 338
+- fields: {calories: 359.33625000000001, carb: 95.823000000000008, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 339
+- fields: {calories: 165.45438000000001, carb: 36.270780000000002, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 4.9686000000000003, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 340
+- fields: {calories: 382.10899999999998, carb: 98.543899999999994, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 28.1554}
+  model: nutrition.nutritioninfo
+  pk: 341
+- fields: {calories: 409.66106999999994, carb: 0.0, cholesterol: 122.78357, fat: 45.326644999999999,
+    fat_calories: 409.66106999999994, protein: 0.0, sodium: 368.92446499999994}
+  model: nutrition.nutritioninfo
+  pk: 342
+- fields: {calories: 761.85199999999998, carb: 15.23704, cholesterol: 0.0, fat: 77.273559999999989,
+    fat_calories: 711.78743999999995, protein: 9.7952399999999997, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 343
+- fields: {calories: 958.41928000000007, carb: 120.47672000000001, cholesterol: 0.0,
+    fat: 48.550320000000006, fat_calories: 431.55840000000001, protein: 12.587120000000001,
+    sodium: 120.47672000000001}
+  model: nutrition.nutritioninfo
+  pk: 344
+- fields: {calories: 649.0, carb: 62.600000000000001, cholesterol: 5.0, fat: 41.5,
+    fat_calories: 373.0, protein: 5.5, sodium: 818.0}
+  model: nutrition.nutritioninfo
+  pk: 345
+- fields: {calories: 1107.288, carb: 240.83514, cholesterol: 0.0, fat: 5.5364399999999998,
+    fat_calories: 47.059740000000005, protein: 19.377540000000003, sodium: 2491.3980000000001}
+  model: nutrition.nutritioninfo
+  pk: 346
+- fields: {calories: 958.41928000000007, carb: 120.47672000000001, cholesterol: 0.0,
+    fat: 48.550320000000006, fat_calories: 431.55840000000001, protein: 12.587120000000001,
+    sodium: 120.47672000000001}
+  model: nutrition.nutritioninfo
+  pk: 347
+- fields: {calories: 719.39189189189187, carb: 47.95945945945946, cholesterol: 0.0,
+    fat: 47.95945945945946, fat_calories: 439.62837837837839, protein: 27.976351351351351,
+    sodium: 439.62837837837839}
+  model: nutrition.nutritioninfo
+  pk: 348
+- fields: {calories: 409.66106999999994, carb: 0.0, cholesterol: 122.78357, fat: 45.326644999999999,
+    fat_calories: 409.66106999999994, protein: 0.0, sodium: 368.92446499999994}
+  model: nutrition.nutritioninfo
+  pk: 349
+- fields: {calories: 3.5035000000000003, carb: 0.14699999999999999, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 350
+- fields: {calories: 759.30854999999997, carb: 195.19499999999999, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 1.9519500000000001, protein: 0.0, sodium: 1.9519500000000001}
+  model: nutrition.nutritioninfo
+  pk: 351
+- fields: {calories: 440.0, carb: 104.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 12.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 352
+- fields: {calories: 43.316000000000003, carb: 0.0, cholesterol: 0.0, fat: 4.9000000000000004,
+    fat_calories: 43.316000000000003, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 353
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 980.00000000000011}
+  model: nutrition.nutritioninfo
+  pk: 354
+- fields: {calories: 344.0, carb: 0.0, cholesterol: 72.0, fat: 24.0, fat_calories: 240.0,
+    protein: 24.0, sodium: 1480.0}
+  model: nutrition.nutritioninfo
+  pk: 355
+- fields: {calories: 914.00400000000013, carb: 4.5360000000000005, cholesterol: 238.14000000000001,
+    fat: 74.844000000000008, fat_calories: 662.25599999999997, protein: 56.700000000000003,
+    sodium: 1408.4280000000001}
+  model: nutrition.nutritioninfo
+  pk: 356
+- fields: {calories: 40.121445000000001, carb: 2.1116550000000003, cholesterol: 9.9549450000000004,
+    fat: 2.4133200000000001, fat_calories: 25.038194999999998, protein: 2.1116550000000003,
+    sodium: 25.038194999999998}
+  model: nutrition.nutritioninfo
+  pk: 357
+- fields: {calories: 0.45716999999999997, carb: 0.094079999999999997, cholesterol: 0.0,
+    fat: 0.0058799999999999998, fat_calories: 0.042629999999999994, protein: 0.030869999999999998,
+    sodium: 0.10289999999999999}
+  model: nutrition.nutritioninfo
+  pk: 358
+- fields: {calories: 307.50551999999999, carb: 0.0, cholesterol: 92.165520000000001,
+    fat: 34.023719999999997, fat_calories: 307.50551999999999, protein: 0.0, sodium: 276.92723999999998}
+  model: nutrition.nutritioninfo
+  pk: 359
+- fields: {calories: 62.097839999999998, carb: 13.61304, cholesterol: 0.0, fat: 0.0,
+    fat_calories: 0.0, protein: 1.8648, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 360
+- fields: {calories: 131.54400000000001, carb: 8.2215000000000007, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 41.107500000000009, protein: 16.443000000000001, sodium: 246.64500000000001}
+  model: nutrition.nutritioninfo
+  pk: 361
+- fields: {calories: 59.528560000000006, carb: 12.255880000000001, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 5.2525199999999996, protein: 5.2525199999999996, sodium: 57.777720000000002}
+  model: nutrition.nutritioninfo
+  pk: 362
+- fields: {calories: 64.670666666666662, carb: 14.195999999999998, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 1.5773333333333333, sodium: 108.83599999999998}
+  model: nutrition.nutritioninfo
+  pk: 363
+- fields: {calories: 18.928000000000001, carb: 4.7320000000000002, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 1.1830000000000001, sodium: 94.640000000000001}
+  model: nutrition.nutritioninfo
+  pk: 364
+- fields: {calories: 30.284800000000004, carb: 6.8140799999999997, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.75712000000000002, sodium: 3.0284800000000001}
+  model: nutrition.nutritioninfo
+  pk: 365
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 2458.3299999999999}
+  model: nutrition.nutritioninfo
+  pk: 366
+- fields: {calories: 4.1405000000000003, carb: 0.91875000000000007, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.15925000000000003, protein: 0.15925000000000003, sodium: 0.30625000000000002}
+  model: nutrition.nutritioninfo
+  pk: 367
+- fields: {calories: 1.5312500000000002, carb: 0.051450000000000003, cholesterol: 0.0,
+    fat: 0.0098000000000000014, fat_calories: 0.101675, protein: 0.0098000000000000014,
+    sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 368
+- fields: {calories: 54.0, carb: 1.0, cholesterol: 210.0, fat: 5.0, fat_calories: 41.0,
+    protein: 3.0, sodium: 8.0}
+  model: nutrition.nutritioninfo
+  pk: 369
+- fields: {calories: 787.87800000000004, carb: 16.562000000000001, cholesterol: 314.678,
+    fat: 78.078000000000003, fat_calories: 709.79999999999995, protein: 0.0, sodium: 78.078000000000003}
+  model: nutrition.nutritioninfo
+  pk: 370
+- fields: {calories: 644.67900000000009, carb: 8.5050000000000008, cholesterol: 158.19300000000004,
+    fat: 47.628000000000014, fat_calories: 425.25000000000006, protein: 45.927000000000007,
+    sodium: 328.29300000000001}
+  model: nutrition.nutritioninfo
+  pk: 371
+- fields: {calories: 88.0, carb: 20.0, cholesterol: 0.0, fat: 0.0, fat_calories: 2.0,
+    protein: 2.0, sodium: 8.0}
+  model: nutrition.nutritioninfo
+  pk: 372
+- fields: {calories: 331.24000000000001, carb: 29.575000000000003, cholesterol: 47.32,
+    fat: 11.83, fat_calories: 106.47, protein: 23.66, sodium: 508.69}
+  model: nutrition.nutritioninfo
+  pk: 373
+- fields: {calories: 144.0, carb: 0.80000000000000004, cholesterol: 372.0, fat: 9.5999999999999996,
+    fat_calories: 40.0, protein: 12.6, sodium: 142.0}
+  model: nutrition.nutritioninfo
+  pk: 374
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 375
+- fields: {calories: 579.09032999999999, carb: 126.94773000000001, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 17.3901, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 376
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 9833.3199999999997}
+  model: nutrition.nutritioninfo
+  pk: 377
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 196.0}
+  model: nutrition.nutritioninfo
+  pk: 378
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 379
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 380
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 381
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 382
+- fields: {calories: 1638.6442799999998, carb: 0.0, cholesterol: 491.13427999999999,
+    fat: 181.30658, fat_calories: 1638.6442799999998, protein: 0.0, sodium: 1475.6978599999998}
+  model: nutrition.nutritioninfo
+  pk: 383
+- fields: {calories: 898.34062500000005, carb: 239.5575, cholesterol: 0.0, fat: 0.0,
+    fat_calories: 0.0, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 384
+- fields: {calories: 72.0, carb: 0.40000000000000002, cholesterol: 186.0, fat: 4.7999999999999998,
+    fat_calories: 20.0, protein: 6.2999999999999998, sodium: 71.0}
+  model: nutrition.nutritioninfo
+  pk: 385
+- fields: {calories: 363.0, carb: 93.0, cholesterol: 0.0, fat: 0.0, fat_calories: 12.0,
+    protein: 3.0, sodium: 3.0}
+  model: nutrition.nutritioninfo
+  pk: 386
+- fields: {calories: 827.27190000000007, carb: 181.35390000000001, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 24.843000000000004, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 387
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 403.42092000000002}
+  model: nutrition.nutritioninfo
+  pk: 388
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 532.875}
+  model: nutrition.nutritioninfo
+  pk: 389
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 2458.3299999999999}
+  model: nutrition.nutritioninfo
+  pk: 390
+- fields: {calories: 958.41928000000007, carb: 120.47672000000001, cholesterol: 0.0,
+    fat: 48.550320000000006, fat_calories: 431.55840000000001, protein: 12.587120000000001,
+    sodium: 120.47672000000001}
+  model: nutrition.nutritioninfo
+  pk: 391
+- fields: {calories: 579.09032999999999, carb: 126.94773000000001, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 17.3901, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 392
+- fields: {calories: 179.668125, carb: 47.911500000000004, cholesterol: 0.0, fat: 0.0,
+    fat_calories: 0.0, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 393
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 1008.5523000000001}
+  model: nutrition.nutritioninfo
+  pk: 394
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 3687.4949999999999}
+  model: nutrition.nutritioninfo
+  pk: 395
+- fields: {calories: 72.0, carb: 0.40000000000000002, cholesterol: 186.0, fat: 4.7999999999999998,
+    fat_calories: 20.0, protein: 6.2999999999999998, sodium: 71.0}
+  model: nutrition.nutritioninfo
+  pk: 396
+- fields: {calories: 95.822999999999993, carb: 8.8725000000000005, cholesterol: 14.196,
+    fat: 3.5489999999999999, fat_calories: 33.715499999999999, protein: 5.3234999999999992,
+    sodium: 95.822999999999993}
+  model: nutrition.nutritioninfo
+  pk: 397
+- fields: {calories: 697.18133333333321, carb: 0.0, cholesterol: 0.0, fat: 78.86666666666666,
+    fat_calories: 697.18133333333321, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 398
+- fields: {calories: 723.20733333333328, carb: 0.0, cholesterol: 0.0, fat: 78.86666666666666,
+    fat_calories: 723.20733333333328, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 399
+- fields: {calories: 359.33625000000001, carb: 95.823000000000008, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 400
+- fields: {calories: 144.0, carb: 0.80000000000000004, cholesterol: 372.0, fat: 9.5999999999999996,
+    fat_calories: 40.0, protein: 12.6, sodium: 142.0}
+  model: nutrition.nutritioninfo
+  pk: 401
+- fields: {calories: 579.09032999999999, carb: 126.94773000000001, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 17.3901, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 402
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 403.42092000000002}
+  model: nutrition.nutritioninfo
+  pk: 403
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 532.875}
+  model: nutrition.nutritioninfo
+  pk: 404
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 2458.3299999999999}
+  model: nutrition.nutritioninfo
+  pk: 405
+- fields: {calories: 210.57400000000001, carb: 54.417999999999999, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 7.0979999999999999, protein: 2.3660000000000001, sodium: 2.3660000000000001}
+  model: nutrition.nutritioninfo
+  pk: 406
+- fields: {calories: 522.88599999999997, carb: 0.0, cholesterol: 0.0, fat: 59.149999999999999,
+    fat_calories: 522.88599999999997, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 407
+- fields: {calories: 72.0, carb: 0.40000000000000002, cholesterol: 186.0, fat: 4.7999999999999998,
+    fat_calories: 20.0, protein: 6.2999999999999998, sodium: 71.0}
+  model: nutrition.nutritioninfo
+  pk: 408
+- fields: {calories: 63.882000000000005, carb: 5.915, cholesterol: 9.4640000000000004,
+    fat: 2.3660000000000001, fat_calories: 22.477, protein: 3.5489999999999999, sodium: 63.882000000000005}
+  model: nutrition.nutritioninfo
+  pk: 409
+- fields: {calories: 496.36313999999999, carb: 108.81233999999999, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 14.905799999999999, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 410
+- fields: {calories: 539.0043750000001, carb: 143.73450000000003, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 411
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 806.84184000000005}
+  model: nutrition.nutritioninfo
+  pk: 412
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 2458.3299999999999}
+  model: nutrition.nutritioninfo
+  pk: 413
+- fields: {calories: 191.05449999999999, carb: 49.271949999999997, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 14.0777}
+  model: nutrition.nutritioninfo
+  pk: 414
+- fields: {calories: 20.699280000000002, carb: 4.5376799999999999, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.62160000000000004, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 415
+- fields: {calories: 6.172530000000001, carb: 2.0241900000000004, cholesterol: 0.0,
+    fat: 0.024990000000000002, fat_calories: 0.24990000000000001, protein: 0.099960000000000007,
+    sodium: 0.24990000000000001}
+  model: nutrition.nutritioninfo
+  pk: 416
+- fields: {calories: 102.50184, carb: 0.0, cholesterol: 30.72184, fat: 11.341240000000001,
+    fat_calories: 102.50184, protein: 0.0, sodium: 92.309079999999994}
+  model: nutrition.nutritioninfo
+  pk: 417
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 418
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 419
+- fields: {calories: 44.955000000000005, carb: 11.988000000000001, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 420
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 3920.0000000000005}
+  model: nutrition.nutritioninfo
+  pk: 421
+- fields: {calories: 43.997100000000003, carb: 6.3283500000000004, cholesterol: 0.0,
+    fat: 1.2054, fat_calories: 6.3283500000000004, protein: 6.3283500000000004, sodium: 7.5337500000000004}
+  model: nutrition.nutritioninfo
+  pk: 422
+- fields: {calories: 2076.9210000000003, carb: 455.30100000000004, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 62.370000000000005, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 423
+- fields: {calories: 54.0, carb: 1.0, cholesterol: 210.0, fat: 5.0, fat_calories: 41.0,
+    protein: 3.0, sodium: 8.0}
+  model: nutrition.nutritioninfo
+  pk: 424
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 425
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 426
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 34306.999999999993}
+  model: nutrition.nutritioninfo
+  pk: 427
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 428
+- fields: {calories: 110.0, carb: 26.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 3.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 429
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 430
+- fields: {calories: 79.194779999999994, carb: 11.391030000000001, cholesterol: 0.0,
+    fat: 2.1697200000000003, fat_calories: 11.391030000000001, protein: 11.391030000000001,
+    sodium: 13.560750000000001}
+  model: nutrition.nutritioninfo
+  pk: 431
+- fields: {calories: 14.883750000000003, carb: 3.9690000000000007, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 432
+- fields: {calories: 819.32213999999988, carb: 0.0, cholesterol: 245.56713999999999,
+    fat: 90.653289999999998, fat_calories: 819.32213999999988, protein: 0.0, sodium: 737.84892999999988}
+  model: nutrition.nutritioninfo
+  pk: 433
+- fields: {calories: 479.59459459459447, carb: 135.8851351351351, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 434
+- fields: {calories: 522.88599999999997, carb: 0.0, cholesterol: 0.0, fat: 59.149999999999999,
+    fat_calories: 522.88599999999997, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 435
+- fields: {calories: 144.0, carb: 0.80000000000000004, cholesterol: 372.0, fat: 9.5999999999999996,
+    fat_calories: 40.0, protein: 12.6, sodium: 142.0}
+  model: nutrition.nutritioninfo
+  pk: 436
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 9833.3199999999997}
+  model: nutrition.nutritioninfo
+  pk: 437
+- fields: {calories: 2150.9069399999998, carb: 471.52013999999997, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 64.591800000000006, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 438
+- fields: {calories: 661.81752000000006, carb: 145.08312000000001, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 19.874400000000001, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 439
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 403.42092000000002}
+  model: nutrition.nutritioninfo
+  pk: 440
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 532.875}
+  model: nutrition.nutritioninfo
+  pk: 441
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 4916.6599999999999}
+  model: nutrition.nutritioninfo
+  pk: 442
+- fields: {calories: 134.86500000000001, carb: 35.964000000000006, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 443
+- fields: {calories: 144.0, carb: 0.80000000000000004, cholesterol: 372.0, fat: 9.5999999999999996,
+    fat_calories: 40.0, protein: 12.6, sodium: 142.0}
+  model: nutrition.nutritioninfo
+  pk: 444
+- fields: {calories: 264.99200000000002, carb: 23.66, cholesterol: 37.856000000000002,
+    fat: 9.4640000000000004, fat_calories: 85.175999999999988, protein: 18.928000000000001,
+    sodium: 406.952}
+  model: nutrition.nutritioninfo
+  pk: 445
+- fields: {calories: 410.00736000000001, carb: 0.0, cholesterol: 122.88736, fat: 45.364960000000004,
+    fat_calories: 410.00736000000001, protein: 0.0, sodium: 369.23631999999998}
+  model: nutrition.nutritioninfo
+  pk: 446
+- fields: {calories: 191.64599999999999, carb: 17.745000000000001, cholesterol: 28.391999999999999,
+    fat: 7.0979999999999999, fat_calories: 67.430999999999997, protein: 10.646999999999998,
+    sodium: 191.64599999999999}
+  model: nutrition.nutritioninfo
+  pk: 447
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 448
+- fields: {calories: 360.0, carb: 102.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 449
+- fields: {calories: 410.00736000000001, carb: 0.0, cholesterol: 122.88736, fat: 45.364960000000004,
+    fat_calories: 410.00736000000001, protein: 0.0, sodium: 369.23631999999998}
+  model: nutrition.nutritioninfo
+  pk: 450
+- fields: {calories: 261.91619999999995, carb: 56.074199999999998, cholesterol: 0.0,
+    fat: 1.4195999999999998, fat_calories: 11.356799999999998, protein: 4.9685999999999995,
+    sodium: 4.9685999999999995}
+  model: nutrition.nutritioninfo
+  pk: 451
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 19666.639999999999}
+  model: nutrition.nutritioninfo
+  pk: 452
+- fields: {calories: 3111.9406499999996, carb: 622.38812999999993, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 113.95838999999999, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 453
+- fields: {calories: 79.733519999999999, carb: 11.46852, cholesterol: 0.0, fat: 2.1844800000000002,
+    fat_calories: 11.46852, protein: 11.46852, sodium: 13.653}
+  model: nutrition.nutritioninfo
+  pk: 454
+- fields: {calories: 351.51999999999998, carb: 70.303999999999988, cholesterol: 0.0,
+    fat: 2.7039999999999997, fat_calories: 24.335999999999999, protein: 13.52, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 455
+- fields: {calories: 330.90876000000003, carb: 72.541560000000004, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 9.9372000000000007, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 456
+- fields: {calories: 179.668125, carb: 47.911500000000004, cholesterol: 0.0, fat: 0.0,
+    fat_calories: 0.0, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 457
+- fields: {calories: 63.882000000000005, carb: 5.915, cholesterol: 9.4640000000000004,
+    fat: 2.3660000000000001, fat_calories: 22.477, protein: 3.5489999999999999, sodium: 63.882000000000005}
+  model: nutrition.nutritioninfo
+  pk: 458
+- fields: {calories: 72.0, carb: 0.40000000000000002, cholesterol: 186.0, fat: 4.7999999999999998,
+    fat_calories: 20.0, protein: 6.2999999999999998, sodium: 71.0}
+  model: nutrition.nutritioninfo
+  pk: 459
+- fields: {calories: 410.00736000000001, carb: 0.0, cholesterol: 122.88736, fat: 45.364960000000004,
+    fat_calories: 410.00736000000001, protein: 0.0, sodium: 369.23631999999998}
+  model: nutrition.nutritioninfo
+  pk: 460
+- fields: {calories: 205.00368, carb: 0.0, cholesterol: 61.443680000000001, fat: 22.682480000000002,
+    fat_calories: 205.00368, protein: 0.0, sodium: 184.61815999999999}
+  model: nutrition.nutritioninfo
+  pk: 461
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 980.00000000000011}
+  model: nutrition.nutritioninfo
+  pk: 462
+- fields: {calories: 440.0, carb: 84.0, cholesterol: 0.0, fat: 6.0, fat_calories: 52.0,
+    protein: 12.0, sodium: 880.0}
+  model: nutrition.nutritioninfo
+  pk: 463
+- fields: {calories: 165.45438000000001, carb: 36.270780000000002, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 4.9686000000000003, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 465
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 466
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 467
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 468
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 469
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 470
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 471
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 472
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 473
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 474
+- fields: {calories: 363.0, carb: 93.0, cholesterol: 0.0, fat: 0.0, fat_calories: 12.0,
+    protein: 3.0, sodium: 3.0}
+  model: nutrition.nutritioninfo
+  pk: 475
+- fields: {calories: 248.18156999999999, carb: 54.406169999999996, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 7.4528999999999996, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 476
+- fields: {calories: 263.63999999999999, carb: 52.728000000000002, cholesterol: 0.0,
+    fat: 2.028, fat_calories: 18.251999999999999, protein: 10.140000000000001, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 477
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 201.71046000000001}
+  model: nutrition.nutritioninfo
+  pk: 478
+- fields: {calories: 0.0, carb: 0.0, cholesterol: 0.0, fat: 0.0, fat_calories: 0.0,
+    protein: 0.0, sodium: 1065.75}
+  model: nutrition.nutritioninfo
+  pk: 479
+- fields: {calories: 24.044715447154474, carb: 6.7325203252032528, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 480
+- fields: {calories: 72.0, carb: 0.40000000000000002, cholesterol: 186.0, fat: 4.7999999999999998,
+    fat_calories: 20.0, protein: 6.2999999999999998, sodium: 71.0}
+  model: nutrition.nutritioninfo
+  pk: 481
+- fields: {calories: 14.014000000000001, carb: 0.58799999999999997, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 482
+- fields: {calories: 359.33625000000001, carb: 95.823000000000008, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 0.0, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 483
+- fields: {calories: 718.81445999999994, carb: 90.35754, cholesterol: 0.0, fat: 36.412739999999999,
+    fat_calories: 323.66879999999998, protein: 9.4403400000000008, sodium: 90.35754}
+  model: nutrition.nutritioninfo
+  pk: 484
+- fields: {calories: 417.03986374999999, carb: 72.658845416666651, cholesterol: 111.98898249999998,
+    fat: 11.540325416666668, fat_calories: 100.87615458333335, protein: 7.8412237499999993,
+    sodium: 661.00168999999994}
+  model: nutrition.nutritioninfo
+  pk: 485
+- fields: {calories: 353.91540277777779, carb: 60.059333333333342, cholesterol: 48.682222222222222,
+    fat: 11.195305555555557, fat_calories: 99.380083333333332, protein: 4.2536666666666667,
+    sodium: 415.24188000000004}
+  model: nutrition.nutritioninfo
+  pk: 486
+- fields: {calories: 251.54707703125001, carb: 38.165767500000001, cholesterol: 0.0,
+    fat: 10.999765, fat_calories: 96.245274999999992, protein: 2.3611568749999998,
+    sodium: 415.98780125000002}
+  model: nutrition.nutritioninfo
+  pk: 487
+- fields: {calories: 68.557663749999989, carb: 9.2444687499999993, cholesterol: 35.137486666666661,
+    fat: 2.1394366666666667, fat_calories: 15.621320000000001, protein: 2.7636875000000001,
+    sodium: 644.75525666666658}
+  model: nutrition.nutritioninfo
+  pk: 488
+- fields: {calories: 133.37949866666668, carb: 18.477358166666665, cholesterol: 18.544368000000002,
+    fat: 6.6575708333333337, fat_calories: 57.292501999999999, protein: 2.007783166666667,
+    sodium: 226.62741999999997}
+  model: nutrition.nutritioninfo
+  pk: 489
+- fields: {calories: 42.281636249999998, carb: 0.82385291666666682, cholesterol: 94.512761249999997,
+    fat: 2.8584125, fat_calories: 14.597874999999998, protein: 3.157083333333333,
+    sodium: 130.98023874999998}
+  model: nutrition.nutritioninfo
+  pk: 490
+- fields: {calories: 175.416, carb: 26.0, cholesterol: 0.0, fat: 7.4000000000000004,
+    fat_calories: 65.415999999999997, protein: 3.0, sodium: 1229.165}
+  model: nutrition.nutritioninfo
+  pk: 491
+- fields: {calories: 61.600560000000002, carb: 2.26884, cholesterol: 15.36092, fat: 5.6706199999999995,
+    fat_calories: 51.250919999999994, protein: 0.31079999999999997, sodium: 46.154539999999997}
+  model: nutrition.nutritioninfo
+  pk: 492
+- fields: {calories: 384.21434062500009, carb: 26.754616875000004, cholesterol: 75.743038125000012,
+    fat: 21.322535000000002, fat_calories: 196.66118062499999, protein: 20.554645624999999,
+    sodium: 797.47538437500009}
+  model: nutrition.nutritioninfo
+  pk: 493
+- fields: {calories: 993.55184000016402, carb: 64.472385000006042, cholesterol: 193.16808833337427,
+    fat: 62.546138333348445, fat_calories: 581.87050500013652, protein: 38.418700000000833,
+    sodium: 2184.2695183334567}
+  model: nutrition.nutritioninfo
+  pk: 494
+- fields: {calories: 290.37239666666665, carb: 19.906749999999999, cholesterol: 68.856666666666655,
+    fat: 13.619999999999999, fat_calories: 125.94274666666668, protein: 22.115569999999998,
+    sodium: 1274.4594099999999}
+  model: nutrition.nutritioninfo
+  pk: 495
+- fields: {calories: 443.41282333333334, carb: 20.555663333333328, cholesterol: 111.24311,
+    fat: 28.014623333333333, fat_calories: 250.78259666666668, protein: 27.263373333333327,
+    sodium: 333.17002333333335}
+  model: nutrition.nutritioninfo
+  pk: 496
+- fields: {calories: 327.072, carb: 16.437866666666665, cholesterol: 74.0, fat: 20.333333333333332,
+    fat_calories: 183.33333333333331, protein: 18.666666666666664, sodium: 3055.6965333333337}
+  model: nutrition.nutritioninfo
+  pk: 497
+- fields: {calories: 490.61634999999995, carb: 38.976909999999997, cholesterol: 103.285,
+    fat: 21.93, fat_calories: 195.96250000000001, protein: 32.832139999999995, sodium: 764.07495999999992}
+  model: nutrition.nutritioninfo
+  pk: 498
+- fields: {calories: 336.479265, carb: 21.510949999999998, cholesterol: 84.682124999999999,
+    fat: 10.308, fat_calories: 92.278339999999986, protein: 36.810650000000003, sodium: 667.849425}
+  model: nutrition.nutritioninfo
+  pk: 499
+- fields: {calories: 303.15586000000002, carb: 30.810570000000006, cholesterol: 58.24588,
+    fat: 5.7284500000000005, fat_calories: 54.735012500000003, protein: 30.8802375,
+    sodium: 606.76416499999993}
+  model: nutrition.nutritioninfo
+  pk: 500
+- fields: {calories: 249.87399999999997, carb: 11.037666666666667, cholesterol: 68.856666666666655,
+    fat: 13.619999999999999, fat_calories: 124.947, protein: 21.3185, sodium: 832.65066666666667}
+  model: nutrition.nutritioninfo
+  pk: 501
+- fields: {calories: 457.20288250000004, carb: 65.904930000000007, cholesterol: 18.928000000000001,
+    fat: 16.869580000000003, fat_calories: 152.84360000000001, protein: 10.24478,
+    sodium: 157.88318000000001}
+  model: nutrition.nutritioninfo
+  pk: 502
+- fields: {calories: 478.72899749999999, carb: 53.718930000000007, cholesterol: 62.47294625,
+    fat: 27.781315624999998, fat_calories: 245.75086375000001, protein: 5.6813700000000003,
+    sodium: 184.69457312499998}
+  model: nutrition.nutritioninfo
+  pk: 503
+- fields: {calories: 439.73025465465463, carb: 67.179257717717718, cholesterol: 13.642618888888888,
+    fat: 16.374762717717719, fat_calories: 147.76217093093089, protein: 6.6601123723723719,
+    sodium: 380.2643903753754}
+  model: nutrition.nutritioninfo
+  pk: 504
+- fields: {calories: 445.47465375000002, carb: 27.685433750000001, cholesterol: 80.023736249999999,
+    fat: 26.540800000000001, fat_calories: 242.66320625, protein: 23.710631249999999,
+    sodium: 973.39227374999996}
+  model: nutrition.nutritioninfo
+  pk: 505
+- fields: {calories: 361.13135611111113, carb: 14.478283333333332, cholesterol: 129.17275333333333,
+    fat: 27.45658666666667, fat_calories: 255.02941083333332, protein: 12.695637222222221,
+    sodium: 610.14361499999995}
+  model: nutrition.nutritioninfo
+  pk: 506
+- fields: {calories: 142.79129125, carb: 22.165341250000001, cholesterol: 52.414999999999999,
+    fat: 2.67875, fat_calories: 18.55875, protein: 6.9562624999999993, sodium: 1336.00125}
+  model: nutrition.nutritioninfo
+  pk: 507
+- fields: {calories: 198.23650354166665, carb: 26.449505000000002, cholesterol: 28.213928333333332,
+    fat: 9.7773708333333325, fat_calories: 87.591778333333323, protein: 1.9470883333333333,
+    sodium: 211.03335416666664}
+  model: nutrition.nutritioninfo
+  pk: 508
+- fields: {calories: 135.31356569444443, carb: 15.344310833333335, cholesterol: 16.683,
+    fat: 7.2679722222222214, fat_calories: 62.5747361111111, protein: 2.4177999999999997,
+    sodium: 405.23919166666667}
+  model: nutrition.nutritioninfo
+  pk: 509
+- fields: {calories: 224.02310148148149, carb: 30.887636666666669, cholesterol: 41.333333333333329,
+    fat: 9.8296296296296273, fat_calories: 85.589481481481471, protein: 3.5951222222222219,
+    sodium: 393.22132444444441}
+  model: nutrition.nutritioninfo
+  pk: 510
+- fields: {calories: 223.84040722222221, carb: 34.966184444444444, cholesterol: 25.131759999999996,
+    fat: 8.6313588888888884, fat_calories: 74.234971111111108, protein: 2.8307066666666665,
+    sodium: 389.63227999999992}
+  model: nutrition.nutritioninfo
+  pk: 511
+- fields: {calories: 277.48413750000003, carb: 59.327168750000006, cholesterol: 26.25,
+    fat: 0.775675, fat_calories: 5.91604375, protein: 8.9622937500000006, sodium: 4780.3167187499994}
+  model: nutrition.nutritioninfo
+  pk: 512
+- fields: {calories: 144.02627348648647, carb: 21.652176837837835, cholesterol: 20.585571333333334,
+    fat: 5.3857669999999995, fat_calories: 46.453305666666665, protein: 3.0527609999999998,
+    sodium: 357.55765600000001}
+  model: nutrition.nutritioninfo
+  pk: 513
+- fields: {calories: 134.64015666666666, carb: 17.125593333333335, cholesterol: 44.395279999999993,
+    fat: 5.3690800000000003, fat_calories: 44.598613333333333, protein: 4.2835333333333327,
+    sodium: 564.26202000000001}
+  model: nutrition.nutritioninfo
+  pk: 514
+- fields: {calories: 147.17479099999997, carb: 26.989194999999999, cholesterol: 5.0426453333333328,
+    fat: 1.8689013333333335, fat_calories: 16.675456000000001, protein: 4.7014169999999993,
+    sodium: 674.87146399999995}
+  model: nutrition.nutritioninfo
+  pk: 515
+- fields: {calories: 201.62374062500001, carb: 24.634007499999996, cholesterol: 47.474379999999996,
+    fat: 9.7396799999999999, fat_calories: 85.228004999999996, protein: 4.1632749999999996,
+    sodium: 208.59206}
+  model: nutrition.nutritioninfo
+  pk: 516
+- fields: {calories: 165.45438000000001, carb: 36.270780000000002, cholesterol: 0.0,
+    fat: 0.0, fat_calories: 0.0, protein: 4.9686000000000003, sodium: 0.0}
+  model: nutrition.nutritioninfo
+  pk: 518
+- fields: {calories: 2063.0309954471545, carb: 394.0352303252032, cholesterol: 186.0,
+    fat: 43.240740000000002, fat_calories: 373.92079999999999, protein: 36.333240000000004,
+    sodium: 1431.818}
+  model: nutrition.nutritioninfo
+  pk: 519

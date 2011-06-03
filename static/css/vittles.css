@@ -153,8 +153,10 @@ a:hover, a:active {
 .nutrition_info table {
   margin: 0;
   padding: 3px 0;
+  /*
   border-top: 2px solid black;
   border-bottom: 2px solid black;
+  */
   border-spacing: 0;
   font-size: 0.9em;
 }
@@ -200,3 +202,14 @@ table.month td ul {
   padding: 0;
   font-weight: normal;
 }
+
+/* Nutrition info popups */
+.ingredient:hover {
+  background: #ffc;
+}
+.nutrition_popup {
+  position: absolute;
+  background: white;
+  border: 1px solid black;
+}
+

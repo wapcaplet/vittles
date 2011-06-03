@@ -1,6 +1,5 @@
 from django.db import models
-from django.core.exceptions import ObjectDoesNotExist
-from core.models import ModelWrapper, Food, Preparation, Unit
+from core.models import ModelWrapper, Food, Preparation, Unit, FoodNutritionInfo
 from core.helpers import NoEquivalence
 from nutrition.models import NutritionInfo
 from core.utils import format_food_unit, pluralize
@@ -53,7 +52,7 @@ class Recipe (ModelWrapper):
     name         = models.CharField(max_length=100)
     directions   = models.TextField(blank=True, null=True)
     preheat      = models.CharField(max_length=5, blank=True, null=True)
-    num_portions = models.IntegerField("Yield", blank=True, null=True)
+    num_portions = models.IntegerField("Yield", default=1)
     portion      = models.ForeignKey(Portion, blank=True, null=True)
     source       = models.CharField(max_length=100, blank=True, null=True)
     rating       = models.IntegerField(blank=True, null=True)
@@ -72,6 +71,15 @@ class Recipe (ModelWrapper):
     @models.permalink
     def get_absolute_url(self):
         return ('cookbook.views.show_recipe', [str(self.id)])
+
+
+    def save(self, *args, **kwargs):
+        """Customized save method; creates and (if possible) calculates
+        `NutritionInfo` for the Ingredient.
+        """
+        super(Recipe, self).save(*args, **kwargs)
+        nutrition, created = RecipeNutritionInfo.objects.get_or_create(recipe=self)
+        nutrition.recalculate()
 
 
     def servings(self):
@@ -107,26 +115,32 @@ class Recipe (ModelWrapper):
         return groups
 
 
-    def nutrition_info(self):
-        """Return total `NutritionInfo` for this recipe.
+class RecipeNutritionInfo (NutritionInfo):
+    """Nutritional information for a Recipe.
+    """
+    recipe = models.OneToOneField(Recipe, related_name='nutrition_info')
+
+    def recalculate(self):
+        """Recalculate the nutrition for the current `Recipe`.
+        Return `True` if all nutrition info could be calculated,
+        `False` otherwise.
         """
-        # FIXME: This is horribly inefficient, because all nutrition info
-        # is recalculated every time this function is called. Some day, need
-        # to find a way to cache this and rebuild it only when requested.
-        nutritions = [ingred.nutrition_info() for ingred in self.ingredients.all()]
+        all_ingredients = self.recipe.ingredients.all()
+        if len(all_ingredients) == 0:
+            return False
+
+        # Recalculate all Ingredients' nutrition info
+        success = all(
+            ingredient.nutrition_info.recalculate()
+            for ingredient in all_ingredients
+        )
+        # Sum them up
+        nutritions = [ingredient.nutrition_info for ingredient in all_ingredients]
         total = sum(nutritions[1:], nutritions[0])
-        if self.num_portions:
-            return total * (1.0 / self.num_portions)
-        else:
-            return total
-
-
-    def nutrition_info_is_incomplete(self):
-        """Return True if this recipe's nutrition information is incomplete
-        (that is, if any ingredients are missing nutrition info).
-        """
-        nutritions = [ingred.nutrition_info() for ingred in self.ingredients.all()]
-        return not all(info.is_defined() for info in nutritions)
+        # Divide by servings
+        total = total * (1.0 / self.recipe.num_portions)
+        self.set_equal(total)
+        return success
 
 
 class Ingredient (ModelWrapper):
@@ -149,31 +163,52 @@ class Ingredient (ModelWrapper):
         return string
 
 
-    def nutrition_info(self):
-        """Return total `NutritionInfo` for this ingredient.
+    def save(self, *args, **kwargs):
+        """Customized save method; creates and (if possible) calculates
+        `NutritionInfo` for the Ingredient.
         """
-        # TODO: Maybe move some of this code into a NutritionInfo method?
+        super(Ingredient, self).save(*args, **kwargs)
+        nutrition, created = IngredientNutritionInfo.objects.get_or_create(ingredient=self)
+        nutrition.recalculate()
 
-        # Find all nutritions for this food, or return undefined if none exist
-        try:
-            nutritions = NutritionInfo.objects.filter(food=self.food)
-        except ObjectDoesNotExist:
-            return NutritionInfo.undefined()
+
+class IngredientNutritionInfo (NutritionInfo):
+    """Nutritional information for an Ingredient.
+    """
+    ingredient = models.OneToOneField(Ingredient, related_name='nutrition_info')
+
+    def recalculate(self):
+        """Recalculate the nutrition for the current `Ingredient`.
+        Return `True` if recalculation was successful, `False` otherwise.
+        """
+        ingredient = self.ingredient
+
+        # Find all nutritions for this food (maybe none)
+        nutritions = FoodNutritionInfo.objects.filter(food=ingredient.food)
 
         # Are there any nutrition infos in terms of the current unit?
-        for matching_unit in nutritions.filter(unit=self.unit):
+        for matching_unit in nutritions.filter(unit=ingredient.unit):
             try:
-                return matching_unit.for_amount(self.quantity, self.unit)
+                info = matching_unit.for_amount(ingredient.quantity, ingredient.unit)
             except NoEquivalence:
                 pass
+            # Success
+            else:
+                self.set_equal(info)
+                return True
 
-        # No matching units. See if there's any other unit that can be converted
+        # No matching units. Any other non-null unit that can be converted?
         for other_unit in nutritions.filter(unit__isnull=False):
             try:
-                return other_unit.for_amount(self.quantity, self.unit)
+                info = other_unit.for_amount(ingredient.quantity, ingredient.unit)
             except NoEquivalence:
                 pass
+            # Success
+            else:
+                self.set_equal(info)
+                return True
 
-        # If we get here, no attempts at conversion succeeded
-        return NutritionInfo.undefined()
+        # If we get here, no attempts at conversion succeeded. Leave the
+        # nutrition info at zero, and return False to indicate failure.
+        return False
 

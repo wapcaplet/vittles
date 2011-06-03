@@ -571,6 +571,297 @@
 - fields: {abbreviation: tsp., kind: volume, name: teaspoon}
   model: core.unit
   pk: 2
+- fields: {food: 133, quantity: 1.0, unit: 3}
+  model: core.foodnutritioninfo
+  pk: 1
+- fields: {food: 114, quantity: 1.0, unit: 3}
+  model: core.foodnutritioninfo
+  pk: 2
+- fields: {food: 10, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 3
+- fields: {food: 11, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 4
+- fields: {food: 93, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 5
+- fields: {food: 9, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 6
+- fields: {food: 1, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 14
+- fields: {food: 12, quantity: 1.0, unit: 14}
+  model: core.foodnutritioninfo
+  pk: 16
+- fields: {food: 88, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 19
+- fields: {food: 3, quantity: 1.0, unit: 14}
+  model: core.foodnutritioninfo
+  pk: 20
+- fields: {food: 20, quantity: 1.0, unit: null}
+  model: core.foodnutritioninfo
+  pk: 30
+- fields: {food: 109, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 34
+- fields: {food: 110, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 35
+- fields: {food: 73, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 42
+- fields: {food: 71, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 43
+- fields: {food: 117, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 44
+- fields: {food: 29, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 49
+- fields: {food: 125, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 58
+- fields: {food: 50, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 68
+- fields: {food: 95, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 74
+- fields: {food: 14, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 75
+- fields: {food: 53, quantity: 1.0, unit: 14}
+  model: core.foodnutritioninfo
+  pk: 76
+- fields: {food: 61, quantity: 1.0, unit: 4}
+  model: core.foodnutritioninfo
+  pk: 77
+- fields: {food: 2, quantity: 1.0, unit: null}
+  model: core.foodnutritioninfo
+  pk: 78
+- fields: {food: 15, quantity: 1.0, unit: 14}
+  model: core.foodnutritioninfo
+  pk: 79
+- fields: {food: 102, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 80
+- fields: {food: 99, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 81
+- fields: {food: 103, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 82
+- fields: {food: 16, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 83
+- fields: {food: 17, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 84
+- fields: {food: 18, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 85
+- fields: {food: 23, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 86
+- fields: {food: 38, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 87
+- fields: {food: 67, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 88
+- fields: {food: 96, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 89
+- fields: {food: 86, quantity: 1.0, unit: null}
+  model: core.foodnutritioninfo
+  pk: 90
+- fields: {food: 119, quantity: 1.0, unit: null}
+  model: core.foodnutritioninfo
+  pk: 91
+- fields: {food: 13, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 92
+- fields: {food: 56, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 93
+- fields: {food: 87, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 94
+- fields: {food: 89, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 95
+- fields: {food: 105, quantity: 1.0, unit: null}
+  model: core.foodnutritioninfo
+  pk: 96
+- fields: {food: 62, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 97
+- fields: {food: 28, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 98
+- fields: {food: 31, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 99
+- fields: {food: 107, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 100
+- fields: {food: 142, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 101
+- fields: {food: 75, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 102
+- fields: {food: 52, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 103
+- fields: {food: 112, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 104
+- fields: {food: 115, quantity: 1.0, unit: 19}
+  model: core.foodnutritioninfo
+  pk: 105
+- fields: {food: 116, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 106
+- fields: {food: 24, quantity: 1.0, unit: null}
+  model: core.foodnutritioninfo
+  pk: 107
+- fields: {food: 120, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 108
+- fields: {food: 118, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 109
+- fields: {food: 122, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 110
+- fields: {food: 41, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 111
+- fields: {food: 123, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 112
+- fields: {food: 105, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 113
+- fields: {food: 16, quantity: 1.0, unit: null}
+  model: core.foodnutritioninfo
+  pk: 114
+- fields: {food: 7, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 115
+- fields: {food: 40, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 116
+- fields: {food: 121, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 117
+- fields: {food: 21, quantity: 1.0, unit: 17}
+  model: core.foodnutritioninfo
+  pk: 118
+- fields: {food: 134, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 119
+- fields: {food: 81, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 120
+- fields: {food: 90, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 121
+- fields: {food: 32, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 122
+- fields: {food: 92, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 123
+- fields: {food: 91, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 124
+- fields: {food: 20, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 125
+- fields: {food: 104, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 126
+- fields: {food: 94, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 127
+- fields: {food: 80, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 128
+- fields: {food: 80, quantity: 1.0, unit: null}
+  model: core.foodnutritioninfo
+  pk: 129
+- fields: {food: 100, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 130
+- fields: {food: 84, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 131
+- fields: {food: 85, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 132
+- fields: {food: 19, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 133
+- fields: {food: 106, quantity: 1.0, unit: 2}
+  model: core.foodnutritioninfo
+  pk: 134
+- fields: {food: 113, quantity: 1.0, unit: 2}
+  model: core.foodnutritioninfo
+  pk: 135
+- fields: {food: 108, quantity: 1.0, unit: 18}
+  model: core.foodnutritioninfo
+  pk: 136
+- fields: {food: 59, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 137
+- fields: {food: 69, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 138
+- fields: {food: 130, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 139
+- fields: {food: 131, quantity: 1.0, unit: null}
+  model: core.foodnutritioninfo
+  pk: 140
+- fields: {food: 83, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 141
+- fields: {food: 132, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 142
+- fields: {food: 143, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 143
+- fields: {food: 36, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 144
+- fields: {food: 135, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 145
+- fields: {food: 138, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 146
+- fields: {food: 136, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 147
+- fields: {food: 137, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 148
+- fields: {food: 144, quantity: 1.0, unit: null}
+  model: core.foodnutritioninfo
+  pk: 149
+- fields: {food: 145, quantity: 123.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 150
+- fields: {food: 35, quantity: 35.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 151
 - fields: {to_quantity: 4.0, to_unit: 8, unit: 9}
   model: core.equivalence
   pk: 1

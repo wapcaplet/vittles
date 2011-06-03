@@ -32,10 +32,16 @@ class DietPlan (ModelWrapper):
     """
     name           = models.CharField(max_length=100)
     description    = models.TextField(blank=True, null=True)
-    nutrition_info = models.ForeignKey(NutritionInfo, null=True, blank=True)
+    #nutrition_info = models.ForeignKey(NutritionInfo, null=True, blank=True)
 
     def __unicode__(self):
         return self.name
+
+
+class DietPlanNutritionInfo (NutritionInfo):
+    """Nutritional information for a DietPlan.
+    """
+    diet_plan = models.OneToOneField(DietPlan, related_name='nutrition_info')
 
 
 class TargetServing (ModelWrapper):
