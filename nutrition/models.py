@@ -31,7 +31,7 @@ class NutritionInfo (models.Model):
 
 
     def set_equal(self, other):
-        """Set this `NutritionInfo` equal to another.
+        """Set this `NutritionInfo` equal to another, and save.
         """
         self.calories = other.calories
         self.fat_calories = other.fat_calories

@@ -1,21 +1,8 @@
 from django.test import TestCase
-from core.models import Unit, Equivalence, Food
 from nutrition.models import NutritionInfo
 
-class NutritionTest (TestCase):
-    """Initialization shared by all test cases
-    """
-    def setUp(self):
-        self.gram = Unit.get(name='gram', kind='weight')
-        self.kilogram = Unit.get(name='kilogram', kind='weight')
-        kilograms_to_grams = Equivalence.get(
-            unit=self.kilogram,
-            to_quantity=1000,
-            to_unit=self.gram,
-        )
 
-
-class NutritionInfoTest (NutritionTest):
+class NutritionInfoTest (TestCase):
     def assert_nutrition_info_equals(self, nutrition_info, **attrs):
         """Assert that the given `NutritionInfo` has attributes matching `attrs`.
         """
@@ -59,8 +46,71 @@ class NutritionInfoTest (NutritionTest):
         )
 
 
-    #def test_unknown_nutrition_info(self):
-        #unknown_nutrition = NutritionInfo.undefined()
-        #self.assertFalse(unknown_nutrition.is_defined())
 
+    def test_multiply_nutrition_info(self):
+        nutrient = NutritionInfo(
+            calories     = 50,
+            fat_calories = 20,
+            fat          = 5,
+            carb         = 3,
+            sodium       = 10,
+            protein      = 0,
+            cholesterol  = 40,
+        )
+
+        self.assert_nutrition_info_equals(
+            nutrient * 2.0,
+            calories     = 100,
+            fat_calories = 40,
+            fat          = 10,
+            carb         = 6,
+            sodium       = 20,
+            protein      = 0,
+            cholesterol  = 80,
+        )
+
+        self.assert_nutrition_info_equals(
+            nutrient * 0.5,
+            calories     = 25,
+            fat_calories = 10,
+            fat          = 2.5,
+            carb         = 1.5,
+            sodium       = 5,
+            protein      = 0,
+            cholesterol  = 20,
+        )
+
+
+    def test_nutrition_info_set_equal(self):
+        nutrient_a = NutritionInfo(
+            calories     = 50,
+            fat_calories = 20,
+            fat          = 5,
+            carb         = 3,
+            sodium       = 10,
+            protein      = 0,
+            cholesterol  = 40,
+        )
+
+        nutrient_b = NutritionInfo(
+            calories     = 40,
+            fat_calories = 30,
+            fat          = 10,
+            carb         = 0,
+            sodium       = 30,
+            protein      = 0,
+            cholesterol  = 5,
+        )
+
+        nutrient_b.set_equal(nutrient_a)
+        self.assert_nutrition_info_equals(
+            nutrient_b,
+            calories     = 50,
+            fat_calories = 20,
+            fat          = 5,
+            carb         = 3,
+            sodium       = 10,
+            protein      = 0,
+            cholesterol  = 40,
+        )
 

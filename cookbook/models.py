@@ -78,8 +78,8 @@ class Recipe (ModelWrapper):
         `NutritionInfo` for the Ingredient.
         """
         super(Recipe, self).save(*args, **kwargs)
-        nutrition, created = RecipeNutritionInfo.objects.get_or_create(recipe=self)
-        nutrition.recalculate()
+        RecipeNutritionInfo.objects.get_or_create(recipe=self)
+        self.nutrition_info.recalculate()
 
 
     def servings(self):
@@ -126,6 +126,7 @@ class RecipeNutritionInfo (NutritionInfo):
         `False` otherwise.
         """
         all_ingredients = self.recipe.ingredients.all()
+
         if len(all_ingredients) == 0:
             return False
 
@@ -140,6 +141,7 @@ class RecipeNutritionInfo (NutritionInfo):
         # Divide by servings
         total = total * (1.0 / self.recipe.num_portions)
         self.set_equal(total)
+        # TODO: Figure out what else could go wrong before returning
         return success
 
 
