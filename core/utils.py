@@ -9,43 +9,43 @@ def float_to_fraction(quantity, denominator=16):
     If `quantity` is less than 1.0, a simple fraction is returned:
 
         >>> float_to_fraction(0.5)
-        "1/2"
+        u"1/2"
 
         >>> float_to_fraction(0.33)
-        "1/3"
+        u"1/3"
 
         >>> float_to_fraction(0.25)
-        "1/4"
+        u"1/4"
 
         >>> float_to_fraction(0.125)
-        "1/8"
+        u"1/8"
 
         >>> float_to_fraction(0.1)
-        "1/10"
+        u"1/10"
 
     If `quantity` is 1.0 or greater, a mixed fraction is returned, with a
     hyphen separating the integer part from the fractional part.
 
         >>> float_to_fraction(1.25)
-        "1-1/4"
+        u"1-1/4"
 
         >>> float_to_fraction(2.75)
-        "2-3/4"
+        u"2-3/4"
 
         >>> float_to_fraction(9.33)
-        "9-1/3"
+        u"9-1/3"
 
     All results are rounded to the nearest ``1 / denominator`` increment, so
     you can decide how precise you need the result to be:
 
         >>> float_to_fraction(0.1875, 16)
-        "3/16"
+        u"3/16"
 
         >>> float_to_fraction(0.1875, 8)
-        "1/5"
+        u"1/5"
 
         >>> float_to_fraction(0.1875, 4)
-        "1/4"
+        u"1/4"
 
     """
     whole = int(quantity)
@@ -171,31 +171,31 @@ def format_food_unit(quantity, unit, food):
     If a unit is given, the unit is pluralized when appropriate:
 
         >>> format_food_unit(2, 'cup', 'flour')
-        "2 cups flour"
+        u"2 cups flour"
         >>> format_food_unit(1.5, 'teaspoon', 'salt')
-        "1-1/2 teaspoons salt"
+        u"1-1/2 teaspoons salt"
         >>> format_food_unit('1-3/4', 'ounce', 'butter')
-        "1-3/4 ounces butter"
+        u"1-3/4 ounces butter"
 
     If no unit is given, the food is pluralized:
 
         >>> format_food_unit(3, None, 'egg')
-        "3 eggs"
+        u"3 eggs"
         >>> format_food_unit(2, None, 'potato')
-        "2 potatoes"
+        u"2 potatoes"
         >>> format_food_unit('4-1/2', None, 'bell pepper')
-        "4-1/2 bell peppers"
+        u"4-1/2 bell peppers"
 
     In all cases, if the quantity is <= 1, no pluralization is done:
 
         >>> format_food_unit(1, None, 'egg')
-        "1 egg"
+        u"1 egg"
         >>> format_food_unit(0.75, 'cup', 'flour')
-        "3/4 cup flour"
+        u"3/4 cup flour"
         >>> format_food_unit(0.5, 'cup', 'oil')
-        "1/2 cup oil"
+        u"1/2 cup oil"
         >>> format_food_unit('1/4', 'teaspoon', 'baking powder')
-        "1/4 teaspoon baking powder"
+        u"1/4 teaspoon baking powder"
 
     """
     # Convert quantity from string if necessary
