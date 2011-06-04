@@ -26,12 +26,12 @@ class MealCalendar (HTMLCalendar):
 
     def formatday(self, day, weekday):
         if day == 0:
-            return self.day_cell('noday', '&nbsp;')
+            return self.day_cell(day, 'noday', '&nbsp;')
 
         cssclass = self.cssclasses[weekday]
-        if date.today() == date(self.year, self.month, day):
+        cell_date = date(self.year, self.month, day)
+        if date.today() == cell_date:
             cssclass += ' today'
-
 
         if day in self.meals:
             cssclass += ' filled'
@@ -43,9 +43,9 @@ class MealCalendar (HTMLCalendar):
                 #body.append('</a>')
                 body.append('</li>')
             body.append('</ul>')
-            return self.day_cell(cssclass, '%d %s' % (day, ''.join(body)))
+            return self.day_cell(day, cssclass, ''.join(body))
 
-        return self.day_cell(cssclass, day)
+        return self.day_cell(day, cssclass)
 
 
     def formatmonth(self, year, month):
@@ -54,7 +54,14 @@ class MealCalendar (HTMLCalendar):
         return super(MealCalendar, self).formatmonth(year, month)
 
 
-    def day_cell(self, cssclass, body):
-        return '<td class="%s">%s</td>' % (cssclass, body)
+    def day_cell(self, day, cssclass, html=''):
+        if day > 0:
+            cell_date = date(self.year, self.month, day)
+            html += '<a href="/diet/add_meal/%s">Add meal</a>' % \
+                    cell_date.strftime('%Y-%m-%d')
+            return '<td class="%s"><b>%d</b> %s</td>' % (cssclass, day, html)
+        else:
+            return '<td class="%s">%s</td>' % (cssclass, html)
+
 
 
