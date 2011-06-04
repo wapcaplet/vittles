@@ -3,7 +3,7 @@
 {% block title %}{{ recipe.name }}{% endblock %}
 
 {% block header %}
-  {% include "recipe_summary.html" %}
+  {% include "cookbook/recipe_summary.html" %}
 {% endblock %}
 
 {% block content %}
@@ -40,7 +40,7 @@
   </p>
 
   <h2>Nutrition</h2>
-  {% include "nutrition_info.html" %}
+  {% include "cookbook/nutrition_info.html" %}
 </div>
 
 <script type="text/javascript">

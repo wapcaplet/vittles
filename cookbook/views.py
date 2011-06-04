@@ -15,7 +15,7 @@ def cookbook(request):
     variables = {
         'recipe_categories': recipe_categories,
     }
-    return render_to_response('cookbook.html', variables)
+    return render_to_response('cookbook/index.html', variables)
 
 
 def show_recipe(request, recipe_id):
@@ -25,5 +25,5 @@ def show_recipe(request, recipe_id):
         'serving': recipe.portion or 'serving',
         'nutrition_info': recipe.nutrition_info,
     }
-    return render_to_response('recipe.html', variables)
+    return render_to_response('cookbook/recipe.html', variables)
 

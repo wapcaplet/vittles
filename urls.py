@@ -20,6 +20,7 @@ urlpatterns += patterns(
 # Diet
 urlpatterns += patterns(
     'diet.views',
+    (r'^diet/$', 'diet'),
     (r'^diet/(?P<year>\d\d\d\d)/(?P<month>\d\d)/$', 'meal_calendar'),
 )
 

@@ -3,6 +3,10 @@ from django.utils.safestring import mark_safe
 from diet.models import Meal
 from diet.helpers import MealCalendar
 
+def diet(request):
+    return render_to_response('diet.html', {})
+
+
 def meal_calendar(request, year, month):
     year, month = int(year), int(month)
     meals = Meal.objects.order_by('date').filter(
