@@ -124,7 +124,7 @@
 - fields: {food_group: 29, grams_per_ml: 0.11, name: basil (dried)}
   model: core.food
   pk: 102
-- fields: {food_group: 29, grams_per_ml: 1.0, name: bay leaf}
+- fields: {food_group: 29, grams_per_ml: 0.12, name: bay leaf}
   model: core.food
   pk: 98
 - fields: {food_group: 22, grams_per_ml: 1.0, name: beef bouillon}
@@ -169,7 +169,7 @@
 - fields: {food_group: 1, grams_per_ml: 1.0, name: carrot}
   model: core.food
   pk: 17
-- fields: {food_group: 29, grams_per_ml: 1.0, name: cayenne pepper}
+- fields: {food_group: 29, grams_per_ml: 0.40000000000000002, name: cayenne pepper}
   model: core.food
   pk: 139
 - fields: {food_group: 1, grams_per_ml: 1.0, name: celery}
@@ -238,9 +238,6 @@
 - fields: {food_group: 1, grams_per_ml: 0.29999999999999999, name: crimini mushrooms}
   model: core.food
   pk: 118
-- fields: {food_group: 29, grams_per_ml: 1.0, name: cumin}
-  model: core.food
-  pk: 140
 - fields: {food_group: 9, grams_per_ml: 1.0, name: dark corn syrup}
   model: core.food
   pk: 55
@@ -289,6 +286,12 @@
 - fields: {food_group: 18, grams_per_ml: 1.0, name: ground beef}
   model: core.food
   pk: 23
+- fields: {food_group: 29, grams_per_ml: 0.40000000000000002, name: ground cumin}
+  model: core.food
+  pk: 140
+- fields: {food_group: 29, grams_per_ml: 0.48999999999999999, name: ground mustard}
+  model: core.food
+  pk: 97
 - fields: {food_group: 19, grams_per_ml: 1.0, name: ham}
   model: core.food
   pk: 43
@@ -334,9 +337,6 @@
 - fields: {food_group: 1, grams_per_ml: 0.29999999999999999, name: mushroom}
   model: core.food
   pk: 121
-- fields: {food_group: 29, grams_per_ml: 0.48999999999999999, name: mustard}
-  model: core.food
-  pk: 97
 - fields: {food_group: 29, grams_per_ml: 1.0, name: nutmeg}
   model: core.food
   pk: 92
@@ -355,13 +355,13 @@
 - fields: {food_group: 13, grams_per_ml: 1.0, name: orange juice}
   model: core.food
   pk: 47
-- fields: {food_group: 29, grams_per_ml: 1.0, name: oregano (dried)}
+- fields: {food_group: 29, grams_per_ml: 0.40000000000000002, name: oregano (dried)}
   model: core.food
   pk: 127
 - fields: {food_group: 29, grams_per_ml: 1.0, name: other spices}
   model: core.food
   pk: 111
-- fields: {food_group: 4, grams_per_ml: 1.0, name: panko bread crumbs}
+- fields: {food_group: 4, grams_per_ml: 0.23999999999999999, name: panko bread crumbs}
   model: core.food
   pk: 101
 - fields: {food_group: 29, grams_per_ml: 0.48999999999999999, name: paprika}
@@ -409,7 +409,7 @@
 - fields: {food_group: 16, grams_per_ml: 1.0, name: provolone}
   model: core.food
   pk: 117
-- fields: {food_group: 4, grams_per_ml: 1.0, name: quick cooking oats}
+- fields: {food_group: 4, grams_per_ml: 0.34000000000000002, name: quick cooking oats}
   model: core.food
   pk: 57
 - fields: {food_group: 3, grams_per_ml: 1.0, name: raisins}
@@ -490,7 +490,7 @@
 - fields: {food_group: 10, grams_per_ml: 1.0, name: water}
   model: core.food
   pk: 15
-- fields: {food_group: 7, grams_per_ml: 1.0, name: whipped cream}
+- fields: {food_group: 7, grams_per_ml: 0.17000000000000001, name: whipped cream}
   model: core.food
   pk: 129
 - fields: {food_group: 24, grams_per_ml: 1.0, name: white wine}
@@ -643,7 +643,7 @@
 - fields: {food: 2, quantity: 1.0, unit: null}
   model: core.foodnutritioninfo
   pk: 78
-- fields: {food: 15, quantity: 1.0, unit: 14}
+- fields: {food: 15, quantity: 237.0, unit: 14}
   model: core.foodnutritioninfo
   pk: 79
 - fields: {food: 102, quantity: 1.0, unit: 5}
@@ -862,6 +862,33 @@
 - fields: {food: 35, quantity: 35.0, unit: 5}
   model: core.foodnutritioninfo
   pk: 151
+- fields: {food: 139, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 520
+- fields: {food: 140, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 521
+- fields: {food: 57, quantity: 40.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 522
+- fields: {food: 129, quantity: 5.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 523
+- fields: {food: 141, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 524
+- fields: {food: 98, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 525
+- fields: {food: 97, quantity: 1.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 526
+- fields: {food: 101, quantity: 28.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 527
+- fields: {food: 127, quantity: 5.0, unit: 5}
+  model: core.foodnutritioninfo
+  pk: 528
 - fields: {to_quantity: 4.0, to_unit: 8, unit: 9}
   model: core.equivalence
   pk: 1

@@ -22,6 +22,10 @@ class FoodInline (admin.TabularInline):
 class FoodNutritionInfoInline (admin.TabularInline):
     model = FoodNutritionInfo
     extra = 0
+    fields = ('quantity', 'unit', 'calories', 'fat_calories',
+              'fat', 'carb', 'sodium', 'protein', 'cholesterol')
+    verbose_name = 'Nutrition information'
+    verbose_name_plural = 'Nutrition information'
 
 # Main forms
 
