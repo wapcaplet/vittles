@@ -27,12 +27,6 @@ class IngredientInline (admin.TabularInline):
 
 # Main forms
 
-class IngredientAdmin (admin.ModelAdmin):
-    form = IngredientForm
-    #fieldsets = (
-        #(None, {'fields': (('quantity', 'unit', 'preparation', 'food'),)}),
-    #)
-
 class RecipeAdmin (admin.ModelAdmin):
     inlines = [IngredientInline]
     list_display = ('name', 'source')
@@ -72,7 +66,6 @@ class RecipeAdmin (admin.ModelAdmin):
 class PortionAdmin (admin.ModelAdmin):
     list_display = ('name',)
 
-admin.site.register(Ingredient, IngredientAdmin)
 admin.site.register(Recipe, RecipeAdmin)
 admin.site.register(Portion, PortionAdmin)
 admin.site.register(IngredientCategory)

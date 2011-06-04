@@ -43,6 +43,9 @@ class DietPlanNutritionInfo (NutritionInfo):
     """
     diet_plan = models.OneToOneField(DietPlan, related_name='nutrition_info')
 
+    class Meta:
+        verbose_name = 'Target nutrition'
+        verbose_name_plural = 'Target nutrition'
 
 class TargetServing (ModelWrapper):
     """Target amount of a given food group as part of a diet plan.
