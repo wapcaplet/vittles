@@ -2,6 +2,7 @@ from calendar import HTMLCalendar
 from datetime import date
 from itertools import groupby
 from django.utils.html import conditional_escape as esc
+from django.template import loader, Context
 
 
 class MealCalendar (HTMLCalendar):
@@ -25,43 +26,28 @@ class MealCalendar (HTMLCalendar):
 
 
     def formatday(self, day, weekday):
-        if day == 0:
-            return self.day_cell(day, 'noday', '&nbsp;')
+        day_template = loader.get_template('diet/meal_calendar_day.html')
+        vars = {
+            'css_class': self.cssclasses[weekday],
+            'day': day,
+        }
+        if day > 0:
+            cell_date = date(self.year, self.month, day)
+            vars['yyyy_mm_dd'] = cell_date.strftime('%Y-%m-%d')
 
-        cssclass = self.cssclasses[weekday]
-        cell_date = date(self.year, self.month, day)
-        if date.today() == cell_date:
-            cssclass += ' today'
+            if date.today() == cell_date:
+                vars['css_class'] += ' today'
 
-        if day in self.meals:
-            cssclass += ' filled'
-            body = ['<ul>']
-            for meal in self.meals[day]:
-                body.append('<li>')
-                #body.append('<a href="%s">' % meal.get_absolute_url())
-                body.append(esc(str(meal)))
-                #body.append('</a>')
-                body.append('</li>')
-            body.append('</ul>')
-            return self.day_cell(day, cssclass, ''.join(body))
+            if day in self.meals:
+                vars['css_class'] += ' filled'
+                vars['meals'] = self.meals[day]
 
-        return self.day_cell(day, cssclass)
+        return day_template.render(Context(vars))
 
 
     def formatmonth(self, year, month):
         self.year = year
         self.month = month
         return super(MealCalendar, self).formatmonth(year, month)
-
-
-    def day_cell(self, day, cssclass, html=''):
-        if day > 0:
-            cell_date = date(self.year, self.month, day)
-            html += '<a href="/diet/add_meal/%s">Add meal</a>' % \
-                    cell_date.strftime('%Y-%m-%d')
-            return '<td class="%s"><b>%d</b> %s</td>' % (cssclass, day, html)
-        else:
-            return '<td class="%s">%s</td>' % (cssclass, html)
-
 
 

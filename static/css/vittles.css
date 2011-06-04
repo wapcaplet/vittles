@@ -181,6 +181,7 @@ a:hover, a:active {
 
 /* Diet calendar */
 table.month {
+  width: 100%;
 }
 table.month th {
   background: #eef;

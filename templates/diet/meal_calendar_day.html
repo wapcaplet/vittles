@@ -1,0 +1,15 @@
+<td class="{{ css_class }}">
+  {% if day %}
+    <b>{{ day }}</b>
+    <b><a href="/diet/add_meal/{{ yyyy_mm_dd }}" title="Add meal">+</a></b>
+    {% if meals %}
+      <ul>
+        {% for meal in meals %}
+          <li><a href="{{ meal.recipe.get_absolute_url }}">{{ meal.recipe.name }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% else %}
+    &nbsp;
+  {% endif %}
+</td>
