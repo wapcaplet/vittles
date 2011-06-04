@@ -22,7 +22,7 @@ class FoodInline (admin.TabularInline):
 
 class FoodNutritionInfoInline (admin.TabularInline):
     model = FoodNutritionInfo
-    extra = 1
+    extra = 0
 
 # Main forms
 

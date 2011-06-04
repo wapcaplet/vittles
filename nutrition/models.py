@@ -22,6 +22,20 @@ class NutritionInfo (models.Model):
         return string
 
 
+    def empty(self):
+        """Return True if this NutritionInfo is empty.
+        """
+        return (
+            self.calories     == 0 and
+            self.fat_calories == 0 and
+            self.fat          == 0 and
+            self.carb         == 0 and
+            self.sodium       == 0 and
+            self.protein      == 0 and
+            self.cholesterol  == 0
+        )
+
+
     def full_string(self):
         string = "%i calories (%i from fat) " % (self.calories, self.fat_calories)
         string += "%ig fat, %ig carbs, " % (self.fat, self.carb)

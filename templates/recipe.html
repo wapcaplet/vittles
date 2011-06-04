@@ -14,6 +14,9 @@
 </div>
 
 <div class="left-column">
+  <p>
+    <a href="/admin/cookbook/recipe/{{ recipe.id }}">Edit Recipe</a>
+  </p>
   <div class="ingredients">
     <h2>Ingredients</h2>
     {% for category, ingredients in recipe.ingredient_groups %}
@@ -25,6 +28,9 @@
         {% for ingredient in ingredients %}
         <li class="ingredient" id="ingredient_{{ ingredient.id }}">
           {{ ingredient }}
+          {% if ingredient.nutrition_info.empty %}
+          *
+          {% endif %}
           <div class="popup" style="display: none;">
             {% show_nutrition ingredient.nutrition_info %}
           </div>

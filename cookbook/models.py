@@ -170,8 +170,8 @@ class Ingredient (ModelWrapper):
         `NutritionInfo` for the Ingredient.
         """
         super(Ingredient, self).save(*args, **kwargs)
-        nutrition, created = IngredientNutritionInfo.objects.get_or_create(ingredient=self)
-        nutrition.recalculate()
+        IngredientNutritionInfo.objects.get_or_create(ingredient=self)
+        self.nutrition_info.recalculate()
 
 
 class IngredientNutritionInfo (NutritionInfo):
