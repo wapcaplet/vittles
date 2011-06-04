@@ -25,7 +25,7 @@
         {% for ingredient in ingredients %}
         <li class="ingredient" id="ingredient_{{ ingredient.id }}">
           {{ ingredient }}
-          <div class="nutrition_popup" style="display: none;">
+          <div class="popup" style="display: none;">
             {% show_nutrition ingredient.nutrition_info %}
           </div>
         </li>
@@ -40,12 +40,7 @@
 </div>
 
 <script type="text/javascript">
-  // Display nutrition info when hovering over an ingredient
-  $('li.ingredient').mouseover(function(event) {
-    $('#' + this.id + ' .nutrition_popup').show();
-  }).mouseout(function() {
-    $('#' + this.id + ' .nutrition_popup').hide();
-  });
+  $(function() { add_popup('li.ingredient'); });
 </script>
 
 <div class="directions">
@@ -58,7 +53,6 @@
     <p>{{ paragraph }}</p>
   {% endfor %}
 </div>
-
 
 {% endblock %}
 

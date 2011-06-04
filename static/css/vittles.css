@@ -207,9 +207,17 @@ table.month td ul {
 .ingredient:hover {
   background: #ffc;
 }
-.nutrition_popup {
+.ingredient .popup {
   position: absolute;
   background: white;
   border: 1px solid black;
 }
-
+.recipe .popup {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: white;
+  border: 1px solid black;
+  font-weight: normal;
+  font-size: 16px;
+}
