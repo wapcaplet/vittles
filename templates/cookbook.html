@@ -31,7 +31,7 @@
           {% include "recipe_summary.html" %}
         </a>
         <div class="popup" style="display: none;">
-          {% show_nutrition recipe.nutrition_info %}
+          {% nutrition_summary recipe.nutrition_info %}
         </div>
       </li>
       {% endfor %}

@@ -28,11 +28,9 @@
         {% for ingredient in ingredients %}
         <li class="ingredient" id="ingredient_{{ ingredient.id }}">
           {{ ingredient }}
-          {% if ingredient.nutrition_info.empty %}
-          *
-          {% endif %}
+          {% if ingredient.nutrition_info.empty %} * {% endif %}
           <div class="popup" style="display: none;">
-            {% show_nutrition ingredient.nutrition_info %}
+            {% nutrition_summary ingredient.nutrition_info %}
           </div>
         </li>
         {% endfor %}
@@ -41,7 +39,6 @@
   </div>
 
   <h2>Nutrition</h2>
-  <p>Per {{ serving }}</p>
   {% include "nutrition_info.html" %}
 </div>
 

@@ -205,19 +205,18 @@ table.month td ul {
 
 /* Nutrition info popups */
 .ingredient:hover {
-  background: #ffc;
+  background: #f8f8d0;
 }
-.ingredient .popup {
-  position: absolute;
-  background: white;
-  border: 1px solid black;
-}
+.ingredient .popup,
 .recipe .popup {
   position: fixed;
   right: 0;
-  top: 0;
+  bottom: 0;
+  left: 0;
   background: white;
-  border: 1px solid black;
+  border-top: 1px solid black;
+  background: #f8f8d0;
   font-weight: normal;
   font-size: 16px;
+  padding: 2px 6px;
 }

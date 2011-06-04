@@ -50,6 +50,25 @@ class RecipeAdmin (admin.ModelAdmin):
         }),
     )
 
+    actions = ['refresh_nutrition_info']
+
+    def refresh_nutrition_info(self, request, queryset):
+        """Custom action to recalculate the `RecipeNutritionInfo`
+        for the selected recipes.
+        """
+        status = []
+        for recipe in queryset:
+            status.append(recipe.nutrition_info.recalculate())
+            recipe.save()
+        message = str(status.count(True)) + \
+            " recipes with complete nutritional info; " + \
+            str(status.count(False)) + \
+            " recipes are missing some nutritional info."
+        self.message_user(request, message)
+
+    refresh_nutrition_info.short_description = "Recalculate nutrition information"
+
+
 class PortionAdmin (admin.ModelAdmin):
     list_display = ('name',)
 

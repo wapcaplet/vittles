@@ -125,18 +125,20 @@ class RecipeNutritionInfo (NutritionInfo):
         Return `True` if all nutrition info could be calculated,
         `False` otherwise.
         """
-        all_ingredients = self.recipe.ingredients.all()
-
-        if len(all_ingredients) == 0:
+        if self.recipe.ingredients.count() == 0:
             return False
 
         # Recalculate all Ingredients' nutrition info
-        success = all(
-            ingredient.nutrition_info.recalculate()
-            for ingredient in all_ingredients
-        )
+        results = []
+        for ingredient in self.recipe.ingredients.all():
+            results.append(ingredient.nutrition_info.recalculate())
+        success = all(results)
+
         # Sum them up
-        nutritions = [ingredient.nutrition_info for ingredient in all_ingredients]
+        nutritions = [
+            ingredient.nutrition_info
+            for ingredient in self.recipe.ingredients.all()
+        ]
         total = sum(nutritions[1:], nutritions[0])
         # Divide by servings
         total = total * (1.0 / self.recipe.num_portions)

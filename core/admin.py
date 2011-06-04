@@ -1,6 +1,5 @@
 from django.contrib import admin
 from core.models import FoodGroup, Food, Unit, Equivalence, Preparation, FoodNutritionInfo
-#from nutrition.models import NutritionInfo
 
 # Inline forms
 
@@ -35,7 +34,7 @@ class FoodGroupAdmin (admin.ModelAdmin):
 class FoodAdmin (admin.ModelAdmin):
     inlines = [FoodNutritionInfoInline]
     ordering = ('name',)
-    list_display = ('name', 'food_group', 'grams_per_ml')
+    list_display = ('name', 'food_group', 'grams_per_ml', 'has_nutrition_info')
     list_filter = ('food_group', 'grams_per_ml')
     list_editable = ('food_group', 'grams_per_ml')
     search_fields = ('name',)

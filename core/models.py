@@ -1,7 +1,8 @@
 from django.db import models
 from core import utils, helpers
 from nutrition.models import NutritionInfo
-
+# For list_filter_range
+from core import filters
 
 class ModelWrapper (models.Model):
     """Abstract base class for models.
@@ -51,6 +52,11 @@ class Food (ModelWrapper):
 
     class Meta:
         ordering = ['name']
+
+    def has_nutrition_info(self):
+        """Return True if this `Food` has `FoodNutritionInfo`, False otherwise.
+        """
+        return self.nutrition_infos.count() > 0
 
 
 class Unit (ModelWrapper):

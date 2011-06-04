@@ -5,9 +5,9 @@ register = template.Library()
 def times(count):
     return range(int(count))
 
-@register.inclusion_tag('nutrition_info.html')
-def show_nutrition(nutrition_info):
-    """Render the nutrition template for the given `NutritionInfo`.
+@register.inclusion_tag('nutrition_summary.html')
+def nutrition_summary(nutrition_info):
+    """Render the nutrition summary for the given `NutritionInfo`.
     """
     return {'nutrition_info': nutrition_info}
 
