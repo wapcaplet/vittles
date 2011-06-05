@@ -19,10 +19,6 @@ class MealAdmin (admin.ModelAdmin):
 class DietPlanAdmin (admin.ModelAdmin):
     inlines = [DietPlanNutritionInfoInline, TargetServingInline]
 
-class TargetServingAdmin (admin.ModelAdmin):
-    list_display = ('__unicode__', 'diet_plan')
-
 admin.site.register(Meal, MealAdmin)
 admin.site.register(DietPlan, DietPlanAdmin)
-admin.site.register(TargetServing, TargetServingAdmin)
 
