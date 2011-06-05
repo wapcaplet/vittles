@@ -219,19 +219,26 @@ class IngredientNutritionInfo (NutritionInfo):
 
 
 # Signals
-from django.dispatch import receiver
 
-@receiver(models.signals.post_save, sender=Food)
-def model_updated(sender, **kwargs):
-    """After a Food is saved, recalculate `NutritionInfo` for related
-    `Recipe`\s.
-    """
-    recipes = set([
-        ingredient.recipe
-        for ingredient in kwargs['instance'].ingredient_set.all()
-    ])
-    for recipe in recipes:
-        print("Recalculating: %s" % recipe)
-        recipe.nutrition_info.recalculate()
+# FIXME: This is commented out, pending a better solution. Turns out the
+# pre_save signal is also emitted when loading fixture data, causing every
+# single Food object loaded to have its Recipe recalculated. Not good.
+# Would be better to have a signal that only prompts recalculation when a
+# user actually modifies a Food instance through the admin site.
+
+#from django.dispatch import receiver
+
+#@receiver(models.signals.post_save, sender=Food)
+#def model_updated(sender, **kwargs):
+    #"""After a Food is saved, recalculate `NutritionInfo` for related
+    #`Recipe`\s.
+    #"""
+    #recipes = set([
+        #ingredient.recipe
+        #for ingredient in kwargs['instance'].ingredient_set.all()
+    #])
+    #for recipe in recipes:
+        #print("Recalculating: %s" % recipe)
+        #recipe.nutrition_info.recalculate()
 
 
