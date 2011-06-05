@@ -115,6 +115,7 @@ class Recipe (ModelWrapper):
         return groups
 
 
+
 class RecipeNutritionInfo (NutritionInfo):
     """Nutritional information for a Recipe.
     """
@@ -215,4 +216,22 @@ class IngredientNutritionInfo (NutritionInfo):
         # If we get here, no attempts at conversion succeeded. Leave the
         # nutrition info at zero, and return False to indicate failure.
         return False
+
+
+# Signals
+from django.dispatch import receiver
+
+@receiver(models.signals.post_save, sender=Food)
+def model_updated(sender, **kwargs):
+    """After a Food is saved, recalculate `NutritionInfo` for related
+    `Recipe`\s.
+    """
+    recipes = set([
+        ingredient.recipe
+        for ingredient in kwargs['instance'].ingredient_set.all()
+    ])
+    for recipe in recipes:
+        print("Recalculating: %s" % recipe)
+        recipe.nutrition_info.recalculate()
+
 
