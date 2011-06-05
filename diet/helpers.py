@@ -1,7 +1,8 @@
 from calendar import HTMLCalendar
 from datetime import date
+from dateutil.relativedelta import relativedelta
 from itertools import groupby
-from django.utils.html import conditional_escape as esc
+#from django.utils.html import conditional_escape as esc
 from django.template import loader, Context
 
 
@@ -31,11 +32,12 @@ class MealCalendar (HTMLCalendar):
             'css_class': self.cssclasses[weekday],
             'day': day,
         }
-        if day > 0:
-            cell_date = date(self.year, self.month, day)
-            vars['yyyy_mm_dd'] = cell_date.strftime('%Y-%m-%d')
+        if day == 0:
+            vars['css_class'] += ' noday'
+        else:
+            vars['cell_date'] = date(self.year, self.month, day)
 
-            if date.today() == cell_date:
+            if date.today() == vars['cell_date']:
                 vars['css_class'] += ' today'
 
             if day in self.meals:
@@ -43,6 +45,15 @@ class MealCalendar (HTMLCalendar):
                 vars['meals'] = self.meals[day]
 
         return day_template.render(Context(vars))
+
+    def formatmonthname(self, year, month, withyear=True):
+        monthname_template = loader.get_template('diet/meal_calendar_monthname.html')
+        vars = {
+            'this_month': date(year, month, 1),
+            'prev_month': date(year, month, 1) + relativedelta(months=-1),
+            'next_month': date(year, month, 1) + relativedelta(months=+1),
+        }
+        return monthname_template.render(Context(vars))
 
 
     def formatmonth(self, year, month):

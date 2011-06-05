@@ -1962,3 +1962,7 @@
     protein: 0.5, sodium: 1.0}
   model: nutrition.nutritioninfo
   pk: 528
+- fields: {calories: 2000.0, carb: 300.0, cholesterol: 300.0, fat: 65.0, fat_calories: 0.0,
+    protein: 50.0, sodium: 2300.0}
+  model: nutrition.nutritioninfo
+  pk: 529

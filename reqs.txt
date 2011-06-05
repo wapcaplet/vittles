@@ -7,4 +7,5 @@ Sphinx==1.0.7
 distribute==0.6.10
 docutils==0.7
 lettuce==0.1.27
+python-dateutil==2.0
 wsgiref==0.1.2

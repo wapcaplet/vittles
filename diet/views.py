@@ -7,7 +7,10 @@ from diet.helpers import MealCalendar
 from diet.forms import MealForm
 
 def diet(request):
-    return render_to_response('diet/index.html', {})
+    vars = {
+        'this_month': date.today()
+    }
+    return render_to_response('diet/index.html', vars)
 
 
 def meal_calendar(request, year, month):
@@ -16,7 +19,10 @@ def meal_calendar(request, year, month):
         date__year=year, date__month=month
     )
     cal = MealCalendar(meals).formatmonth(year, month)
-    return render_to_response('diet/meal_calendar.html', {'calendar': mark_safe(cal)})
+    vars = {
+        'calendar': mark_safe(cal),
+    }
+    return render_to_response('diet/meal_calendar.html', vars)
 
 
 def add_meal(request, year, month, day):

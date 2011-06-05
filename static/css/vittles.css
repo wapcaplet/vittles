@@ -180,19 +180,26 @@ a:hover, a:active {
 
 
 /* Diet calendar */
+div.calendar {
+  margin: 1em 2em;
+}
 table.month {
   width: 100%;
 }
 table.month th {
-  background: #eef;
+  padding: 2px 6px;
 }
 table.month td {
-  border: 1px solid #999;
+  background: #fff;
+  border: 1px solid #ccc;
   width: 100px;
   height: 80px;
   vertical-align: top;
   padding: 5px;
   font-weight: normal;
+}
+table.month td.noday {
+  background: #eee;
 }
 table.month td.today {
   background: #ffc;
@@ -201,6 +208,14 @@ table.month td ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  font-weight: normal;
+}
+table.month th.prev_month {
+  text-align: left;
+  font-weight: normal;
+}
+table.month th.next_month {
+  text-align: right;
   font-weight: normal;
 }
 
@@ -221,3 +236,4 @@ table.month td ul {
   font-size: 16px;
   padding: 2px 6px;
 }
+

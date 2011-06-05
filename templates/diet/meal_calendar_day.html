@@ -1,7 +1,7 @@
 <td class="{{ css_class }}">
   {% if day %}
     <b>{{ day }}</b>
-    <b><a href="/diet/add_meal/{{ yyyy_mm_dd }}" title="Add meal">+</a></b>
+    <b><a href="/diet/add_meal/{{ cell_date|date:"Y-m-d" }}" title="Add meal">+</a></b>
     {% if meals %}
       <ul>
         {% for meal in meals %}
