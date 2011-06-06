@@ -6,7 +6,7 @@ from diet.models import Meal
 from diet.helpers import MealCalendar
 from diet.forms import MealForm
 
-def diet(request):
+def index(request):
     vars = {
         'this_month': date.today()
     }
@@ -27,12 +27,17 @@ def meal_calendar(request, year, month):
 
 def add_meal(request, year, month, day):
     meal_date = date(int(year), int(month), int(day))
-    if request.method == 'GET':
-        form = MealForm(initial = {'date': meal_date})
-    else:
+    if request.method == 'POST':
         form = MealForm(request.POST)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/diet/%s' % meal_date.strftime('%Y-%m'))
-    return render_to_response('diet/add_meal.html', {'form': form})
+    else:
+        form = MealForm(initial = {'date': meal_date})
+    vars = {
+        'form': form,
+        'meal_date': meal_date,
+    }
+    return render_to_response('diet/add_meal.html', vars)
+
 

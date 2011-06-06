@@ -1,7 +1,7 @@
 from django.shortcuts import render_to_response
 from cookbook.models import Recipe
 
-def cookbook(request):
+def index(request):
     """Cookbook homepage.
     """
     recipes = Recipe.objects.all()
