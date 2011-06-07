@@ -28,7 +28,7 @@
       {% for recipe in recipes %}
       <li class="recipe" id="recipe_{{ recipe.id }}">
         <a href="{% url cookbook-show-recipe recipe.id %}">
-          {% include "cookbook/recipe_summary.html" %}
+          {% include "cookbook/_recipe_summary.html" %}
         </a>
         <div class="popup" style="display: none;">
           {% nutrition_summary recipe.nutrition_info %}
