@@ -26,7 +26,7 @@ class MealCalendar (HTMLCalendar):
 
 
     def formatday(self, day, weekday):
-        day_template = loader.get_template('diet/meal_calendar_day.html')
+        day_template = loader.get_template('diet/_meal_calendar_day.html')
         vars = {
             'css_class': self.cssclasses[weekday],
             'day': day,
@@ -46,7 +46,7 @@ class MealCalendar (HTMLCalendar):
         return day_template.render(Context(vars))
 
     def formatmonthname(self, year, month, withyear=True):
-        monthname_template = loader.get_template('diet/meal_calendar_monthname.html')
+        monthname_template = loader.get_template('diet/_meal_calendar_monthname.html')
         vars = {
             'this_month': date(year, month, 1),
             'prev_month': date(year, month, 1) + relativedelta(months=-1),
