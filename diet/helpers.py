@@ -12,7 +12,6 @@ class MealCalendar (HTMLCalendar):
     def __init__(self, meals):
         super(MealCalendar, self).__init__()
         self.meals = self.group_by_day(meals)
-        print(self.meals)
 
 
     def group_by_day(self, meals):

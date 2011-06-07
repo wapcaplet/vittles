@@ -7,8 +7,8 @@
 
 <div class="breadcrumbs">
   &larr; <a href="/">Vittles</a>
-  &larr; <a href="/diet">Diet</a>
-  &larr; <a href="/diet/meals/{{ meal_date|date:"Y-m" }}">{{ meal_date|date:"F Y" }}</a>
+  &larr; <a href="{% url diet-index %}">Diet</a>
+  &larr; <a href="{% url diet-meal-calendar meal_date|date:"Y-m" %}">{{ meal_date|date:"F Y" }}</a>
 </div>
 
 <form action="" method="post">

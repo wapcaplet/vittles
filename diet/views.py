@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import datetime
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django.utils.safestring import mark_safe
@@ -8,37 +8,43 @@ from diet.forms import MealForm
 
 def index(request):
     vars = {
-        'this_month': date.today()
+        'this_month': datetime.today()
     }
     return render_to_response('diet/index.html', vars)
 
 
-def meal_calendar(request, year=0, month=0):
-    # Use this month if none are provided
-    year = int(year) or date.today().year
-    month = int(month) or date.today().month
+def meal_calendar(request, yyyy_mm=''):
+    if yyyy_mm:
+        date = datetime.strptime(yyyy_mm, '%Y-%m')
+    else:
+        date = datetime.today()
+
     meals = Meal.objects.order_by('date').filter(
-        date__year=year, date__month=month
+        date__year=date.year, date__month=date.month
     )
-    cal = MealCalendar(meals).formatmonth(year, month)
+    cal = MealCalendar(meals).formatmonth(date.year, date.month)
     vars = {
         'calendar': mark_safe(cal),
     }
     return render_to_response('diet/meal_calendar.html', vars)
 
 
-def add_meal(request, year, month, day):
-    meal_date = date(int(year), int(month), int(day))
+def add_meal(request, yyyy_mm_dd):
+    if yyyy_mm_dd:
+        date = datetime.strptime(yyyy_mm_dd, '%Y-%m-%d')
+    else:
+        date = datetime.today()
+
     if request.method == 'POST':
         form = MealForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/diet/meals/%s' % meal_date.strftime('%Y-%m'))
+            return HttpResponseRedirect('/diet/meals/%s' % date.strftime('%Y-%m'))
     else:
-        form = MealForm(initial = {'date': meal_date})
+        form = MealForm(initial = {'date': date})
     vars = {
         'form': form,
-        'meal_date': meal_date,
+        'meal_date': date,
     }
     return render_to_response('diet/add_meal.html', vars)
 

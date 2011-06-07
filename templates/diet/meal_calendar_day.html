@@ -1,13 +1,13 @@
 <td class="{{ css_class }}">
   {% if day %}
     <b>{{ day }}</b>
-    <b><a href="/diet/meals/{{ cell_date|date:"Y-m-d" }}/add" title="Add meal">+</a></b>
+    <b><a href="{% url diet-meal-add cell_date|date:"Y-m-d" %}" title="Add meal">+</a></b>
     {% if meals %}
       <ul>
         {% for meal in meals %}
         <li>
           <a href="{{ meal.recipe.get_absolute_url }}">{{ meal.recipe.name }}</a>
-          (<a href="/diet/meals/{{ meal.id }}/delete">X</a>)
+          (<a href="{% url diet-meal-delete meal.id %}">X</a>)
         </li>
         {% endfor %}
       </ul>
