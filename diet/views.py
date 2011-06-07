@@ -13,8 +13,10 @@ def index(request):
     return render_to_response('diet/index.html', vars)
 
 
-def meal_calendar(request, year, month):
-    year, month = int(year), int(month)
+def meal_calendar(request, year=0, month=0):
+    # Use this month if none are provided
+    year = int(year) or date.today().year
+    month = int(month) or date.today().month
     meals = Meal.objects.order_by('date').filter(
         date__year=year, date__month=month
     )
@@ -31,7 +33,7 @@ def add_meal(request, year, month, day):
         form = MealForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/diet/%s' % meal_date.strftime('%Y-%m'))
+            return HttpResponseRedirect('/diet/meals/%s' % meal_date.strftime('%Y-%m'))
     else:
         form = MealForm(initial = {'date': meal_date})
     vars = {
