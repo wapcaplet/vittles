@@ -1,0 +1,57 @@
+- fields: {abbreviation: '', kind: individual, name: clove}
+  model: core.unit
+  pk: 19
+- fields: {abbreviation: C., kind: volume, name: cup}
+  model: core.unit
+  pk: 1
+- fields: {abbreviation: '', kind: volume, name: dash}
+  model: core.unit
+  pk: 16
+- fields: {abbreviation: fl. oz., kind: volume, name: fluid ounce}
+  model: core.unit
+  pk: 15
+- fields: {abbreviation: gal., kind: volume, name: gallon}
+  model: core.unit
+  pk: 9
+- fields: {abbreviation: g, kind: weight, name: gram}
+  model: core.unit
+  pk: 5
+- fields: {abbreviation: kg, kind: weight, name: kilogram}
+  model: core.unit
+  pk: 12
+- fields: {abbreviation: L, kind: volume, name: liter}
+  model: core.unit
+  pk: 11
+- fields: {abbreviation: mg, kind: weight, name: milligram}
+  model: core.unit
+  pk: 20
+- fields: {abbreviation: ml, kind: volume, name: milliliter}
+  model: core.unit
+  pk: 14
+- fields: {abbreviation: oz., kind: weight, name: ounce}
+  model: core.unit
+  pk: 4
+- fields: {abbreviation: '', kind: volume, name: pinch}
+  model: core.unit
+  pk: 7
+- fields: {abbreviation: pt., kind: volume, name: pint}
+  model: core.unit
+  pk: 10
+- fields: {abbreviation: lb., kind: weight, name: pound}
+  model: core.unit
+  pk: 6
+- fields: {abbreviation: qt., kind: volume, name: quart}
+  model: core.unit
+  pk: 8
+- fields: {abbreviation: '', kind: individual, name: slab}
+  model: core.unit
+  pk: 18
+- fields: {abbreviation: '', kind: individual, name: slice}
+  model: core.unit
+  pk: 17
+- fields: {abbreviation: Tbsp., kind: volume, name: tablespoon}
+  model: core.unit
+  pk: 3
+- fields: {abbreviation: tsp., kind: volume, name: teaspoon}
+  model: core.unit
+  pk: 2

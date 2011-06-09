@@ -6,14 +6,11 @@ from vittles.core.helpers import \
 class CoreTest (TestCase):
     """Initialization shared by all test cases
     """
-    def setUp(self):
-        ounce = Unit.get(name='ounce')
-        pound = Unit.get(name='pound')
-        self.pound_to_ounces = Equivalence.get(
-            unit=pound,
-            to_quantity=16.0,
-            to_unit=ounce,
-        )
+    fixtures = [
+        'test_food.yaml',
+        'test_unit.yaml',
+        'test_equivalence.yaml',
+    ]
 
 
 class ConvertUnitTest (CoreTest):
@@ -27,45 +24,45 @@ class ConvertUnitTest (CoreTest):
 
 
 class ConvertDifferentUnitKindsTest (CoreTest):
-    def setUp(self):
-        self.ml = Unit.get(name='milliliter', kind='volume')
-        self.cup = Unit.get(name='cup', kind='volume')
-        self.gram = Unit.get(name='gram', kind='weight')
-        self.ounce = Unit.get(name='ounce', kind='weight')
-
-        self.syrup = Food.get(name='syrup', grams_per_ml=1.2)
-        self.powder = Food.get(name='powder', grams_per_ml=0.5)
-
-        self.cup_to_ml = Equivalence.get(
-            unit=self.cup,
-            to_quantity=236.6,
-            to_unit=self.ml,
-        )
-        self.ounce_to_gram = Equivalence.get(
-            unit=self.ounce,
-            to_quantity=28.35,
-            to_unit=self.gram,
-        )
-
     def test_convert_volume_to_grams(self):
+        # Two foods with very different densities
+        honey = Food.objects.get(name='honey')
+        paprika = Food.objects.get(name='paprika')
+
+        # Two units of volume
+        ml = Unit.objects.get(name='milliliter')
+        cup = Unit.objects.get(name='cup')
+        ml_per_cup = Equivalence.objects.get(unit=cup, to_unit=ml).to_quantity
+
+        # Convert units of volume into grams
         # Without food, assume 1.0 g/ml
-        self.failUnlessEqual(to_grams(self.ml), 1.0)
-        self.failUnlessEqual(to_grams(self.cup), 1.0 * 236.6)
+        self.failUnlessEqual(to_grams(ml), 1.0)
+        self.failUnlessEqual(to_grams(cup), 1.0 * ml_per_cup)
         # With food, use its density
-        self.failUnlessEqual(to_grams(self.ml, self.syrup), 1.2)
-        self.failUnlessEqual(to_grams(self.ml, self.powder), 0.5)
-        self.failUnlessEqual(to_grams(self.cup, self.syrup), 1.2 * 236.6)
-        self.failUnlessEqual(to_grams(self.cup, self.powder), 0.5 * 236.6)
+        self.failUnlessEqual(to_grams(ml, honey), honey.grams_per_ml)
+        self.failUnlessEqual(to_grams(ml, paprika), paprika.grams_per_ml)
+        self.failUnlessEqual(to_grams(cup, honey), honey.grams_per_ml * ml_per_cup)
+        self.failUnlessEqual(to_grams(cup, paprika), paprika.grams_per_ml * ml_per_cup)
+
 
     def test_convert_weight_to_ml(self):
+        # Two foods with very different densities
+        honey = Food.objects.get(name='honey')
+        paprika = Food.objects.get(name='paprika')
+        # Two units of weight
+        gram = Unit.objects.get(name='gram')
+        ounce = Unit.objects.get(name='ounce')
+        g_per_oz = Equivalence.objects.get(unit=ounce, to_unit=gram).to_quantity
+
+        # Convert units of weight into milliliters
         # Without food, assume 1.0 g/ml
-        self.failUnlessEqual(to_ml(self.gram), 1.0)
-        self.failUnlessEqual(to_ml(self.ounce), 28.35)
+        self.failUnlessEqual(to_ml(gram), 1.0)
+        self.failUnlessEqual(to_ml(ounce), g_per_oz)
         # With food, use its density
-        self.failUnlessEqual(to_ml(self.gram, self.syrup), 1.0 / 1.2)
-        self.failUnlessEqual(to_ml(self.gram, self.powder), 1.0 / 0.5)
-        self.failUnlessEqual(to_ml(self.ounce, self.syrup), 28.35 / 1.2)
-        self.failUnlessEqual(to_ml(self.ounce, self.powder), 28.35 / 0.5)
+        self.failUnlessEqual(to_ml(gram, honey), 1.0 / honey.grams_per_ml)
+        self.failUnlessEqual(to_ml(gram, paprika), 1.0 / paprika.grams_per_ml)
+        self.failUnlessEqual(to_ml(ounce, honey), g_per_oz / honey.grams_per_ml)
+        self.failUnlessEqual(to_ml(ounce, paprika), g_per_oz / paprika.grams_per_ml)
 
 
 class ConvertAmountTest (CoreTest):
@@ -130,13 +127,9 @@ class NutritionTest (CoreTest):
     """Initialization shared by all test cases
     """
     def setUp(self):
-        self.gram = Unit.get(name='gram', kind='weight')
-        self.kilogram = Unit.get(name='kilogram', kind='weight')
-        kilograms_to_grams = Equivalence.get(
-            unit=self.kilogram,
-            to_quantity=1000,
-            to_unit=self.gram,
-        )
+        self.gram = Unit.objects.get(name='gram')
+        self.kilogram = Unit.objects.get(name='kilogram')
+
 
     def assert_nutrition_info_equals(self, nutrition_info, **attrs):
         """Assert that the given `NutritionInfo` has attributes matching `attrs`.
@@ -146,8 +139,40 @@ class NutritionTest (CoreTest):
             self.assertEqual(nutrition_info.__getattribute__(name), expect,
                             "Expected %s == %s, got %s instead" % (name, expect, actual))
 
+
+    def test_normalize_nutrition_info(self):
+        butter = Food.objects.get(name='butter')
+        butter_nutrition = FoodNutritionInfo(
+            food         = butter,
+            quantity     = 14.0,
+            unit         = self.gram,
+            calories     = 100,
+            fat_calories = 100,
+            fat          = 11,
+            carb         = 0,
+            sodium       = 90,
+            protein      = 0,
+            cholesterol  = 30,
+        )
+
+        butter_nutrition.normalize()
+        self.assert_nutrition_info_equals(
+            butter_nutrition,
+            food         = butter,
+            quantity     = 1.0,
+            unit         = self.gram,
+            calories     = 7.14,
+            fat_calories = 7.14,
+            fat          = 0.79,
+            carb         = 0.0,
+            sodium       = 6.43,
+            protein      = 0.0,
+            cholesterol  = 2.14,
+        )
+
+
     def test_convert_nutrition_info(self):
-        butter = Food.get(name='butter', grams_per_ml=0.97)
+        butter = Food.objects.get(name='butter')
         nutrition = FoodNutritionInfo(
             quantity     = 10,
             unit         = self.gram,
@@ -192,14 +217,11 @@ class NutritionTest (CoreTest):
 
     def test_convert_nutrition_info_weight_to_volume(self):
         # Test data
-        butter = Food.get(name='butter', grams_per_ml=0.97)
-        cup = Unit.get(name='cup', kind='volume')
-        ml = Unit.get(name='milliliter', kind='volume')
-        ml_per_cup = Equivalence.get(
-            unit=cup,
-            to_quantity=236.6,
-            to_unit=ml,
-        )
+        butter = Food.objects.get(name='butter')
+        cup = Unit.objects.get(name='cup')
+        ml = Unit.objects.get(name='milliliter')
+        ml_per_cup = Equivalence.objects.get(unit=cup, to_unit=ml).to_quantity
+
         butter_nutrition = FoodNutritionInfo(
             food         = butter,
             quantity     = 14.0,
@@ -216,7 +238,7 @@ class NutritionTest (CoreTest):
         # Multiplier for a 1-gram serving size
         gram_serving = 1.0 / (1.0 * 14.0)          # 14.0 g/serving
         # Number of grams in target amount
-        target_grams = 0.97 * 236.6                # 0.97 g/ml, 236.6 g/cup
+        target_grams = butter.grams_per_ml * ml_per_cup
         # Expected nutrition multiplier for a 1-cup amount
         servings_per_cup = gram_serving * target_grams
 
@@ -237,14 +259,11 @@ class NutritionTest (CoreTest):
 
 
     def test_convert_nutrition_info_volume_to_weight(self):
-        peanut_butter = Food.get(name='peanut butter', grams_per_ml=0.76)
-        tbs = Unit.get(name='tablespoon', kind='volume')
-        ml = Unit.get(name='milliliter', kind='volume')
-        ml_per_tbs = Equivalence.get(
-            unit=tbs,
-            to_quantity=14.8,
-            to_unit=ml,
-        )
+        peanut_butter = Food.objects.get(name='peanut butter')
+        tbs = Unit.objects.get(name='tablespoon')
+        ml = Unit.objects.get(name='milliliter')
+        ml_per_tbs = Equivalence.objects.get(unit=tbs, to_unit=ml).to_quantity
+
         peanut_butter_nutrition = FoodNutritionInfo(
             food         = peanut_butter,
             quantity     = 2.0,
@@ -258,7 +277,8 @@ class NutritionTest (CoreTest):
             cholesterol  = 0,
         )
 
-        gram_serving = 1.0 / (14.8 * 0.76 * 2.0)   # 14.8 ml/tbs, 0.76 g/ml, 2.0 tbs/serving
+        # 14.8 ml/tbs, 0.76 g/ml, 2.0 tbs/serving
+        gram_serving = 1.0 / (ml_per_tbs * peanut_butter.grams_per_ml * 2.0)
         target_grams = 1000.0
         servings_per_kg = gram_serving * target_grams
 
@@ -275,38 +295,6 @@ class NutritionTest (CoreTest):
             protein      = servings_per_kg * 7,
             cholesterol  = servings_per_kg * 0,
         )
-
-
-    def test_normalize_nutrition_info(self):
-        butter = Food.get(name='butter', grams_per_ml=0.97)
-        butter_nutrition = FoodNutritionInfo(
-            food         = butter,
-            quantity     = 14.0,
-            unit         = self.gram,
-            calories     = 100,
-            fat_calories = 100,
-            fat          = 11,
-            carb         = 0,
-            sodium       = 90,
-            protein      = 0,
-            cholesterol  = 30,
-        )
-
-        butter_nutrition.normalize()
-        self.assert_nutrition_info_equals(
-            butter_nutrition,
-            food         = butter,
-            quantity     = 1.0,
-            unit         = self.gram,
-            calories     = 7.14,
-            fat_calories = 7.14,
-            fat          = 0.79,
-            carb         = 0.0,
-            sodium       = 6.43,
-            protein      = 0.0,
-            cholesterol  = 2.14,
-        )
-
 
 
 

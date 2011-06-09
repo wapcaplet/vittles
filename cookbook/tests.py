@@ -5,15 +5,21 @@ from cookbook.models import Recipe, Ingredient
 class CookbookTest (TestCase):
     """Initialization shared by all test cases
     """
+    fixtures = [
+        'test_food.yaml',
+        'test_unit.yaml',
+        'test_equivalence.yaml',
+    ]
+
     def setUp(self):
         # Units
-        self.cup = Unit.get(name='cup')
-        self.ounce = Unit.get(name='ounce')
+        self.cup = Unit.objects.get(name='cup')
+        self.ounce = Unit.objects.get(name='ounce')
 
         # Foods
-        self.egg = Food.get(name='egg')
-        self.flour = Food.get(name='flour')
-        self.butter = Food.get(name='butter')
+        self.egg = Food.objects.get(name='egg')
+        self.flour = Food.objects.get(name='all-purpose flour')
+        self.butter = Food.objects.get(name='butter')
 
         # Nutrition Infos
         self.egg_nutrition, created = FoodNutritionInfo.objects.get_or_create(
@@ -114,4 +120,24 @@ class RecipeTest (CookbookTest):
             protein      = 18.3,
             cholesterol  = 246,
         )
+
+
+from django.test.client import Client
+
+class CookbookIndexTest (TestCase):
+    def setUp(self):
+        self.context = Client()
+
+    def test_cookbook_index(self):
+        index = self.context.get('/cookbook/')
+        self.assertEqual(index.status_code, 200)
+
+        # Test templates rendered
+        #print('templates:')
+        #print([t.name for t in index.templates])
+
+        # Test view context
+        #print('context:')
+        #print(index.context['recipe_categories'])
+
 
