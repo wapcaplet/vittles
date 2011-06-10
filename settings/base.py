@@ -159,3 +159,7 @@ LETTUCE_APPS = (
     'inventory',
 )
 
+SERIALIZATION_MODULES = {
+    'yaml': 'core.better_yaml',
+}
+

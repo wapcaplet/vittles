@@ -1,121 +1,41 @@
-- fields: {to_quantity: 4.0, to_unit: 8, unit: 9}
-  model: core.equivalence
-  pk: 1
-- fields: {to_quantity: 1000.0, to_unit: 5, unit: 12}
-  model: core.equivalence
-  pk: 2
-- fields: {to_quantity: 1000.0, to_unit: 14, unit: 11}
-  model: core.equivalence
-  pk: 3
-- fields: {to_quantity: 16.0, to_unit: 4, unit: 6}
-  model: core.equivalence
-  pk: 4
-- fields: {to_quantity: 8.0, to_unit: 15, unit: 1}
-  model: core.equivalence
-  pk: 5
-- fields: {to_quantity: 236.59999999999999, to_unit: 14, unit: 1}
-  model: core.equivalence
-  pk: 6
-- fields: {to_quantity: 0.5, to_unit: 10, unit: 1}
-  model: core.equivalence
-  pk: 7
-- fields: {to_quantity: 29.57, to_unit: 14, unit: 15}
-  model: core.equivalence
-  pk: 8
-- fields: {to_quantity: 473.18000000000001, to_unit: 14, unit: 10}
-  model: core.equivalence
-  pk: 9
-- fields: {to_quantity: 3785.0, to_unit: 14, unit: 9}
-  model: core.equivalence
-  pk: 10
-- fields: {to_quantity: 14.800000000000001, to_unit: 14, unit: 3}
-  model: core.equivalence
-  pk: 11
-- fields: {to_quantity: 4.9000000000000004, to_unit: 14, unit: 2}
-  model: core.equivalence
-  pk: 12
-- fields: {to_quantity: 3.0, to_unit: 2, unit: 3}
-  model: core.equivalence
-  pk: 13
-- fields: {to_quantity: 16.0, to_unit: 3, unit: 1}
-  model: core.equivalence
-  pk: 14
-- fields: {to_quantity: 0.45000000000000001, to_unit: 12, unit: 6}
-  model: core.equivalence
-  pk: 16
-- fields: {to_quantity: 454.0, to_unit: 5, unit: 6}
-  model: core.equivalence
-  pk: 17
-- fields: {to_quantity: 0.26400000000000001, to_unit: 9, unit: 11}
-  model: core.equivalence
-  pk: 18
-- fields: {to_quantity: 1.0566, to_unit: 8, unit: 11}
-  model: core.equivalence
-  pk: 19
-- fields: {to_quantity: 2.113, to_unit: 10, unit: 11}
-  model: core.equivalence
-  pk: 20
-- fields: {to_quantity: 33.814, to_unit: 15, unit: 11}
-  model: core.equivalence
-  pk: 21
-- fields: {to_quantity: 0.94599999999999995, to_unit: 11, unit: 8}
-  model: core.equivalence
-  pk: 22
-- fields: {to_quantity: 946.0, to_unit: 14, unit: 8}
-  model: core.equivalence
-  pk: 23
-- fields: {to_quantity: 2.0, to_unit: 10, unit: 8}
-  model: core.equivalence
-  pk: 24
-- fields: {to_quantity: 0.25, to_unit: 9, unit: 8}
-  model: core.equivalence
-  pk: 25
-- fields: {to_quantity: 0.25, to_unit: 8, unit: 1}
-  model: core.equivalence
-  pk: 26
-- fields: {to_quantity: 0.125, to_unit: 1, unit: 15}
-  model: core.equivalence
-  pk: 27
-- fields: {to_quantity: 2.2046000000000001, to_unit: 6, unit: 12}
-  model: core.equivalence
-  pk: 28
-- fields: {to_quantity: 35.274000000000001, to_unit: 4, unit: 12}
-  model: core.equivalence
-  pk: 29
-- fields: {to_quantity: 0.0625, to_unit: 6, unit: 4}
-  model: core.equivalence
-  pk: 30
-- fields: {to_quantity: 28.350000000000001, to_unit: 5, unit: 4}
-  model: core.equivalence
-  pk: 31
-- fields: {to_quantity: 0.035000000000000003, to_unit: 4, unit: 5}
-  model: core.equivalence
-  pk: 32
-- fields: {to_quantity: 0.0022000000000000001, to_unit: 6, unit: 5}
-  model: core.equivalence
-  pk: 33
-- fields: {to_quantity: 0.001, to_unit: 12, unit: 5}
-  model: core.equivalence
-  pk: 34
-- fields: {to_quantity: 3.7850000000000001, to_unit: 11, unit: 9}
-  model: core.equivalence
-  pk: 35
-- fields: {to_quantity: 0.5, to_unit: 8, unit: 10}
-  model: core.equivalence
-  pk: 36
-- fields: {to_quantity: 16.0, to_unit: 15, unit: 10}
-  model: core.equivalence
-  pk: 37
-- fields: {to_quantity: 0.125, to_unit: 9, unit: 10}
-  model: core.equivalence
-  pk: 38
-- fields: {to_quantity: 0.47299999999999998, to_unit: 11, unit: 10}
-  model: core.equivalence
-  pk: 39
-- fields: {to_quantity: 0.5, to_unit: 14, unit: 16}
-  model: core.equivalence
-  pk: 40
-- fields: {to_quantity: 0.5, to_unit: 14, unit: 7}
-  model: core.equivalence
-  pk: 41
-
+core.equivalence:
+  1: {to_quantity: 4.0, to_unit: 8, unit: 9}
+  2: {to_quantity: 1000.0, to_unit: 5, unit: 12}
+  3: {to_quantity: 1000.0, to_unit: 14, unit: 11}
+  4: {to_quantity: 16.0, to_unit: 4, unit: 6}
+  5: {to_quantity: 8.0, to_unit: 15, unit: 1}
+  6: {to_quantity: 236.59999999999999, to_unit: 14, unit: 1}
+  7: {to_quantity: 0.5, to_unit: 10, unit: 1}
+  8: {to_quantity: 29.57, to_unit: 14, unit: 15}
+  9: {to_quantity: 473.18000000000001, to_unit: 14, unit: 10}
+  10: {to_quantity: 3785.0, to_unit: 14, unit: 9}
+  11: {to_quantity: 14.800000000000001, to_unit: 14, unit: 3}
+  12: {to_quantity: 4.9000000000000004, to_unit: 14, unit: 2}
+  13: {to_quantity: 3.0, to_unit: 2, unit: 3}
+  14: {to_quantity: 16.0, to_unit: 3, unit: 1}
+  16: {to_quantity: 0.45000000000000001, to_unit: 12, unit: 6}
+  17: {to_quantity: 454.0, to_unit: 5, unit: 6}
+  18: {to_quantity: 0.26400000000000001, to_unit: 9, unit: 11}
+  19: {to_quantity: 1.0566, to_unit: 8, unit: 11}
+  20: {to_quantity: 2.113, to_unit: 10, unit: 11}
+  21: {to_quantity: 33.814, to_unit: 15, unit: 11}
+  22: {to_quantity: 0.94599999999999995, to_unit: 11, unit: 8}
+  23: {to_quantity: 946.0, to_unit: 14, unit: 8}
+  24: {to_quantity: 2.0, to_unit: 10, unit: 8}
+  25: {to_quantity: 0.25, to_unit: 9, unit: 8}
+  26: {to_quantity: 0.25, to_unit: 8, unit: 1}
+  27: {to_quantity: 0.125, to_unit: 1, unit: 15}
+  28: {to_quantity: 2.2046000000000001, to_unit: 6, unit: 12}
+  29: {to_quantity: 35.274000000000001, to_unit: 4, unit: 12}
+  30: {to_quantity: 0.0625, to_unit: 6, unit: 4}
+  31: {to_quantity: 28.350000000000001, to_unit: 5, unit: 4}
+  32: {to_quantity: 0.035000000000000003, to_unit: 4, unit: 5}
+  33: {to_quantity: 0.0022000000000000001, to_unit: 6, unit: 5}
+  34: {to_quantity: 0.001, to_unit: 12, unit: 5}
+  35: {to_quantity: 3.7850000000000001, to_unit: 11, unit: 9}
+  36: {to_quantity: 0.5, to_unit: 8, unit: 10}
+  37: {to_quantity: 16.0, to_unit: 15, unit: 10}
+  38: {to_quantity: 0.125, to_unit: 9, unit: 10}
+  39: {to_quantity: 0.47299999999999998, to_unit: 11, unit: 10}
+  40: {to_quantity: 0.5, to_unit: 14, unit: 16}
+  41: {to_quantity: 0.5, to_unit: 14, unit: 7}

@@ -186,7 +186,14 @@ class IngredientNutritionInfo (NutritionInfo):
         """Recalculate the nutrition for the current `Ingredient`.
         Return `True` if recalculation was successful, `False` otherwise.
         """
-        ingredient = self.ingredient
+        # For some bizarre reason, it's necessary to force a reload of the
+        # ingredient instance here; if the ingredient was just modified/saved,
+        # `self.ingredient` still refers to the old instance.
+        # See: https://code.djangoproject.com/ticket/901
+        # If this kind of hackery is needed more frequently, it might be good
+        # to create a 'reload' method in the base model class.
+        #ingredient = self.ingredient
+        ingredient = Ingredient.objects.get(pk=self.ingredient.id)
 
         # Find all nutritions for this food (maybe none)
         nutritions = FoodNutritionInfo.objects.filter(food=ingredient.food)

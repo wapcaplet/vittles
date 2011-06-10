@@ -22,7 +22,7 @@ class CookbookTest (TestCase):
         self.butter = Food.objects.get(name='butter')
 
         # Nutrition Infos
-        self.egg_nutrition, created = FoodNutritionInfo.objects.get_or_create(
+        self.egg_nutrition_info, created = FoodNutritionInfo.objects.get_or_create(
             food         = self.egg,
             quantity     = 1,
             unit         = None,
@@ -34,7 +34,7 @@ class CookbookTest (TestCase):
             protein      = 6.3,
             cholesterol  = 186,
         )
-        self.flour_nutrition, created = FoodNutritionInfo.objects.get_or_create(
+        self.flour_nutrition_info, created = FoodNutritionInfo.objects.get_or_create(
             food         = self.flour,
             quantity     = 1,
             unit         = self.cup,
@@ -47,7 +47,7 @@ class CookbookTest (TestCase):
             cholesterol  = 0,
         )
 
-        self.flour_nutrition, created = FoodNutritionInfo.objects.get_or_create(
+        self.butter_nutrition_info, created = FoodNutritionInfo.objects.get_or_create(
             food         = self.butter,
             quantity     = 1,
             unit         = self.ounce,
@@ -70,55 +70,84 @@ class CookbookTest (TestCase):
                             "Expected %s == %s, got %s instead" % (name, expect, actual))
 
 
-class RecipeTest (CookbookTest):
-    def test_recipe_nutrition_info(self):
+class IngredientNutritionTest (CookbookTest):
+    def test_ingredient_nutrition_info_recalculation(self):
         pancakes = Recipe.get(name='Pancakes')
-        pancakes.ingredients.create(quantity=1, food=self.egg)
-        pancakes.ingredients.create(quantity=1, unit=self.cup, food=self.flour)
-        pancakes.save()
+        eggs = Ingredient(
+            recipe   = pancakes,
+            quantity = 2,
+            food     = self.egg,
+        )
+        eggs.save()
 
+        egg = self.egg_nutrition_info
+
+        # Before recalculation
         self.assert_nutrition_info_equals(
-            pancakes.nutrition_info,
-            calories     = 472,
-            fat_calories = 20,
-            fat          = 4.8,
-            carb         = 88.4,
-            sodium       = 71,
-            protein      = 18.3,
-            cholesterol  = 186,
+            eggs.nutrition_info,
+            calories     = 2 * egg.calories,
+            fat_calories = 2 * egg.fat_calories,
+            fat          = 2 * egg.fat,
+            carb         = 2 * egg.carb,
+            sodium       = 2 * egg.sodium,
+            protein      = 2 * egg.protein,
+            cholesterol  = 2 * egg.cholesterol,
         )
 
-    def test_recipe_nutrition_info_recalculate(self):
+        # Add another egg
+        eggs.quantity = 3
+        eggs.save()
+
+        # Ensure nutrition reflects 3 eggs now
+        self.assert_nutrition_info_equals(
+            eggs.nutrition_info,
+            calories     = 3 * egg.calories,
+            fat_calories = 3 * egg.fat_calories,
+            fat          = 3 * egg.fat,
+            carb         = 3 * egg.carb,
+            sodium       = 3 * egg.sodium,
+            protein      = 3 * egg.protein,
+            cholesterol  = 3 * egg.cholesterol,
+        )
+
+
+class RecipeTest (CookbookTest):
+    def test_recipe_nutrition_info_recalculation(self):
         pancakes = Recipe.get(name='Pancakes')
         pancakes.ingredients.create(quantity=1, food=self.egg)
         pancakes.ingredients.create(quantity=1, unit=self.cup, food=self.flour)
         pancakes.save()
+
+        egg = self.egg_nutrition_info
+        flour = self.flour_nutrition_info
+        butter = self.butter_nutrition_info
 
         # Before recalculation
         self.assert_nutrition_info_equals(
             pancakes.nutrition_info,
-            calories     = 472,
-            fat_calories = 20,
-            fat          = 4.8,
-            carb         = 88.4,
-            sodium       = 71,
-            protein      = 18.3,
-            cholesterol  = 186,
+            calories     = egg.calories     + flour.calories,
+            fat_calories = egg.fat_calories + flour.fat_calories,
+            fat          = egg.fat          + flour.fat,
+            carb         = egg.carb         + flour.carb,
+            sodium       = egg.sodium       + flour.sodium,
+            protein      = egg.protein      + flour.protein,
+            cholesterol  = egg.cholesterol  + flour.cholesterol,
         )
 
         # Add 1 oz. butter to recipe
         pancakes.ingredients.create(quantity=1, unit=self.ounce, food=self.butter)
         pancakes.save()
 
+        # Ensure that butter nutrition is now included
         self.assert_nutrition_info_equals(
             pancakes.nutrition_info,
-            calories     = 672,
-            fat_calories = 220,
-            fat          = 26.8,
-            carb         = 88.4,
-            sodium       = 251,
-            protein      = 18.3,
-            cholesterol  = 246,
+            calories     = egg.calories     + flour.calories     + butter.calories,
+            fat_calories = egg.fat_calories + flour.fat_calories + butter.fat_calories,
+            fat          = egg.fat          + flour.fat          + butter.fat,
+            carb         = egg.carb         + flour.carb         + butter.carb,
+            sodium       = egg.sodium       + flour.sodium       + butter.sodium,
+            protein      = egg.protein      + flour.protein      + butter.protein,
+            cholesterol  = egg.cholesterol  + flour.cholesterol  + butter.cholesterol,
         )
 
 

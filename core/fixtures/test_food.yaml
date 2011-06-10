@@ -1,18 +1,7 @@
-- fields: {food_group: 4, grams_per_ml: 0.41999999999999998, name: all-purpose flour}
-  model: core.food
-  pk: 1
-- fields: {food_group: 6, grams_per_ml: 1.0, name: egg}
-  model: core.food
-  pk: 2
-- fields: {food_group: 2, grams_per_ml: 0.96999999999999997, name: butter}
-  model: core.food
-  pk: 9
-- fields: {food_group: 26, grams_per_ml: 0.76000000000000001, name: peanut butter}
-  model: core.food
-  pk: 133
-- fields: {food_group: 9, grams_per_ml: 1.4399999999999999, name: honey}
-  model: core.food
-  pk: 114
-- fields: {food_group: 29, grams_per_ml: 0.48999999999999999, name: paprika}
-  model: core.food
-  pk: 99
+core.food:
+  1: {food_group: null, grams_per_ml: 0.41999999999999998, name: all-purpose flour}
+  2: {food_group: null, grams_per_ml: 1.0, name: egg}
+  3: {food_group: null, grams_per_ml: 0.96999999999999997, name: butter}
+  4: {food_group: null, grams_per_ml: 0.76000000000000001, name: peanut butter}
+  5: {food_group: null, grams_per_ml: 1.4399999999999999, name: honey}
+  6: {food_group: null, grams_per_ml: 0.48999999999999999, name: paprika}
