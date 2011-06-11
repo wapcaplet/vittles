@@ -1,17 +1,11 @@
 {% extends "base.html" %}
 {% block title %}Meal calendar{% endblock %}
 
-{% block header %}Meal calendar{% endblock %}
+{% block breadcrumbs %}
+  <a href="/">Vittles</a>
+  <a href="{% url diet-index %}">Diet</a>
+{% endblock %}
 
 {% block content %}
-
-<div class="breadcrumbs">
-  &larr; <a href="/">Vittles</a>
-  &larr; <a href="{% url diet-index %}">Diet</a>
-</div>
-
-<div class="calendar">
   {{ calendar }}
-</div>
-
 {% endblock %}

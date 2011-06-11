@@ -2,18 +2,12 @@
 {% load cookbook_extras %}
 {% block title %}{{ recipe.name }}{% endblock %}
 
-{% block header %}
-  {% include "cookbook/_recipe_summary.html" %}
+{% block breadcrumbs %}
+  <a href="/">Vittles</a>
+  <a href="{% url cookbook-index %}">Cookbook</a>
 {% endblock %}
 
-{% block content %}
-
-<div class="breadcrumbs">
-  &larr; <a href="/">Vittles</a>
-  &larr; <a href="{% url cookbook-index %}">Cookbook</a>
-</div>
-
-<div class="left-column">
+{% block sidebar %}
   <div class="ingredients">
     <h2>Ingredients</h2>
     {% for category, ingredients in recipe.ingredient_groups %}
@@ -41,22 +35,22 @@
 
   <h2>Nutrition</h2>
   {% include "cookbook/_nutrition_info.html" %}
-</div>
 
-<script type="text/javascript">
-  $(function() { add_popup('li.ingredient'); });
-</script>
+  <script type="text/javascript">
+    $(function() { add_popup('li.ingredient'); });
+  </script>
+{% endblock %}
 
-<div class="directions">
-  <h2>Directions</h2>
-  {% if recipe.preheat %}
-    <p class="preheat">Preheat oven to {{ recipe.preheat }}</p>
-  {% endif %}
+{% block content %}
+  <div class="directions">
+    <h2>Directions</h2>
+    {% if recipe.preheat %}
+      <p class="preheat">Preheat oven to {{ recipe.preheat }}</p>
+    {% endif %}
 
-  {% for paragraph in recipe.directions_paragraphs %}
-    <p>{{ paragraph }}</p>
-  {% endfor %}
-</div>
-
+    {% for paragraph in recipe.directions_paragraphs %}
+      <p>{{ paragraph }}</p>
+    {% endfor %}
+  </div>
 {% endblock %}
 

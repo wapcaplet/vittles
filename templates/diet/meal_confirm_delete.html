@@ -1,14 +1,10 @@
 {% extends "base.html" %}
-{% block title %}Vittles: Delete Meal{% endblock %}
-
-{% block header %}Delete Meal{% endblock %}
+{% block title %}Delete Meal?{% endblock %}
 
 {% block content %}
-
-<form action="" method="post">
-  Really delete {{ object }} ?
-  <input type="submit" value="Yes" />
-</form>
-
+  <form action="" method="post">
+    Really delete {{ object }} ?
+    <input type="submit" value="Yes" />
+  </form>
 {% endblock %}
 

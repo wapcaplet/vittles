@@ -1,19 +1,15 @@
 {% extends "base.html" %}
-{% block title %}Vittles: Add Meal{% endblock %}
+{% block title %}Add Meal{% endblock %}
 
-{% block header %}Add Meal{% endblock %}
+{% block breadcrumbs %}
+  <a href="/">Vittles</a>
+  <a href="{% url diet-index %}">Diet</a>
+  <a href="{% url diet-meal-calendar meal_date|date:"Y-m" %}">{{ meal_date|date:"F Y" }}</a>
+{% endblock %}
 
 {% block content %}
-
-<div class="breadcrumbs">
-  &larr; <a href="/">Vittles</a>
-  &larr; <a href="{% url diet-index %}">Diet</a>
-  &larr; <a href="{% url diet-meal-calendar meal_date|date:"Y-m" %}">{{ meal_date|date:"F Y" }}</a>
-</div>
-
-<form action="" method="post">
-  {{ form.as_p }}
-  <input type="submit" value="Save" />
-</form>
-
+  <form action="" method="post">
+    {{ form.as_p }}
+    <input type="submit" value="Save" />
+  </form>
 {% endblock %}

@@ -1,46 +1,44 @@
 {% extends "base.html" %}
 {% load cookbook_extras %}
-{% block title %}Vittles: Cookbook{% endblock %}
+{% block title %}Cookbook{% endblock %}
 
-{% block header %}Cookbook{% endblock %}
+{% block breadcrumbs %}
+  <a href="/">Vittles</a>
+{% endblock %}
+
+{% block quicksearch %}
+  <div class="nav">
+    <form>
+      <label for="search">Search</label> <input type="text" id="search" size="30" />
+    </form>
+    <script type="text/javascript">
+      $(function () {
+        $('input#search').quicksearch('ul li');
+      });
+    </script>
+  </div>
+{% endblock %}
 
 {% block content %}
+  <div class="recipes">
+    {% for category, recipes in recipe_categories %}
+      {% if category %} <h2>{{ category }}</h2> {% endif %}
+      <ul>
+        {% for recipe in recipes %}
+        <li class="recipe" id="recipe_{{ recipe.id }}">
+          <a href="{% url cookbook-show-recipe recipe.id %}">
+            {% include "cookbook/_recipe_summary.html" %}
+          </a>
+          <div class="popup" style="display: none;">
+            {% nutrition_summary recipe.nutrition_info %}
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  </div>
 
-<div class="breadcrumbs">
-  &larr; <a href="/">Vittles</a>
-</div>
-
-<div class="nav">
-  <form>
-    <label for="search">Search</label> <input type="text" id="search" size="30" />
-  </form>
   <script type="text/javascript">
-    $(function () {
-      $('input#search').quicksearch('ul li');
-    });
+    $(function() { add_popup('li.recipe'); });
   </script>
-</div>
-
-<div class="recipes">
-  {% for category, recipes in recipe_categories %}
-    {% if category %} <h2>{{ category }}</h2> {% endif %}
-    <ul>
-      {% for recipe in recipes %}
-      <li class="recipe" id="recipe_{{ recipe.id }}">
-        <a href="{% url cookbook-show-recipe recipe.id %}">
-          {% include "cookbook/_recipe_summary.html" %}
-        </a>
-        <div class="popup" style="display: none;">
-          {% nutrition_summary recipe.nutrition_info %}
-        </div>
-      </li>
-      {% endfor %}
-    </ul>
-  {% endfor %}
-</div>
-
-<script type="text/javascript">
-  $(function() { add_popup('li.recipe'); });
-</script>
-
 {% endblock %}

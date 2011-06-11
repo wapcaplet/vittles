@@ -32,7 +32,7 @@ h1, h2, h3 {
   margin: 0;
 }
 
-.left-column {
+.sidebar {
   float: left;
   margin-right: 1em;
   border-right: 1px solid #ccc;
@@ -115,15 +115,15 @@ a:hover, a:active {
   font-style: italic;
 }
 
-.nav {
+.quicksearch {
   padding: 1em 2em;
   background: #eee;
   border-bottom: 1px solid #ccc;
 }
-.nav p {
+.quicksearch p {
   margin: 0 0 1em 0;
 }
-.nav label {
+.quicksearch label {
   font-weight: bold;
 }
 
@@ -135,6 +135,13 @@ a:hover, a:active {
 }
 .breadcrumbs a:hover {
   text-decoration: underline;
+}
+.breadcrumbs a:after {
+  content: ' \2190';
+}
+
+.content {
+  margin: 1em 2em;
 }
 
 .nutrition_info {
@@ -180,9 +187,6 @@ a:hover, a:active {
 
 
 /* Diet calendar */
-div.calendar {
-  margin: 1em 2em;
-}
 table.month {
   width: 100%;
 }

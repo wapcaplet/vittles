@@ -1,19 +1,16 @@
 {% extends "base.html" %}
-{% block title %}Vittles: Diet{% endblock %}
+{% block title %}Diet{% endblock %}
 
-{% block header %}Diet{% endblock %}
+{% block breadcrumbs %}
+  <a href="/">Vittles</a>
+{% endblock %}
 
 {% block content %}
-
-<div class="breadcrumbs">
-  &larr; <a href="/">Vittles</a>
-</div>
-
-<ul>
-  <li>
-  <a href="{% url diet-meal-calendar this_month|date:"Y-m" %}">
-    Meal calendar for {{ this_month|date:"F Y" }}
-  </a>
-  </li>
-</ul>
+  <ul>
+    <li>
+    <a href="{% url diet-meal-calendar this_month|date:"Y-m" %}">
+      Meal calendar for {{ this_month|date:"F Y" }}
+    </a>
+    </li>
+  </ul>
 {% endblock %}

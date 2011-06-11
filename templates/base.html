@@ -1,7 +1,9 @@
+{% load capture %}
+{% captureas title %}{% block title %}{% endblock %}{% endcaptureas %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>{% block title %}{% endblock %}</title>
+    <title>{{ title }}</title>
     <link rel="stylesheet" type="text/css" href="/static/css/vittles.css" />
     <script type="text/javascript" src="/static/js/jquery-1.6.1.js"></script>
     <script type="text/javascript" src="/static/js/jquery.quicksearch.js"></script>
@@ -9,10 +11,30 @@
   </head>
   <body>
     <div class="header">
-      <h1>{% block header %}{% endblock %}</h1>
+      <h1>{{ title }}</h1>
       <a href="/admin">Go to admin site</a>
     </div>
-    {% block content %}{% endblock %}
+
+    {# These blocks are only displayed if they're defined #}
+    {% captureas breadcrumbs %}{% block breadcrumbs %}{% endblock %}{% endcaptureas %}
+    {% captureas sidebar %}{% block sidebar %}{% endblock %}{% endcaptureas %}
+    {% captureas quicksearch %}{% block quicksearch %}{% endblock %}{% endcaptureas %}
+
+    {% if breadcrumbs %}
+      <div class="breadcrumbs">{{ breadcrumbs }}</div>
+    {% endif %}
+
+    {% if quicksearch %}
+      <div class="quicksearch">{{ quicksearch}}</div>
+    {% endif %}
+
+    {% if sidebar %}
+      <div class="sidebar">{{ sidebar }}</div>
+    {% endif %}
+
+    <div class="content">
+      {% block content %}{% endblock %}
+    </div>
   </body>
 </html>
 

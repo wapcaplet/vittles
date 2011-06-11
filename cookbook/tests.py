@@ -60,6 +60,9 @@ class CookbookTest (TestCase):
             cholesterol  = 60,
         )
 
+        # Recipes
+        self.pancakes, created = Recipe.objects.get_or_create(name='Pancakes')
+
 
     def assert_nutrition_info_equals(self, nutrition_info, **attrs):
         """Assert that the given `NutritionInfo` has attributes matching `attrs`.
@@ -72,17 +75,13 @@ class CookbookTest (TestCase):
 
 class IngredientNutritionTest (CookbookTest):
     def test_ingredient_nutrition_info_recalculation(self):
-        pancakes = Recipe.get(name='Pancakes')
-        eggs = Ingredient(
-            recipe   = pancakes,
-            quantity = 2,
-            food     = self.egg,
-        )
+        # Create an ingredient
+        eggs = Ingredient(recipe=self.pancakes, quantity=2, food=self.egg)
         eggs.save()
 
         egg = self.egg_nutrition_info
 
-        # Before recalculation
+        # Nutrition info should equal 2 eggs
         self.assert_nutrition_info_equals(
             eggs.nutrition_info,
             calories     = 2 * egg.calories,
@@ -94,7 +93,7 @@ class IngredientNutritionTest (CookbookTest):
             cholesterol  = 2 * egg.cholesterol,
         )
 
-        # Add another egg
+        # Make it 3 eggs
         eggs.quantity = 3
         eggs.save()
 
@@ -113,10 +112,10 @@ class IngredientNutritionTest (CookbookTest):
 
 class RecipeTest (CookbookTest):
     def test_recipe_nutrition_info_recalculation(self):
-        pancakes = Recipe.get(name='Pancakes')
-        pancakes.ingredients.create(quantity=1, food=self.egg)
-        pancakes.ingredients.create(quantity=1, unit=self.cup, food=self.flour)
-        pancakes.save()
+        # Add an egg and 1 cup of flour to the pancakes recipe
+        self.pancakes.ingredients.create(quantity=1, food=self.egg)
+        self.pancakes.ingredients.create(quantity=1, unit=self.cup, food=self.flour)
+        self.pancakes.save()
 
         egg = self.egg_nutrition_info
         flour = self.flour_nutrition_info
@@ -124,7 +123,7 @@ class RecipeTest (CookbookTest):
 
         # Before recalculation
         self.assert_nutrition_info_equals(
-            pancakes.nutrition_info,
+            self.pancakes.nutrition_info,
             calories     = egg.calories     + flour.calories,
             fat_calories = egg.fat_calories + flour.fat_calories,
             fat          = egg.fat          + flour.fat,
@@ -135,12 +134,12 @@ class RecipeTest (CookbookTest):
         )
 
         # Add 1 oz. butter to recipe
-        pancakes.ingredients.create(quantity=1, unit=self.ounce, food=self.butter)
-        pancakes.save()
+        self.pancakes.ingredients.create(quantity=1, unit=self.ounce, food=self.butter)
+        self.pancakes.save()
 
-        # Ensure that butter nutrition is now included
+        # Ensure that butter nutrition is now included in the total
         self.assert_nutrition_info_equals(
-            pancakes.nutrition_info,
+            self.pancakes.nutrition_info,
             calories     = egg.calories     + flour.calories     + butter.calories,
             fat_calories = egg.fat_calories + flour.fat_calories + butter.fat_calories,
             fat          = egg.fat          + flour.fat          + butter.fat,
