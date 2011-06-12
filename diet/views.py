@@ -19,14 +19,19 @@ def meal_calendar(request, yyyy_mm=''):
     else:
         date = datetime.today()
 
-    meals = Meal.objects.order_by('date').filter(
-        date__year=date.year, date__month=date.month
-    )
-    cal = MealCalendar(meals).formatmonth(date.year, date.month)
     vars = {
-        'calendar': mark_safe(cal),
+        'year': date.year,
+        'month': date.month,
     }
     return render_to_response('diet/meal_calendar.html', vars)
+    #meals = Meal.objects.order_by('date').filter(
+        #date__year=date.year, date__month=date.month
+    #)
+    #cal = MealCalendar(meals).formatmonth(date.year, date.month)
+    #vars = {
+        #'calendar': mark_safe(cal),
+    #}
+    #return render_to_response('diet/meal_calendar.html', vars)
 
 
 def add_meal(request, yyyy_mm_dd):

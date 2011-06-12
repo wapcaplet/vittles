@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load month_calendar %}
 {% block title %}Meal calendar{% endblock %}
 
 {% block breadcrumbs %}
@@ -7,5 +8,5 @@
 {% endblock %}
 
 {% block content %}
-  {{ calendar }}
+  {% month_cal year month %}
 {% endblock %}

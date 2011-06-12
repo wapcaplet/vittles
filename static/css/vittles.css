@@ -202,7 +202,7 @@ table.month td {
   padding: 5px;
   font-weight: normal;
 }
-table.month td.noday {
+table.month td.other_month {
   background: #eee;
 }
 table.month td.today {
