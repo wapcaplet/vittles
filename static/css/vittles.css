@@ -218,9 +218,15 @@ table.month th.prev_month {
   text-align: left;
   font-weight: normal;
 }
+table.month th.prev_month a:before {
+  content: '\2190  '; /* Left-arrow */
+}
 table.month th.next_month {
   text-align: right;
   font-weight: normal;
+}
+table.month th.next_month a:after {
+  content: '  \2192'; /* Right-arrow */
 }
 
 /* Nutrition info popups */
@@ -241,3 +247,18 @@ table.month th.next_month {
   padding: 2px 6px;
 }
 
+/* Searchable dropdown */
+select#id_recipe {
+  background: #ff9;
+}
+
+/* Tableized forms */
+table.form th {
+  text-align: right;
+}
+table.form ul.errorlist {
+  margin: 0;
+  padding: 0;
+  float: right;
+  color: #d00;
+}

@@ -9,7 +9,15 @@
 
 {% block content %}
   <form action="" method="post">
-    {{ form.as_p }}
-    <input type="submit" value="Save" />
+    <table class="form">
+      {{ form.as_table }}
+    </table>
+      <input type="submit" value="Save" />
   </form>
+
+  <script type="text/javascript">
+    $(function() {
+      $('#id_recipe').searchable();
+    });
+  </script>
 {% endblock %}

@@ -1,13 +1,13 @@
 <table class="month">
   <tr>
     <th class="prev_month">
-      <a href="{% url diet-meal-calendar prev_month|date:"Y-m" %}">&larr; {{ prev_month|date:"F Y" }}</a>
+      <a href="{% url diet-meal-calendar prev_month|date:"Y-m" %}">{{ prev_month|date:"F Y" }}</a>
     </th>
     <th colspan="5">
       {{ this_month|date:"F Y" }}
     </th>
     <th class="next_month">
-      <a href="{% url diet-meal-calendar next_month|date:"Y-m" %}">{{ next_month|date:"F Y" }} &rarr;</a>
+      <a href="{% url diet-meal-calendar next_month|date:"Y-m" %}">{{ next_month|date:"F Y" }}</a>
     </th>
   </tr>
 
@@ -26,12 +26,12 @@
           <td>
         {% endif %}
           <b>{{ day.day|date:"j" }}</b>
-          <b><a href="{% url diet-meal-add day.day|date:"Y-m-d" %}" title="Add meal">+</a></b>
+          <a href="{% url diet-meal-add day.day|date:"Y-m-d" %}" title="Add meal"><img src="/static/images/icon_addlink.gif" alt="+"/></a>
           <ul>
             {% for meal in day.events %}
             <li>
-              <a href="{{ meal.recipe.get_absolute_url }}">{{ meal.recipe.name }}</a>
-              (<a href="{% url diet-meal-delete meal.id %}">X</a>)
+              <a href="{{ meal.recipe.get_absolute_url }}" title="View recipe">{{ meal.recipe.name }}</a>
+              <a href="{% url diet-meal-delete meal.id %}" title="Remove {{ meal.recipe.name }}"><img src="/static/images/icon_deletelink.gif" alt="X"/></a>
             </li>
             {% endfor %}
           </ul>
