@@ -69,7 +69,6 @@ a:hover, a:active {
 }
 
 .recipes h2 {
-  padding: 0.5em 2em 0 2em;
   font-weight: normal;
   /*
   background: #eee;
@@ -80,7 +79,7 @@ a:hover, a:active {
 
 .recipes ul {
   list-style: none;
-  margin: 1em 4em;
+  margin: 1em 1em 3em 1em;
   padding: 0;
 }
 
