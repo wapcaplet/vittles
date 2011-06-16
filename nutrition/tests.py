@@ -3,15 +3,6 @@ from nutrition.models import NutritionInfo
 
 
 class NutritionInfoTest (TestCase):
-    def assert_nutrition_info_equals(self, nutrition_info, **attrs):
-        """Assert that the given `NutritionInfo` has attributes matching `attrs`.
-        """
-        for name, expect in attrs.iteritems():
-            actual = nutrition_info.__getattribute__(name)
-            self.assertEqual(nutrition_info.__getattribute__(name), expect,
-                            "Expected %s == %s, got %s instead" % (name, expect, actual))
-
-
     def test_add_nutrition_info(self):
         nutrient_a = NutritionInfo(
             calories     = 50,
@@ -33,9 +24,8 @@ class NutritionInfoTest (TestCase):
             cholesterol  = 5,
         )
 
-        nutrient_total = nutrient_a + nutrient_b
-        self.assert_nutrition_info_equals(
-            nutrient_total,
+        actual_total = nutrient_a + nutrient_b
+        expected_total = NutritionInfo(
             calories     = 90,
             fat_calories = 50,
             fat          = 15,
@@ -44,7 +34,7 @@ class NutritionInfoTest (TestCase):
             protein      = 0,
             cholesterol  = 45,
         )
-
+        self.assertTrue(actual_total.is_equal(expected_total))
 
 
     def test_multiply_nutrition_info(self):
@@ -58,8 +48,8 @@ class NutritionInfoTest (TestCase):
             cholesterol  = 40,
         )
 
-        self.assert_nutrition_info_equals(
-            nutrient * 2.0,
+        actual_total = nutrient * 2.0
+        expected_total = NutritionInfo(
             calories     = 100,
             fat_calories = 40,
             fat          = 10,
@@ -68,9 +58,11 @@ class NutritionInfoTest (TestCase):
             protein      = 0,
             cholesterol  = 80,
         )
+        self.assertTrue(actual_total.is_equal(expected_total))
 
-        self.assert_nutrition_info_equals(
-            nutrient * 0.5,
+
+        actual_total = nutrient * 0.5
+        expected_total = NutritionInfo(
             calories     = 25,
             fat_calories = 10,
             fat          = 2.5,
@@ -79,6 +71,7 @@ class NutritionInfoTest (TestCase):
             protein      = 0,
             cholesterol  = 20,
         )
+        self.assertTrue(actual_total.is_equal(expected_total))
 
 
     def test_nutrition_info_set_equal(self):
@@ -103,8 +96,7 @@ class NutritionInfoTest (TestCase):
         )
 
         nutrient_b.set_equal(nutrient_a)
-        self.assert_nutrition_info_equals(
-            nutrient_b,
+        expected_total = NutritionInfo(
             calories     = 50,
             fat_calories = 20,
             fat          = 5,
@@ -113,4 +105,5 @@ class NutritionInfoTest (TestCase):
             protein      = 0,
             cholesterol  = 40,
         )
+        self.assertTrue(nutrient_b.is_equal(expected_total))
 

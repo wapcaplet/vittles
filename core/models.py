@@ -129,6 +129,17 @@ class FoodNutritionInfo (NutritionInfo):
         self.save()
 
 
+    def is_equal(self, other):
+        """Return True if this `FoodNutritionInfo` is equal to another,
+        False otherwise.
+        """
+        return all([
+            self.quantity == other.quantity,
+            self.unit == other.unit,
+            self.food == other.food,
+        ]) and super(FoodNutritionInfo, self).is_equal(other)
+
+
 class Equivalence (ModelWrapper):
     """Maps one unit to another.
     """

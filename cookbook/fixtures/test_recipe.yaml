@@ -1,0 +1,4 @@
+cookbook.recipe:
+  1: {name: Pancakes, directions: '1 serving of pancakes',
+      category: null, prep_minutes: 10, cook_minutes: 10, inactive_prep_minutes: null,
+      num_portions: 1, portion: null, preheat: '', rating: 5, source: null}

@@ -57,6 +57,21 @@ class NutritionInfo (models.Model):
         self.save()
 
 
+    def is_equal(self, other):
+        """Return True if this `NutritionInfo` is equal to another,
+        False otherwise.
+        """
+        return all([
+            self.calories == other.calories,
+            self.fat_calories == other.fat_calories,
+            self.fat == other.fat,
+            self.carb == other.carb,
+            self.sodium == other.sodium,
+            self.protein == other.protein,
+            self.cholesterol == other.cholesterol,
+        ])
+
+
     def __add__(self, other):
         """Add this `NutritionInfo` to another, and return the sum.
         """
