@@ -126,23 +126,27 @@ class RecipeNutritionInfo (NutritionInfo):
         Return `True` if all nutrition info could be calculated,
         `False` otherwise.
         """
-        if self.recipe.ingredients.count() == 0:
+        # Force a reload of the recipe object
+        # See: https://code.djangoproject.com/ticket/901
+        recipe = Recipe.objects.get(pk=self.recipe.id)
+
+        if recipe.ingredients.count() == 0:
             return False
 
         # Recalculate all Ingredients' nutrition info
         results = []
-        for ingredient in self.recipe.ingredients.all():
+        for ingredient in recipe.ingredients.all():
             results.append(ingredient.nutrition_info.recalculate())
         success = all(results)
 
         # Sum them up
         nutritions = [
             ingredient.nutrition_info
-            for ingredient in self.recipe.ingredients.all()
+            for ingredient in recipe.ingredients.all()
         ]
         total = sum(nutritions[1:], nutritions[0])
         # Divide by servings
-        total = total * (1.0 / self.recipe.num_portions)
+        total = total * (1.0 / recipe.num_portions)
         self.set_equal(total)
         # TODO: Figure out what else could go wrong before returning
         return success
@@ -186,13 +190,8 @@ class IngredientNutritionInfo (NutritionInfo):
         """Recalculate the nutrition for the current `Ingredient`.
         Return `True` if recalculation was successful, `False` otherwise.
         """
-        # For some bizarre reason, it's necessary to force a reload of the
-        # ingredient instance here; if the ingredient was just modified/saved,
-        # `self.ingredient` still refers to the old instance.
+        # Force a reload of the Ingredient instance
         # See: https://code.djangoproject.com/ticket/901
-        # If this kind of hackery is needed more frequently, it might be good
-        # to create a 'reload' method in the base model class.
-        #ingredient = self.ingredient
         ingredient = Ingredient.objects.get(pk=self.ingredient.id)
 
         # Find all nutritions for this food (maybe none)
