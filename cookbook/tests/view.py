@@ -3,7 +3,7 @@ from django.test.client import Client
 from django.core.urlresolvers import reverse
 from cookbook.models import Recipe
 
-class CookbookIndexTest (TestCase):
+class CookbookViewTest (TestCase):
     fixtures = [
         'test_food',
         'test_unit',
