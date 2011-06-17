@@ -151,12 +151,7 @@ INSTALLED_APPS = (
     'diet',
 
     # Add-ons
-    'lettuce.django',
-    'south',
-)
-
-LETTUCE_APPS = (
-    'inventory',
+    #'south',
 )
 
 SERIALIZATION_MODULES = {
