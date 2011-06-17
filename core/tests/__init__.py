@@ -2,6 +2,7 @@
 from conversion import *
 from amount import *
 from nutrition import *
+from formatting import *
 
 # Doctests
 from vittles.core.utils import \
