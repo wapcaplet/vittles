@@ -163,3 +163,13 @@ SERIALIZATION_MODULES = {
     'yaml': 'core.better_yaml',
 }
 
+TEST_RUNNER = 'testcoverage.test_runner.TestCoverageTestRunner'
+
+TESTCOVERAGE_APPS = (
+    'core',
+    'cookbook',
+    'inventory',
+    'nutrition',
+    'diet',
+)
+
