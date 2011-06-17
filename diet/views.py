@@ -1,9 +1,8 @@
 from datetime import datetime
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
-from django.utils.safestring import mark_safe
-from diet.models import Meal
-from diet.helpers import MealCalendar
+#from django.utils.safestring import mark_safe
+#from diet.models import Meal
 from diet.forms import MealForm
 
 def index(request):
@@ -24,14 +23,6 @@ def meal_calendar(request, yyyy_mm=''):
         'month': date.month,
     }
     return render_to_response('diet/meal_calendar.html', vars)
-    #meals = Meal.objects.order_by('date').filter(
-        #date__year=date.year, date__month=date.month
-    #)
-    #cal = MealCalendar(meals).formatmonth(date.year, date.month)
-    #vars = {
-        #'calendar': mark_safe(cal),
-    #}
-    #return render_to_response('diet/meal_calendar.html', vars)
 
 
 def add_meal(request, yyyy_mm_dd):

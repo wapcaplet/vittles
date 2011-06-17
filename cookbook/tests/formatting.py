@@ -12,22 +12,22 @@ class CookbookStringTest (TestCase):
         'test_recipe',
     ]
 
-    def test_portion_format(self):
+    def test_portion_string(self):
         portion, created = Portion.objects.get_or_create(name='slice')
         self.assertEqual(str(portion), 'slice')
 
 
-    def test_ingredient_category_format(self):
+    def test_ingredient_category_string(self):
         category, created = IngredientCategory.objects.get_or_create(name='dry goods')
         self.assertEqual(str(category), 'dry goods')
 
 
-    def test_recipe_category_format(self):
+    def test_recipe_category_string(self):
         category, created = RecipeCategory.objects.get_or_create(name='desserts')
         self.assertEqual(str(category), 'desserts')
 
 
-    def test_recipe_format(self):
+    def test_recipe_string(self):
         # One portion
         portion, created = Portion.objects.get_or_create(name='loaf')
         recipe, created = Recipe.objects.get_or_create(
@@ -45,7 +45,7 @@ class CookbookStringTest (TestCase):
         self.assertEqual(str(recipe), 'Chocolate Cupcakes (12 cupcakes)')
 
 
-    def test_ingredient_format(self):
+    def test_ingredient_string(self):
         pancakes = Recipe.objects.get(name='Pancakes')
         egg = Food.objects.get(name='egg')
         butter = Food.objects.get(name='butter')

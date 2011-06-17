@@ -152,19 +152,18 @@ INSTALLED_APPS = (
 
     # Add-ons
     #'south',
+    'django_nose',
 )
 
 SERIALIZATION_MODULES = {
     'yaml': 'core.better_yaml',
 }
 
-TEST_RUNNER = 'testcoverage.test_runner.TestCoverageTestRunner'
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
-TESTCOVERAGE_APPS = (
-    'core',
-    'cookbook',
-    'inventory',
-    'nutrition',
-    'diet',
-)
+# Nose configuration options
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package=core,cookbook,inventory,nutrition,diet',
+]
 

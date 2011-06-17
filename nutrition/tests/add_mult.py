@@ -2,7 +2,7 @@ from django.test import TestCase
 from nutrition.models import NutritionInfo
 
 
-class NutritionInfoTest (TestCase):
+class NutritionInfoMathTest (TestCase):
     def test_add_nutrition_info(self):
         nutrient_a = NutritionInfo(
             calories     = 50,
