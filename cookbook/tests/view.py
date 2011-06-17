@@ -18,21 +18,22 @@ class CookbookIndexTest (TestCase):
 
 
     def test_view_cookbook_index(self):
-        index = self.context.get(reverse('cookbook-index'))
-        self.assertEqual(index.status_code, 200)
+        response = self.context.get(reverse('cookbook-index'))
+        self.assertEqual(response.status_code, 200)
         # Index template is rendered
-        template_names = [t.name for t in index.templates]
-        self.assertTrue('cookbook/index.html' in template_names)
+        self.assertTemplateUsed(response, 'cookbook/index.html')
         # One recipe category is shown
-        self.assertEqual(len(index.context['recipe_categories']), 1)
+        self.assertEqual(len(response.context['recipe_categories']), 1)
 
 
     def test_view_cookbook_recipe(self):
         pancakes = Recipe.objects.get(name='Pancakes')
-        recipe = self.context.get(pancakes.get_absolute_url())
-        self.assertEqual(recipe.status_code, 200)
+        response = self.context.get(pancakes.get_absolute_url())
+        self.assertEqual(response.status_code, 200)
+        # Recipe template is rendered
+        self.assertTemplateUsed(response, 'cookbook/recipe.html')
         # Ensure context is correct
-        self.assertEqual(recipe.context['recipe'], pancakes)
-        self.assertEqual(recipe.context['nutrition_info'], pancakes.nutrition_info)
+        self.assertEqual(response.context['recipe'], pancakes)
+        self.assertEqual(response.context['nutrition_info'], pancakes.nutrition_info)
 
 
