@@ -164,6 +164,7 @@ TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 # Nose configuration options
 NOSE_ARGS = [
     '--with-coverage',
+    '--cover-html',
     '--cover-package=core,cookbook,inventory,nutrition,diet',
 ]
 

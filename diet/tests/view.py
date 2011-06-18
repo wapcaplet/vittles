@@ -19,15 +19,13 @@ class DietViewTest (TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'diet/meal_calendar.html')
         # With date
-        response = self.context.get(reverse('diet-meal-calendar',
-                                            kwargs={'yyyy_mm': '2011-06'}))
+        response = self.context.get(reverse('diet-meal-calendar', args=['2011-06']))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'diet/meal_calendar.html')
 
 
     def test_view_diet_meal_add(self):
-        response = self.context.get(reverse('diet-meal-add',
-                                            kwargs={'yyyy_mm_dd': '2011-06-01'}))
+        response = self.context.get(reverse('diet-meal-add', args=['2011-06-01']))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'diet/add_meal.html')
 
