@@ -9,8 +9,8 @@ core.equivalence:
   8: {to_quantity: 29.57, to_unit: 14, unit: 15}
   9: {to_quantity: 473.18000000000001, to_unit: 14, unit: 10}
   10: {to_quantity: 3785.0, to_unit: 14, unit: 9}
-  11: {to_quantity: 14.800000000000001, to_unit: 14, unit: 3}
-  12: {to_quantity: 4.9000000000000004, to_unit: 14, unit: 2}
+  11: {to_quantity: 14.786759999999999, to_unit: 14, unit: 3}
+  12: {to_quantity: 4.9289199999999997, to_unit: 14, unit: 2}
   13: {to_quantity: 3.0, to_unit: 2, unit: 3}
   14: {to_quantity: 16.0, to_unit: 3, unit: 1}
   16: {to_quantity: 0.45000000000000001, to_unit: 12, unit: 6}

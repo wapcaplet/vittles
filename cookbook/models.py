@@ -201,6 +201,7 @@ class IngredientNutritionInfo (NutritionInfo):
         for matching_unit in nutritions.filter(unit=ingredient.unit):
             try:
                 info = matching_unit.for_amount(ingredient.quantity, ingredient.unit)
+            # TODO: Is this exception even reachable?
             except NoEquivalence:
                 pass
             # Success

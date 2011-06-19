@@ -1,5 +1,5 @@
 from django.test import TestCase
-from core.models import Food, FoodNutritionInfo
+from core.models import Food, Unit, FoodNutritionInfo
 from cookbook.models import Recipe, Ingredient
 
 class IngredientNutritionTest (TestCase):
@@ -34,4 +34,18 @@ class IngredientNutritionTest (TestCase):
         self.assertTrue(eggs.nutrition_info.is_equal(total_NI))
 
 
+    def test_ingredient_nutrition_info_recalculation_from_different_unit(self):
+        pancakes = Recipe.objects.get(name='Pancakes')
+        # A food that we don't have nutrition info for yet
+        nuts, created = Food.objects.get_or_create(name='nuts')
+        tablespoon = Unit.objects.get(name='tablespoon')
+        teaspoon = Unit.objects.get(name='teaspoon')
+        # NutritionInfo in terms of a different unit
+        nuts_NI, created = FoodNutritionInfo.objects.get_or_create(
+            food=nuts, quantity=1, unit=teaspoon, calories=50)
+        # Create an ingredient
+        tablespoon_nuts = Ingredient(recipe=pancakes, quantity=1, unit=tablespoon, food=nuts)
+        tablespoon_nuts.save()
+        # Ensure correct nutrition was calculated
+        self.assertTrue(tablespoon_nuts.nutrition_info.is_equal(nuts_NI * 3.0))
 

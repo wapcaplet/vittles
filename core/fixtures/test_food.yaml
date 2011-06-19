@@ -5,3 +5,4 @@ core.food:
   4: {food_group: null, grams_per_ml: 0.76000000000000001, name: peanut butter}
   5: {food_group: null, grams_per_ml: 1.4399999999999999, name: honey}
   6: {food_group: null, grams_per_ml: 0.48999999999999999, name: paprika}
+  7: {food_group: null, grams_per_ml: 1.0, name: salt}

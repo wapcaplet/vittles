@@ -1,6 +1,6 @@
 from django.test import TestCase
 from core.models import Food, Unit, FoodNutritionInfo
-from cookbook.models import Recipe
+from cookbook.models import Recipe, IngredientCategory
 
 class RecipeTest (TestCase):
     fixtures = [
@@ -16,11 +16,19 @@ class RecipeTest (TestCase):
         self.egg = Food.objects.get(name='egg')
         self.flour = Food.objects.get(name='all-purpose flour')
         self.butter = Food.objects.get(name='butter')
+        self.salt = Food.objects.get(name='salt')
         # Units
         self.cup = Unit.objects.get(name='cup')
         self.ounce = Unit.objects.get(name='ounce')
-        # Add an egg and 1 cup of flour to the pancakes recipe
+        self.teaspoon = Unit.objects.get(name='teaspoon')
+        # Recipe
         self.pancakes = Recipe.objects.get(name='Pancakes')
+
+
+class RecipeNutritionTest (RecipeTest):
+    def setUp(self):
+        super(RecipeNutritionTest, self).setUp()
+        # Add an egg and 1 cup of flour to the pancakes recipe
         self.pancakes.ingredients.create(quantity=1, food=self.egg)
         self.pancakes.ingredients.create(quantity=1, unit=self.cup, food=self.flour)
         self.pancakes.save()
@@ -59,4 +67,41 @@ class RecipeTest (TestCase):
         self.pancakes.save()
         total_NI = (self.egg_NI + self.flour_NI) * 0.25
         self.assertTrue(self.pancakes.nutrition_info.is_equal(total_NI))
+
+
+class RecipeIngredientTest (RecipeTest):
+    def test_recipe_ingredient_groups(self):
+        # Wet and dry ingredient groups
+        wet = IngredientCategory.get(name='Wet Works')
+        dry = IngredientCategory.get(name='Dry Goods')
+
+        wet_egg = self.pancakes.ingredients.create(
+            category=wet, quantity=1, food=self.egg)
+        wet_butter = self.pancakes.ingredients.create(
+            category=wet, quantity=1, unit=self.ounce, food=self.butter)
+
+        dry_salt = self.pancakes.ingredients.create(
+            category=dry, quantity=1, unit=self.teaspoon, food=self.salt)
+        dry_flour = self.pancakes.ingredients.create(
+            category=dry, quantity=1, unit=self.cup, food=self.flour)
+
+        all_groups = self.pancakes.ingredient_groups()
+
+        # Ensure there are two groups
+        self.assertEqual(len(all_groups), 2)
+        wet_group, dry_group = all_groups
+
+        # Ensure correct name for each group
+        self.assertEqual(wet_group[0], u'Wet Works')
+        self.assertEqual(dry_group[0], u'Dry Goods')
+
+        # Ensure correct length of ingredient list in each group
+        self.assertEqual(len(wet_group[1]), 2)
+        self.assertEqual(len(dry_group[1]), 2)
+
+        # Ensure correct ingredients in both groups
+        self.assertTrue(wet_egg in wet_group[1])
+        self.assertTrue(wet_butter in wet_group[1])
+        self.assertTrue(dry_salt in dry_group[1])
+        self.assertTrue(dry_flour in dry_group[1])
 
