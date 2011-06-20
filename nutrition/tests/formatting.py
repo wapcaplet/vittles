@@ -3,6 +3,8 @@ from nutrition.models import NutritionInfo
 
 class NutritionInfoStringTest (TestCase):
     def test_nutrition_info_string(self):
+        """Format NutritionInfo as a string.
+        """
         nutrient = NutritionInfo(
             calories     = 50,
             fat_calories = 20,

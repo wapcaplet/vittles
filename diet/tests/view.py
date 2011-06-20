@@ -8,12 +8,16 @@ class DietViewTest (TestCase):
 
 
     def test_view_diet_index(self):
+        """View diet index page.
+        """
         response = self.context.get(reverse('diet-index'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'diet/index.html')
 
 
     def test_view_diet_calendar(self):
+        """View diet calendar page.
+        """
         # Without date
         response = self.context.get(reverse('diet-meal-calendar'))
         self.assertEqual(response.status_code, 200)
@@ -25,6 +29,8 @@ class DietViewTest (TestCase):
 
 
     def test_view_diet_meal_add(self):
+        """View page for adding a Meal.
+        """
         response = self.context.get(reverse('diet-meal-add', args=['2011-06-01']))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'diet/add_meal.html')

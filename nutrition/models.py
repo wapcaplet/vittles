@@ -18,11 +18,23 @@ class NutritionInfo (models.Model):
 
 
     def __unicode__(self):
+        """Format this NutritionInfo as a string.
+        """
         string = u"%i calories" % self.calories
         return string
 
 
-    def empty(self):
+    def full_string(self):
+        """Return a string with full details of this NutritionInfo.
+        """
+        string = "%i calories (%i from fat) " % (self.calories, self.fat_calories)
+        string += "%ig fat, %ig carbs, " % (self.fat, self.carb)
+        string += "%img sodium, %ig protein, " % (self.sodium, self.protein)
+        string += "%img cholesterol" % self.cholesterol
+        return string
+
+
+    def is_empty(self):
         """Return True if this NutritionInfo is empty.
         """
         return (
@@ -34,27 +46,6 @@ class NutritionInfo (models.Model):
             self.protein      == 0 and
             self.cholesterol  == 0
         )
-
-
-    def full_string(self):
-        string = "%i calories (%i from fat) " % (self.calories, self.fat_calories)
-        string += "%ig fat, %ig carbs, " % (self.fat, self.carb)
-        string += "%img sodium, %ig protein, " % (self.sodium, self.protein)
-        string += "%img cholesterol" % self.cholesterol
-        return string
-
-
-    def set_equal(self, other):
-        """Set this `NutritionInfo` equal to another, and save.
-        """
-        self.calories = other.calories
-        self.fat_calories = other.fat_calories
-        self.fat = other.fat
-        self.carb = other.carb
-        self.sodium = other.sodium
-        self.protein = other.protein
-        self.cholesterol = other.cholesterol
-        self.save()
 
 
     def is_equal(self, other):
@@ -70,6 +61,19 @@ class NutritionInfo (models.Model):
             self.protein == other.protein,
             self.cholesterol == other.cholesterol,
         ])
+
+
+    def set_equal(self, other):
+        """Set this `NutritionInfo` equal to another, and save.
+        """
+        self.calories = other.calories
+        self.fat_calories = other.fat_calories
+        self.fat = other.fat
+        self.carb = other.carb
+        self.sodium = other.sodium
+        self.protein = other.protein
+        self.cholesterol = other.cholesterol
+        self.save()
 
 
     def __add__(self, other):

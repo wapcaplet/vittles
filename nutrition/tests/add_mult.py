@@ -4,6 +4,8 @@ from nutrition.models import NutritionInfo
 
 class NutritionInfoMathTest (TestCase):
     def test_add_nutrition_info(self):
+        """Add NutritionInfo.
+        """
         nutrient_a = NutritionInfo(
             calories     = 50,
             fat_calories = 20,
@@ -38,6 +40,8 @@ class NutritionInfoMathTest (TestCase):
 
 
     def test_multiply_nutrition_info(self):
+        """Multiply NutritionInfo.
+        """
         nutrient = NutritionInfo(
             calories     = 50,
             fat_calories = 20,
@@ -75,6 +79,8 @@ class NutritionInfoMathTest (TestCase):
 
 
     def test_nutrition_info_set_equal(self):
+        """Set one NutritionInfo equal to another.
+        """
         nutrient_a = NutritionInfo(
             calories     = 50,
             fat_calories = 20,

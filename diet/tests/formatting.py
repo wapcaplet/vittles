@@ -15,6 +15,8 @@ class DietStringTest (TestCase):
     ]
 
     def test_meal_string(self):
+        """Format Meal as a string.
+        """
         pancakes = Recipe.get(name='Pancakes')
         meal, created = Meal.objects.get_or_create(
             kind='breakfast', recipe=pancakes, date=datetime.today())
@@ -22,12 +24,16 @@ class DietStringTest (TestCase):
 
 
     def test_diet_plan_string(self):
+        """Format DietPlan as a string.
+        """
         plan, created = DietPlan.objects.get_or_create(
             name='2000 Calorie Diet')
         self.assertEqual(str(plan), '2000 Calorie Diet')
 
 
     def test_target_serving_string(self):
+        """Format TargetServing as a string.
+        """
         plan, created = DietPlan.objects.get_or_create(
             name='Food Pyramid')
         meat, created = FoodGroup.objects.get_or_create(
