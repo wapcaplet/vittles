@@ -131,13 +131,11 @@ class RecipeNutritionInfo (NutritionInfo):
         recipe = Recipe.objects.get(pk=self.recipe.id)
 
         if recipe.ingredients.count() == 0:
-            return False
+            return
 
         # Recalculate all Ingredients' nutrition info
-        results = []
         for ingredient in recipe.ingredients.all():
-            results.append(ingredient.nutrition_info.recalculate())
-        success = all(results)
+            ingredient.nutrition_info.recalculate()
 
         # Sum them up
         nutritions = [
@@ -148,8 +146,6 @@ class RecipeNutritionInfo (NutritionInfo):
         # Divide by servings
         total = total * (1.0 / recipe.num_portions)
         self.set_equal(total)
-        # TODO: Figure out what else could go wrong before returning
-        return success
 
 
 class Ingredient (ModelWrapper):
@@ -197,32 +193,31 @@ class IngredientNutritionInfo (NutritionInfo):
         # Find all nutritions for this food (maybe none)
         nutritions = FoodNutritionInfo.objects.filter(food=ingredient.food)
 
-        # Are there any nutrition infos in terms of the current unit?
-        for matching_unit in nutritions.filter(unit=ingredient.unit):
+        # Is there any nutrition info in terms of the current unit?
+        for nutrition in nutritions.filter(unit=ingredient.unit):
             try:
-                info = matching_unit.for_amount(ingredient.quantity, ingredient.unit)
+                info = nutrition.for_amount(ingredient.quantity, ingredient.unit)
             # TODO: Is this exception even reachable?
             except NoEquivalence:
                 pass
             # Success
             else:
                 self.set_equal(info)
-                return True
+                return
 
         # No matching units. Any other non-null unit that can be converted?
-        for other_unit in nutritions.filter(unit__isnull=False):
+        for nutrition in nutritions.filter(unit__isnull=False):
             try:
-                info = other_unit.for_amount(ingredient.quantity, ingredient.unit)
+                info = nutrition.for_amount(ingredient.quantity, ingredient.unit)
             except NoEquivalence:
                 pass
             # Success
             else:
                 self.set_equal(info)
-                return True
+                return
 
         # If we get here, no attempts at conversion succeeded. Leave the
-        # nutrition info at zero, and return False to indicate failure.
-        return False
+        # nutrition info at zero.
 
 
 # Signals
