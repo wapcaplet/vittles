@@ -1,8 +1,6 @@
 from datetime import datetime
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
-#from django.utils.safestring import mark_safe
-#from diet.models import Meal
 from diet.forms import MealForm
 
 def index(request):
@@ -26,11 +24,9 @@ def meal_calendar(request, yyyy_mm=''):
 
 
 def add_meal(request, yyyy_mm_dd):
-    if yyyy_mm_dd:
-        date = datetime.strptime(yyyy_mm_dd, '%Y-%m-%d')
-    else:
-        date = datetime.today()
-
+    """Add a meal with the given date.
+    """
+    date = datetime.strptime(yyyy_mm_dd, '%Y-%m-%d')
     if request.method == 'POST':
         form = MealForm(request.POST)
         if form.is_valid():
