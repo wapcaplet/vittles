@@ -42,6 +42,8 @@ class RecipeNutritionTest (RecipeTest):
 
 
     def test_recipe_nutrition_info_after_adding_ingredient(self):
+        """Recalculate RecipeNutritionInfo after adding an Ingredient.
+        """
         # Before recalculation - only egg and flour
         total_NI = self.egg_NI + self.flour_NI
         self.assertTrue(self.pancakes.nutrition_info.is_equal(total_NI))
@@ -56,6 +58,8 @@ class RecipeNutritionTest (RecipeTest):
 
 
     def test_recipe_nutrition_info_after_changing_servings(self):
+        """Recalculate RecipeNutritionInfo after changing number of servings.
+        """
         # If the recipe serves 2, nutrition information should be halved
         self.pancakes.num_portions = 2.0
         self.pancakes.save()
@@ -71,6 +75,8 @@ class RecipeNutritionTest (RecipeTest):
 
 class RecipeIngredientTest (RecipeTest):
     def test_recipe_ingredient_groups(self):
+        """Group Recipe ingredients by IngredientCategory.
+        """
         # Wet and dry ingredient groups
         wet = IngredientCategory.get(name='Wet Works')
         dry = IngredientCategory.get(name='Dry Goods')

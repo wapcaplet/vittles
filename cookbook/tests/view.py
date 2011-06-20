@@ -18,6 +18,8 @@ class CookbookViewTest (TestCase):
 
 
     def test_view_cookbook_index(self):
+        """View the Cookbook index page.
+        """
         response = self.context.get(reverse('cookbook-index'))
         self.assertEqual(response.status_code, 200)
         # Index template is rendered
@@ -27,6 +29,8 @@ class CookbookViewTest (TestCase):
 
 
     def test_view_cookbook_recipe(self):
+        """View a Recipe page.
+        """
         pancakes = Recipe.objects.get(name='Pancakes')
         response = self.context.get(pancakes.get_absolute_url())
         self.assertEqual(response.status_code, 200)

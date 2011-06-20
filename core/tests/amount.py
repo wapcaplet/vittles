@@ -8,6 +8,8 @@ class AddAmountTest (AmountTest):
     """Test adding two amounts together.
     """
     def test_add_same_units(self):
+        """Add two amounts having the same units.
+        """
         # Results in pounds
         self.failUnlessEqual(add_amount(2.0, 'pound', 0.5, 'pound'), 2.5)
         self.failUnlessEqual(add_amount(0.5, 'pound', 2.0, 'pound'), 2.5)
@@ -17,6 +19,8 @@ class AddAmountTest (AmountTest):
 
 
     def test_add_different_units(self):
+        """Add two amounts having different units.
+        """
         # Results in pounds
         self.failUnlessEqual(add_amount(2, 'pound', 4, 'ounce'), 2.25)
         self.failUnlessEqual(add_amount(2, 'pound', 12, 'ounce'), 2.75)
@@ -30,6 +34,8 @@ class AddAmountTest (AmountTest):
 
 
     def test_add_units_without_equivalence(self):
+        """NoEquivalence when adding amounts with different units.
+        """
         self.assertRaises(NoEquivalence, add_amount, 2.0, 'pound', 3.0, 'quart')
 
 
@@ -37,6 +43,8 @@ class SubtractAmountTest (AmountTest):
     """Test subtracting one amount from another.
     """
     def test_subtract_same_units(self):
+        """Subtract amounts having the same units.
+        """
         # Results in pounds
         self.failUnlessEqual(subtract_amount(2, 'pound', 0.5, 'pound'), 1.5)
         # Results in ounces
@@ -44,6 +52,8 @@ class SubtractAmountTest (AmountTest):
 
 
     def test_subtract_different_units(self):
+        """Subtract amounts having different units.
+        """
         # Results in pounds
         self.failUnlessEqual(subtract_amount(2, 'pound', 4, 'ounce'), 1.75)
         self.failUnlessEqual(subtract_amount(2, 'pound', 12, 'ounce'), 1.25)
@@ -53,6 +63,8 @@ class SubtractAmountTest (AmountTest):
 
 
     def test_subtract_units_without_equivalence(self):
+        """NoEquivalence subtracting amounts with different units.
+        """
         self.assertRaises(NoEquivalence, subtract_amount, 2.0, 'pound', 3.0, 'quart')
 
 

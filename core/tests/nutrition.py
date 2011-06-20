@@ -7,6 +7,8 @@ class FoodNutritionTest (TestCase):
     fixtures = ['test_unit', 'test_food', 'test_equivalence']
 
     def test_normalize_nutrition_info(self):
+        """Normalize FoodNutritionInfo.
+        """
         gram = Unit.objects.get(name='gram')
         butter = Food.objects.get(name='butter')
         butter_nutrition = FoodNutritionInfo(
@@ -39,6 +41,8 @@ class FoodNutritionTest (TestCase):
 
 
     def test_convert_nutrition_info(self):
+        """Convert FoodNutritionInfo to different Units.
+        """
         gram = Unit.objects.get(name='gram')
         kilogram = Unit.objects.get(name='kilogram')
         butter = Food.objects.get(name='butter')
@@ -87,6 +91,8 @@ class FoodNutritionTest (TestCase):
 
 
     def test_convert_nutrition_info_weight_to_volume(self):
+        """Convert FoodNutritionInfo from weight to volume.
+        """
         # Test data
         gram = Unit.objects.get(name='gram')
         butter = Food.objects.get(name='butter')
@@ -132,6 +138,8 @@ class FoodNutritionTest (TestCase):
 
 
     def test_convert_nutrition_info_volume_to_weight(self):
+        """Convert FoodNutritionInfo from volume to weight.
+        """
         kilogram = Unit.objects.get(name='kilogram')
         tbs = Unit.objects.get(name='tablespoon')
         ml = Unit.objects.get(name='milliliter')

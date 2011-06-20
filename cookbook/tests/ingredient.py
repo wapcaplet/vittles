@@ -13,6 +13,8 @@ class IngredientNutritionTest (TestCase):
     ]
 
     def test_ingredient_nutrition_info_recalculation(self):
+        """Recalculate IngredientNutritionInfo on save.
+        """
         egg = Food.objects.get(name='egg')
         pancakes = Recipe.objects.get(name='Pancakes')
         # Create an ingredient
@@ -35,6 +37,8 @@ class IngredientNutritionTest (TestCase):
 
 
     def test_ingredient_nutrition_info_recalculation_from_different_unit(self):
+        """Recalculate IngredientNutritionInfo with different units on save.
+        """
         pancakes = Recipe.objects.get(name='Pancakes')
         # A food that we don't have nutrition info for yet
         nuts, created = Food.objects.get_or_create(name='nuts')
