@@ -3,6 +3,7 @@ from conversion import *
 from amount import *
 from nutrition import *
 from formatting import *
+from serialization import *
 
 # Doctests
 from vittles.core.utils import \

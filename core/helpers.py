@@ -98,3 +98,18 @@ def subtract_amount(quantity, unit, to_quantity, to_unit):
     return quantity - convert_amount(to_quantity, to_unit, unit)
 
 
+def group_by_category(queryset):
+    """Group objects in `queryset` by category name, and return a list of
+    ``(category_name, [matching_objects])`` for each category.
+
+    Objects in `queryset` must have a `category` attribute, where `category`
+    itself has a `name` attribute.
+    """
+    categories = set(obj.category for obj in queryset)
+    groups = []
+    for category in categories:
+        if category:
+            category = category.name
+        groups.append((category, queryset.filter(category__name=category)))
+    return groups
+

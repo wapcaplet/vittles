@@ -1,19 +1,12 @@
 from django.shortcuts import render_to_response
 from cookbook.models import Recipe
+from core.helpers import group_by_category
 
 def index(request):
     """Cookbook homepage.
     """
-    recipes = Recipe.objects.all()
-    categories = set(recipe.category for recipe in recipes)
-    recipe_categories = []
-    for category in categories:
-        if category:
-            category = category.name
-        recipe_categories.append((category, recipes.filter(category__name=category)))
-
     variables = {
-        'recipe_categories': recipe_categories,
+        'recipe_categories': group_by_category(Recipe.objects.all()),
     }
     return render_to_response('cookbook/index.html', variables)
 

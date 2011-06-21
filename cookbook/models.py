@@ -1,9 +1,8 @@
 from django.db import models
 from core.models import ModelWrapper, Food, Preparation, Unit, FoodNutritionInfo
-from core.helpers import NoEquivalence
+from core.helpers import NoEquivalence, group_by_category
 from nutrition.models import NutritionInfo
 from core.utils import format_food_unit, pluralize
-
 
 class Portion (ModelWrapper):
     """Serving or portion names for recipe yields.
@@ -105,15 +104,7 @@ class Recipe (ModelWrapper):
         """Return a list of ``(category, [ingredients])`` for this recipe.
         ``category`` is ``None`` for any ingredients without a defined category.
         """
-        ingredients = self.ingredients.all()
-        categories = set(ingred.category for ingred in ingredients)
-        groups = []
-        for category in categories:
-            if category:
-                category = category.name
-            groups.append((category, ingredients.filter(category__name=category)))
-        return groups
-
+        return group_by_category(self.ingredients.all())
 
 
 class RecipeNutritionInfo (NutritionInfo):
