@@ -37,15 +37,15 @@ class NutritionInfo (models.Model):
     def is_empty(self):
         """Return True if this NutritionInfo is empty.
         """
-        return (
-            self.calories     == 0 and
-            self.fat_calories == 0 and
-            self.fat          == 0 and
-            self.carb         == 0 and
-            self.sodium       == 0 and
-            self.protein      == 0 and
-            self.cholesterol  == 0
-        )
+        return all([
+            self.calories     == 0,
+            self.fat_calories == 0,
+            self.fat          == 0,
+            self.carb         == 0,
+            self.sodium       == 0,
+            self.protein      == 0,
+            self.cholesterol  == 0,
+        ])
 
 
     def is_equal(self, other):
@@ -53,26 +53,26 @@ class NutritionInfo (models.Model):
         False otherwise.
         """
         return all([
-            self.calories == other.calories,
+            self.calories     == other.calories,
             self.fat_calories == other.fat_calories,
-            self.fat == other.fat,
-            self.carb == other.carb,
-            self.sodium == other.sodium,
-            self.protein == other.protein,
-            self.cholesterol == other.cholesterol,
+            self.fat          == other.fat,
+            self.carb         == other.carb,
+            self.sodium       == other.sodium,
+            self.protein      == other.protein,
+            self.cholesterol  == other.cholesterol,
         ])
 
 
     def set_equal(self, other):
         """Set this `NutritionInfo` equal to another, and save.
         """
-        self.calories = other.calories
+        self.calories     = other.calories
         self.fat_calories = other.fat_calories
-        self.fat = other.fat
-        self.carb = other.carb
-        self.sodium = other.sodium
-        self.protein = other.protein
-        self.cholesterol = other.cholesterol
+        self.fat          = other.fat
+        self.carb         = other.carb
+        self.sodium       = other.sodium
+        self.protein      = other.protein
+        self.cholesterol  = other.cholesterol
         self.save()
 
 
@@ -80,18 +80,18 @@ class NutritionInfo (models.Model):
         """Add this `NutritionInfo` to another, and return the sum.
         """
         return NutritionInfo(
-            calories     = self.calories + other.calories,
+            calories     = self.calories     + other.calories,
             fat_calories = self.fat_calories + other.fat_calories,
-            fat          = self.fat + other.fat,
-            carb         = self.carb + other.carb,
-            sodium       = self.sodium + other.sodium,
-            protein      = self.protein + other.protein,
-            cholesterol  = self.cholesterol + other.cholesterol,
+            fat          = self.fat          + other.fat,
+            carb         = self.carb         + other.carb,
+            sodium       = self.sodium       + other.sodium,
+            protein      = self.protein      + other.protein,
+            cholesterol  = self.cholesterol  + other.cholesterol,
         )
 
 
     def __mul__(self, factor):
-        """Multiply this `NutritionInfo` by `factor`.
+        """Multiply this `NutritionInfo` by `factor`, and return the product.
         """
         return NutritionInfo(
             calories     = factor * self.calories,
