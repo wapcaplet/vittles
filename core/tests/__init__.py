@@ -4,6 +4,7 @@ from amount import *
 from nutrition import *
 from formatting import *
 from serialization import *
+from filterspecs import *
 
 # Doctests
 from vittles.core.utils import \
