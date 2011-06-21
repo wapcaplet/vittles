@@ -6,6 +6,29 @@ class FoodNutritionTest (TestCase):
     """
     fixtures = ['test_unit', 'test_food', 'test_equivalence']
 
+    def test_has_nutrition_info(self):
+        """Check whether a Food has a NutritionInfo.
+        """
+        butter = Food.objects.get(name='butter')
+        self.assertFalse(butter.has_nutrition_info())
+        # Add nutrition
+        gram = Unit.objects.get(name='gram')
+        butter_nutrition = FoodNutritionInfo(
+            food         = butter,
+            quantity     = 14.0,
+            unit         = gram,
+            calories     = 100,
+            fat_calories = 100,
+            fat          = 11,
+            carb         = 0,
+            sodium       = 90,
+            protein      = 0,
+            cholesterol  = 30,
+        )
+        butter_nutrition.save()
+        self.assertTrue(butter.has_nutrition_info())
+
+
     def test_normalize_nutrition_info(self):
         """Normalize FoodNutritionInfo.
         """
