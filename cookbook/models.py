@@ -185,16 +185,11 @@ class IngredientNutritionInfo (NutritionInfo):
         nutritions = FoodNutritionInfo.objects.filter(food=ingredient.food)
 
         # Is there any nutrition info in terms of the current unit?
-        for nutrition in nutritions.filter(unit=ingredient.unit):
-            try:
-                info = nutrition.for_amount(ingredient.quantity, ingredient.unit)
-            # TODO: Is this exception even reachable?
-            except NoEquivalence:
-                pass
-            # Success
-            else:
-                self.set_equal(info)
-                return
+        matches = nutritions.filter(unit=ingredient.unit)
+        if matches.count() > 0:
+            info = matches[0].for_amount(ingredient.quantity, ingredient.unit)
+            self.set_equal(info)
+            return
 
         # No matching units. Any other non-null unit that can be converted?
         for nutrition in nutritions.filter(unit__isnull=False):
