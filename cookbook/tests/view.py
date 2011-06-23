@@ -14,13 +14,13 @@ class CookbookViewTest (TestCase):
         'test_recipe_nutrition_info',
     ]
     def setUp(self):
-        self.context = Client()
+        self.client = Client()
 
 
     def test_view_cookbook_index(self):
         """View the Cookbook index page.
         """
-        response = self.context.get(reverse('cookbook-index'))
+        response = self.client.get(reverse('cookbook-index'))
         self.assertEqual(response.status_code, 200)
         # Index template is rendered
         self.assertTemplateUsed(response, 'cookbook/index.html')
@@ -32,7 +32,7 @@ class CookbookViewTest (TestCase):
         """View a Recipe page.
         """
         pancakes = Recipe.objects.get(name='Pancakes')
-        response = self.context.get(pancakes.get_absolute_url())
+        response = self.client.get(pancakes.get_absolute_url())
         self.assertEqual(response.status_code, 200)
         # Recipe template is rendered
         self.assertTemplateUsed(response, 'cookbook/recipe.html')

@@ -13,13 +13,13 @@ class DietViewTest (TestCase):
         'test_recipe',
     ]
     def setUp(self):
-        self.context = Client()
+        self.client = Client()
 
 
     def test_view_diet_index(self):
         """View diet index page.
         """
-        response = self.context.get(reverse('diet-index'))
+        response = self.client.get(reverse('diet-index'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'diet/index.html')
 
@@ -28,12 +28,12 @@ class DietViewTest (TestCase):
         """View diet calendar page.
         """
         # Without date
-        response = self.context.get(reverse('diet-meal-calendar'))
+        response = self.client.get(reverse('diet-meal-calendar'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'diet/meal_calendar.html')
         # With date
         url = reverse('diet-meal-calendar', args=['2011-06'])
-        response = self.context.get(url)
+        response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'diet/meal_calendar.html')
 
@@ -42,7 +42,7 @@ class DietViewTest (TestCase):
         """View page for adding a Meal.
         """
         url = reverse('diet-meal-add', args=['2011-06-01'])
-        response = self.context.get(url)
+        response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'diet/add_meal.html')
         # Submit the form with a valid recipe
@@ -51,7 +51,7 @@ class DietViewTest (TestCase):
             'kind': 'breakfast',
             'recipe': '1',
         }
-        response = self.context.post(url, params)
+        response = self.client.post(url, params)
         # Ensure we were redirected back to the meal calendar
         self.assertEqual(response.status_code, 302)
         # Ensure a meal was created
