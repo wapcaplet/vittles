@@ -26,7 +26,7 @@
       <ul>
         {% for recipe in recipes %}
         <li class="recipe" id="recipe_{{ recipe.id }}">
-          <a href="{% url cookbook-show-recipe recipe.id %}">
+          <a href="{% url cookbook_show_recipe recipe.id %}">
             {% include "cookbook/_recipe_summary.html" %}
           </a>
           <div class="popup" style="display: none;">

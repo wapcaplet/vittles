@@ -20,7 +20,7 @@ class CookbookViewTest (TestCase):
     def test_view_cookbook_index(self):
         """View the Cookbook index page.
         """
-        response = self.client.get(reverse('cookbook-index'))
+        response = self.client.get(reverse('cookbook_index'))
         self.assertEqual(response.status_code, 200)
         # Index template is rendered
         self.assertTemplateUsed(response, 'cookbook/index.html')

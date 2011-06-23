@@ -3,8 +3,8 @@
 
 {% block breadcrumbs %}
   <a href="/">Vittles</a>
-  <a href="{% url diet-index %}">Diet</a>
-  <a href="{% url diet-meal-calendar meal_date|date:"Y-m" %}">{{ meal_date|date:"F Y" }}</a>
+  <a href="{% url diet_index %}">Diet</a>
+  <a href="{% url diet_meal_calendar meal_date|date:"Y-m" %}">{{ meal_date|date:"F Y" }}</a>
 {% endblock %}
 
 {% block content %}
