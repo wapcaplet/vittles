@@ -10,7 +10,7 @@ class RangeValuesFilterSpecTest (TestCase):
     def setUp(self):
         # FIXME: I don't understand most of what this is doing
         # Ideas borrowed from:
-        # https://github.com/jezdez/django
+        # https://github.com/django/django
         #   /blob/master/tests/regressiontests/admin_filters/tests.py
         self.modeladmin = FoodAdmin(Food, admin.site)
         self.request_factory = RequestFactory()
