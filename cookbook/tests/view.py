@@ -32,7 +32,8 @@ class CookbookViewTest (TestCase):
         """View a Recipe page.
         """
         pancakes = Recipe.objects.get(name='Pancakes')
-        response = self.client.get(pancakes.get_absolute_url())
+        url = reverse('cookbook_show_recipe', kwargs={'recipe_id': pancakes.id})
+        response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         # Recipe template is rendered
         self.assertTemplateUsed(response, 'cookbook/recipe.html')
@@ -40,4 +41,11 @@ class CookbookViewTest (TestCase):
         self.assertEqual(response.context['recipe'], pancakes)
         self.assertEqual(response.context['nutrition_info'], pancakes.nutrition_info)
 
+
+    def test_view_cookbook_nonexistent_recipe(self):
+        """View a nonexistent Recipe.
+        """
+        url = reverse('cookbook_show_recipe', kwargs={'recipe_id': 999})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 404)
 

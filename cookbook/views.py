@@ -1,4 +1,4 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, get_object_or_404
 from cookbook.models import Recipe
 from core.helpers import group_by_category
 
@@ -12,7 +12,7 @@ def index(request):
 
 
 def show_recipe(request, recipe_id):
-    recipe = Recipe.objects.get(id=recipe_id)
+    recipe = get_object_or_404(Recipe, pk=recipe_id)
     variables = {
         'recipe': recipe,
         'serving': recipe.portion or 'serving',
