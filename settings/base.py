@@ -151,7 +151,7 @@ INSTALLED_APPS = (
     'diet',
 
     # Add-ons
-    #'south',
+    'south',
     'django_nose',
 )
 

@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <title>{{ title }}</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/vittles.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/vittles.css" media="Screen" />
+    <link rel="stylesheet" type="text/css" href="/static/css/mobile.css" media="handheld" />
     <script type="text/javascript" src="/static/js/jquery-1.6.1.js"></script>
     <script type="text/javascript" src="/static/js/jquery.quicksearch.js"></script>
     <script type="text/javascript" src="/static/js/vittles.js"></script>
@@ -21,13 +22,15 @@
     {% captureas sidebar %}{% block sidebar %}{% endblock %}{% endcaptureas %}
     {% captureas quicksearch %}{% block quicksearch %}{% endblock %}{% endcaptureas %}
 
-    {% if breadcrumbs %}
-      <div class="breadcrumbs">{{ breadcrumbs }}</div>
-    {% endif %}
+    <div class="nav">
+      {% if breadcrumbs %}
+        <div class="breadcrumbs">{{ breadcrumbs }}</div>
+      {% endif %}
 
-    {% if quicksearch %}
-      <div class="quicksearch">{{ quicksearch}}</div>
-    {% endif %}
+      {% if quicksearch %}
+        <div class="quicksearch">{{ quicksearch}}</div>
+      {% endif %}
+    </div>
 
     {% if sidebar %}
       <div class="sidebar">{{ sidebar }}</div>

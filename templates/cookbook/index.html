@@ -7,20 +7,18 @@
 {% endblock %}
 
 {% block quicksearch %}
-  <div class="nav">
-    <form>
-      <label for="search">Search</label> <input type="text" id="search" size="30" />
-    </form>
-    <script type="text/javascript">
-      $(function () {
-        $('input#search').quicksearch('ul li');
-      });
-    </script>
-  </div>
+  <form>
+    <label for="search">Search</label> <input type="text" id="search" size="30" />
+  </form>
+  <script type="text/javascript">
+    $(function () {
+      $('input#search').quicksearch('ul li');
+    });
+  </script>
 {% endblock %}
 
 {% block content %}
-  <div class="recipes">
+  <div class="boxlist">
     {% for category, recipes in recipe_categories %}
       {% if category %} <h2>{{ category }}</h2> {% endif %}
       <ul>

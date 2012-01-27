@@ -3,9 +3,11 @@
 
 {% block content %}
 
-  <ul>
-    <li><a href="{% url cookbook_index %}">Cookbook</a></li>
-    <li><a href="{% url diet_index %}">Diet</a></li>
-  </ul>
+  <div class="boxlist">
+    <ul>
+      <li><a href="{% url cookbook_index %}">Cookbook</a></li>
+      <li><a href="{% url diet_index %}">Diet</a></li>
+    </ul>
+  </div>
 
 {% endblock %}

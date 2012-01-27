@@ -2,7 +2,7 @@
 
 body {
   font-family: Arial, Verdana, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 1em;
   margin: 0;
 }
 
@@ -16,7 +16,6 @@ body {
   position: absolute;
   top: 5px;
   right: 10px;
-  font-size: 0.9em;
   color: #999;
 }
 .header a:hover {
@@ -68,7 +67,7 @@ a:hover, a:active {
   text-decoration: none;
 }
 
-.recipes h2 {
+.boxlist h2 {
   font-weight: normal;
   /*
   background: #eee;
@@ -77,25 +76,26 @@ a:hover, a:active {
   */
 }
 
-.recipes ul {
+.boxlist ul {
   list-style: none;
   margin: 1em 1em 3em 1em;
   padding: 0;
 }
 
-.recipes ul li a {
+.boxlist ul li {
+  font-size: 1.4em;
+}
+
+.boxlist ul li a {
   display: block;
   background: #fff;
   border: 1px solid #aaa;
-  padding: 6px 10px;
-  margin: 2px 0;
+  padding: 8px 12px;
+  margin: 6px 0;
   border-radius: 5px;
   -moz-border-radius: 5px;
 }
 
-.recipes ul li {
-  font-size: 1.3em;
-}
 .recipe-name {
   font-weight: bold;
 }
@@ -105,7 +105,7 @@ a:hover, a:active {
   font-size: 0.8em;
 }
 
-.recipes ul li a:hover {
+.boxlist ul li a:hover {
   background: #f8f8d0;
 }
 
@@ -115,9 +115,10 @@ a:hover, a:active {
 }
 
 .quicksearch {
-  padding: 1em 2em;
-  background: #eee;
-  border-bottom: 1px solid #ccc;
+  display: inline-block;
+}
+.quicksearch form {
+  display: inline-block;
 }
 .quicksearch p {
   margin: 0 0 1em 0;
@@ -125,12 +126,27 @@ a:hover, a:active {
 .quicksearch label {
   font-weight: bold;
 }
+.quicksearch input {
+  font-size: 1.2em;
+}
 
-.breadcrumbs {
+.nav {
   background: #DCE;
   margin: 0;
   padding: 4px 10px;
-  font-size: 0.9em;
+}
+
+.breadcrumbs {
+  display: inline-block;
+}
+.breadcrumbs a {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #aaa;
+  padding: 6px 10px;
+  margin: 2px 0;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
 }
 .breadcrumbs a:hover {
   text-decoration: underline;
@@ -242,7 +258,7 @@ table.month th.next_month a:after {
   border-top: 1px solid black;
   background: #f8f8d0;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 0.9em;
   padding: 2px 6px;
 }
 
