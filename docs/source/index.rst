@@ -64,6 +64,19 @@ http://127.0.0.1:8000/cookbook to view the recipes you've entered.
 .. _virtualenvwrapper: http://pypi.python.org/pypi/virtualenvwrapper
 
 
+Developing
+----------
+
+To build the documentation::
+
+    $ cd docs
+    $ make html
+
+To run the test suite::
+
+    $ ./manage.py test
+
+
 Indices and tables
 ==================
 
