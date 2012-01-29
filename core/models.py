@@ -34,7 +34,7 @@ class FoodGroup (ModelWrapper):
 
     class Meta:
         ordering = ['name']
-        verbose_name_plural = 'Categories'
+        verbose_name_plural = 'Food Groups'
 
 
 class Food (ModelWrapper):
