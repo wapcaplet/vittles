@@ -42,9 +42,11 @@
 {% endblock %}
 
 {% block content %}
-  <div class="photo">
-    <img src="{{ recipe.photo.url }}"/>
-  </div>
+  {% if recipe.photo %}
+    <div class="photo">
+      <img src="{{ recipe.photo.url }}"/>
+    </div>
+  {% endif %}
 
   <div class="directions">
     <h2>Directions</h2>
