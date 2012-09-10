@@ -96,137 +96,39 @@ def fraction_to_float(fraction_string):
 def pluralize(word):
     """Pluralize the given noun, using a simple heuristic. Will pluralize
     some nouns incorrectly because English is beastly complicated.
-
-    Consonant + 'o' gets '-es':
-
-        >>> pluralize('potato')
-        'potatoes'
-
-    Sibilants get '-es':
-
-        >>> pluralize('batch')
-        'batches'
-        >>> pluralize('box')
-        'boxes'
-
-    Consonant + 'y' becomes '-ies':
-
-        >>> pluralize('cherry')
-        'cherries'
-
-    Endings of 'f' or 'fe' become '-ves':
-
-        >>> pluralize('loaf')
-        'loaves'
-        >>> pluralize('bay leaf')
-        'bay leaves'
-        >>> pluralize('knife')
-        'knives'
-
-    Simple 's' ending:
-
-        >>> pluralize('ounce')
-        'ounces'
-        >>> pluralize('egg')
-        'eggs'
-
     """
     word = str(word)
 
-    #vowel = '[aeiouy]'
-    consonant = '([bcdfghjklmnpqrstvwxz])'
-    sibilant = '(x|z|s|sh|ch)'
+    rules = (
+        ('(?i)([^aeiouy])o$', '\\1oes'),        # potatoes, tomatoes
+        ('(?i)([^aeiouy])y$', '\\1ies'),        # cherries, berries
+        ('(?i)(x|z|s|sh|ch|ss)$', '\\1es'),     # boxes, radishes
+        ('(?i)(f|fe)$', 'ves'),                 # loaves, leaves, knives
+        ('(?i)$', 's'),
+    )
 
-    # Nouns ending in 'o' preceded by a consonant are pluralized with '-es'
-    # (vowel + 'o' will fall back on '-s')
-    if re.search(consonant + 'o$', word):
-        return word + 'es'
-
-    # Nouns ending in 'y' preceded by a consonant drop the 'y' and add '-ies'
-    # (vowel + 'y' will fall back on '-s')
-    elif re.search(consonant + 'y$', word):
-        return word[:-1] + 'ies'
-
-    # Nouns ending with x, z, s, sh, ch usually get pluralized with '-es'
-    elif re.search(sibilant + '$', word):
-        return word + 'es'
-
-    # Nouns ending in 'f' drop the 'f' and add '-ves'
-    elif re.search('f$', word):
-        return word[:-1] + 'ves'
-
-    # Nouns ending in 'fe' drop the 'fe' and add '-ves'
-    elif re.search('fe$', word):
-        return word[:-2] + 'ves'
-
-    # Default case: just add '-s'
-    else:
-        return word + 's'
+    for expr, replace in rules:
+        if re.search(expr, word):
+            return re.sub(expr, replace, word)
 
 
 def singularize(word):
     """Convert a plural word into singular form.
-
-    Consonant + 'oes' drops the 'es':
-
-        >>> singularize('potatoes')
-        'potato'
-
-    Sibilants + 'es' drops the 'es':
-
-        >>> singularize('batches')
-        'batch'
-        >>> singularize('boxes')
-        'box'
-
-    Consonant + 'ies' drops the 'ies' and adds 'y':
-
-        >>> singularize('cherries')
-        'cherry'
-
-    Endings of 'ves' become 'f':
-
-        >>> singularize('loaves')
-        'loaf'
-        >>> singularize('bay leaves')
-        'bay leaf'
-
-    Endings of 's' drop the 's':
-
-        >>> singularize('ounces')
-        'ounce'
-        >>> singularize('eggs')
-        'egg'
-
     """
     word = str(word)
 
-    #vowel = '[aeiouy]'
-    consonant = '([bcdfghjklmnpqrstvwxz])'
-    sibilant = '(x|z|s|sh|ch)'
+    rules = (
+        ('(?i)([^aeiouy])oes$', '\\1o'),        # potatoes, tomatoes
+        ('(?i)([^aeiouy])ies$', '\\1y'),        # cherries, berries
+        ('(?i)(x|z|s|sh|ch|ss)es$', '\\1'),     # boxes, radishes
+        ('(?i)(chive|clove)s$', '\\1'),         # special cases of -ves
+        ('(?i)ves$', 'f'),                      # loaves, leaves
+        ('(?i)s$', ''),
+    )
 
-    # Nouns ending in 'o' preceded by a consonant are pluralized with '-es'
-    # (vowel + 'o' will fall back on '-s')
-    if re.search(consonant + 'oes$', word):
-        return re.sub(consonant + 'oes$', '\\1o', word)
-
-    # Nouns ending in 'y' preceded by a consonant drop the 'y' and add '-ies'
-    # (vowel + 'y' will fall back on '-s')
-    elif re.search(consonant + 'ies$', word):
-        return re.sub(consonant + 'ies$', '\\1y', word)
-
-    # Nouns ending with x, z, s, sh, ch usually get pluralized with '-es'
-    elif re.search(sibilant + 'es$', word):
-        return re.sub(sibilant + 'es$', '\\1', word)
-
-    # Nouns ending in 'f' drop the 'f' and add '-ves'
-    elif re.search('ves$', word):
-        return re.sub('ves$', 'f', word)
-
-    # Default case: drop any '-s' ending
-    else:
-        return re.sub('s$', '', word)
-
+    for expr, replace in rules:
+        if re.search(expr, word):
+            return re.sub(expr, replace, word)
 
 
 def format_food_unit(quantity, unit, food):

@@ -5,19 +5,22 @@ from nutrition import *
 from formatting import *
 from serialization import *
 from filterspecs import *
+from inflection import *
+from fraction import *
 
 # Doctests
-from vittles.core.utils import \
-        float_to_fraction, fraction_to_float, \
-        pluralize, singularize, \
-        format_food_unit, parse_food_unit
+# (run automatically using the --with-doctest option)
+#from vittles.core.utils import \
+        #float_to_fraction, fraction_to_float, \
+        #pluralize, singularize, \
+        #format_food_unit, parse_food_unit
 
-__test__ = {
-    'float_to_fraction': float_to_fraction,
-    'fraction_to_float': fraction_to_float,
-    'format_food_unit': format_food_unit,
-    'parse_food_unit': parse_food_unit,
-    'pluralize': pluralize,
-    'singularize': singularize,
-}
+#__test__ = {
+    #'float_to_fraction': float_to_fraction,
+    #'fraction_to_float': fraction_to_float,
+    #'format_food_unit': format_food_unit,
+    #'parse_food_unit': parse_food_unit,
+    #'pluralize': pluralize,
+    #'singularize': singularize,
+#}
 
