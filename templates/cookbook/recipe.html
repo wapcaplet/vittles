@@ -42,6 +42,10 @@
 {% endblock %}
 
 {% block content %}
+  <div class="photo">
+    <img src="{{ recipe.photo.url }}"/>
+  </div>
+
   <div class="directions">
     <h2>Directions</h2>
     {% if recipe.preheat %}

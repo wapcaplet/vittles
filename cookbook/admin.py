@@ -40,6 +40,7 @@ class RecipeAdmin (admin.ModelAdmin):
                 'directions',
                 ('num_portions', 'portion'),
                 ('rating', 'source'),
+                'photo',
             )
         }),
     )

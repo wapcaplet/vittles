@@ -59,6 +59,7 @@ class Recipe (ModelWrapper):
     prep_minutes = models.IntegerField(blank=True, null=True)
     inactive_prep_minutes = models.IntegerField(blank=True, null=True)
     cook_minutes = models.IntegerField(blank=True, null=True)
+    photo        = models.ImageField(blank=True, null=True, upload_to='recipes')
 
     def __unicode__(self):
         string = u"%s" % self.name
