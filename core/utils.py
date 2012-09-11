@@ -2,54 +2,13 @@ import re
 from fractions import Fraction
 
 def float_to_fraction(quantity, denominator=16):
-    """Convert the given quantity into a fraction string, rounded to the nearest
-    ``1 / denominator`` increment. For example, if `denominator` is 16, round
-    the result to the nearest 1/16th.
-
-    If `quantity` is less than 1.0, a simple fraction is returned:
-
-        >>> float_to_fraction(0.5)
-        u'1/2'
-
-        >>> float_to_fraction(0.33)
-        u'1/3'
-
-        >>> float_to_fraction(0.25)
-        u'1/4'
-
-        >>> float_to_fraction(0.125)
-        u'1/8'
-
-        >>> float_to_fraction(0.1)
-        u'1/10'
-
-    If `quantity` is 1.0 or greater, a mixed fraction is returned, with a
-    hyphen separating the integer part from the fractional part.
-
-        >>> float_to_fraction(1.25)
-        u'1-1/4'
-
-        >>> float_to_fraction(2.75)
-        u'2-3/4'
-
-        >>> float_to_fraction(9.33)
-        u'9-1/3'
-
-    All results are rounded to the nearest ``1 / denominator`` increment, so
-    you can decide how precise you need the result to be:
-
-        >>> float_to_fraction(0.1875, 16)
-        u'3/16'
-
-        >>> float_to_fraction(0.1875, 8)
-        u'1/5'
-
-        >>> float_to_fraction(0.1875, 4)
-        u'1/4'
-
+    """Convert the given quantity into a fraction string. The ``denominator``
+    argument limits how large the fraction's denominator is allowed to be
+    (though the denominator may be smaller if it gives a better approximation
+    to the original value).
     """
     whole = int(quantity)
-    frac = Fraction(str(quantity - whole)).limit_denominator(denominator)
+    frac = Fraction(unicode(quantity - whole)).limit_denominator(denominator)
     if whole > 0:
         if frac > 0:
             return u'%d-%s' % (whole, frac)
@@ -60,32 +19,9 @@ def float_to_fraction(quantity, denominator=16):
 
 
 def fraction_to_float(fraction_string):
-    """Convert a fraction string into a floating-point value.
-
-    Simple fractions take the form of "n/d":
-
-        >>> fraction_to_float("1/2")
-        0.5
-        >>> fraction_to_float("3/8")
-        0.375
-
-    Mixed fractions may be separated by one or more spaces or hyphens.
-
-        >>> fraction_to_float("1 1/4")
-        1.25
-        >>> fraction_to_float("1-1/4")
-        1.25
-        >>> fraction_to_float("1 - 1/4")
-        1.25
-
-    Any string that is already a decimal expression is just converted to
-    its numeric form:
-
-        >>> fraction_to_float("5.75")
-        5.75
-        >>> fraction_to_float(".5")
-        0.5
-
+    """Convert a fraction string into a floating-point value. Fractions may be
+    simple (like ``3/4``), or mixed with a hyphen between the whole and
+    fractional parts (like ``1-1/2`` or ``3-2/3``).
     """
     result = 0.0
     for numpart in re.split('[ -]+', fraction_string):
@@ -97,7 +33,7 @@ def pluralize(word):
     """Pluralize the given noun, using a simple heuristic. Will pluralize
     some nouns incorrectly because English is beastly complicated.
     """
-    word = str(word)
+    word = unicode(word)
 
     rules = (
         ('(?i)([^aeiouy])o$', '\\1oes'),        # potatoes, tomatoes
@@ -115,7 +51,7 @@ def pluralize(word):
 def singularize(word):
     """Convert a plural word into singular form.
     """
-    word = str(word)
+    word = unicode(word)
 
     rules = (
         ('(?i)([^aeiouy])oes$', '\\1o'),        # potatoes, tomatoes
@@ -196,11 +132,11 @@ def parse_food_unit(text):
     Examples:
 
         >>> parse_food_unit("2 cups flour")
-        (2.0, 'cup', 'flour')
+        (2.0, u'cup', u'flour')
         >>> parse_food_unit("3 eggs")
-        (3.0, None, 'egg')
+        (3.0, None, u'egg')
         >>> parse_food_unit("1-1/2 teaspoons salt")
-        (1.5, 'teaspoon', 'salt')
+        (1.5, u'teaspoon', u'salt')
     """
     parts = text.split(' ')
 
@@ -213,7 +149,7 @@ def parse_food_unit(text):
         food = singularize(' '.join(parts))
     else:
         unit = singularize(parts.pop(0))
-        food = ' '.join(parts)
+        food = unicode(' '.join(parts))
 
     return (qty, unit, food)
 
