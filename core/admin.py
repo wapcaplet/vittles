@@ -57,10 +57,14 @@ class EquivalenceAdmin (admin.ModelAdmin):
 class PreparationAdmin (admin.ModelAdmin):
     ordering = ('name',)
 
-admin.site.register(FoodGroup, FoodGroupAdmin)
-admin.site.register(Food, FoodAdmin)
-admin.site.register(Unit, UnitAdmin)
-admin.site.register(Equivalence, EquivalenceAdmin)
-admin.site.register(Preparation, PreparationAdmin)
-
+# Hack to allow --with-doctest to work with django-nose
+# (http://mtrichardson.com/2009/05/testing-django-with-nose-and-with-doctest/)
+try:
+    admin.site.register(FoodGroup, FoodGroupAdmin)
+    admin.site.register(Food, FoodAdmin)
+    admin.site.register(Unit, UnitAdmin)
+    admin.site.register(Equivalence, EquivalenceAdmin)
+    admin.site.register(Preparation, PreparationAdmin)
+except admin.sites.AlreadyRegistered:
+    pass
 

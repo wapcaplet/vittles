@@ -165,8 +165,10 @@ TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 # Nose configuration options
 NOSE_ARGS = [
     '--with-coverage',
+    '--with-doctest',
     '--cover-html',
     '--cover-package=core,cookbook,inventory,nutrition,diet',
+    '--verbosity=2',
 ]
 
 # Tastypie configuration

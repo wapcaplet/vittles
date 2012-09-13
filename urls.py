@@ -1,6 +1,12 @@
 from django.conf.urls.defaults import include, patterns
 from django.contrib import admin
-admin.autodiscover()
+
+# Hack to allow --with-doctest to work with django-nose
+# (http://mtrichardson.com/2009/05/testing-django-with-nose-and-with-doctest/)
+try:
+    admin.autodiscover()
+except admin.sites.AlreadyRegistered:
+    pass
 
 urlpatterns = patterns(
     '',

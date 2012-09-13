@@ -2,90 +2,26 @@ import re
 from fractions import Fraction
 
 def float_to_fraction(quantity, denominator=16):
-    """Convert the given quantity into a fraction string, rounded to the nearest
-    ``1 / denominator`` increment. For example, if `denominator` is 16, round
-    the result to the nearest 1/16th.
-
-    If `quantity` is less than 1.0, a simple fraction is returned:
-
-        >>> float_to_fraction(0.5)
-        u"1/2"
-
-        >>> float_to_fraction(0.33)
-        u"1/3"
-
-        >>> float_to_fraction(0.25)
-        u"1/4"
-
-        >>> float_to_fraction(0.125)
-        u"1/8"
-
-        >>> float_to_fraction(0.1)
-        u"1/10"
-
-    If `quantity` is 1.0 or greater, a mixed fraction is returned, with a
-    hyphen separating the integer part from the fractional part.
-
-        >>> float_to_fraction(1.25)
-        u"1-1/4"
-
-        >>> float_to_fraction(2.75)
-        u"2-3/4"
-
-        >>> float_to_fraction(9.33)
-        u"9-1/3"
-
-    All results are rounded to the nearest ``1 / denominator`` increment, so
-    you can decide how precise you need the result to be:
-
-        >>> float_to_fraction(0.1875, 16)
-        u"3/16"
-
-        >>> float_to_fraction(0.1875, 8)
-        u"1/5"
-
-        >>> float_to_fraction(0.1875, 4)
-        u"1/4"
-
+    """Convert the given quantity into a fraction string. The ``denominator``
+    argument limits how large the fraction's denominator is allowed to be
+    (though the denominator may be smaller if it gives a better approximation
+    to the original value).
     """
     whole = int(quantity)
-    frac = Fraction(str(quantity - whole)).limit_denominator(denominator)
+    frac = Fraction(unicode(quantity - whole)).limit_denominator(denominator)
     if whole > 0:
         if frac > 0:
-            return u"%d-%s" % (whole, frac)
+            return u'%d-%s' % (whole, frac)
         else:
-            return u"%d" % whole
+            return u'%d' % whole
     else:
-        return u"%s" % frac
+        return u'%s' % frac
 
 
 def fraction_to_float(fraction_string):
-    """Convert a fraction string into a floating-point value.
-
-    Simple fractions take the form of "n/d":
-
-        >>> fraction_to_float("1/2")
-        0.5
-        >>> fraction_to_float("3/8")
-        0.375
-
-    Mixed fractions may be separated by one or more spaces or hyphens.
-
-        >>> fraction_to_float("1 1/4")
-        1.25
-        >>> fraction_to_float("1-1/4")
-        1.25
-        >>> fraction_to_float("1 - 1/4")
-        1.25
-
-    Any string that is already a decimal expression is just converted to
-    its numeric form:
-
-        >>> fraction_to_float("5.75")
-        5.75
-        >>> fraction_to_float(".5")
-        0.5
-
+    """Convert a fraction string into a floating-point value. Fractions may be
+    simple (like ``3/4``), or mixed with a hyphen between the whole and
+    fractional parts (like ``1-1/2`` or ``3-2/3``).
     """
     result = 0.0
     for numpart in re.split('[ -]+', fraction_string):
@@ -93,74 +29,42 @@ def fraction_to_float(fraction_string):
     return result
 
 
-def pluralize(noun):
+def pluralize(word):
     """Pluralize the given noun, using a simple heuristic. Will pluralize
     some nouns incorrectly because English is beastly complicated.
-
-    Consonant + 'o' gets '-es':
-
-        >>> pluralize('potato')
-        'potatoes'
-
-    Sibilants get '-es':
-
-        >>> pluralize('batch')
-        'batches'
-        >>> pluralize('box')
-        'boxes'
-
-    Consonant + 'y' becomes '-ies':
-
-        >>> pluralize('cherry')
-        'cherries'
-
-    Endings of 'f' or 'fe' become '-ves':
-
-        >>> pluralize('loaf')
-        'loaves'
-        >>> pluralize('bay leaf')
-        'bay leaves'
-        >>> pluralize('knife')
-        'knives'
-
-    Simple 's' ending:
-
-        >>> pluralize('ounce')
-        'ounces'
-        >>> pluralize('egg')
-        'eggs'
-
     """
-    noun = str(noun)
+    word = unicode(word)
 
-    #vowel = '[aeiouy]'
-    consonant = '[bcdfghjklmnpqrstvwxz]'
+    rules = (
+        ('(?i)([^aeiouy])o$', '\\1oes'),        # potatoes, tomatoes
+        ('(?i)([^aeiouy])y$', '\\1ies'),        # cherries, berries
+        ('(?i)(x|z|s|sh|ch|ss)$', '\\1es'),     # boxes, radishes
+        ('(?i)(f|fe)$', 'ves'),                 # loaves, leaves, knives
+        ('(?i)$', 's'),
+    )
 
-    # Nouns ending in 'o' preceded by a consonant are pluralized with '-es'
-    # (vowel + 'o' will fall back on '-s')
-    if re.search(consonant + 'o$', noun):
-        return noun + 'es'
+    for expr, replace in rules:
+        if re.search(expr, word):
+            return re.sub(expr, replace, word)
 
-    # Nouns ending in 'y' preceded by a consonant drop the 'y' and add '-ies'
-    # (vowel + 'y' will fall back on '-s')
-    elif re.search(consonant + 'y$', noun):
-        return noun[:-1] + 'ies'
 
-    # Nouns ending with x, z, s, sh, ch usually get pluralized with '-es'
-    elif re.search('(x|z|s|sh|ch)$', noun):
-        return noun + 'es'
+def singularize(word):
+    """Convert a plural word into singular form.
+    """
+    word = unicode(word)
 
-    # Nouns ending in 'f' drop the 'f' and add '-ves'
-    elif re.search('f$', noun):
-        return noun[:-1] + 'ves'
+    rules = (
+        ('(?i)([^aeiouy])oes$', '\\1o'),        # potatoes, tomatoes
+        ('(?i)([^aeiouy])ies$', '\\1y'),        # cherries, berries
+        ('(?i)(x|z|s|sh|ch|ss)es$', '\\1'),     # boxes, radishes
+        ('(?i)(chive|clove)s$', '\\1'),         # special cases of -ves
+        ('(?i)ves$', 'f'),                      # loaves, leaves
+        ('(?i)s$', ''),
+    )
 
-    # Nouns ending in 'fe' drop the 'fe' and add '-ves'
-    elif re.search('fe$', noun):
-        return noun[:-2] + 'ves'
-
-    # Default case: just add '-s'
-    else:
-        return noun + 's'
+    for expr, replace in rules:
+        if re.search(expr, word):
+            return re.sub(expr, replace, word)
 
 
 def format_food_unit(quantity, unit, food):
@@ -171,31 +75,31 @@ def format_food_unit(quantity, unit, food):
     If a unit is given, the unit is pluralized when appropriate:
 
         >>> format_food_unit(2, 'cup', 'flour')
-        u"2 cups flour"
+        u'2 cups flour'
         >>> format_food_unit(1.5, 'teaspoon', 'salt')
-        u"1-1/2 teaspoons salt"
+        u'1-1/2 teaspoons salt'
         >>> format_food_unit('1-3/4', 'ounce', 'butter')
-        u"1-3/4 ounces butter"
+        u'1-3/4 ounces butter'
 
     If no unit is given, the food is pluralized:
 
         >>> format_food_unit(3, None, 'egg')
-        u"3 eggs"
+        u'3 eggs'
         >>> format_food_unit(2, None, 'potato')
-        u"2 potatoes"
+        u'2 potatoes'
         >>> format_food_unit('4-1/2', None, 'bell pepper')
-        u"4-1/2 bell peppers"
+        u'4-1/2 bell peppers'
 
     In all cases, if the quantity is <= 1, no pluralization is done:
 
         >>> format_food_unit(1, None, 'egg')
-        u"1 egg"
+        u'1 egg'
         >>> format_food_unit(0.75, 'cup', 'flour')
-        u"3/4 cup flour"
+        u'3/4 cup flour'
         >>> format_food_unit(0.5, 'cup', 'oil')
-        u"1/2 cup oil"
+        u'1/2 cup oil'
         >>> format_food_unit('1/4', 'teaspoon', 'baking powder')
-        u"1/4 teaspoon baking powder"
+        u'1/4 teaspoon baking powder'
 
     """
     # Convert quantity from string if necessary
@@ -220,4 +124,32 @@ def format_food_unit(quantity, unit, food):
 
     return string
 
+
+def parse_food_unit(text):
+    """Parse a string containing a quantity, optional unit, and
+    food name. Effectively the reverse of `format_food_unit`.
+
+    Examples:
+
+        >>> parse_food_unit("2 cups flour")
+        (2.0, u'cup', u'flour')
+        >>> parse_food_unit("3 eggs")
+        (3.0, None, u'egg')
+        >>> parse_food_unit("1-1/2 teaspoons salt")
+        (1.5, u'teaspoon', u'salt')
+    """
+    parts = text.split(' ')
+
+    # Assume quantity is the first part
+    qty = fraction_to_float(parts.pop(0))
+
+    # Assume unit is the next part
+    if len(parts) == 1:
+        unit = None
+        food = singularize(' '.join(parts))
+    else:
+        unit = singularize(parts.pop(0))
+        food = unicode(' '.join(parts))
+
+    return (qty, unit, food)
 
