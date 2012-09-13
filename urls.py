@@ -10,6 +10,7 @@ urlpatterns = patterns(
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/', include(admin.site.urls)),
 
+    (r'^core/', include('core.urls')),
     (r'^cookbook/', include('cookbook.urls')),
     (r'^diet/', include('diet.urls')),
 )

@@ -153,6 +153,7 @@ INSTALLED_APPS = (
     # Add-ons
     'south',
     'django_nose',
+    'tastypie',
 )
 
 SERIALIZATION_MODULES = {
@@ -167,4 +168,7 @@ NOSE_ARGS = [
     '--cover-html',
     '--cover-package=core,cookbook,inventory,nutrition,diet',
 ]
+
+# Tastypie configuration
+API_LIMIT_PER_PAGE = 0
 
