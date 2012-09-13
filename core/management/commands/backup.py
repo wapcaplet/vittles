@@ -6,7 +6,7 @@ from django.core.management import call_command
 # TODO: Support command-line args for app name(s) and backup directory
 
 class Command (BaseCommand):
-    help = "Backup the database to YAML format"
+    help = "Backup the database to YAML files"
 
     def handle(self, *args, **options):
         backup_dir = os.path.join(os.path.abspath('.'), 'db_backup')
