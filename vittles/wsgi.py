@@ -5,7 +5,7 @@ import site
 
 venvpath = '/home/eric/.virtualenvs/vittles/lib/python2.7/site-packages/'
 site.addsitedir(venvpath)
-sys.path.append('/home/eric/git')
+sys.path.append('/var/www/vittles')
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
 
