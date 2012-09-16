@@ -90,16 +90,14 @@ def Deserializer(stream_or_string, **options):
         stream = stream_or_string
 
     # Reconstruct the flat object list as PythonDeserializer expects
-    # FIXME: This will probably choke on large data sets, since it
-    # constructs the flattened data list in memory
-    data = []
-    for model, objects in yaml.load(stream).iteritems():
-        # Add the model name back into each object dict
-        for pk, fields in objects.iteritems():
-            data.append({'model': model, 'pk': pk, 'fields': fields})
+    def iterate_data():
+        for model, objects in yaml.load(stream).iteritems():
+            # Add the model name back into each object dict
+            for pk, fields in objects.iteritems():
+                yield {'model': model, 'pk': pk, 'fields': fields}
 
     # Deserialize the flattened data
-    for obj in PythonDeserializer(data, **options):
+    for obj in PythonDeserializer(iterate_data(), **options):
         yield obj
 
 
