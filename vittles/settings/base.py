@@ -150,6 +150,7 @@ INSTALLED_APPS = (
     'nutrition',
     'diet',
     'rest',
+    'tasks',
 
     # Add-ons
     'south',
@@ -170,11 +171,8 @@ NOSE_ARGS = [
     '--cover-package=core,cookbook,inventory,nutrition,diet,rest',
     '--verbosity=2',
 
-    # FIXME: HTML coverage causes weird issues with missing
-    # core/management/__init__.py,cover (maybe because the directory has no
-    # other code in it?)
-    #'--cover-html',
-    #'--cover-html-dir=coverage',
+    '--cover-html',
+    '--cover-html-dir=coverage',
 ]
 
 # Tastypie configuration
