@@ -1,5 +1,7 @@
 from django.shortcuts import render_to_response, get_object_or_404
+from django.http import HttpResponseRedirect
 from cookbook.models import Recipe
+from cookbook.forms import RecipeForm
 from core.helpers import group_by_category
 
 def index(request):
@@ -19,4 +21,20 @@ def show_recipe(request, recipe_id):
         'nutrition_info': recipe.nutrition_info,
     }
     return render_to_response('cookbook/recipe.html', variables)
+
+
+def add_recipe(request):
+    """Add a new recipe.
+    """
+    if request.method == 'POST':
+        form = RecipeForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/cookbook/')
+    else:
+        form = RecipeForm()
+    vars = {
+        'form': form,
+    }
+    return render_to_response('cookbook/add_recipe.html', vars)
 

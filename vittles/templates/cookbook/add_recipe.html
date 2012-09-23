@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Add Recipe{% endblock %}
+
+{% block breadcrumbs %}
+  <a href="/">Vittles</a>
+  <a href="{% url cookbook_index %}">Cookbook</a>
+{% endblock %}
+
+{% block content %}
+  <form action="" method="post">
+    <table class="form">
+      {{ form.as_table }}
+    </table>
+    <input type="submit" value="Save" />
+  </form>
+{% endblock %}
