@@ -149,6 +149,7 @@ INSTALLED_APPS = (
     'inventory',
     'nutrition',
     'diet',
+    'rest',
 
     # Add-ons
     'south',
