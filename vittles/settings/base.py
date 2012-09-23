@@ -167,7 +167,7 @@ TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = [
     '--with-coverage',
     '--with-doctest',
-    '--cover-package=core,cookbook,inventory,nutrition,diet',
+    '--cover-package=core,cookbook,inventory,nutrition,diet,rest',
     '--verbosity=2',
 
     # FIXME: HTML coverage causes weird issues with missing
