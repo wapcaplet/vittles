@@ -18,7 +18,7 @@ def show_recipe(request, recipe_id):
     variables = {
         'recipe': recipe,
         'serving': recipe.portion or 'serving',
-        'nutrition_info': recipe.nutrition_info,
+        'nutrition': recipe.nutrition,
     }
     return render_to_response('cookbook/recipe.html', variables)
 

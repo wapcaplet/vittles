@@ -1,4 +1,4 @@
-core.foodnutritioninfo:
+core.foodnutrition:
   1: {food: 1, quantity: 1.0, unit: 1}    # 1 cup all-purpose flour
   2: {food: 2, quantity: 1.0, unit: null} # 1 egg
   3: {food: 3, quantity: 1.0, unit: 4}    # 1 ounce butter

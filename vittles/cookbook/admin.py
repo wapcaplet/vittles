@@ -45,17 +45,17 @@ class RecipeAdmin (admin.ModelAdmin):
         }),
     )
 
-    actions = ['refresh_nutrition_info']
+    actions = ['refresh_nutrition']
 
-    def refresh_nutrition_info(self, request, queryset):
-        """Custom action to recalculate the `RecipeNutritionInfo`
+    def refresh_nutrition(self, request, queryset):
+        """Custom action to recalculate the `RecipeNutrition`
         for the selected recipes.
         """
         for recipe in queryset:
-            recipe.nutrition_info.recalculate()
+            recipe.nutrition.recalculate()
             recipe.save()
 
-    refresh_nutrition_info.short_description = "Recalculate nutrition information"
+    refresh_nutrition.short_description = "Recalculate nutrition information"
 
 
 class PortionAdmin (admin.ModelAdmin):

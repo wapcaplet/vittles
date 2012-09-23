@@ -8,10 +8,10 @@ class CookbookViewTest (TestCase):
         'test_food',
         'test_unit',
         'test_equivalence',
-        'test_food_nutrition_info',
-        'test_nutrition_info',
+        'test_food_nutrition',
+        'test_nutrition',
         'test_recipe',
-        'test_recipe_nutrition_info',
+        'test_recipe_nutrition',
     ]
     def setUp(self):
         self.client = Client()
@@ -39,7 +39,7 @@ class CookbookViewTest (TestCase):
         self.assertTemplateUsed(response, 'cookbook/recipe.html')
         # Ensure context is correct
         self.assertEqual(response.context['recipe'], pancakes)
-        self.assertEqual(response.context['nutrition_info'], pancakes.nutrition_info)
+        self.assertEqual(response.context['nutrition'], pancakes.nutrition)
 
 
     def test_view_cookbook_nonexistent_recipe(self):

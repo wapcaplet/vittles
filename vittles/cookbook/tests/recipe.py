@@ -1,5 +1,5 @@
 from django.test import TestCase
-from core.models import Food, Unit, FoodNutritionInfo
+from core.models import Food, Unit, FoodNutrition
 from cookbook.models import Recipe, IngredientCategory
 
 class RecipeTest (TestCase):
@@ -7,8 +7,8 @@ class RecipeTest (TestCase):
         'test_food',
         'test_unit',
         'test_equivalence',
-        'test_food_nutrition_info',
-        'test_nutrition_info',
+        'test_food_nutrition',
+        'test_nutrition',
         'test_recipe',
     ]
     def setUp(self):
@@ -33,20 +33,20 @@ class RecipeNutritionTest (RecipeTest):
         self.pancakes.ingredients.create(quantity=1, unit=self.cup, food=self.flour)
         self.pancakes.save()
 
-        self.egg_NI = FoodNutritionInfo.objects.get(
+        self.egg_NI = FoodNutrition.objects.get(
             food=self.egg, quantity=1, unit=None)
-        self.flour_NI = FoodNutritionInfo.objects.get(
+        self.flour_NI = FoodNutrition.objects.get(
             food=self.flour, quantity=1, unit=self.cup)
-        self.butter_NI = FoodNutritionInfo.objects.get(
+        self.butter_NI = FoodNutrition.objects.get(
             food=self.butter, quantity=1, unit=self.ounce)
 
 
-    def test_recipe_nutrition_info_after_adding_ingredient(self):
-        """Recalculate RecipeNutritionInfo after adding an Ingredient.
+    def test_recipe_nutrition_after_adding_ingredient(self):
+        """Recalculate RecipeNutrition after adding an Ingredient.
         """
         # Before recalculation - only egg and flour
         total_NI = self.egg_NI + self.flour_NI
-        self.assertTrue(self.pancakes.nutrition_info.is_equal(total_NI))
+        self.assertTrue(self.pancakes.nutrition.is_equal(total_NI))
 
         # Add 1 oz. butter to recipe
         self.pancakes.ingredients.create(quantity=1, unit=self.ounce, food=self.butter)
@@ -54,23 +54,23 @@ class RecipeNutritionTest (RecipeTest):
 
         # Ensure that butter nutrition is now included in the total
         total_NI = self.egg_NI + self.flour_NI + self.butter_NI
-        self.assertTrue(self.pancakes.nutrition_info.is_equal(total_NI))
+        self.assertTrue(self.pancakes.nutrition.is_equal(total_NI))
 
 
-    def test_recipe_nutrition_info_after_changing_servings(self):
-        """Recalculate RecipeNutritionInfo after changing number of servings.
+    def test_recipe_nutrition_after_changing_servings(self):
+        """Recalculate RecipeNutrition after changing number of servings.
         """
         # If the recipe serves 2, nutrition information should be halved
         self.pancakes.num_portions = 2.0
         self.pancakes.save()
         total_NI = (self.egg_NI + self.flour_NI) * 0.5
-        self.assertTrue(self.pancakes.nutrition_info.is_equal(total_NI))
+        self.assertTrue(self.pancakes.nutrition.is_equal(total_NI))
 
         # If the recipe serves 4, nutrition information should be quartered
         self.pancakes.num_portions = 4.0
         self.pancakes.save()
         total_NI = (self.egg_NI + self.flour_NI) * 0.25
-        self.assertTrue(self.pancakes.nutrition_info.is_equal(total_NI))
+        self.assertTrue(self.pancakes.nutrition.is_equal(total_NI))
 
 
 class RecipeIngredientTest (RecipeTest):

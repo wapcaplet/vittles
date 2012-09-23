@@ -1,11 +1,11 @@
 from django.test import TestCase
-from nutrition.models import NutritionInfo
+from nutrition.models import Nutrition
 
-class NutritionInfoOtherTest (TestCase):
-    def test_nutrition_info_is_empty(self):
-        """Check if NutritionInfo is empty.
+class NutritionOtherTest (TestCase):
+    def test_nutrition_is_empty(self):
+        """Check if Nutrition is empty.
         """
-        empty_nutrient = NutritionInfo(
+        empty_nutrient = Nutrition(
             calories     = 0,
             fat_calories = 0,
             fat          = 0,
@@ -16,7 +16,7 @@ class NutritionInfoOtherTest (TestCase):
         )
         self.assertTrue(empty_nutrient.is_empty())
 
-        non_empty_nutrient = NutritionInfo(
+        non_empty_nutrient = Nutrition(
             calories     = 0,
             fat_calories = 0,
             fat          = 0,

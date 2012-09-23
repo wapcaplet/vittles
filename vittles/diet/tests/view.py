@@ -8,8 +8,8 @@ class DietViewTest (TestCase):
         'test_food',
         'test_unit',
         'test_equivalence',
-        'test_food_nutrition_info',
-        'test_nutrition_info',
+        'test_food_nutrition',
+        'test_nutrition',
         'test_recipe',
     ]
     def setUp(self):

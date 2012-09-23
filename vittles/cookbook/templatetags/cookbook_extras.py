@@ -6,8 +6,8 @@ def times(count):
     return range(int(count))
 
 @register.inclusion_tag('cookbook/_nutrition_summary.html')
-def nutrition_summary(nutrition_info):
-    """Render the nutrition summary for the given `NutritionInfo`.
+def nutrition_summary(nutrition):
+    """Render the nutrition summary for the given `Nutrition`.
     """
-    return {'nutrition_info': nutrition_info}
+    return {'nutrition': nutrition}
 

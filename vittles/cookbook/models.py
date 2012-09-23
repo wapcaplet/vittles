@@ -1,7 +1,7 @@
 from django.db import models
-from core.models import ModelWrapper, Food, Preparation, Unit, FoodNutritionInfo
+from core.models import ModelWrapper, Food, Preparation, Unit, FoodNutrition
 from core.helpers import NoEquivalence, group_by_category
-from nutrition.models import NutritionInfo
+from nutrition.models import Nutrition
 from core.utils import format_food_unit, pluralize
 
 class Portion (ModelWrapper):
@@ -75,11 +75,11 @@ class Recipe (ModelWrapper):
 
     def save(self, *args, **kwargs):
         """Customized save method; creates and (if possible) calculates
-        `NutritionInfo` for the Ingredient.
+        `Nutrition` for the Ingredient.
         """
         super(Recipe, self).save(*args, **kwargs)
-        RecipeNutritionInfo.objects.get_or_create(recipe=self)
-        self.nutrition_info.recalculate()
+        RecipeNutrition.objects.get_or_create(recipe=self)
+        self.nutrition.recalculate()
 
 
     def servings(self):
@@ -108,10 +108,10 @@ class Recipe (ModelWrapper):
         return group_by_category(self.ingredients.all())
 
 
-class RecipeNutritionInfo (NutritionInfo):
+class RecipeNutrition (Nutrition):
     """Nutritional information for a Recipe.
     """
-    recipe = models.OneToOneField(Recipe, related_name='nutrition_info')
+    recipe = models.OneToOneField(Recipe, related_name='nutrition')
 
     def recalculate(self):
         """Recalculate the nutrition for the current `Recipe`.
@@ -127,11 +127,11 @@ class RecipeNutritionInfo (NutritionInfo):
 
         # Recalculate all Ingredients' nutrition info
         for ingredient in recipe.ingredients.all():
-            ingredient.nutrition_info.recalculate()
+            ingredient.nutrition.recalculate()
 
         # Sum them up
         nutritions = [
-            ingredient.nutrition_info
+            ingredient.nutrition
             for ingredient in recipe.ingredients.all()
         ]
         total = sum(nutritions[1:], nutritions[0])
@@ -162,17 +162,17 @@ class Ingredient (ModelWrapper):
 
     def save(self, *args, **kwargs):
         """Customized save method; creates and (if possible) calculates
-        `NutritionInfo` for the Ingredient.
+        `Nutrition` for the Ingredient.
         """
         super(Ingredient, self).save(*args, **kwargs)
-        IngredientNutritionInfo.objects.get_or_create(ingredient=self)
-        self.nutrition_info.recalculate()
+        IngredientNutrition.objects.get_or_create(ingredient=self)
+        self.nutrition.recalculate()
 
 
-class IngredientNutritionInfo (NutritionInfo):
+class IngredientNutrition (Nutrition):
     """Nutritional information for an Ingredient.
     """
-    ingredient = models.OneToOneField(Ingredient, related_name='nutrition_info')
+    ingredient = models.OneToOneField(Ingredient, related_name='nutrition')
 
     def recalculate(self):
         """Recalculate the nutrition for the current `Ingredient`.
@@ -183,7 +183,7 @@ class IngredientNutritionInfo (NutritionInfo):
         ingredient = Ingredient.objects.get(pk=self.ingredient.id)
 
         # Find all nutritions for this food (maybe none)
-        nutritions = FoodNutritionInfo.objects.filter(food=ingredient.food)
+        nutritions = FoodNutrition.objects.filter(food=ingredient.food)
 
         # Is there any nutrition info in terms of the current unit?
         matches = nutritions.filter(unit=ingredient.unit)
@@ -219,7 +219,7 @@ class IngredientNutritionInfo (NutritionInfo):
 
 #@receiver(models.signals.post_save, sender=Food)
 #def model_updated(sender, **kwargs):
-    #"""After a Food is saved, recalculate `NutritionInfo` for related
+    #"""After a Food is saved, recalculate `Nutrition` for related
     #`Recipe`\s.
     #"""
     #recipes = set([
@@ -228,6 +228,6 @@ class IngredientNutritionInfo (NutritionInfo):
     #])
     #for recipe in recipes:
         #print("Recalculating: %s" % recipe)
-        #recipe.nutrition_info.recalculate()
+        #recipe.nutrition.recalculate()
 
 

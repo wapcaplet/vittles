@@ -1,12 +1,12 @@
 from django.test import TestCase
-from nutrition.models import NutritionInfo
+from nutrition.models import Nutrition
 
 
-class NutritionInfoMathTest (TestCase):
-    def test_add_nutrition_info(self):
-        """Add NutritionInfo.
+class NutritionMathTest (TestCase):
+    def test_add_nutrition(self):
+        """Add Nutrition.
         """
-        nutrient_a = NutritionInfo(
+        nutrient_a = Nutrition(
             calories     = 50,
             fat_calories = 20,
             fat          = 5,
@@ -16,7 +16,7 @@ class NutritionInfoMathTest (TestCase):
             cholesterol  = 40,
         )
 
-        nutrient_b = NutritionInfo(
+        nutrient_b = Nutrition(
             calories     = 40,
             fat_calories = 30,
             fat          = 10,
@@ -27,7 +27,7 @@ class NutritionInfoMathTest (TestCase):
         )
 
         actual_total = nutrient_a + nutrient_b
-        expected_total = NutritionInfo(
+        expected_total = Nutrition(
             calories     = 90,
             fat_calories = 50,
             fat          = 15,
@@ -39,10 +39,10 @@ class NutritionInfoMathTest (TestCase):
         self.assertTrue(actual_total.is_equal(expected_total))
 
 
-    def test_multiply_nutrition_info(self):
-        """Multiply NutritionInfo.
+    def test_multiply_nutrition(self):
+        """Multiply Nutrition.
         """
-        nutrient = NutritionInfo(
+        nutrient = Nutrition(
             calories     = 50,
             fat_calories = 20,
             fat          = 5,
@@ -53,7 +53,7 @@ class NutritionInfoMathTest (TestCase):
         )
 
         actual_total = nutrient * 2.0
-        expected_total = NutritionInfo(
+        expected_total = Nutrition(
             calories     = 100,
             fat_calories = 40,
             fat          = 10,
@@ -66,7 +66,7 @@ class NutritionInfoMathTest (TestCase):
 
 
         actual_total = nutrient * 0.5
-        expected_total = NutritionInfo(
+        expected_total = Nutrition(
             calories     = 25,
             fat_calories = 10,
             fat          = 2.5,
@@ -78,10 +78,10 @@ class NutritionInfoMathTest (TestCase):
         self.assertTrue(actual_total.is_equal(expected_total))
 
 
-    def test_nutrition_info_set_equal(self):
-        """Set one NutritionInfo equal to another.
+    def test_nutrition_set_equal(self):
+        """Set one Nutrition equal to another.
         """
-        nutrient_a = NutritionInfo(
+        nutrient_a = Nutrition(
             calories     = 50,
             fat_calories = 20,
             fat          = 5,
@@ -91,7 +91,7 @@ class NutritionInfoMathTest (TestCase):
             cholesterol  = 40,
         )
 
-        nutrient_b = NutritionInfo(
+        nutrient_b = Nutrition(
             calories     = 40,
             fat_calories = 30,
             fat          = 10,
@@ -102,7 +102,7 @@ class NutritionInfoMathTest (TestCase):
         )
 
         nutrient_b.set_equal(nutrient_a)
-        expected_total = NutritionInfo(
+        expected_total = Nutrition(
             calories     = 50,
             fat_calories = 20,
             fat          = 5,

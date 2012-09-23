@@ -1,6 +1,6 @@
 from django.db import models
 from core import utils, helpers
-from nutrition.models import NutritionInfo
+from nutrition.models import Nutrition
 # For list_filter_range
 from core import filters
 
@@ -24,7 +24,7 @@ class ModelWrapper (models.Model):
 
 
 class FoodGroup (ModelWrapper):
-    """A classification for something.
+    """A general classification for edible things.
     """
     name = models.CharField(max_length=50, unique=True)
     parent = models.ForeignKey('FoodGroup', null=True, blank=True)
@@ -53,14 +53,14 @@ class Food (ModelWrapper):
     class Meta:
         ordering = ['name']
 
-    def has_nutrition_info(self):
-        """Return True if this `Food` has `FoodNutritionInfo`, False otherwise.
+    def has_nutrition(self):
+        """Return True if this `Food` has `FoodNutrition`, False otherwise.
         """
-        return self.nutrition_infos.count() > 0
+        return self.nutritions.count() > 0
 
 
 class Unit (ModelWrapper):
-    """A form of measurement.
+    """A quantifiable form of measurement.
     """
     _kind_choices = (
         ('weight', 'Weight'),
@@ -78,15 +78,15 @@ class Unit (ModelWrapper):
         ordering = ['name']
 
 
-class FoodNutritionInfo (NutritionInfo):
+class FoodNutrition (Nutrition):
     """Nutritional information for a Food.
     """
-    food     = models.ForeignKey(Food, related_name='nutrition_infos')
+    food     = models.ForeignKey(Food, related_name='nutritions')
     quantity = models.FloatField(default=1)
     unit     = models.ForeignKey(Unit, null=True, blank=True)
 
     def for_amount(self, to_quantity, to_unit):
-        """Return a `FoodNutritionInfo` for the given quantity and unit.
+        """Return a `FoodNutrition` for the given quantity and unit.
         """
         # If units are the same, scale by quantity alone
         if self.unit == to_unit:
@@ -99,7 +99,7 @@ class FoodNutritionInfo (NutritionInfo):
             # Overall scaling factor to apply to all nutritional info
             factor = gram_serving * target_grams
 
-        return FoodNutritionInfo(
+        return FoodNutrition(
             food         = self.food,
             quantity     = to_quantity,
             unit         = to_unit,
@@ -114,7 +114,7 @@ class FoodNutritionInfo (NutritionInfo):
 
 
     def normalize(self):
-        """Adjust this `NutritionInfo` to have `quantity` of 1.0.
+        """Adjust this `Nutrition` to have `quantity` of 1.0.
         """
         # FIXME: Catch possibility of self.quantity == 0
         scale = 1.0 / self.quantity
@@ -130,14 +130,14 @@ class FoodNutritionInfo (NutritionInfo):
 
 
     def is_equal(self, other):
-        """Return True if this `FoodNutritionInfo` is equal to another,
+        """Return True if this `FoodNutrition` is equal to another,
         False otherwise.
         """
         return all([
             self.quantity == other.quantity,
             self.unit == other.unit,
             self.food == other.food,
-        ]) and super(FoodNutritionInfo, self).is_equal(other)
+        ]) and super(FoodNutrition, self).is_equal(other)
 
 
 class Equivalence (ModelWrapper):

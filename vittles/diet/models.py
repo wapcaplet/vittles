@@ -1,7 +1,7 @@
 from django.db import models
 from core.models import ModelWrapper, FoodGroup, Unit
 from core.utils import pluralize
-from nutrition.models import NutritionInfo
+from nutrition.models import Nutrition
 from cookbook.models import Recipe
 
 
@@ -18,7 +18,7 @@ class Meal (ModelWrapper):
     date           = models.DateField()
     kind           = models.CharField(max_length=20, choices=_meal_choices)
     recipe         = models.ForeignKey(Recipe)
-    nutrition_info = models.ForeignKey(NutritionInfo, editable=False, null=True, blank=True)
+    nutrition = models.ForeignKey(Nutrition, editable=False, null=True, blank=True)
 
     def __unicode__(self):
         string = u"%s" % self.get_kind_display()
@@ -32,16 +32,16 @@ class DietPlan (ModelWrapper):
     """
     name           = models.CharField(max_length=100)
     description    = models.TextField(blank=True, null=True)
-    #nutrition_info = models.ForeignKey(NutritionInfo, null=True, blank=True)
+    #nutrition = models.ForeignKey(Nutrition, null=True, blank=True)
 
     def __unicode__(self):
         return self.name
 
 
-class DietPlanNutritionInfo (NutritionInfo):
+class DietPlanNutrition (Nutrition):
     """Nutritional information for a DietPlan.
     """
-    diet_plan = models.OneToOneField(DietPlan, related_name='nutrition_info')
+    diet_plan = models.OneToOneField(DietPlan, related_name='nutrition')
 
     class Meta:
         verbose_name = 'Target nutrition'

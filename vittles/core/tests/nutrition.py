@@ -1,19 +1,19 @@
 from django.test import TestCase
-from core.models import Food, Unit, Equivalence, FoodNutritionInfo
+from core.models import Food, Unit, Equivalence, FoodNutrition
 
 class FoodNutritionTest (TestCase):
-    """Test operations related to FoodNutritionInfo.
+    """Test operations related to FoodNutrition.
     """
     fixtures = ['test_unit', 'test_food', 'test_equivalence']
 
-    def test_has_nutrition_info(self):
-        """Check whether a Food has a NutritionInfo.
+    def test_has_nutrition(self):
+        """Check whether a Food has a Nutrition.
         """
         butter = Food.objects.get(name='butter')
-        self.assertFalse(butter.has_nutrition_info())
+        self.assertFalse(butter.has_nutrition())
         # Add nutrition
         gram = Unit.objects.get(name='gram')
-        butter_nutrition = FoodNutritionInfo(
+        butter_nutrition = FoodNutrition(
             food         = butter,
             quantity     = 14.0,
             unit         = gram,
@@ -26,15 +26,15 @@ class FoodNutritionTest (TestCase):
             cholesterol  = 30,
         )
         butter_nutrition.save()
-        self.assertTrue(butter.has_nutrition_info())
+        self.assertTrue(butter.has_nutrition())
 
 
-    def test_normalize_nutrition_info(self):
-        """Normalize FoodNutritionInfo.
+    def test_normalize_nutrition(self):
+        """Normalize FoodNutrition.
         """
         gram = Unit.objects.get(name='gram')
         butter = Food.objects.get(name='butter')
-        butter_nutrition = FoodNutritionInfo(
+        butter_nutrition = FoodNutrition(
             food         = butter,
             quantity     = 14.0,
             unit         = gram,
@@ -48,7 +48,7 @@ class FoodNutritionTest (TestCase):
         )
 
         butter_nutrition.normalize()
-        expected_total = FoodNutritionInfo(
+        expected_total = FoodNutrition(
             food         = butter,
             quantity     = 1.0,
             unit         = gram,
@@ -63,13 +63,13 @@ class FoodNutritionTest (TestCase):
         self.assertTrue(butter_nutrition.is_equal(expected_total))
 
 
-    def test_convert_nutrition_info(self):
-        """Convert FoodNutritionInfo to different Units.
+    def test_convert_nutrition(self):
+        """Convert FoodNutrition to different Units.
         """
         gram = Unit.objects.get(name='gram')
         kilogram = Unit.objects.get(name='kilogram')
         butter = Food.objects.get(name='butter')
-        ten_grams_butter = FoodNutritionInfo(
+        ten_grams_butter = FoodNutrition(
             quantity     = 10,
             unit         = gram,
             food         = butter,
@@ -83,7 +83,7 @@ class FoodNutritionTest (TestCase):
         )
 
         one_kilo_butter = ten_grams_butter.for_amount(1, kilogram)
-        expected_total = FoodNutritionInfo(
+        expected_total = FoodNutrition(
             quantity     = 1.0,
             unit         = kilogram,
             food         = butter,
@@ -98,7 +98,7 @@ class FoodNutritionTest (TestCase):
         self.assertTrue(one_kilo_butter.is_equal(expected_total))
 
         five_grams_butter = ten_grams_butter.for_amount(5, gram)
-        expected_total = FoodNutritionInfo(
+        expected_total = FoodNutrition(
             quantity     = 5,
             unit         = gram,
             food         = butter,
@@ -113,8 +113,8 @@ class FoodNutritionTest (TestCase):
         self.assertTrue(five_grams_butter.is_equal(expected_total))
 
 
-    def test_convert_nutrition_info_weight_to_volume(self):
-        """Convert FoodNutritionInfo from weight to volume.
+    def test_convert_nutrition_weight_to_volume(self):
+        """Convert FoodNutrition from weight to volume.
         """
         # Test data
         gram = Unit.objects.get(name='gram')
@@ -123,7 +123,7 @@ class FoodNutritionTest (TestCase):
         ml = Unit.objects.get(name='milliliter')
         ml_per_cup = Equivalence.objects.get(unit=cup, to_unit=ml).to_quantity
 
-        butter_nutrition = FoodNutritionInfo(
+        butter_nutrition = FoodNutrition(
             food         = butter,
             quantity     = 14.0,
             unit         = gram,
@@ -145,7 +145,7 @@ class FoodNutritionTest (TestCase):
 
         # Ensure the amount calculated matches the 1-cup amount
         butter_nutrition_cup = butter_nutrition.for_amount(1, cup)
-        expected_total = FoodNutritionInfo(
+        expected_total = FoodNutrition(
             quantity     = 1.0,
             unit         = cup,
             food         = butter,
@@ -160,8 +160,8 @@ class FoodNutritionTest (TestCase):
         self.assertTrue(butter_nutrition_cup.is_equal(expected_total))
 
 
-    def test_convert_nutrition_info_volume_to_weight(self):
-        """Convert FoodNutritionInfo from volume to weight.
+    def test_convert_nutrition_volume_to_weight(self):
+        """Convert FoodNutrition from volume to weight.
         """
         kilogram = Unit.objects.get(name='kilogram')
         tbs = Unit.objects.get(name='tablespoon')
@@ -169,7 +169,7 @@ class FoodNutritionTest (TestCase):
         ml_per_tbs = Equivalence.objects.get(unit=tbs, to_unit=ml).to_quantity
         peanut_butter = Food.objects.get(name='peanut butter')
 
-        two_tbs_peanut_butter = FoodNutritionInfo(
+        two_tbs_peanut_butter = FoodNutrition(
             food         = peanut_butter,
             quantity     = 2.0,
             unit         = tbs,
@@ -188,7 +188,7 @@ class FoodNutritionTest (TestCase):
         servings_per_kg = gram_serving * target_grams
 
         one_kilo_peanut_butter = two_tbs_peanut_butter.for_amount(1, kilogram)
-        expected_total = FoodNutritionInfo(
+        expected_total = FoodNutrition(
             quantity     = 1.0,
             unit         = kilogram,
             food         = peanut_butter,

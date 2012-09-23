@@ -159,7 +159,7 @@ a:hover, a:active {
   margin: 1em 2em;
 }
 
-.nutrition_info {
+.nutrition {
   /*
   background: white;
   border: 2px solid black;
@@ -168,11 +168,11 @@ a:hover, a:active {
   margin: 0;
   display: inline-block;
 }
-.nutrition_info p {
+.nutrition p {
   margin: 0;
   padding: 3px 0;
 }
-.nutrition_info table {
+.nutrition table {
   margin: 0;
   padding: 3px 0;
   /*
@@ -182,21 +182,21 @@ a:hover, a:active {
   border-spacing: 0;
   font-size: 0.9em;
 }
-.nutrition_info tr th,
-.nutrition_info tr td {
+.nutrition tr th,
+.nutrition tr td {
   padding: 3px 0;
   margin: 0;
   font-weight: normal;
   border-bottom: 1px solid black;
 }
-.nutrition_info tr:last-child th,
-.nutrition_info tr:last-child td {
+.nutrition tr:last-child th,
+.nutrition tr:last-child td {
   border-bottom: none;
 }
-.nutrition_info th {
+.nutrition th {
   text-align: left;
 }
-.nutrition_info td {
+.nutrition td {
   text-align: right;
 }
 

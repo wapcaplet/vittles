@@ -19,9 +19,9 @@
         {% for ingredient in ingredients %}
         <li class="ingredient" id="ingredient_{{ ingredient.id }}">
         <a href="/admin/core/food/{{ ingredient.food.id }}">{{ ingredient }}</a>
-          {% if ingredient.nutrition_info.empty %} * {% endif %}
+          {% if ingredient.nutrition.empty %} * {% endif %}
           <div class="popup" style="display: none;">
-            {% nutrition_summary ingredient.nutrition_info %}
+            {% nutrition_summary ingredient.nutrition %}
           </div>
         </li>
         {% endfor %}
@@ -34,7 +34,7 @@
   </p>
 
   <h2>Nutrition</h2>
-  {% include "cookbook/_nutrition_info.html" %}
+  {% include "cookbook/_nutrition.html" %}
 
   <script type="text/javascript">
     $(function() { add_popup('li.ingredient'); });

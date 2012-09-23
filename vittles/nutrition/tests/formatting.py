@@ -1,11 +1,11 @@
 from django.test import TestCase
-from nutrition.models import NutritionInfo
+from nutrition.models import Nutrition
 
-class NutritionInfoStringTest (TestCase):
-    def test_nutrition_info_string(self):
-        """Format NutritionInfo as a string.
+class NutritionStringTest (TestCase):
+    def test_nutrition_string(self):
+        """Format Nutrition as a string.
         """
-        nutrient = NutritionInfo(
+        nutrient = Nutrition(
             calories     = 50,
             fat_calories = 20,
             fat          = 5,

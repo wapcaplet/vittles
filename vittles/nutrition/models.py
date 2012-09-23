@@ -2,7 +2,7 @@ from django.db import models
 #from core.models import ModelWrapper
 
 
-class NutritionInfo (models.Model):
+class Nutrition (models.Model):
     """Generic nutritional information.
     """
     calories     = models.FloatField(default=0)
@@ -18,14 +18,14 @@ class NutritionInfo (models.Model):
 
 
     def __unicode__(self):
-        """Format this NutritionInfo as a string.
+        """Format this Nutrition as a string.
         """
         string = u"%i calories" % self.calories
         return string
 
 
     def full_string(self):
-        """Return a string with full details of this NutritionInfo.
+        """Return a string with full details of this Nutrition.
         """
         string = "%i calories (%i from fat) " % (self.calories, self.fat_calories)
         string += "%ig fat, %ig carbs, " % (self.fat, self.carb)
@@ -35,7 +35,7 @@ class NutritionInfo (models.Model):
 
 
     def is_empty(self):
-        """Return True if this NutritionInfo is empty.
+        """Return True if this Nutrition is empty.
         """
         return all([
             self.calories     == 0,
@@ -49,7 +49,7 @@ class NutritionInfo (models.Model):
 
 
     def is_equal(self, other):
-        """Return True if this `NutritionInfo` is equal to another,
+        """Return True if this `Nutrition` is equal to another,
         False otherwise.
         """
         return all([
@@ -64,7 +64,7 @@ class NutritionInfo (models.Model):
 
 
     def set_equal(self, other):
-        """Set this `NutritionInfo` equal to another, and save.
+        """Set this `Nutrition` equal to another, and save.
         """
         self.calories     = other.calories
         self.fat_calories = other.fat_calories
@@ -77,9 +77,9 @@ class NutritionInfo (models.Model):
 
 
     def __add__(self, other):
-        """Add this `NutritionInfo` to another, and return the sum.
+        """Add this `Nutrition` to another, and return the sum.
         """
-        return NutritionInfo(
+        return Nutrition(
             calories     = self.calories     + other.calories,
             fat_calories = self.fat_calories + other.fat_calories,
             fat          = self.fat          + other.fat,
@@ -91,9 +91,9 @@ class NutritionInfo (models.Model):
 
 
     def __mul__(self, factor):
-        """Multiply this `NutritionInfo` by `factor`, and return the product.
+        """Multiply this `Nutrition` by `factor`, and return the product.
         """
-        return NutritionInfo(
+        return Nutrition(
             calories     = factor * self.calories,
             fat_calories = factor * self.fat_calories,
             fat          = factor * self.fat,

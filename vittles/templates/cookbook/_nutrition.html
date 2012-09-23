@@ -1,0 +1,15 @@
+<div class="nutrition">
+  {% if serving %}
+    <p>Per {{ serving }}</p>
+  {% endif %}
+  <table>
+    <tr><th>Calories</th>          <td>{{ nutrition.calories|floatformat }}</td></tr>
+    <tr><th>Calories from Fat</th> <td>{{ nutrition.fat_calories|floatformat }}</td></tr>
+    <tr><th>Fat</th>               <td>{{ nutrition.fat|floatformat }} g</td></tr>
+    <tr><th>Carbohydrate</th>      <td>{{ nutrition.carb|floatformat }} g</td></tr>
+    <tr><th>Sodium</th>            <td>{{ nutrition.sodium|floatformat }} mg</td></tr>
+    <tr><th>Protein</th>           <td>{{ nutrition.protein|floatformat }} g</td></tr>
+    <tr><th>Cholesterol</th>       <td>{{ nutrition.cholesterol|floatformat }} mg</td></tr>
+  </table>
+</div>
+
