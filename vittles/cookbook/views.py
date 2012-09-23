@@ -27,7 +27,7 @@ def add_recipe(request):
     """Add a new recipe.
     """
     if request.method == 'POST':
-        form = RecipeForm(request.POST)
+        form = RecipeForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/cookbook/')
