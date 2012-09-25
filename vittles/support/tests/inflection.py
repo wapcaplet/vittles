@@ -1,5 +1,5 @@
 from django.test import TestCase
-from core.utils import singularize, pluralize
+from support.utils import singularize, pluralize
 
 class InflectionTest (TestCase):
     def setUp(self):

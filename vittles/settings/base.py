@@ -159,7 +159,7 @@ INSTALLED_APPS = (
 )
 
 SERIALIZATION_MODULES = {
-    'yaml': 'core.better_yaml',
+    'yaml': 'support.better_yaml',
 }
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
@@ -168,7 +168,7 @@ TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = [
     '--with-coverage',
     '--with-doctest',
-    '--cover-package=core,cookbook,inventory,nutrition,diet,rest',
+    '--cover-package=support,core,cookbook,inventory,nutrition,diet,rest',
     '--verbosity=2',
 
     '--cover-html',

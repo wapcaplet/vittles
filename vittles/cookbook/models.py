@@ -2,7 +2,7 @@ from django.db import models
 from core.models import ModelWrapper, Food, Preparation, Unit, FoodNutrition
 from core.helpers import NoEquivalence, group_by_category
 from nutrition.models import Nutrition
-from core.utils import format_food_unit, pluralize
+from support.utils import format_food_unit, pluralize
 
 class Portion (ModelWrapper):
     """Serving or portion names for recipe yields.

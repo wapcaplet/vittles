@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib import admin
 from cookbook.models import Ingredient, Recipe, Portion, IngredientCategory, RecipeCategory
-from core.utils import fraction_to_float
+from support.utils import fraction_to_float, string_to_minutes
 
 # Custom forms and fields
 
@@ -10,6 +10,12 @@ class QuantityField (forms.Field):
     """
     def to_python(self, value):
         return fraction_to_float(value)
+
+class TimeField (forms.Field):
+    """A field for entering a duration of time in minutes or hours.
+    """
+    def to_python(self, value):
+        return string_to_minutes(value)
 
 class IngredientForm (forms.ModelForm):
     quantity = QuantityField(label="Quantity",

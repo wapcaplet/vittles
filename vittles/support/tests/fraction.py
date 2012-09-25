@@ -1,5 +1,5 @@
 from django.test import TestCase
-from core.utils import fraction_to_float, float_to_fraction
+from support.utils import fraction_to_float, float_to_fraction
 
 class FractionTest (TestCase):
     def setUp(self):

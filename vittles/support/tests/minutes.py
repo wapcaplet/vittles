@@ -1,5 +1,5 @@
 from django.test import TestCase
-from core.utils import string_to_minutes
+from support.utils import string_to_minutes
 
 class TimesTest (TestCase):
     def setUp(self):

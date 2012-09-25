@@ -1,5 +1,6 @@
 from django.db import models
-from core import utils, helpers
+from core import helpers
+from support import utils
 from nutrition.models import Nutrition
 # For list_filter_range
 from core import filters

@@ -1,6 +1,6 @@
 from django.db import models
 from core.models import ModelWrapper, FoodGroup, Unit
-from core.utils import pluralize
+from support.utils import pluralize
 from nutrition.models import Nutrition
 from cookbook.models import Recipe
 
