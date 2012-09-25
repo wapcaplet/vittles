@@ -153,3 +153,38 @@ def parse_food_unit(text):
 
     return (qty, unit, food)
 
+
+def string_to_minutes(text):
+    """Convert a human-readable string into an integer duration in minutes.
+
+    Examples:
+
+        >>> string_to_minutes("10")
+        10
+        >>> string_to_minutes("15 minutes")
+        15
+        >>> string_to_minutes("30 mins")
+        30
+        >>> string_to_minutes("2 hours")
+        120
+        >>> string_to_minutes("2-1/2 hours")
+        150
+        >>> string_to_minutes("1/2 hour")
+        30
+
+    """
+    parts = text.split(' ')
+    if len(parts) > 1:
+        quantity = parts[0]
+        unit = parts[1]
+    else:
+        quantity = parts[0]
+        unit = "minutes"
+
+    if unit.startswith("m"):
+        minutes = fraction_to_float(quantity)
+    elif unit.startswith("h"):
+        minutes = fraction_to_float(quantity) * 60
+
+    return int(minutes)
+

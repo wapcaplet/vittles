@@ -1,7 +1,7 @@
 from django.test import TestCase
 from core.utils import fraction_to_float, float_to_fraction
 
-class InflectionTest (TestCase):
+class FractionTest (TestCase):
     def setUp(self):
         self.less_than_one = [
             ('1/2', 0.5),
